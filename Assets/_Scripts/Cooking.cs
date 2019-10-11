@@ -10,9 +10,9 @@ public class Cooking : MonoBehaviour
     //private Material raw;
 
     [SerializeField]
-    private Shader cooked;
+    private Material cooked;
 
-    [SerializeField]
+    //[SerializeField]
     private Material burnt;
     
     [SerializeField]
@@ -28,7 +28,8 @@ public class Cooking : MonoBehaviour
     void Start()
     {
         timeCooked = 0;
-        cooked = Shader.Find("_albedoCooked");
+        cooked.SetColor("_albedoCook", Color.red);
+       
     }
 
     // Update is called once per frame
@@ -42,18 +43,16 @@ public class Cooking : MonoBehaviour
 
         if (other.gameObject.CompareTag("Pan"))
         {
-            
-            
             if (isCooked == false)
             {
-                if (timeCooked < 5)
+                if (timeCooked < 2)
                 {
                     timeCooked += Time.deltaTime;
-                    Debug.Log("Cooking TIme: " + timeCooked + " seconds");
+                    Debug.Log("Cooking Time: " + timeCooked + " seconds");
                 }
                 else
                 {
-                    rend.material.shader = cooked;
+                    cooked.SetColor("_albedoCook", Color.black);
                     //gameObject.SetActive(false);
                     isCooked = true;
                     Debug.Log("Object is cooked");
