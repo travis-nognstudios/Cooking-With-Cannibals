@@ -6,9 +6,6 @@ public class Cooking : MonoBehaviour
 {
     #region Variables
 
-    //[SerializeField]
-    //private Material raw;
-
     [SerializeField]
     private Material cooked;
 
@@ -20,9 +17,27 @@ public class Cooking : MonoBehaviour
 
     private float timeCooked;
 
-    private bool isCooked = false;
-
     #endregion Variables
+
+    // Getters
+
+    public bool IsRaw()
+    {
+        return !(IsCooked() || IsBurnt());
+    }
+
+    public bool IsCooked()
+    {
+        return cooked == true;
+    }
+
+    public bool IsBurnt()
+    {
+        return burnt == true;
+    }
+
+    // End Getters
+
 
     // Start is called before the first frame update
     void Start()
@@ -35,7 +50,7 @@ public class Cooking : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     void OnTriggerStay(Collider other)
@@ -43,7 +58,7 @@ public class Cooking : MonoBehaviour
 
         if (other.gameObject.CompareTag("Pan"))
         {
-            if (isCooked == false)
+            if (IsCooked() == false)
             {
                 if (timeCooked < 2)
                 {
@@ -54,7 +69,7 @@ public class Cooking : MonoBehaviour
                 {
                     cooked.SetColor("_albedoCook", Color.black);
                     //gameObject.SetActive(false);
-                    isCooked = true;
+                    //isCooked = true;
                     Debug.Log("Object is cooked");
                 }
             }
