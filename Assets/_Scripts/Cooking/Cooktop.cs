@@ -15,6 +15,7 @@ public class Cooktop : MonoBehaviour
 
     #endregion Variables
 
+    #region MonoBehavior
     // Start is called before the first frame update
     void Start()
     {
@@ -43,15 +44,20 @@ public class Cooktop : MonoBehaviour
         }
     }
 
-    void MakeHot()
+    #endregion MonoBehavior
+
+    #region Private Methods
+    private void MakeHot()
     {
         IsHot = true;
         //Debug.Log("Now hot");
     }
 
-    void MakeCold()
+    private  void MakeCold()
     {
         IsHot = false;
         //Debug.Log("Now cold");
     }
+
+    #endregion Private Methods
 }
