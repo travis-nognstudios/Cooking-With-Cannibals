@@ -8,9 +8,6 @@ namespace Cooking
     {
         #region Variables
 
-        public enum Cooktype { Grill, Boil, Deepfry };
-        public enum Ingredient { Shoulder, Hand, BurgerBuns, Tongue, Lettuce };
-
         [Header("Type")]
         public Ingredient ingredientType;
 
@@ -24,7 +21,9 @@ namespace Cooking
         private bool burnt;
 
         [Header("Textures")]
-        public Material[] material;
+        public Material uncookedMat;
+        public Material cookedMat;
+        public Material burntMat;
         Renderer rend;
 
         #endregion Variables
@@ -62,14 +61,13 @@ namespace Cooking
         #endregion Properties
 
 
-
         #region MonoBehavior
         // Start is called before the first frame update
         void Start()
         {
             rend = GetComponent<Renderer>();
             rend.enabled = true;
-            rend.sharedMaterial = material[0];
+            rend.sharedMaterial = uncookedMat;
         }
 
         // Update is called once per frame
@@ -84,15 +82,20 @@ namespace Cooking
             //Removing it for the demo
             if (other.gameObject.CompareTag("Cooktop"))
             {
-                timeCooked += Time.deltaTime;
+                Cooktop cooktop = other.gameObject.GetComponent<Cooktop>();
 
-                if (!IsCooked() && timeCooked >= timeToCook && timeCooked < timeToBurn)
+                if (cooktop.cooktype == cooktype && cooktop.IsHot())
                 {
-                    MakeCooked();
-                }
-                else if (!IsBurnt() && timeCooked >= timeToBurn)
-                {
-                    MakeBurnt();
+                    timeCooked += Time.deltaTime;
+
+                    if (!IsCooked() && timeCooked >= timeToCook && timeCooked < timeToBurn)
+                    {
+                        MakeCooked();
+                    }
+                    else if (!IsBurnt() && timeCooked >= timeToBurn)
+                    {
+                        MakeBurnt();
+                    }
                 }
             }
         }
@@ -102,14 +105,14 @@ namespace Cooking
         private void MakeCooked()
         {
             cooked = true;
-            rend.sharedMaterial = material[1];
+            rend.sharedMaterial = cookedMat;
             Debug.Log("Cooked");
         }
 
         private void MakeBurnt()
         {
             burnt = true;
-            rend.sharedMaterial = material[2];
+            rend.sharedMaterial = burntMat;
             Debug.Log("Burnt");
         }
         #endregion Private Methods

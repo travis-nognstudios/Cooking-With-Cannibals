@@ -8,9 +8,7 @@ namespace Cooking
     {
         #region Variables
 
-        public enum Cooktype { Grill, Boil, Deepfry };
-
-        private bool IsHot;
+        private bool hot;
 
         [Header("Cooktop Settings")]
         public Cooktype cooktype;
@@ -51,16 +49,23 @@ namespace Cooking
         #region Private Methods
         private void MakeHot()
         {
-            IsHot = true;
+            hot = true;
             //Debug.Log("Now hot");
         }
 
         private void MakeCold()
         {
-            IsHot = false;
+            hot = false;
             //Debug.Log("Now cold");
         }
 
         #endregion Private Methods
+
+        #region Properties
+        public bool IsHot()
+        {
+            return hot;
+        }
+        #endregion Properties
     }
 }

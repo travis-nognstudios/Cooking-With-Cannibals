@@ -11,7 +11,7 @@ public class LevelPlate : MonoBehaviour
     #region Variables
 
     [Header("Recipes")]
-    public Cooking.Cookable.Ingredient[] recipes; //ToDo: Make actual recipes, not ingredients
+    public Cooking.Ingredient[] recipes; //ToDo: Make actual recipes, not ingredients
 
     private bool[] contains;
     private bool done;
@@ -50,8 +50,8 @@ public class LevelPlate : MonoBehaviour
 
         if (other.gameObject.CompareTag("Cookable"))
         {
-            Cooking.Cookable.Ingredient ingrType = otherScript.ingredientType;
-            if (ingrType == Cookable.Ingredient.Hand)
+            Cooking.Ingredient ingrType = otherScript.ingredientType;
+            if (ingrType == Cooking.Ingredient.Hand)
             {
                 if (otherScript.IsCooked())
                 {
@@ -67,7 +67,7 @@ public class LevelPlate : MonoBehaviour
         }
     }
 
-    private int GetArrayIndex(Cooking.Cookable.Ingredient ingr)
+    private int GetArrayIndex(Cooking.Ingredient ingr)
     {
         return System.Array.IndexOf(recipes, ingr);
     }
