@@ -2,21 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Cutting : MonoBehaviour
+namespace Cutting
 {
-
-    public Material CapMaterial;
-
-
-    private void OnTriggerEnter(Collision collision)
+    public class Cutting : MonoBehaviour
     {
-        GameObject victim = collision.collider.gameObject;
 
-        GameObject[] pieces = MeshCut.Cut(victim, transform.position, transform.right, CapMaterial);
+        public Material CapMaterial;
 
-        if (!pieces[1].GetComponent<Rigidbody>())
-            pieces[1].AddComponent<Rigidbody>();
 
-        Destroy(pieces[1], 1);
+        private void OnTriggerEnter(Collision collision)
+        {
+            GameObject victim = collision.collider.gameObject;
+
+            GameObject[] pieces = MeshCut.Cut(victim, transform.position, transform.right, CapMaterial);
+
+            if (!pieces[1].GetComponent<Rigidbody>())
+                pieces[1].AddComponent<Rigidbody>();
+
+            Destroy(pieces[1], 1);
+        }
     }
 }
