@@ -106,14 +106,14 @@ namespace Cooking
         {
             cooked = true;
             rend.sharedMaterial = cookedMat;
-            Debug.Log("Cooked");
+            //Debug.Log("Cooked");
         }
 
         private void MakeBurnt()
         {
             burnt = true;
             rend.sharedMaterial = burntMat;
-            Debug.Log("Burnt");
+            //Debug.Log("Burnt");
         }
         #endregion Private Methods
 
