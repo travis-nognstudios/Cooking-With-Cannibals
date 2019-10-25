@@ -40,7 +40,7 @@ public class Cooking : MonoBehaviour
 
     void OnTriggerStay(Collider other)
     {
-
+        Debug.Log("touching");
         if (other.gameObject.CompareTag("Pan"))
         {
             if (isCooked == false)
