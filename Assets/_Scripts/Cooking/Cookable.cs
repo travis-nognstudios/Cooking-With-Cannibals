@@ -23,26 +23,41 @@ public class Cookable : MonoBehaviour
 
     #endregion Variables
 
-    // Getters
+    
+    #region Properties
 
+    /// <summary>
+    /// Whether the object is raw
+    /// </summary>
+    /// <returns></returns>
     private bool IsRaw()
     {
         return !(IsCooked() || IsBurnt());
     }
 
+    /// <summary>
+    /// Whether the object is cooked
+    /// </summary>
+    /// <returns></returns>
     private bool IsCooked()
     {
         return cooked == true && burnt == false;
     }
 
+    /// <summary>
+    /// Whether the object is burnt
+    /// </summary>
+    /// <returns></returns>
     private bool IsBurnt()
     {
         return burnt == true;
     }
+    
+    #endregion Properties
 
-    // End Getters
 
 
+    #region MonoBehavior
     // Start is called before the first frame update
     void Start()
     {
@@ -75,7 +90,9 @@ public class Cookable : MonoBehaviour
             }
         }
     }
+    #endregion MonoBehavior
 
+    #region Private Methods
     private void MakeCooked()
     {
         cooked = true;
@@ -89,5 +106,6 @@ public class Cookable : MonoBehaviour
         rend.sharedMaterial = material[2];
         Debug.Log("Burnt");
     }
+    #endregion Private Methods
 
 }
