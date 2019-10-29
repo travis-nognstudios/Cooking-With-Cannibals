@@ -17,8 +17,7 @@ namespace Cooking
         public float timeToBurn;
 
         private float timeCooked;
-        private bool cooked;
-        private bool burnt;
+        private Cookstate cookstate;
 
         [Header("Textures")]
         public Material uncookedMat;
@@ -37,7 +36,7 @@ namespace Cooking
         /// <returns></returns>
         public bool IsRaw()
         {
-            return !(IsCooked() || IsBurnt());
+            return cookstate == Cookstate.Uncooked;
         }
 
         /// <summary>
@@ -46,7 +45,7 @@ namespace Cooking
         /// <returns></returns>
         public bool IsCooked()
         {
-            return cooked == true && burnt == false;
+            return cookstate == Cookstate.Cooked;
         }
 
         /// <summary>
@@ -55,7 +54,7 @@ namespace Cooking
         /// <returns></returns>
         public bool IsBurnt()
         {
-            return burnt == true;
+            return cookstate == Cookstate.Burnt;
         }
 
         #endregion Properties
@@ -104,14 +103,14 @@ namespace Cooking
         #region Private Methods
         private void MakeCooked()
         {
-            cooked = true;
+            cookstate = Cookstate.Cooked;
             rend.sharedMaterial = cookedMat;
             //Debug.Log("Cooked");
         }
 
         private void MakeBurnt()
         {
-            burnt = true;
+            cookstate = Cookstate.Burnt;
             rend.sharedMaterial = burntMat;
             //Debug.Log("Burnt");
         }
