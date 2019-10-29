@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 112000000, guid: b57e7f7ac43141b4ab9b6f415fcdf99b,
     type: 2}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -318,18 +318,6 @@ MonoBehaviour:
   objectHighlighter: {fileID: 0}
   touchHighlightColor: {r: 0, g: 0, b: 0, a: 0}
   usingState: 0
---- !u!114 &64872515
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 64872509}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4918105fd6a8c3f4496c6d2d1d94e6f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &64872516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -342,10 +330,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c92d3df10de124125a65852f7e877713, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ingredientType: 0
   cooktype: 0
   timeToCook: 5
   timeToBurn: 5
-  material: []
+  uncookedMat: {fileID: 0}
+  cookedMat: {fileID: 0}
+  burntMat: {fileID: 0}
 --- !u!65 &64872517
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -777,10 +768,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c92d3df10de124125a65852f7e877713, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ingredientType: 0
   cooktype: 0
   timeToCook: 5
   timeToBurn: 5
-  material: []
+  uncookedMat: {fileID: 0}
+  cookedMat: {fileID: 0}
+  burntMat: {fileID: 0}
 --- !u!54 &828580057
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -909,7 +903,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 828580053}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.262, y: 1.24, z: 0.709}
+  m_LocalPosition: {x: 0.376, y: 1.163, z: 0.782}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children:
   - {fileID: 420530330}
@@ -949,6 +943,19 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: -4387333169272331330, guid: 329c0769167106c4a96bdc0dc0ebae4e, type: 3}
+--- !u!114 &988322821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 988322816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3315261d6aa5d4952b09b54561453ec3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  capMaterial: {fileID: 2100000, guid: d3269833dd5ec9948b729dbc52dc2a4d, type: 2}
 --- !u!1 &1219650450 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8619932809859388002, guid: d972e47dacc22c841b02fbf912aba9d0,
@@ -966,7 +973,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 7401353886334607404, guid: 329c0769167106c4a96bdc0dc0ebae4e, type: 3}
 --- !u!1 &1236971853 stripped
@@ -1307,7 +1314,7 @@ PrefabInstance:
     - target: {fileID: 4322564163004855113, guid: d972e47dacc22c841b02fbf912aba9d0,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.208
+      value: 1.324
       objectReference: {fileID: 0}
     - target: {fileID: 4322564163004855113, guid: d972e47dacc22c841b02fbf912aba9d0,
         type: 3}
@@ -1652,12 +1659,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92b02665a39b79e479bda43f79c14e76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooktype: 0
-  timeToCook: 8
-  timeToBurn: 16
-  m_Raw: {fileID: 2100000, guid: a41a57fb29f6626448f66c10989c2ba2, type: 2}
-  m_Cooked: {fileID: 2100000, guid: 7ee19ce88a059bd4d972ac810d07e5f7, type: 2}
-  m_Burnt: {fileID: 2100000, guid: 27968d15a4fa15541bef28c80e0a4628, type: 2}
 --- !u!65 &5671379190895036172
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1683,8 +1684,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4918105fd6a8c3f4496c6d2d1d94e6f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooked: {fileID: 2100000, guid: a41a57fb29f6626448f66c10989c2ba2, type: 2}
-  rend: {fileID: 828580063}
 --- !u!1 &8091745748574372361 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1064593677753724615, guid: 6c182385d346f2e4bbd9b91d72cd2495,
@@ -1815,6 +1814,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8497995867736173317, guid: e3d064256441bfa4892bc4dbbf5c9c46,
+        type: 3}
+      propertyPath: m_Name
+      value: '[VRTK_SDKManager]'
+      objectReference: {fileID: 0}
     - target: {fileID: 4973997057399094974, guid: e3d064256441bfa4892bc4dbbf5c9c46,
         type: 3}
       propertyPath: m_SizeDelta.x
@@ -1969,11 +1973,6 @@ PrefabInstance:
         type: 3}
       propertyPath: buttonTwoText
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8497995867736173317, guid: e3d064256441bfa4892bc4dbbf5c9c46,
-        type: 3}
-      propertyPath: m_Name
-      value: '[VRTK_SDKManager]'
       objectReference: {fileID: 0}
     - target: {fileID: 8497995867736173314, guid: e3d064256441bfa4892bc4dbbf5c9c46,
         type: 3}
