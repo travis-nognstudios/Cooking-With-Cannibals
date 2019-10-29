@@ -10,9 +10,9 @@ namespace Cutting
         public Material CapMaterial;
 
 
-        private void OnTriggerEnter(Collision collision)
+        private void OnTriggerEnter(Collider collision)
         {
-            GameObject victim = collision.collider.gameObject;
+            GameObject victim = collision.gameObject;
 
             GameObject[] pieces = MeshCut.Cut(victim, transform.position, transform.right, CapMaterial);
 
