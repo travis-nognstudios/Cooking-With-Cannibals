@@ -2,62 +2,70 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Cooktop : MonoBehaviour
+namespace Cooking
 {
-    #region Variables
-
-    public enum Cooktype { Grill, Boil, Deepfry };
-
-    private bool IsHot;
-
-    [Header("Cooktop Settings")]
-    public Cooktype cooktype;
-
-    #endregion Variables
-
-    #region MonoBehavior
-    // Start is called before the first frame update
-    void Start()
+    public class Cooktop : MonoBehaviour
     {
-        MakeCold();
-    }
+        #region Variables
 
-    // Update is called once per frame
-    void Update()
-    {
+        private bool hot;
 
-    }
+        [Header("Cooktop Settings")]
+        public Cooktype cooktype;
 
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Heatsource"))  
-        {
-            MakeHot();
-        }
-    }
+        #endregion Variables
 
-    void OnTriggerExit(Collider other)
-    {
-        if(other.gameObject.CompareTag("Heatsource"))
+        #region MonoBehavior
+        // Start is called before the first frame update
+        void Start()
         {
             MakeCold();
         }
+
+        // Update is called once per frame
+        void Update()
+        {
+
+        }
+
+        void OnTriggerEnter(Collider other)
+        {
+            if (other.gameObject.CompareTag("Heatsource"))
+            {
+                MakeHot();
+            }
+        }
+
+        void OnTriggerExit(Collider other)
+        {
+            if (other.gameObject.CompareTag("Heatsource"))
+            {
+                MakeCold();
+            }
+        }
+
+        #endregion MonoBehavior
+
+        #region Private Methods
+        private void MakeHot()
+        {
+            hot = true;
+            //Debug.Log("Now hot");
+        }
+
+        private void MakeCold()
+        {
+            hot = false;
+            //Debug.Log("Now cold");
+        }
+
+        #endregion Private Methods
+
+        #region Properties
+        public bool IsHot()
+        {
+            return hot;
+        }
+        #endregion Properties
     }
-
-    #endregion MonoBehavior
-
-    #region Private Methods
-    private void MakeHot()
-    {
-        IsHot = true;
-        //Debug.Log("Now hot");
-    }
-
-    private  void MakeCold()
-    {
-        IsHot = false;
-        //Debug.Log("Now cold");
-    }
-
-    #endregion Private Methods
 }
