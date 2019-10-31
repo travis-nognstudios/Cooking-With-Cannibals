@@ -6,8 +6,10 @@ namespace Serving
 {
     public class Recipe : MonoBehaviour
     {
-        [Header("Recipe Items")]
-        public Recipeitem[] recipeitems;
+        public string title;
+        public Recipeitem ingredient;
+        public Recipeitem[] toppings;
+
 
         // Use this for initialization
         void Start()
