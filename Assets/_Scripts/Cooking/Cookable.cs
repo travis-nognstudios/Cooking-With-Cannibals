@@ -57,6 +57,11 @@ namespace Cooking
             return cookstate == Cookstate.Burnt;
         }
 
+        public Cookstate GetCookstate()
+        {
+            return cookstate;
+        }
+
         #endregion Properties
 
 
