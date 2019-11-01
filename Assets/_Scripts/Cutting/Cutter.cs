@@ -7,14 +7,17 @@ public class Cutter : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision)
     {
-        GameObject victim = collision.collider.gameObject;
+        if (collision.gameObject.CompareTag("Cookable"))
+        {
+            GameObject victim = collision.collider.gameObject;
 
-        GameObject[] pieces = BLINDED_AM_ME.MeshCut.Cut(victim, transform.position, transform.right, capMaterial);
+            GameObject[] pieces = BLINDED_AM_ME.MeshCut.Cut(victim, transform.position, transform.right, capMaterial);
 
-        if (!pieces[1].GetComponent<Rigidbody>())
-            pieces[1].AddComponent<Rigidbody>();
+            if (!pieces[1].GetComponent<Rigidbody>())
+                pieces[1].AddComponent<Rigidbody>();
 
-        Destroy(pieces[1], 1);
+            Destroy(pieces[1], 1);
+        }
     }
 
 }

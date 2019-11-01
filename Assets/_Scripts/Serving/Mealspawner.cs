@@ -3,7 +3,7 @@ using System.Collections;
 
 namespace Serving
 {
-    public class Mealspawner : MonoBehaviour
+    public class MealSpawner : MonoBehaviour
     {
         // Use this for initialization
         void Start()

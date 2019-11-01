@@ -2,7 +2,7 @@
 
 namespace Cooking
 {
-    public enum Cooktype
+    public enum CookType
     {
         Uncooked,
         Grill,
