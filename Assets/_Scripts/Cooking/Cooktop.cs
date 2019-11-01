@@ -4,14 +4,14 @@ using UnityEngine;
 
 namespace Cooking
 {
-    public class Cooktop : MonoBehaviour
+    public class CookTop : MonoBehaviour
     {
         #region Variables
 
         private bool hot;
 
         [Header("Cooktop Settings")]
-        public Cooktype cooktype;
+        public CookType cookType;
 
         #endregion Variables
 

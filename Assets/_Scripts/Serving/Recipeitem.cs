@@ -4,10 +4,10 @@ using Cooking;
 namespace Serving
 {
     [System.Serializable]
-    public struct Recipeitem
+    public struct RecipeItem
     {
         public Cooking.Ingredient ingredient;
-        public Cooking.Cooktype cooktype;
-        public Cooking.Cookstate cookstate;
+        public Cooking.CookType cookType;
+        public Cooking.CookState cookState;
     }
 }

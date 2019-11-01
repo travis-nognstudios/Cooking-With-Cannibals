@@ -2,7 +2,7 @@
 
 namespace Cooking
 {
-    public enum Cookstate
+    public enum CookState
     {
         Uncooked,
         Cooked,

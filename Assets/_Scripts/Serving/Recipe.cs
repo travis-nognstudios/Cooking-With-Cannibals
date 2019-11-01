@@ -7,8 +7,8 @@ namespace Serving
     public class Recipe : MonoBehaviour
     {
         public string title;
-        public Recipeitem ingredient;
-        public Recipeitem[] toppings;
+        public RecipeItem ingredient;
+        public RecipeItem[] toppings;
 
 
         // Use this for initialization

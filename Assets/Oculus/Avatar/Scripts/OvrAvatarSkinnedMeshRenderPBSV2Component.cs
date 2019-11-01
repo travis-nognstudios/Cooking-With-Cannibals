@@ -32,7 +32,8 @@ public class OvrAvatarSkinnedMeshPBSV2RenderComponent : OvrAvatarRenderComponent
 #if UNITY_ANDROID
         var singleComponentShader = "OvrAvatar/Avatar_Mobile_SingleComponent";
 #else
-        var singleComponentShader = "OvrAvatar/Avatar_PC_SingleComponent";
+        //var singleComponentShader = "OvrAvatar/Avatar_PC_SingleComponent";
+        var singleComponentShader = "Lightweight Render Pipeline/Simple Lit"; // LWRP HACK
 #endif
 
         var shader = IsCombinedMaterial

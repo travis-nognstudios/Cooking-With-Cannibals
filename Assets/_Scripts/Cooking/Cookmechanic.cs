@@ -2,9 +2,9 @@
 
 namespace Cooking
 {
-    public struct Cookmechanic
+    public struct CookMechanic
     {
-        public Cooktype cooktype;
-        public Cookstate cookstate;
+        public CookType cookType;
+        public CookState cookState;
     }
 }

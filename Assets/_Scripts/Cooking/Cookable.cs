@@ -12,12 +12,12 @@ namespace Cooking
         public Ingredient ingredientType;
 
         [Header("Cooking Settings")]
-        public Cooktype cooktype;
+        public CookType cookType;
         public float timeToCook;
         public float timeToBurn;
 
-        private float timeCooked;
-        private Cookstate cookstate;
+        private float timeCooked = 0;
+        private CookState cookState;
 
         [Header("Textures")]
         public Material uncookedMat;
@@ -36,7 +36,7 @@ namespace Cooking
         /// <returns></returns>
         public bool IsRaw()
         {
-            return cookstate == Cookstate.Uncooked;
+            return cookState == CookState.Uncooked;
         }
 
         /// <summary>
@@ -45,7 +45,7 @@ namespace Cooking
         /// <returns></returns>
         public bool IsCooked()
         {
-            return cookstate == Cookstate.Cooked;
+            return cookState == CookState.Cooked;
         }
 
         /// <summary>
@@ -54,12 +54,12 @@ namespace Cooking
         /// <returns></returns>
         public bool IsBurnt()
         {
-            return cookstate == Cookstate.Burnt;
+            return cookState == CookState.Burnt;
         }
 
-        public Cookstate GetCookstate()
+        public CookState GetCookState()
         {
-            return cookstate;
+            return cookState;
         }
 
         #endregion Properties
@@ -86,12 +86,12 @@ namespace Cooking
             //Removing it for the demo
             if (other.gameObject.CompareTag("Cooktop"))
             {
-                Cooktop cooktop = other.gameObject.GetComponent<Cooktop>();
-
-                if (cooktop.cooktype == cooktype && cooktop.IsHot())
-                {
+                CookTop cookTop = other.gameObject.GetComponent<CookTop>();
+                //Debug.Log("Touched cooktop");
+                //if (cookTop.cookType == cookType) //&& cookTop.IsHot())
+                //{
                     timeCooked += Time.deltaTime;
-
+                    
                     if (!IsCooked() && timeCooked >= timeToCook && timeCooked < timeToBurn)
                     {
                         MakeCooked();
@@ -100,7 +100,7 @@ namespace Cooking
                     {
                         MakeBurnt();
                     }
-                }
+               // }
             }
         }
         #endregion MonoBehavior
@@ -108,14 +108,14 @@ namespace Cooking
         #region Private Methods
         private void MakeCooked()
         {
-            cookstate = Cookstate.Cooked;
+            cookState = CookState.Cooked;
             rend.sharedMaterial = cookedMat;
             //Debug.Log("Cooked");
         }
 
         private void MakeBurnt()
         {
-            cookstate = Cookstate.Burnt;
+            cookState = CookState.Burnt;
             rend.sharedMaterial = burntMat;
             //Debug.Log("Burnt");
         }
