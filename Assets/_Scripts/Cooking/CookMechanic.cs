@@ -2,6 +2,7 @@
 
 namespace Cooking
 {
+    [System.Serializable]
     public struct CookMechanic
     {
         public CookType cookType;
