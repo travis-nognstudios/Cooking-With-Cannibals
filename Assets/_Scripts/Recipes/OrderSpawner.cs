@@ -13,25 +13,23 @@ namespace Recipes
         [SerializeField, Tooltip ("Order ticket game objects")]
         private GameObject[] orderTickets;
 
+        [SerializeField]
+        private RecipeManager recipeManager;
         private float orderTime;
-        private Recipe[] recipes;
         private int i;
-
+        private bool canSpawn;  
         private string lvl1Name;
         private string lvl2Name;
         private string lvl3Name;
-
-
-
         #endregion
 
         void Start()
         {
             orderTime = 0;
-            lvl1Name = "Lvl1";
+            canSpawn = true;
+            lvl1Name = "Testing";
             lvl2Name = "Lvl2";
             lvl3Name = "Lvl3";
-            recipes = new Recipe[recipes.Length];
             Time.timeScale = 1.0f;
         }
 
@@ -40,10 +38,12 @@ namespace Recipes
         {
             orderTime = Time.deltaTime + timeBetweenOrders;
 
-            i = Random.Range(0, recipes.Length);
-            if (SceneManager.GetActiveScene().name == lvl1Name)
+            i = Random.Range(0, recipeManager.recipes.Length);
+            if (SceneManager.GetActiveScene().name == lvl1Name && canSpawn == true)
             {
+                
                 StartCoroutine(SpawnOrder(i));
+                //StopCoroutine(SpawnOrder(i));
             }
 
             if (SceneManager.GetActiveScene().name == lvl2Name)
@@ -60,7 +60,11 @@ namespace Recipes
 
         IEnumerator SpawnOrder(int i)
         {
+            canSpawn = false;
             yield return new WaitForSeconds(timeBetweenOrders);
+            Debug.Log("Spawn Ticket");
+            Instantiate(orderTickets[i]);
+            canSpawn = true;
 
 
         }
