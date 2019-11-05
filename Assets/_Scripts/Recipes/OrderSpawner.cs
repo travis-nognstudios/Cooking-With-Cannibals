@@ -21,6 +21,9 @@ namespace Recipes
         private string lvl1Name;
         private string lvl2Name;
         private string lvl3Name;
+
+        [SerializeField]
+        private GameObject spawnPoint;
         #endregion
 
         void Start()
@@ -43,7 +46,7 @@ namespace Recipes
             {
                 
                 StartCoroutine(SpawnOrder(i));
-                //StopCoroutine(SpawnOrder(i));
+                
             }
 
             if (SceneManager.GetActiveScene().name == lvl2Name)
@@ -63,7 +66,7 @@ namespace Recipes
             canSpawn = false;
             yield return new WaitForSeconds(timeBetweenOrders);
             Debug.Log("Spawn Ticket");
-            Instantiate(orderTickets[i]);
+            Instantiate(orderTickets[i], spawnPoint.transform.position, spawnPoint.transform.rotation);
             canSpawn = true;
 
 
