@@ -18,10 +18,10 @@ namespace Cooking
         public CookTime[] stateChangeTimes;
 
         [Header("Textures")]
-        public Material ungrilledMat;
-        public Material grilledMat;
-        public Material overgrilledMat;
-        private Renderer rend;
+        public Material uncookedMat;
+        public Material cookedMat;
+        public Material burntMat;
+        Renderer rend;
 
         #endregion Variables
 
@@ -29,6 +29,17 @@ namespace Cooking
         // Use this for initialization
         void Start()
         {
+            // ==============================
+            // ==============================
+            // Testing Only
+            // Remove later
+            rend = GetComponent<Renderer>();
+            rend.enabled = true;
+            rend.sharedMaterial = uncookedMat;
+            // ==============================
+            // ==============================
+
+
             // Instantiate objects
             steps = new List<CookMechanic>();
             allMechanics = new List<CookMechanic>();
@@ -79,6 +90,21 @@ namespace Cooking
             return -1;
         }
 
+        private int GetStepIndex(CookType lookingFor)
+        {
+            for (int i = 0; i < steps.Count; ++i)
+            {
+                CookType cooktype = steps[i].cookType;
+
+                if (cooktype.Equals(lookingFor))
+                {
+                    return i;
+                }
+            }
+
+            return -1;
+        }
+
         // Cook
         void OnTriggerStay(Collider other)
         {
@@ -107,7 +133,7 @@ namespace Cooking
                     if (!isCooked && timeCooked >= timeToCook && timeCooked < timeToOvercook)
                     {
                         MakeCooked(cookTopType);
-                        //ToDo Add to steps
+                        steps.Add(allMechanics[typeIndex]);
                     }
                     else if (!isOvercooked && timeCooked >= timeToOvercook)
                     {
@@ -120,12 +146,27 @@ namespace Cooking
 
         private void MakeCooked(CookType cookType)
         {
-            //ToDo Decide how to change state/appearance
+            int typeIndex = GetCookTypeIndex(cookType);
+            CookMechanic currentState = allMechanics[typeIndex];
+            currentState.cookState = CookState.Cooked;
+
+            allMechanics[typeIndex] = currentState;
+
+
+            //ToDo Change later
+            rend.sharedMaterial = cookedMat;
         }
 
         private void MakeOvercooked(CookType cookType)
         {
-            //ToDo Decide how to change state/appearance
+            int typeIndex = GetStepIndex(cookType);
+            CookMechanic currentState = steps[typeIndex];
+            currentState.cookState = CookState.Burnt;
+
+            steps[typeIndex] = currentState;
+
+            //ToDo Change later
+            rend.sharedMaterial = burntMat;
         }
     }
 }
