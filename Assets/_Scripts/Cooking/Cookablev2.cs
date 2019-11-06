@@ -46,9 +46,15 @@ namespace Cooking
             cookTimes = new List<float>();
 
             // Populate cookmechanics and their respective cooktimes
-            foreach(CookMechanic cookmechanic in Enum.GetValues(typeof(CookMechanic)))
+            foreach(CookType cooktype in Enum.GetValues(typeof(CookType)))
             {
-                allMechanics.Add(cookmechanic);
+                CookMechanic mechanic = new CookMechanic
+                {
+                    cookType = cooktype,
+                    cookState = CookState.Uncooked
+                };
+
+                allMechanics.Add(mechanic);
                 cookTimes.Add(0);
             }
 
@@ -151,7 +157,6 @@ namespace Cooking
             currentState.cookState = CookState.Cooked;
 
             allMechanics[typeIndex] = currentState;
-
 
             //ToDo Change later
             rend.sharedMaterial = cookedMat;
