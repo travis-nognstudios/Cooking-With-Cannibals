@@ -3,9 +3,10 @@
 namespace Cooking
 {
     [System.Serializable]
-    public struct CookMechanic
+    public struct CookTime
     {
         public CookType cookType;
-        public CookState cookState;
+        public float timeToCook;
+        public float timeToOverCook;
     }
 }
