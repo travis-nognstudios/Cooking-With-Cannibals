@@ -7,21 +7,29 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: MAT_truck_cab
-  m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
+  m_Name: MAT_door
+  m_Shader: {fileID: -6465566751694194690, guid: 8414798d81b934c48a583cd9228ff654,
+    type: 3}
   m_ShaderKeywords: _OCCLUSIONMAP
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 2050
-  stringTagMap:
-    RenderType: Opaque
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - Texture2D_5384A158:
+        m_Texture: {fileID: 2800000, guid: c0e4c6e1456ebae4d9993c31728c8ccd, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_9720C8F1:
+        m_Texture: {fileID: 2800000, guid: 9941771ee2502374580049d2bb7f2f1b, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _BaseMap:
-        m_Texture: {fileID: 2800000, guid: 09dc605078279c840b7d598c0d3d2a4f, type: 3}
+        m_Texture: {fileID: 2800000, guid: c0e4c6e1456ebae4d9993c31728c8ccd, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
@@ -33,7 +41,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 09dc605078279c840b7d598c0d3d2a4f, type: 3}
+        m_Texture: {fileID: 2800000, guid: c0e4c6e1456ebae4d9993c31728c8ccd, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -41,7 +49,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
-        m_Texture: {fileID: 2800000, guid: b137c5c5bf9bfae478110215221164ae, type: 3}
+        m_Texture: {fileID: 2800000, guid: 9941771ee2502374580049d2bb7f2f1b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
@@ -49,6 +57,9 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - Vector1_10247E97: 0.02
+    - Vector1_319FB80F: 32
+    - Vector1_CBC6EA5A: 0.82
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -71,11 +82,15 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
+    - Color_20F572ED: {r: 0.17568529, g: 0.20625511, b: 0.26415092, a: 0}
+    - Color_3F92662E: {r: 0, g: 0, b: 0, a: 0}
+    - Color_DFAAE583: {r: 1, g: 1, b: 1, a: 0}
+    - Color_E76B7D1D: {r: 0, g: 0, b: 0, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 0.8, g: 0.8, b: 0.8, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
---- !u!114 &140685227946393469
+--- !u!114 &2362501458223750615
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}

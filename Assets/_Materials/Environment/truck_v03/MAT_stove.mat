@@ -7,10 +7,10 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: ToonShader_Ball
+  m_Name: MAT_stove
   m_Shader: {fileID: -6465566751694194690, guid: 8414798d81b934c48a583cd9228ff654,
     type: 3}
-  m_ShaderKeywords: 
+  m_ShaderKeywords: _OCCLUSIONMAP
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -20,12 +20,24 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - Texture2D_20CA272C:
+        m_Texture: {fileID: 2800000, guid: 333ff2c1c3e734149a5ad9ed911698b6, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - Texture2D_5384A158:
-        m_Texture: {fileID: 2800000, guid: 6f62dbb8fce29e04fb0a99913642d116, type: 3}
+        m_Texture: {fileID: 2800000, guid: 333ff2c1c3e734149a5ad9ed911698b6, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_75263CED:
+        m_Texture: {fileID: 2800000, guid: 1e6a5816c3858ae498572ca25eca7e81, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_9720C8F1:
+        m_Texture: {fileID: 2800000, guid: 1e6a5816c3858ae498572ca25eca7e81, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 333ff2c1c3e734149a5ad9ed911698b6, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
@@ -37,7 +49,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 6f62dbb8fce29e04fb0a99913642d116, type: 3}
+        m_Texture: {fileID: 2800000, guid: 333ff2c1c3e734149a5ad9ed911698b6, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -45,7 +57,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 1e6a5816c3858ae498572ca25eca7e81, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
@@ -53,67 +65,47 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_10247E97: 0.837
+    - Vector1_10247E97: 0.18
+    - Vector1_151B55B9: 0.46
+    - Vector1_19C9EF1: 0.46
     - Vector1_319FB80F: 5000
-    - Vector1_5F3B8FBE: 0
-    - Vector1_71418097: 0
-    - Vector1_74DA313E: 0.07
-    - Vector1_CBC6EA5A: 0.019
-    - Vector1_D8B21FF2: 0
+    - Vector1_CBC6EA5A: 1
+    - Vector1_F9B67951: 35.36
     - _AlphaClip: 0
     - _Blend: 0
-    - _BlendOp: 0
     - _BumpScale: 1
-    - _CameraFadingEnabled: 0
-    - _CameraFarFadeDistance: 2
-    - _CameraNearFadeDistance: 1
-    - _ColorMode: 0
     - _Cull: 2
     - _Cutoff: 0.5
-    - _DistortionBlend: 0.5
-    - _DistortionEnabled: 0
-    - _DistortionStrength: 1
-    - _DistortionStrengthScaled: 0.1
     - _DstBlend: 0
     - _EnvironmentReflections: 1
-    - _FlipbookBlending: 0
-    - _FlipbookMode: 0
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
     - _Metallic: 0
-    - _Mode: 0
     - _OcclusionStrength: 1
-    - _Outline: 0.1
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _Smoothness: 0.5
+    - _Smoothness: 0
     - _SmoothnessTextureChannel: 0
-    - _SoftParticlesEnabled: 0
-    - _SoftParticlesFarFadeDistance: 1
-    - _SoftParticlesNearFadeDistance: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _Surface: 0
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - Color_20F572ED: {r: 0.6320754, g: 0.09242612, b: 0.09242612, a: 0}
-    - Color_3F92662E: {r: 1, g: 1, b: 1, a: 0}
-    - Color_DFAAE583: {r: 1, g: 0.7122642, b: 0.7122642, a: 0}
-    - Color_E76B7D1D: {r: 0.2735849, g: 0.16131185, b: 0.16131185, a: 0}
-    - Vector3_2967F14F: {r: 0, g: 0, b: 0, a: 0}
-    - _BaseColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-    - _BaseColorAddSubDiff: {r: 0, g: 0, b: 0, a: 0}
-    - _CameraFadeParams: {r: 0, g: 0, b: 0, a: 0}
-    - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-    - _DiffuseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _EdgeColor: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
-    - _SoftParticleFadeParams: {r: 0, g: 0, b: 0, a: 0}
+    - Color_1BE4A2CB: {r: 0, g: 0, b: 0, a: 0}
+    - Color_20F572ED: {r: 0.2169811, g: 0.2169811, b: 0.2169811, a: 0}
+    - Color_3F92662E: {r: 0.5188679, g: 0.5188679, b: 0.5188679, a: 0}
+    - Color_53B8247: {r: 0.1981132, g: 0.1981132, b: 0.1981132, a: 0}
+    - Color_8D7E8A49: {r: 0.4528302, g: 0.4528302, b: 0.4528302, a: 0}
+    - Color_A79902E: {r: 0.09433961, g: 0.09433961, b: 0.09433961, a: 0}
+    - Color_DFAAE583: {r: 1, g: 1, b: 1, a: 0}
+    - Color_E76B7D1D: {r: 0, g: 0, b: 0, a: 0}
+    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 0.8, g: 0.8, b: 0.8, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
---- !u!114 &9144652466163897006
+--- !u!114 &2837137746037777190
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}

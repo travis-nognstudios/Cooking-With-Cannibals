@@ -7,21 +7,37 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: mat-utensil-handles
-  m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
-  m_ShaderKeywords: 
+  m_Name: MAT_truck_cab
+  m_Shader: {fileID: -6465566751694194690, guid: 8414798d81b934c48a583cd9228ff654,
+    type: 3}
+  m_ShaderKeywords: _OCCLUSIONMAP
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 2050
-  stringTagMap:
-    RenderType: Opaque
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - Texture2D_20CA272C:
+        m_Texture: {fileID: 2800000, guid: 09dc605078279c840b7d598c0d3d2a4f, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_5384A158:
+        m_Texture: {fileID: 2800000, guid: 09dc605078279c840b7d598c0d3d2a4f, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_75263CED:
+        m_Texture: {fileID: 2800000, guid: b137c5c5bf9bfae478110215221164ae, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_9720C8F1:
+        m_Texture: {fileID: 2800000, guid: b137c5c5bf9bfae478110215221164ae, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _BaseMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 09dc605078279c840b7d598c0d3d2a4f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
@@ -33,7 +49,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 09dc605078279c840b7d598c0d3d2a4f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -41,7 +57,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: b137c5c5bf9bfae478110215221164ae, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
@@ -49,6 +65,12 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - Vector1_10247E97: 0.43
+    - Vector1_151B55B9: 0.32
+    - Vector1_19C9EF1: 0.17
+    - Vector1_319FB80F: 46.9
+    - Vector1_CBC6EA5A: 1
+    - Vector1_F9B67951: 32
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -71,11 +93,19 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 1, g: 0.64966327, b: 0.2216981, a: 1}
+    - Color_1BE4A2CB: {r: 0, g: 0, b: 0, a: 0}
+    - Color_20F572ED: {r: 0.6320754, g: 0.6320754, b: 0.6320754, a: 0}
+    - Color_3F92662E: {r: 0.4811321, g: 0.4811321, b: 0.4811321, a: 0}
+    - Color_53B8247: {r: 0.2169811, g: 0.2169811, b: 0.2169811, a: 0}
+    - Color_8D7E8A49: {r: 1, g: 1, b: 1, a: 0}
+    - Color_A79902E: {r: 0.4811321, g: 0.4811321, b: 0.4811321, a: 0}
+    - Color_DFAAE583: {r: 1, g: 1, b: 1, a: 0}
+    - Color_E76B7D1D: {r: 0, g: 0, b: 0, a: 0}
+    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 0.8, g: 0.8, b: 0.8, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
---- !u!114 &9072705047294890393
+--- !u!114 &140685227946393469
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
