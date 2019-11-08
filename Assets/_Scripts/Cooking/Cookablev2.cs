@@ -152,6 +152,7 @@ namespace Cooking
 
         private void MakeCooked(CookType cookType)
         {
+            Debug.Log("cooked" + cookType);
             int typeIndex = GetCookTypeIndex(cookType);
             CookMechanic currentState = allMechanics[typeIndex];
             currentState.cookState = CookState.Cooked;
@@ -164,6 +165,7 @@ namespace Cooking
 
         private void MakeOvercooked(CookType cookType)
         {
+            Debug.Log("burnt" + cookType);
             int typeIndex = GetStepIndex(cookType);
             CookMechanic currentState = steps[typeIndex];
             currentState.cookState = CookState.Burnt;
