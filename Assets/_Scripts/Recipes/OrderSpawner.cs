@@ -30,7 +30,7 @@ namespace Recipes
         {
             orderTime = 0;
             canSpawn = true;
-            lvl1Name = "Testing";
+            lvl1Name = "Lvl1_Test";
             lvl2Name = "Lvl2";
             lvl3Name = "Lvl3";
             Time.timeScale = 1.0f;
@@ -44,7 +44,7 @@ namespace Recipes
             i = Random.Range(0, recipeManager.recipes.Length);
             if (SceneManager.GetActiveScene().name == lvl1Name && canSpawn == true)
             {
-                
+                Debug.Log("cansapwn");
                 StartCoroutine(SpawnOrder(i));
                 
             }
