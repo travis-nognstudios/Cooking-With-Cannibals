@@ -30,7 +30,7 @@ namespace Recipes
         {
             orderTime = 0;
             canSpawn = true;
-            lvl1Name = "Lvl1_Test";
+            lvl1Name = "Week 8";
             lvl2Name = "Lvl2";
             lvl3Name = "Lvl3";
             Time.timeScale = 1.0f;
