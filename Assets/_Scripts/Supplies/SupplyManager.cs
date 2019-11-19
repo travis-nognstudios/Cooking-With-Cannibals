@@ -13,34 +13,36 @@ namespace Supplies
         // Use this for initialization
         void Start()
         {
-            
+            for (int i = 0; i < supplyPoints.Length; i++)
+            {
+                supplyPoints[i].numberSpawned = 0;
+            }
         }
-
         // Update is called once per frame
         void Update()
         {
             sinceLastSpawn += Time.deltaTime;
-
-            if (sinceLastSpawn >= spawnInterval)
+            foreach (SupplyPoint supplyPoint in supplyPoints)
             {
-                sinceLastSpawn = 0;
-                SpawnItems();
+                if (sinceLastSpawn >= spawnInterval && supplyPoint.maxSpawnNumber > supplyPoint.numberSpawned)
+                {
+                    sinceLastSpawn = 0;
+                    SpawnItems(supplyPoint);
+                    
+                }
             }
+            
 
         }
 
-        void SpawnItems()
+        void SpawnItems(SupplyPoint supplyPoint)
         {
-            foreach(SupplyPoint point in supplyPoints)
-            {
-                // ToDo: Check how many are already in supplyarea
-                GameObject item = point.object_to_spawn;
-                Vector3 pos = point.spawnArea.transform.position;
+            supplyPoint.numberSpawned++;
+            Debug.Log(supplyPoint.numberSpawned);
+            Instantiate(supplyPoint.objectToSpawn, supplyPoint.spawnArea.transform.position, supplyPoint.spawnArea.transform.rotation);
 
-                GameObject clone = Instantiate(item);
-                clone.transform.position = pos;
-                Debug.Log("Spawned " + item.name);
-            }
+            Debug.Log("Spawned " + supplyPoint.objectToSpawn.name);
+            
         }
     }
 }
