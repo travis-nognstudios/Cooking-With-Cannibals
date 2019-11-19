@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+//NEEDS REFACTOR AFTER WEEK 09 DEMO, TOO MANY CALLS
+
 public class IngredientSpawner : MonoBehaviour
 {
     public int spawnInterval = 5;
