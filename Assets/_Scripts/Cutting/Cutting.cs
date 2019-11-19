@@ -2,22 +2,49 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Cutting
+
+public class Cutting : MonoBehaviour
 {
-    public class Cutting : MonoBehaviour
+    [SerializeField]
+    private GameObject choppedObject;
+    [SerializeField, Tooltip("Amount of slices for object to become cut")]
+    private int cuttingChops;
+    [HideInInspector]
+    private int numberChops;
+    private bool chopped;
+
+
+    private void Start()
     {
-        public Material capMaterial;
+        numberChops = 0;
+        chopped = false;
+    }
 
-        private void OnTriggerEnter(Collider collision)
-        {   
-            GameObject victim = collision.gameObject;
-
-            GameObject[] pieces = MeshCut.Cut(victim, transform.position, transform.right, capMaterial);
-
-            if (!pieces[1].GetComponent<Rigidbody>())
-                pieces[1].AddComponent<Rigidbody>();
-
-            Destroy(pieces[1], 1);
+    private void OnTriggerEnter(Collider other)
+    {
+        checkChopped();
+        if (chopped)
+        {
+            Instantiate(choppedObject, transform.position, transform.rotation);
+            Destroy(gameObject);
+            //Instantiate(choppedObject, transform.position, transform.rotation);
         }
     }
+    public void Chop()
+    {
+        Debug.Log(chopped);
+        Debug.Log(numberChops);
+        numberChops++;
+    }
+
+    public bool checkChopped()
+    {
+        if (numberChops >= cuttingChops)
+        {
+          chopped = true;
+        }
+        return chopped;
+    }
+
+
 }
