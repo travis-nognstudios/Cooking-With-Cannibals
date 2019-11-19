@@ -3,14 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using VRTK;
 
-public class DoorGrabbable : VRTK.VRTK_InteractableObject
+namespace DoorsAndHandles
 {
-    public Transform doorHandler;
-
-    public override void OnInteractableObjectUngrabbed(InteractableObjectEventArgs e)
+    public class DoorGrabbable : VRTK.VRTK_InteractableObject
     {
-        base.OnInteractableObjectUngrabbed(e);
-        this.transform.position = doorHandler.transform.position;
-        this.transform.rotation = doorHandler.transform.rotation;
+        public Transform doorHandler;
+
+        public override void OnInteractableObjectUngrabbed(InteractableObjectEventArgs e)
+        {
+            base.OnInteractableObjectUngrabbed(e);
+            this.transform.position = doorHandler.transform.position;
+            this.transform.rotation = doorHandler.transform.rotation;
+        }
     }
 }

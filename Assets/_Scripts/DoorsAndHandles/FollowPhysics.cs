@@ -2,19 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FollowPhysics : MonoBehaviour
+namespace DoorsAndHandles
 {
-    public Transform target;
-    Rigidbody rb;
-
-
-    void Start()
+    public class FollowPhysics : MonoBehaviour
     {
-        rb = GetComponent<Rigidbody>();
-    }
+        public Transform target;
+        Rigidbody rb;
 
-    void FixedUpdate()
-    {
-        rb.MovePosition(target.transform.position);
+
+        void Start()
+        {
+            rb = GetComponent<Rigidbody>();
+        }
+
+        void FixedUpdate()
+        {
+            rb.MovePosition(target.transform.position);
+        }
     }
 }
