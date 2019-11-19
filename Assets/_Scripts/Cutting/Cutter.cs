@@ -3,21 +3,24 @@ using System.Collections;
 
 public class Cutter : MonoBehaviour {
 
-	public Material capMaterial;
+    private bool isColliding = false;
 
     private void OnTriggerEnter(Collider collision)
     {
-        if (collision.gameObject.tag == "Cuttable")
+        if (isColliding) return;
+        isColliding = true;
+        if (collision.gameObject.CompareTag("Cuttable"))
         {
-            GameObject victim = collision.gameObject;
-
-            GameObject[] pieces = BLINDED_AM_ME.MeshCut.Cut(victim, transform.position, transform.right, capMaterial);
-
-          
-            pieces[1].AddComponent<Rigidbody>();
-
-            
+            collision.gameObject.GetComponent<Cutting>().Chop();
         }
+
+        StartCoroutine(Reset());
+    }
+
+    IEnumerator Reset()
+    {
+        yield return new WaitForEndOfFrame();
+        isColliding = false;
     }
 
 }

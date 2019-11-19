@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CuttingManager : MonoBehaviour
 {
+
     [SerializeField]
     PreCutMesh[] preCutMeshes;
     // Start is called before the first frame update
@@ -21,5 +22,12 @@ public class CuttingManager : MonoBehaviour
             }
         }
                 
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Cuttable"))
+        {
+        }
     }
 }
