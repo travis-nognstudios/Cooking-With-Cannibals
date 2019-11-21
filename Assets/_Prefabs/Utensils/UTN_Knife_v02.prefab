@@ -1,51 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1392761629
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1392761630}
-  - component: {fileID: 1392761631}
-  m_Layer: 0
-  m_Name: CuttingManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1392761630
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1392761629}
-  m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
-  m_LocalPosition: {x: 0.39628765, y: -0.018799424, z: -0.090243876}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4322564163004855113}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1392761631
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1392761629}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ac432191090eab4abb80d927625fe91, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  preCutMeshes:
-  - whole: {fileID: 0}
-    cut: {fileID: 4201027157235883893, guid: abe6d4cd3b4a0434895b5f2564511a3c, type: 3}
 --- !u!1 &1560937452318611890
 GameObject:
   m_ObjectHideFlags: 0
@@ -58,8 +12,6 @@ GameObject:
   - component: {fileID: 4801101433426175243}
   - component: {fileID: 1340504889389522278}
   - component: {fileID: 988322820}
-  - component: {fileID: 988322821}
-  - component: {fileID: 5865935105923574431}
   m_Layer: 0
   m_Name: Blade-Handle
   m_TagString: Untagged
@@ -141,33 +93,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: -4387333169272331330, guid: 329c0769167106c4a96bdc0dc0ebae4e, type: 3}
---- !u!114 &988322821
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1560937452318611890}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3315261d6aa5d4952b09b54561453ec3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  capMaterial: {fileID: 2100000, guid: d3269833dd5ec9948b729dbc52dc2a4d, type: 2}
---- !u!64 &5865935105923574431
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1560937452318611890}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: -4387333169272331330, guid: 329c0769167106c4a96bdc0dc0ebae4e, type: 3}
 --- !u!1 &8078394168550695312
 GameObject:
   m_ObjectHideFlags: 0
@@ -183,6 +108,7 @@ GameObject:
   - component: {fileID: 5965071311021482029}
   - component: {fileID: 1373098076}
   - component: {fileID: 7649340819244248829}
+  - component: {fileID: 55989695}
   m_Layer: 0
   m_Name: UTN_Knife_v02
   m_TagString: Untagged
@@ -203,7 +129,6 @@ Transform:
   m_Children:
   - {fileID: 2103562745852081352}
   - {fileID: 2411078620725203316}
-  - {fileID: 1392761630}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -313,9 +238,21 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 7401353886334607404, guid: deafcc08f4ed20645a05638ccbc9d4ee, type: 3}
+--- !u!114 &55989695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8078394168550695312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3315261d6aa5d4952b09b54561453ec3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8619932809859388002
 GameObject:
   m_ObjectHideFlags: 0
@@ -328,7 +265,6 @@ GameObject:
   - component: {fileID: 3040579616228018012}
   - component: {fileID: 3714446118231589747}
   - component: {fileID: 1219650454}
-  - component: {fileID: 3322396935651523472}
   m_Layer: 0
   m_Name: Blade
   m_TagString: Untagged
@@ -397,20 +333,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!64 &1219650454
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8619932809859388002}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 7401353886334607404, guid: 329c0769167106c4a96bdc0dc0ebae4e, type: 3}
---- !u!64 &3322396935651523472
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
