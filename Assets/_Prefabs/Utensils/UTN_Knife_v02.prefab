@@ -12,8 +12,6 @@ GameObject:
   - component: {fileID: 4801101433426175243}
   - component: {fileID: 1340504889389522278}
   - component: {fileID: 988322820}
-  - component: {fileID: 988322821}
-  - component: {fileID: 5865935105923574431}
   m_Layer: 0
   m_Name: Blade-Handle
   m_TagString: Untagged
@@ -95,33 +93,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: -4387333169272331330, guid: 329c0769167106c4a96bdc0dc0ebae4e, type: 3}
---- !u!114 &988322821
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1560937452318611890}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3315261d6aa5d4952b09b54561453ec3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  capMaterial: {fileID: 2100000, guid: d3269833dd5ec9948b729dbc52dc2a4d, type: 2}
---- !u!64 &5865935105923574431
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1560937452318611890}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: -4387333169272331330, guid: 329c0769167106c4a96bdc0dc0ebae4e, type: 3}
 --- !u!1 &8078394168550695312
 GameObject:
   m_ObjectHideFlags: 0
@@ -137,7 +108,7 @@ GameObject:
   - component: {fileID: 5965071311021482029}
   - component: {fileID: 1373098076}
   - component: {fileID: 7649340819244248829}
-  - component: {fileID: 5994391806985782054}
+  - component: {fileID: 55989695}
   m_Layer: 0
   m_Name: UTN_Knife_v02
   m_TagString: Untagged
@@ -267,10 +238,10 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 7401353886334607404, guid: deafcc08f4ed20645a05638ccbc9d4ee, type: 3}
---- !u!114 &5994391806985782054
+--- !u!114 &55989695
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -282,7 +253,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3315261d6aa5d4952b09b54561453ec3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  capMaterial: {fileID: 2100000, guid: d3269833dd5ec9948b729dbc52dc2a4d, type: 2}
 --- !u!1 &8619932809859388002
 GameObject:
   m_ObjectHideFlags: 0
@@ -295,7 +265,6 @@ GameObject:
   - component: {fileID: 3040579616228018012}
   - component: {fileID: 3714446118231589747}
   - component: {fileID: 1219650454}
-  - component: {fileID: 3322396935651523472}
   m_Layer: 0
   m_Name: Blade
   m_TagString: Untagged
@@ -364,20 +333,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!64 &1219650454
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8619932809859388002}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 7401353886334607404, guid: 329c0769167106c4a96bdc0dc0ebae4e, type: 3}
---- !u!64 &3322396935651523472
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
