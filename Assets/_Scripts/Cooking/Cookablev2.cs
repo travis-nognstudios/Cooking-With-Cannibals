@@ -10,6 +10,7 @@ namespace Cooking
 
         #region Variables
 
+        
         private List<CookMechanic> steps;
         private List<CookMechanic> allMechanics;
         private List<float> cookTimes;
@@ -22,6 +23,8 @@ namespace Cooking
         public Material cookedMat;
         public Material burntMat;
         Renderer rend;
+
+
 
         #endregion Variables
 
