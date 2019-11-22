@@ -6,7 +6,7 @@ using UnityEngine;
 public class Cutting : MonoBehaviour
 {
     [SerializeField]
-    private GameObject choppedObject;
+    private GameObject[] choppedObject;
     [SerializeField, Tooltip("Amount of slices for object to become cut")]
     private int cuttingChops;
     [HideInInspector]
@@ -25,7 +25,11 @@ public class Cutting : MonoBehaviour
         checkChopped();
         if (chopped)
         {
-            Instantiate(choppedObject, transform.position, transform.rotation);
+            foreach(GameObject choppedObj in choppedObject)
+            {
+                Instantiate(choppedObj, transform.position, transform.rotation);
+            }
+            
             Destroy(gameObject);
             //Instantiate(choppedObject, transform.position, transform.rotation);
         }
