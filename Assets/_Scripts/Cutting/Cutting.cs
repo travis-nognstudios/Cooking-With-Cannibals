@@ -12,37 +12,44 @@ public class Cutting : MonoBehaviour
     [HideInInspector]
     private int numberChops;
     private bool chopped;
+    [HideInInspector]
+    public bool canChop;
 
 
     private void Start()
     {
         numberChops = 0;
         chopped = false;
+        canChop = true;
     }
 
     private void OnTriggerEnter(Collider other)
     {
         checkChopped();
-        if (chopped)
+        if (chopped && canChop == false)
         {
-            foreach(GameObject choppedObj in choppedObject)
+            foreach (GameObject choppedObj in choppedObject)
             {
-                Instantiate(choppedObj, transform.position, transform.rotation);
+                GameObject newChoppedObj = Instantiate(choppedObj, transform.position, transform.rotation);
+                newChoppedObj.name = choppedObj.name;
             }
-            
+
             Destroy(gameObject);
             //Instantiate(choppedObject, transform.position, transform.rotation);
+        }
+        else 
+        {
+            canChop = true;
         }
     }
     public void Chop()
     {
-        Debug.Log(chopped);
-        Debug.Log(numberChops);
         numberChops++;
     }
 
     public bool checkChopped()
     {
+        canChop = false;
         if (numberChops >= cuttingChops)
         {
           chopped = true;

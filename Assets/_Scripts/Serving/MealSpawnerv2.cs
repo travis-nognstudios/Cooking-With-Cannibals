@@ -19,8 +19,9 @@ namespace Serving
 
             foreach(Recipe recipe in recipes)
             {
-                if (recipe.recipeObject.name.Equals(meal.name))
+                if (recipe.recipeObject.Equals(meal))
                 {
+                    Debug.Log("dsafafgDSADASf");
                     myRecipe = recipe;
                 }
                 else
@@ -63,7 +64,6 @@ namespace Serving
             string mainIngredientNameShouldBe = myRecipe.mainIngredient.gameObject.name;
             int numToppingsShouldHave = myRecipe.toppings.Length;
 
-
             if (inBoxNames.Contains(mainIngredientNameShouldBe))
             {
                 containsMainIngredient = true;
@@ -73,6 +73,7 @@ namespace Serving
             {
                 if (inBoxNames.Contains(topping.name))
                 {
+                    Debug.Log(topping.name);
                     numToppingsContains += 1;
                 }
             }
@@ -90,6 +91,7 @@ namespace Serving
 
         private List<string> GetInBoxNames()
         {
+
             List<string> inBoxNames = new List<string>();
 
             foreach (GameObject item in inBox)
