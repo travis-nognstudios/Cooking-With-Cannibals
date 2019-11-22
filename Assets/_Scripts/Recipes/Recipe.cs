@@ -9,6 +9,6 @@ namespace Recipes
     {
         public GameObject recipeObject;
         public CookableIngredient mainIngredient;
-        public CookableTopping[] toppings;
+        public GameObject[] toppings;
     }
 }
