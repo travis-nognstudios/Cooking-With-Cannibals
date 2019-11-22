@@ -9,9 +9,10 @@ public class Cutter : MonoBehaviour {
     {
         if (isColliding) return;
         isColliding = true;
-        if (collision.gameObject.CompareTag("Cuttable"))
+        if (collision.gameObject.GetComponent<Cutting>())
         {
-            collision.gameObject.GetComponent<Cutting>().Chop();
+            if (collision.gameObject.GetComponent<Cutting>().canChop == true)
+                collision.gameObject.GetComponent<Cutting>().Chop();
         }
 
         StartCoroutine(Reset());

@@ -66,7 +66,7 @@ namespace Cooking
         // Update is called once per frame
         void Update()
         {
-
+           
         }
 
         private int GetCookTypeIndex(CookType lookingFor)
@@ -119,6 +119,7 @@ namespace Cooking
         {
             if (other.gameObject.CompareTag("Cooktop"))
             {
+
                 // Cooktop properties
                 CookTop cookTop = other.gameObject.GetComponent<CookTop>();
                 CookType cookTopType = cookTop.cookType;
@@ -134,10 +135,12 @@ namespace Cooking
                 bool isCooked = currentState.Equals(CookState.Cooked);
                 bool isOvercooked = currentState.Equals(CookState.Burnt);
 
+                Debug.Log(cookTop.IsHot());
                 if (cookTop.IsHot())
                 {
                     cookTimes[typeIndex] += Time.deltaTime;
                     float timeCooked = cookTimes[typeIndex];
+                    Debug.Log(timeCooked);
 
                     if (!isCooked && timeCooked >= timeToCook && timeCooked < timeToOvercook)
                     {
