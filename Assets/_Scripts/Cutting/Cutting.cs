@@ -26,13 +26,17 @@ public class Cutting : MonoBehaviour
         numberChops = 0;
         chopped = false;
         canChop = true;
+        Debug.Log(numberChops);
     }
 
-    private void OnTriggerEnter(Collider other)
+    //private void OnTriggerEnter(Collider other)
+    private void Update()
     {
-        CheckChopped();
+        
         if (chopped)
         {
+            chopped = false;
+            canChop = false;
             progressBar.SetActive(false);
             for (int i = 0; i < choppedObject.Length; i++)
             {
@@ -48,18 +52,11 @@ public class Cutting : MonoBehaviour
     }
     public void Chop()
     {
+        Debug.Log(numberChops);
         progressBar.SetActive(true);
         numberChops++;
         progressSlider.value = numberChops;
-    }
-
-    private void OnTriggerStay(Collider other)
-    {
-        canChop = false;
-    }
-    private void OnTriggerExit(Collider other)
-    {
-        canChop = true;
+        CheckChopped();
     }
     public void TryChop()
     {
@@ -68,6 +65,7 @@ public class Cutting : MonoBehaviour
             Chop();
         }
     }
+
     public bool CheckChopped()
     {
         canChop = false;
