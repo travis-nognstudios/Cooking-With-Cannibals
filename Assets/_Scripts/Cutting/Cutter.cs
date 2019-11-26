@@ -11,8 +11,7 @@ public class Cutter : MonoBehaviour {
         isColliding = true;
         if (collision.gameObject.GetComponent<Cutting>())
         {
-            if (collision.gameObject.GetComponent<Cutting>().canChop == true)
-                collision.gameObject.GetComponent<Cutting>().Chop();
+                collision.gameObject.GetComponent<Cutting>().TryChop();
         }
 
         StartCoroutine(Reset());
