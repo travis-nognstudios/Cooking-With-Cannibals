@@ -21,7 +21,6 @@ namespace Serving
             {
                 if (recipe.recipeObject.Equals(meal))
                 {
-                    Debug.Log("dsafafgDSADASf");
                     myRecipe = recipe;
                 }
                 else
