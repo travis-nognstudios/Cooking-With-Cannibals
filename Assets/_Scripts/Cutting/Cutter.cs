@@ -7,21 +7,14 @@ public class Cutter : MonoBehaviour {
 
     private void OnTriggerEnter(Collider collision)
     {
-        if (isColliding) return;
-        isColliding = true;
-        if (collision.gameObject.GetComponent<Cutting>())
+        if (collision.gameObject.GetComponent<Cutting>() && !isColliding)
         {
-            if (collision.gameObject.GetComponent<Cutting>().canChop == true)
-                collision.gameObject.GetComponent<Cutting>().Chop();
+            isColliding = true;
+            collision.gameObject.GetComponent<Cutting>().Chop();
+            isColliding = false;
         }
 
-        StartCoroutine(Reset());
     }
 
-    IEnumerator Reset()
-    {
-        yield return new WaitForEndOfFrame();
-        isColliding = false;
-    }
 
 }

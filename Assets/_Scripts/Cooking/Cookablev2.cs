@@ -135,12 +135,12 @@ namespace Cooking
                 bool isCooked = currentState.Equals(CookState.Cooked);
                 bool isOvercooked = currentState.Equals(CookState.Burnt);
 
-                Debug.Log(cookTop.IsHot());
+
                 if (cookTop.IsHot())
                 {
                     cookTimes[typeIndex] += Time.deltaTime;
                     float timeCooked = cookTimes[typeIndex];
-                    Debug.Log(timeCooked);
+  
 
                     if (!isCooked && timeCooked >= timeToCook && timeCooked < timeToOvercook)
                     {
@@ -171,7 +171,7 @@ namespace Cooking
 
         private void MakeOvercooked(CookType cookType)
         {
-            Debug.Log("burnt" + cookType);
+
             int typeIndex = GetStepIndex(cookType);
             CookMechanic currentState = steps[typeIndex];
             currentState.cookState = CookState.Burnt;
