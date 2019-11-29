@@ -72,7 +72,7 @@ namespace Recipes
         //public void OnCollisionrEnter(Collider col)
         private void OnTriggerEnter(Collider col)
         {
-            Debug.Log("collided with trigger");
+            //Debug.Log("collided with trigger");
             if (col.gameObject.tag == "destroy")
             {
                 Destroy(container.gameObject);

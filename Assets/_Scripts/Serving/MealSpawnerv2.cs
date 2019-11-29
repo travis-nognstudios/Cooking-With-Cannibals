@@ -72,7 +72,7 @@ namespace Serving
             {
                 if (inBoxNames.Contains(topping.name))
                 {
-                    Debug.Log(topping.name);
+                    //Debug.Log(topping.name);
                     numToppingsContains += 1;
                 }
             }

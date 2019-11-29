@@ -26,7 +26,7 @@ public class Cutting : MonoBehaviour
         numberChops = 0;
         chopped = false;
         canChop = true;
-        Debug.Log(numberChops);
+        //Debug.Log(numberChops);
     }
 
     //private void OnTriggerEnter(Collider other)
@@ -52,7 +52,7 @@ public class Cutting : MonoBehaviour
     }
     public void Chop()
     {
-        Debug.Log(numberChops);
+        //Debug.Log(numberChops);
         progressBar.SetActive(true);
         numberChops++;
         progressSlider.value = numberChops;
