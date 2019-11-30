@@ -42,7 +42,9 @@ namespace Serving
         private void OnTriggerEnter(Collider other)
         {
             GameObject item = other.gameObject;
-            if (!inBox.Contains(item))
+
+            // Only add interactables (default layer)
+            if (!inBox.Contains(item) && item.layer == 0)
             {
                 inBox.Add(item);
             }
