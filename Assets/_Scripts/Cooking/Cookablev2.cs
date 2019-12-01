@@ -10,7 +10,16 @@ namespace Cooking
 
         #region Variables
 
-        
+        /*
+        steps = all the cook steps made on this object
+        allMechanics = all possible cooking that can be done
+
+        Usage:
+        allMechanics is used to check the progress of the cook states
+        when a state change happens, it's updated on steps
+        cookTimes tracks the times on each CORRESPONDING allMechanics element
+        */
+
         private List<CookMechanic> steps;
         private List<CookMechanic> allMechanics;
         private List<float> cookTimes;
@@ -23,8 +32,6 @@ namespace Cooking
         public Material cookedMat;
         public Material burntMat;
         Renderer rend;
-
-
 
         #endregion Variables
 
@@ -64,11 +71,9 @@ namespace Cooking
         }
 
         // Update is called once per frame
-        void Update()
-        {
-           
-        }
+        void Update() {}
 
+        // Get the index on allMechanics given the cookType
         private int GetCookTypeIndex(CookType lookingFor)
         {
             for(int i=0; i<allMechanics.Count; ++i)
@@ -84,6 +89,7 @@ namespace Cooking
             return -1;
         }
 
+        // Get the index on cookTime (corresponding to allMechanics) given the cookType
         private int GetCookTimeIndex(CookType lookingFor)
         {
             for (int i = 0; i < stateChangeTimes.Length; ++i)
@@ -99,6 +105,7 @@ namespace Cooking
             return -1;
         }
 
+        // Get the index on steps given the cookType
         private int GetStepIndex(CookType lookingFor)
         {
             for (int i = 0; i < steps.Count; ++i)
@@ -120,7 +127,7 @@ namespace Cooking
             if (other.gameObject.CompareTag("Cooktop"))
             {
 
-                // Cooktop properties
+                // Get cooktop's type
                 CookTop cookTop = other.gameObject.GetComponent<CookTop>();
                 CookType cookTopType = cookTop.cookType;
                 int typeIndex = GetCookTypeIndex(cookTopType);
@@ -141,7 +148,7 @@ namespace Cooking
                     cookTimes[typeIndex] += Time.deltaTime;
                     float timeCooked = cookTimes[typeIndex];
   
-
+                    // If cook state reached, update allMechanics and add to steps
                     if (!isCooked && timeCooked >= timeToCook && timeCooked < timeToOvercook)
                     {
                         MakeCooked(cookTopType);
@@ -150,7 +157,6 @@ namespace Cooking
                     else if (!isOvercooked && timeCooked >= timeToOvercook)
                     {
                         MakeOvercooked(cookTopType);
-                        //ToDo Update steps for this type
                     }
                 }
             }
@@ -158,11 +164,12 @@ namespace Cooking
 
         private void MakeCooked(CookType cookType)
         {
-            //Debug.Log("cooked" + cookType);
+            // Get current state in allMechanics
             int typeIndex = GetCookTypeIndex(cookType);
             CookMechanic currentState = allMechanics[typeIndex];
-            currentState.cookState = CookState.Cooked;
 
+            // Change it to Cooked and update allMechanics
+            currentState.cookState = CookState.Cooked;
             allMechanics[typeIndex] = currentState;
 
             //ToDo Change later
@@ -171,12 +178,17 @@ namespace Cooking
 
         private void MakeOvercooked(CookType cookType)
         {
+            // Get current state in allMechanics
+            int typeIndexAllMechanics = GetCookTypeIndex(cookType);
+            CookMechanic currentState = allMechanics[typeIndexAllMechanics];
 
-            int typeIndex = GetStepIndex(cookType);
-            CookMechanic currentState = steps[typeIndex];
+            // Change it to Burnt and update allMechanics
             currentState.cookState = CookState.Burnt;
+            allMechanics[typeIndexAllMechanics] = currentState;
 
-            steps[typeIndex] = currentState;
+            // Also update steps
+            int typeIndexSteps = GetStepIndex(cookType);
+            steps[typeIndexSteps] = currentState;
 
             //ToDo Change later
             rend.sharedMaterial = burntMat;
