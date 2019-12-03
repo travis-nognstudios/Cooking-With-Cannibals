@@ -9,6 +9,7 @@ namespace Serving
     {
         public GameObject recipeManager;
         public GameObject meal;
+        public GameObject mealBox;
 
         private Recipe myRecipe;
         private List<GameObject> inBox = new List<GameObject>();
@@ -28,6 +29,8 @@ namespace Serving
                     myRecipe = new Recipe();
                 }
             }
+
+
         }
 
         void Update()
@@ -115,6 +118,7 @@ namespace Serving
             Vector3 mealSpawnOffset = new Vector3(0, 0.1f, 0);
 
             Instantiate(meal, myCollider.transform.position + mealSpawnOffset, myCollider.transform.rotation);
+            
         }
     }
 }
