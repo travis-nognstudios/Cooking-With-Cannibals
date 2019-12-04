@@ -4,14 +4,24 @@ using UnityEngine;
 
 public class BoxClose : MonoBehaviour
 {
+    [HideInInspector]
+    public bool isClosed;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.name == "Styrofoam_Bottom")
+        if (other.gameObject.name == "Styrofoam_Top")
         {
-            transform.parent.GetComponent<BoxParent>().BoxClosed(this);
-            Debug.Log("Box Closed");
+            isClosed = true;
             
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.name == "Styrofoam_Top")
+        {
+            isClosed = false;
+
         }
     }
 }
