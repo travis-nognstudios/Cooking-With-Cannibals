@@ -20,7 +20,7 @@ namespace Recipes
         }
         public void SpawnMeal(int i)
         {
-            Debug.Log("Spawn Meal");
+            //Debug.Log("Spawn Meal");
             Instantiate(recipeManager.recipes[i].recipeObject,transform.position,transform.rotation);
         }
         
