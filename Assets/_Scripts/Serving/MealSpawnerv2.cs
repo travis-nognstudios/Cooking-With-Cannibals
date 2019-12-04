@@ -35,11 +35,23 @@ namespace Serving
 
         void Update()
         {
-            if (recipeIsReady())
+            if (BoxIsClosed())
+            {
+                Debug.Log("Box Closed");
+                Debug.Log("In Box: ");
+                foreach (GameObject item in inBox)
+                {
+                    Debug.Log(item.gameObject.name);
+                }
+            }
+
+            /*
+            if (recipeIsReady() && BoxIsClosed())
             {
                 despawnIngredients();
                 spawnMeal();
             }
+            */
         }
 
         private void OnTriggerEnter(Collider other)
@@ -91,6 +103,12 @@ namespace Serving
             {
                 return false;
             }     
+        }
+
+        private bool BoxIsClosed()
+        {
+            BoxClose boxCloseScript = GetComponentInChildren<BoxClose>();
+            return boxCloseScript.isClosed;
         }
 
         private List<string> GetInBoxNames()
