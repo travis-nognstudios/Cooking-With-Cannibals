@@ -6,6 +6,7 @@ namespace Recipes
     public class RecipeManager : MonoBehaviour
     {
         public Recipe[] recipes;
+        public GameObject dubiousFood;
 
         // Use this for initialization
     void Start()
