@@ -3,7 +3,7 @@
 public class BoxClose : MonoBehaviour
 {
     [HideInInspector]
-    public bool isClosed;
+    public bool isClosed = false;
 
     private void OnTriggerEnter(Collider other)
     {
