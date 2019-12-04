@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 106311271068433060}
   - component: {fileID: 8820827849945283696}
   - component: {fileID: 1181468790727594345}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: PanCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104,7 +104,7 @@ GameObject:
   - component: {fileID: 7561884070950023408}
   - component: {fileID: 7851347719333346522}
   - component: {fileID: 7769952034526787855}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: PanCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -196,7 +196,7 @@ GameObject:
   - component: {fileID: 8556757486269553863}
   - component: {fileID: 423882950525731515}
   - component: {fileID: 4608918353167940879}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: PanCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -287,7 +287,7 @@ GameObject:
   - component: {fileID: 1041852614281686808}
   - component: {fileID: 5727349388018657876}
   - component: {fileID: 732319986281770232}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Pan
   m_TagString: Cooktop
   m_Icon: {fileID: 0}
@@ -378,7 +378,7 @@ GameObject:
   - component: {fileID: 1096559423604101709}
   - component: {fileID: 7651986994949192284}
   - component: {fileID: 8271970093521801495}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: PanCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -470,7 +470,7 @@ GameObject:
   - component: {fileID: 9189217011773479025}
   - component: {fileID: 9096773446917703098}
   - component: {fileID: 1959426971593651445}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: PanCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -562,7 +562,7 @@ GameObject:
   - component: {fileID: 1774501490936627294}
   - component: {fileID: 1744484787688714915}
   - component: {fileID: 2596932099894425649}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Pan-Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -654,7 +654,7 @@ GameObject:
   - component: {fileID: 1586397872397908356}
   - component: {fileID: 5723157915418020327}
   - component: {fileID: 2010091424050341665}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: PanCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -746,7 +746,7 @@ GameObject:
   - component: {fileID: 8756860469195656044}
   - component: {fileID: 8408642653731372459}
   - component: {fileID: 2261166301916378222}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: PanCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -838,7 +838,7 @@ GameObject:
   - component: {fileID: 6175087766858274390}
   - component: {fileID: 7848734336904452312}
   - component: {fileID: 4674876296886780245}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: PanCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -932,7 +932,9 @@ GameObject:
   - component: {fileID: 2138565211}
   - component: {fileID: 2138565208}
   - component: {fileID: 6806703863925018692}
-  m_Layer: 0
+  - component: {fileID: 1620943992}
+  - component: {fileID: 1620943998}
+  m_Layer: 10
   m_Name: UTN_Pan_v02
   m_TagString: Cooktop
   m_Icon: {fileID: 0}
@@ -967,7 +969,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8afa0b205791c9f4496bf2814aeac078, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  precisionGrab: 0
+  precisionGrab: 1
   rightSnapHandle: {fileID: 0}
   leftSnapHandle: {fileID: 0}
   throwVelocityWithAttachDistance: 0
@@ -1049,6 +1051,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18055ba762aa3994f9c10208cd088bc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &1620943992
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4859693620423587014}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.29855084, y: 0.072651386, z: 0.25183415}
+  m_Center: {x: 0.0015726686, y: 0.0015717745, z: 0.26091504}
+--- !u!114 &1620943998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4859693620423587014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72ae90a88ba40e04f9fa180ed0ee7a61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObjPos: {x: 0, y: 0, z: 0}
 --- !u!1 &5090101059237130363
 GameObject:
   m_ObjectHideFlags: 0
@@ -1061,7 +1089,7 @@ GameObject:
   - component: {fileID: 7196070319831797564}
   - component: {fileID: 3508357869205985128}
   - component: {fileID: 6175698226116165365}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: PanCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1153,7 +1181,7 @@ GameObject:
   - component: {fileID: 3281256258594107584}
   - component: {fileID: 6137456220363092837}
   - component: {fileID: 5208337716358660918}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: PanCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1245,7 +1273,7 @@ GameObject:
   - component: {fileID: 2888784422085995239}
   - component: {fileID: 6438166368297346713}
   - component: {fileID: 7749790989512576860}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: PanCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1337,7 +1365,7 @@ GameObject:
   - component: {fileID: 1385724574731153333}
   - component: {fileID: 8183192742970198317}
   - component: {fileID: 3896389903200439305}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: PanCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
