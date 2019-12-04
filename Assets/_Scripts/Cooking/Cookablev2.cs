@@ -203,6 +203,7 @@ namespace Cooking
         public void PlayCookingSound()
         {
             AudioSource audioSource = GetComponent<AudioSource>();
+            GetComponent<GrabBasedAudio>().SetCookSound();
             if (!audioSource.isPlaying)
             {
                 audioSource.Play();
@@ -212,6 +213,7 @@ namespace Cooking
         public void StopCookingSound()
         {
             AudioSource audioSource = GetComponent<AudioSource>();
+            GetComponent<GrabBasedAudio>().SetDropSound();
             if (audioSource.isPlaying)
             {
                 audioSource.Stop();

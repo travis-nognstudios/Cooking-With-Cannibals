@@ -130,7 +130,7 @@ namespace Serving
         private void spawnMeal()
         {
             Collider myCollider = GetComponent<Collider>();
-            Vector3 mealSpawnOffset = new Vector3(0, 0.1f, 0);
+            Vector3 mealSpawnOffset = new Vector3(0, 0.3f, 0);
 
             Instantiate(meal, myCollider.transform.position + mealSpawnOffset, myCollider.transform.rotation);
         }

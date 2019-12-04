@@ -20,6 +20,7 @@ GameObject:
   - component: {fileID: 546498717357320025}
   - component: {fileID: 6901277372735250714}
   - component: {fileID: 7975426029683853219}
+  - component: {fileID: 7939671716038685212}
   m_Layer: 0
   m_Name: ING_burgerBun_BotV01
   m_TagString: Untagged
@@ -306,6 +307,7 @@ MonoBehaviour:
   soundSource: {fileID: 0}
   dropSound: {fileID: 8300000, guid: c5d67b32416ccb34298447bcb849691d, type: 3}
   interactSound: {fileID: 8300000, guid: c5d67b32416ccb34298447bcb849691d, type: 3}
+  cookSound: {fileID: 8300000, guid: 3a58ff49945f2dd418b930da25bdd418, type: 3}
   dropSpeed: 1
 --- !u!114 &7975426029683853219
 MonoBehaviour:
@@ -341,3 +343,22 @@ MonoBehaviour:
   touchHighlightColor: {r: 0, g: 0, b: 0, a: 0}
   usingState: 0
   dropSpeed: 1
+--- !u!114 &7939671716038685212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6347608639245709512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 074d8dcfb56f345f1abde6a7cb765705, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stateChangeTimes:
+  - cookType: 1
+    timeToCook: 10
+    timeToOverCook: 25
+  uncookedMat: {fileID: 2100000, guid: 4a3fb9f199f4e12458b4562e343870cb, type: 2}
+  cookedMat: {fileID: 2100000, guid: 7f1e0c8e02b9f8c4d8e6caac1d258754, type: 2}
+  burntMat: {fileID: 2100000, guid: e09cc7d82bf3b1841ac841a02c843457, type: 2}
