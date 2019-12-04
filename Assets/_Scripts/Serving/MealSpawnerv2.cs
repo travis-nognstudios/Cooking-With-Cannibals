@@ -9,15 +9,15 @@ namespace Serving
     {
         public GameObject recipeManager;
         public GameObject meal;
-        public GameObject mealBox;
+        
 
         private Recipe myRecipe;
+        private GameObject dubiousFood;
         private List<GameObject> inBox = new List<GameObject>();
 
         void Start()
         {
             Recipe[] recipes = recipeManager.GetComponent<RecipeManager>().recipes;
-
             foreach(Recipe recipe in recipes)
             {
                 if (recipe.recipeObject.Equals(meal))
@@ -30,28 +30,24 @@ namespace Serving
                 }
             }
 
-
+            dubiousFood = recipeManager.GetComponent<RecipeManager>().dubiousFood;
         }
 
         void Update()
         {
             if (BoxIsClosed())
             {
-                Debug.Log("Box Closed");
-                Debug.Log("In Box: ");
-                foreach (GameObject item in inBox)
+                despawnIngredients();
+
+                if (recipeIsReady())
                 {
-                    Debug.Log(item.gameObject.name);
+                    spawnMeal();
+                }
+                else
+                {
+                    spawnDubiousFood();
                 }
             }
-
-            /*
-            if (recipeIsReady() && BoxIsClosed())
-            {
-                despawnIngredients();
-                spawnMeal();
-            }
-            */
         }
 
         private void OnTriggerEnter(Collider other)
@@ -89,7 +85,6 @@ namespace Serving
             {
                 if (inBoxNames.Contains(topping.name))
                 {
-                    //Debug.Log(topping.name);
                     numToppingsContains += 1;
                 }
             }
@@ -138,7 +133,14 @@ namespace Serving
             Vector3 mealSpawnOffset = new Vector3(0, 0.1f, 0);
 
             Instantiate(meal, myCollider.transform.position + mealSpawnOffset, myCollider.transform.rotation);
-            
+        }
+
+        private void spawnDubiousFood()
+        {
+            Collider myCollider = GetComponent<Collider>();
+            Vector3 mealSpawnOffset = new Vector3(0, 0.1f, 0);
+
+            Instantiate(dubiousFood, myCollider.transform.position + mealSpawnOffset, myCollider.transform.rotation);
         }
     }
 }
