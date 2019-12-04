@@ -998,25 +998,6 @@ Transform:
   m_Father: {fileID: 1877985835}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &189609175 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3609441740759046107, guid: 1933dfb2dc9e8574f9778bcb61d10a37,
-    type: 3}
-  m_PrefabInstance: {fileID: 4699151298997372141}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &189609176
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 189609175}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72ae90a88ba40e04f9fa180ed0ee7a61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ObjPos: {x: 0, y: 0, z: 0}
 --- !u!1001 &192688863
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1170,7 +1151,7 @@ MonoBehaviour:
   - {fileID: 3707048209541631882, guid: 3e72d472dcc293944b07ff0876483c09, type: 3}
   - {fileID: 3707048209541631882, guid: 39e3d0ea6ba4acf4bbb820ad541d18a5, type: 3}
   recipeManager: {fileID: 287736179}
-  spawnPoint: {fileID: 1607308295}
+  spawnPoint: {fileID: 0}
 --- !u!114 &287736179
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1210,7 +1191,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &292888328
 PrefabInstance:
@@ -1615,7 +1596,7 @@ GameObject:
   - component: {fileID: 455483638}
   - component: {fileID: 455483637}
   - component: {fileID: 455483636}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Fire_Right
   m_TagString: Heatsource
   m_Icon: {fileID: 0}
@@ -1781,7 +1762,7 @@ GameObject:
   - component: {fileID: 500427836}
   - component: {fileID: 500427835}
   - component: {fileID: 500427834}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Fire_Left
   m_TagString: Heatsource
   m_Icon: {fileID: 0}
@@ -2384,83 +2365,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.6736942, y: 0.12657896, z: 0.5390767}
   m_Center: {x: -0.00067369756, y: -0.06313802, z: 0.26846415}
---- !u!1 &658769503 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6305245613539072668, guid: 1933dfb2dc9e8574f9778bcb61d10a37,
-    type: 3}
-  m_PrefabInstance: {fileID: 4699151298997372141}
-  m_PrefabAsset: {fileID: 0}
---- !u!54 &658769510
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 658769503}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 10
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!114 &658769511
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 658769503}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3abaf4521bf2344ea21ed3020b98eb2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  disableWhenIdle: 1
-  allowedNearTouchControllers: 0
-  allowedTouchControllers: 0
-  ignoredColliders: []
-  isGrabbable: 1
-  holdButtonToGrab: 1
-  stayGrabbedOnTeleport: 1
-  validDrop: 1
-  grabOverrideButton: 0
-  allowedGrabControllers: 0
-  grabAttachMechanicScript: {fileID: 0}
-  secondaryGrabActionScript: {fileID: 0}
-  isUsable: 0
-  holdButtonToUse: 1
-  useOnlyIfGrabbed: 0
-  pointerActivatesUseAction: 0
-  useOverrideButton: 0
-  allowedUseControllers: 0
-  objectHighlighter: {fileID: 0}
-  touchHighlightColor: {r: 0, g: 0, b: 0, a: 0}
-  usingState: 0
---- !u!114 &658769512
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 658769503}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a1ebaa51525b734287157cb3f53f958, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  precisionGrab: 1
-  rightSnapHandle: {fileID: 0}
-  leftSnapHandle: {fileID: 0}
-  throwVelocityWithAttachDistance: 0
-  throwMultiplier: 1
-  onGrabCollisionDelay: 0
-  detachDistance: 1
-  velocityLimit: Infinity
-  angularVelocityLimit: Infinity
-  maxDistanceDelta: 10
 --- !u!1001 &675232704
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2536,6 +2440,39 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 675232704}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &691248364
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 691248365}
+  m_Layer: 10
+  m_Name: OrderTicketPlacement
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &691248365
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 691248364}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.663, y: 1.561553, z: 1.02}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1373427895}
+  - {fileID: 1098981945}
+  - {fileID: 1105943684}
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &698943433 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: f1da658cf5e9bfd47ab51186c6312ca7,
@@ -2553,6 +2490,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: UTN_Board_v02
+      objectReference: {fileID: 0}
+    - target: {fileID: 8974102765283586571, guid: 2495a2677415a5c40b4e8732043cd926,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5317304874274090432, guid: 2495a2677415a5c40b4e8732043cd926,
         type: 3}
@@ -2608,6 +2550,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5761460132746604145, guid: 2495a2677415a5c40b4e8732043cd926,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2495a2677415a5c40b4e8732043cd926, type: 3}
@@ -2718,7 +2665,7 @@ GameObject:
   - component: {fileID: 807790302}
   - component: {fileID: 807790301}
   - component: {fileID: 807790300}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2835,262 +2782,6 @@ Transform:
   m_Father: {fileID: 153251957}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &828580053
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 828580065}
-  - component: {fileID: 828580064}
-  - component: {fileID: 828580063}
-  - component: {fileID: 828580062}
-  - component: {fileID: 828580061}
-  - component: {fileID: 828580060}
-  - component: {fileID: 828580059}
-  - component: {fileID: 828580058}
-  - component: {fileID: 828580057}
-  - component: {fileID: 828580056}
-  - component: {fileID: 828580055}
-  - component: {fileID: 828580054}
-  - component: {fileID: 828580066}
-  m_Layer: 0
-  m_Name: CookMe
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &828580054
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 828580053}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4918105fd6a8c3f4496c6d2d1d94e6f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &828580055
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 828580053}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 947b27445602ed640b885db7e667dfc1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  grabButton: 7
-  grabPrecognition: 0
-  throwMultiplier: 1
-  createRigidBodyWhenNotTouching: 0
-  controllerAttachPoint: {fileID: 0}
-  controllerEvents: {fileID: 0}
-  interactTouch: {fileID: 0}
---- !u!114 &828580056
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 828580053}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 947b27445602ed640b885db7e667dfc1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  grabButton: 7
-  grabPrecognition: 0
-  throwMultiplier: 1
-  createRigidBodyWhenNotTouching: 0
-  controllerAttachPoint: {fileID: 0}
-  controllerEvents: {fileID: 0}
-  interactTouch: {fileID: 0}
---- !u!54 &828580057
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 828580053}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!114 &828580058
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 828580053}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18055ba762aa3994f9c10208cd088bc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &828580059
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 828580053}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ec2ac476f2fc9a45a4e69712580a603, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  precisionGrab: 0
-  rightSnapHandle: {fileID: 0}
-  leftSnapHandle: {fileID: 0}
-  throwVelocityWithAttachDistance: 0
-  throwMultiplier: 1
-  onGrabCollisionDelay: 0
---- !u!114 &828580060
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 828580053}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3abaf4521bf2344ea21ed3020b98eb2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  disableWhenIdle: 1
-  allowedNearTouchControllers: 0
-  allowedTouchControllers: 0
-  ignoredColliders: []
-  isGrabbable: 1
-  holdButtonToGrab: 1
-  stayGrabbedOnTeleport: 1
-  validDrop: 1
-  grabOverrideButton: 0
-  allowedGrabControllers: 0
-  grabAttachMechanicScript: {fileID: 828580059}
-  secondaryGrabActionScript: {fileID: 828580058}
-  isUsable: 0
-  holdButtonToUse: 1
-  useOnlyIfGrabbed: 0
-  pointerActivatesUseAction: 0
-  useOverrideButton: 0
-  allowedUseControllers: 0
-  objectHighlighter: {fileID: 0}
-  touchHighlightColor: {r: 0, g: 0, b: 0, a: 0}
-  usingState: 0
---- !u!135 &828580061
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 828580053}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!135 &828580062
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 828580053}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &828580063
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 828580053}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 696e62bba96e6034a8401f0e21ae94ea, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
---- !u!33 &828580064
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 828580053}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &828580065
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 828580053}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.262, y: 1.24, z: 0.709}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &828580066
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 828580053}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &850463540
 GameObject:
   m_ObjectHideFlags: 0
@@ -3307,7 +2998,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 978094397}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: StoveTop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3583,7 +3274,7 @@ GameObject:
   - component: {fileID: 1050289977}
   - component: {fileID: 1050289979}
   - component: {fileID: 1050289978}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: FoodBits
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8457,162 +8148,66 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1933dfb2dc9e8574f9778bcb61d10a37, type: 3}
---- !u!1 &1093113292 stripped
+--- !u!1 &1098981944
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 4544655198247583517, guid: 1933dfb2dc9e8574f9778bcb61d10a37,
-    type: 3}
-  m_PrefabInstance: {fileID: 4699151298997372141}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1093113296
-MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1093113292}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac34eae8fff136941b1afe5b45a82ecc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  orderTickets:
-  - {fileID: 3707048209541631882, guid: 3e72d472dcc293944b07ff0876483c09, type: 3}
-  - {fileID: 3707048209541631882, guid: 39e3d0ea6ba4acf4bbb820ad541d18a5, type: 3}
-  recipeManager: {fileID: 287736179}
-  i: 0
-  container: {fileID: 1425020828}
---- !u!54 &1093113297
-Rigidbody:
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1098981945}
+  m_Layer: 10
+  m_Name: TicketSpawnPoint02
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1098981945
+Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1093113292}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 10
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!114 &1093113298
-MonoBehaviour:
+  m_GameObject: {fileID: 1098981944}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.026, y: 0.15144706, z: 0.0039999485}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 691248365}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1105943683
+GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1093113292}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3abaf4521bf2344ea21ed3020b98eb2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  disableWhenIdle: 1
-  allowedNearTouchControllers: 0
-  allowedTouchControllers: 0
-  ignoredColliders: []
-  isGrabbable: 1
-  holdButtonToGrab: 1
-  stayGrabbedOnTeleport: 1
-  validDrop: 1
-  grabOverrideButton: 0
-  allowedGrabControllers: 0
-  grabAttachMechanicScript: {fileID: 0}
-  secondaryGrabActionScript: {fileID: 0}
-  isUsable: 0
-  holdButtonToUse: 1
-  useOnlyIfGrabbed: 0
-  pointerActivatesUseAction: 0
-  useOverrideButton: 0
-  allowedUseControllers: 0
-  objectHighlighter: {fileID: 0}
-  touchHighlightColor: {r: 0, g: 0, b: 0, a: 0}
-  usingState: 0
---- !u!114 &1093113299
-MonoBehaviour:
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1105943684}
+  m_Layer: 10
+  m_Name: TicketSpawnPoint03
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1105943684
+Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1093113292}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7668d60aac28b44ab5e626253713906, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  precisionGrab: 1
-  rightSnapHandle: {fileID: 0}
-  leftSnapHandle: {fileID: 0}
-  throwVelocityWithAttachDistance: 0
-  throwMultiplier: 1
-  onGrabCollisionDelay: 0
-  detachDistance: 1
-  velocityLimit: Infinity
-  angularVelocityLimit: Infinity
-  maxDistanceDelta: 10
---- !u!65 &1093113300
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1093113292}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.673694, y: 0.12657893, z: 0.5390767}
-  m_Center: {x: -0.0006732793, y: -0.06313837, z: 0.26846403}
---- !u!65 &1093113301
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1093113292}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.673694, y: 0.12657893, z: 0.5390767}
-  m_Center: {x: -0.0006732793, y: -0.06313837, z: 0.26846403}
---- !u!59 &1093113302
-HingeJoint:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1093113292}
-  m_ConnectedBody: {fileID: 658769510}
-  m_Anchor: {x: 1, y: 0, z: 0}
-  m_Axis: {x: 1, y: 0, z: 0}
-  m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.99999994, y: 0.12999998, z: 0.27250525}
-  m_UseSpring: 0
-  m_Spring:
-    spring: 0
-    damper: 0
-    targetPosition: 0
-  m_UseMotor: 0
-  m_Motor:
-    targetVelocity: 0
-    force: 0
-    freeSpin: 0
-  m_UseLimits: 0
-  m_Limits:
-    min: 0
-    max: 0
-    bounciness: 0
-    bounceMinVelocity: 0.2
-    contactDistance: 0
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_EnableCollision: 0
-  m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
+  m_GameObject: {fileID: 1105943683}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.426, y: 0.15144706, z: 0.0039999485}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 691248365}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1111938372 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7296876146829552440, guid: 7eb02a0f9697ad24e8202a5986e6402f,
@@ -8909,7 +8504,7 @@ GameObject:
   - component: {fileID: 1279539644}
   - component: {fileID: 1279539646}
   - component: {fileID: 1279539645}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Poof
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13726,6 +13321,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 362813766352477818, guid: 4b8f0d152b70e5f4fb4d1ed4862a48f5,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 158577969604071076, guid: 4b8f0d152b70e5f4fb4d1ed4862a48f5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -13796,6 +13396,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.14586
       objectReference: {fileID: 0}
+    - target: {fileID: 8557388025942148875, guid: 4b8f0d152b70e5f4fb4d1ed4862a48f5,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8557388027533152777, guid: 4b8f0d152b70e5f4fb4d1ed4862a48f5,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b8f0d152b70e5f4fb4d1ed4862a48f5, type: 3}
 --- !u!4 &1281824844 stripped
@@ -13816,7 +13426,7 @@ GameObject:
   - component: {fileID: 1283052901}
   - component: {fileID: 1283052900}
   - component: {fileID: 1283052899}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Water
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13906,7 +13516,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1327032501}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: FX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13964,6 +13574,36 @@ Transform:
   - {fileID: 1877985835}
   m_Father: {fileID: 2002399107}
   m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1373427894
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1373427895}
+  m_Layer: 10
+  m_Name: TicketSpawnPoint01
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1373427895
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1373427894}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.358, y: 0.15144706, z: 0.0039999485}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 691248365}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1401121205
 PrefabInstance:
@@ -14049,7 +13689,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1425020829}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: StyrofoamBox_SpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14288,6 +13928,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8138375899935023652, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -1676645182331070993, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -6183149351753312996, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -677725784326206394, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -14296,7 +13961,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
         type: 3}
@@ -14326,7 +13991,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
         type: 3}
@@ -14358,6 +14023,446 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 6ceba7ae98a089543bd09e58177023e2, type: 2}
+    - target: {fileID: -8281346260134947241, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2184969199833114488, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 9065906238872704453, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -8434814940307335466, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -4124003166530791789, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1658055349339581451, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -6124505279351168587, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -2929929850443395895, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5146647093095349087, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -8663859222548363535, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5818059957671789695, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -12423241964089041, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -4455781353118930537, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -9012582883306253559, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1034452372374031725, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -8944160391559162441, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -7527718192733757356, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 256994259412758717, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -6499875523779790212, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -435481993901814288, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -2324271141525611035, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -8333018850246756343, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4541860638875565963, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3555225806966220841, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -482740104936014494, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -1359903076473296537, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6435513305202972175, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -4745183159311547743, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 9111962883125049612, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -4710666747836401732, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -7833856907900376432, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -6238385960629927665, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -791290730635535639, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -3491872099148682982, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6867356985376096596, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -2253293073042364635, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -397836296996733240, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5720046476300157849, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -6449302239883089296, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4927210677250180510, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 9006365394032064954, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -6222830087279353882, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -8192447757870514817, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7306293074299231742, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8025758699543226868, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8137183772764647684, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3633856024671073226, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5627532290113707282, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 155683964901571144, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6814095526653263271, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -5508121497530004790, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -7549104322882408863, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -3982591621510832468, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6117923104666314283, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2894080112057117918, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 9124285457272047948, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2702937499632162138, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3313499628348052115, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1581987613619340581, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -5870803936130228472, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -8720997766147596541, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -201012595421248230, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7732233866204438415, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -2286235455427745859, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 879833615716933630, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -5809795884974924222, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -3502460903387762916, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -6317578316391722409, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -1422986836756093638, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -8256276282117639282, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6429355248196136662, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7545140399451645472, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -1459838918879401798, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8954881661028911756, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -593989431937120795, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -1101718152079171045, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1344579296797436827, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -6426377190119635854, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -8859774792894196524, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5588033585219514600, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -2119263513385127944, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -5956904211589207602, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6265941383154332026, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -7476685842743349404, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1671909925688385866, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -2819705702085570758, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -1444208204357697056, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7842701080791206990, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10, type: 3}
 --- !u!1001 &1581510820
@@ -14440,36 +14545,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1581510820}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1607308295
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1607308296}
-  m_Layer: 0
-  m_Name: SpawnPoint
-  m_TagString: Spawn
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &1607308296
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1607308295}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.588, y: 1.176, z: 0.863}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1615764618
 GameObject:
   m_ObjectHideFlags: 0
@@ -14629,10 +14704,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2138565207, guid: 5e66dbd97a8187b47bdf338af66d3848, type: 3}
-      propertyPath: precisionGrab
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e66dbd97a8187b47bdf338af66d3848, type: 3}
 --- !u!4 &1620943990 stripped
@@ -14641,38 +14712,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1620943989}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1620943991 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4859693620423587014, guid: 5e66dbd97a8187b47bdf338af66d3848,
-    type: 3}
-  m_PrefabInstance: {fileID: 1620943989}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &1620943992
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1620943991}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.29855084, y: 0.072651386, z: 0.25183415}
-  m_Center: {x: 0.0015726686, y: 0.0015717745, z: 0.26091504}
---- !u!114 &1620943998
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1620943991}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72ae90a88ba40e04f9fa180ed0ee7a61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ObjPos: {x: 0, y: 0, z: 0}
 --- !u!1001 &1636229897
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14877,7 +14916,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1716080119}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15061,11 +15100,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -76.962006
-      objectReference: {fileID: 0}
-    - target: {fileID: 5656769813652256713, guid: d972e47dacc22c841b02fbf912aba9d0,
-        type: 3}
-      propertyPath: precisionGrab
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d972e47dacc22c841b02fbf912aba9d0, type: 3}
@@ -15821,25 +15855,6 @@ Transform:
   m_Father: {fileID: 1365981624}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1889163884 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8078394168550695312, guid: d972e47dacc22c841b02fbf912aba9d0,
-    type: 3}
-  m_PrefabInstance: {fileID: 1762474726}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1889163892
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1889163884}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72ae90a88ba40e04f9fa180ed0ee7a61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ObjPos: {x: 0, y: 0, z: 0}
 --- !u!1 &1901311506
 GameObject:
   m_ObjectHideFlags: 0
@@ -16058,7 +16073,7 @@ GameObject:
   - component: {fileID: 1965523357}
   - component: {fileID: 1965523356}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: OutsideFloorCollider
   m_TagString: destroy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16135,7 +16150,7 @@ Transform:
   m_LocalScale: {x: 5.1370525, y: 2.9786105, z: 3.4732802}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2002399106
 GameObject:
@@ -16532,7 +16547,7 @@ GameObject:
   - component: {fileID: 8431613427209465444}
   - component: {fileID: 1054768760984829693}
   - component: {fileID: 7567432771458441729}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: truck_cab_ACvent01_divider02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16627,7 +16642,7 @@ GameObject:
   - component: {fileID: 8066400436054848569}
   - component: {fileID: 4144141691913789940}
   - component: {fileID: 9143898243454834987}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: truck_cab_frontLogo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16849,7 +16864,7 @@ GameObject:
   - component: {fileID: 3403766027143988820}
   - component: {fileID: 141013378671562662}
   - component: {fileID: 2210355294580883358}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: truck_counter_top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17030,7 +17045,7 @@ GameObject:
   - component: {fileID: 6944447835840466187}
   - component: {fileID: 2158774037724933248}
   - component: {fileID: 7953432493470534770}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: truck_cab_pedal_stop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17264,7 +17279,7 @@ GameObject:
   - component: {fileID: 2153514777741189338}
   - component: {fileID: 449618484716226132}
   - component: {fileID: 3399788716942916771}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: garbage_Can
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17455,7 +17470,7 @@ GameObject:
   - component: {fileID: 2032669576253380268}
   - component: {fileID: 6334107739645289169}
   - component: {fileID: 907053484358255781}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: truck_counter_pole_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17496,7 +17511,7 @@ GameObject:
   - component: {fileID: 3063381045515568061}
   - component: {fileID: 622971525453896844}
   - component: {fileID: 3938360552215224405}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: truck_cab_clutch_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17640,7 +17655,7 @@ GameObject:
   - component: {fileID: 2294373050988143204}
   - component: {fileID: 771116752792396194}
   - component: {fileID: 4553888711204146446}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: window_hinge02_top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17659,7 +17674,7 @@ GameObject:
   - component: {fileID: 8335467160702957761}
   - component: {fileID: 3027999738152547762}
   - component: {fileID: 8226447437678061264}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: truck_cab_radio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17802,7 +17817,7 @@ GameObject:
   - component: {fileID: 1811975355879067416}
   - component: {fileID: 5119673347287186998}
   - component: {fileID: 6185943996413222973}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: stove_burner_right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17924,7 +17939,7 @@ GameObject:
   - component: {fileID: 8974352511068004236}
   - component: {fileID: 2001211573202749027}
   - component: {fileID: 6392686315248914658}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: truck_wall_topthing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18019,7 +18034,7 @@ GameObject:
   - component: {fileID: 7773926834755308744}
   - component: {fileID: 2932321134821769696}
   - component: {fileID: 5070747164021033460}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: fridge_door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18052,7 +18067,7 @@ GameObject:
   - component: {fileID: 7318217483063830778}
   - component: {fileID: 1903566630907363445}
   - component: {fileID: 7335466414763976143}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: sink_lever-left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18109,7 +18124,7 @@ GameObject:
   - component: {fileID: 731178014036659795}
   - component: {fileID: 6266935639718906920}
   - component: {fileID: 5714855014173202369}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: truck_cab_dash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18127,7 +18142,7 @@ GameObject:
   - component: {fileID: 319239424080104574}
   - component: {fileID: 6300251883342411177}
   - component: {fileID: 2986300084981600380}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: truck_wall_doorTrim01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18183,7 +18198,7 @@ GameObject:
   - component: {fileID: 1558100203902903591}
   - component: {fileID: 7075689099836128286}
   - component: {fileID: 5002131034910505589}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: window_awingFrame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18240,7 +18255,7 @@ GameObject:
   - component: {fileID: 7742246344972245483}
   - component: {fileID: 2463807306331275343}
   - component: {fileID: 1212650698819711021}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: truck_counter_pole_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18312,7 +18327,7 @@ GameObject:
   - component: {fileID: 7155667312240790237}
   - component: {fileID: 7252846464993395175}
   - component: {fileID: 6140284894820863784}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: truck_cab_ACvent02_divider03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18384,7 +18399,7 @@ GameObject:
   - component: {fileID: 4975420948555926545}
   - component: {fileID: 2118505108154181895}
   - component: {fileID: 6273579742039214240}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: truck_cab_dash_section
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18430,7 +18445,7 @@ GameObject:
   - component: {fileID: 8549991375631156069}
   - component: {fileID: 4001023865608764154}
   - component: {fileID: 721451220284874896}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: truck_counter_pole_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18731,7 +18746,7 @@ GameObject:
   - component: {fileID: 8760562708188744141}
   - component: {fileID: 4890551561355125303}
   - component: {fileID: 666784171285761915}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: window_hinge01_bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18788,7 +18803,7 @@ GameObject:
   - component: {fileID: 1868591421968821758}
   - component: {fileID: 8551548932253010031}
   - component: {fileID: 7858607339589898269}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: truck_cab_clutch_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18894,7 +18909,7 @@ GameObject:
   - component: {fileID: 7517360036512375779}
   - component: {fileID: 3515875130437705821}
   - component: {fileID: 8389371897240833171}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: truck_door_handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19397,7 +19412,7 @@ GameObject:
   - component: {fileID: 7806320713587217293}
   - component: {fileID: 9029180904526203108}
   - component: {fileID: 1257378412528762181}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: light_Outlit_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19554,7 +19569,7 @@ GameObject:
   - component: {fileID: 2905096687035210081}
   - component: {fileID: 2351321430133025674}
   - component: {fileID: 1454331473442235204}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: sink_pipe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19588,7 +19603,7 @@ GameObject:
   - component: {fileID: 2497287771064702651}
   - component: {fileID: 2497287771064702650}
   - component: {fileID: 2497287771064702649}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: fridge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19750,7 +19765,7 @@ GameObject:
   - component: {fileID: 4534900371739441477}
   - component: {fileID: 6699199727765361570}
   - component: {fileID: 8769540414566588893}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: window_hinge04_top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19850,7 +19865,7 @@ GameObject:
   - component: {fileID: 6886333978983412818}
   - component: {fileID: 6073309723093488721}
   - component: {fileID: 7094992208691474849}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: truck_cab_ACvent02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19907,7 +19922,7 @@ GameObject:
   - component: {fileID: 6884706218530975377}
   - component: {fileID: 3184799839027210047}
   - component: {fileID: 8026226020058984505}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: window_spring_bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19939,7 +19954,7 @@ GameObject:
   - component: {fileID: 4533520419528684379}
   - component: {fileID: 4795048079646696291}
   - component: {fileID: 3842610204403131399}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: light_Bracket_Cable_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20145,7 +20160,7 @@ GameObject:
   - component: {fileID: 7104197150315592592}
   - component: {fileID: 8320198842456742393}
   - component: {fileID: 5751185229100294200}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: truck_cab_pedal_gas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20178,7 +20193,7 @@ GameObject:
   - component: {fileID: 1742908843370737754}
   - component: {fileID: 267295940070106310}
   - component: {fileID: 3396278210174571936}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: light_Bracket_Cable_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20295,7 +20310,7 @@ GameObject:
   - component: {fileID: 8865707765179345041}
   - component: {fileID: 96571996162173339}
   - component: {fileID: 4142480713396036109}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: truck_cab_radio_wire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20314,7 +20329,7 @@ GameObject:
   - component: {fileID: 3054454272322778644}
   - component: {fileID: 7816388848124102889}
   - component: {fileID: 1287687892591537905}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: truck_cab_brandPlate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20488,7 +20503,7 @@ GameObject:
   - component: {fileID: 8063352295186408136}
   - component: {fileID: 3182429218406013086}
   - component: {fileID: 8003353495792538336}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: window_hinge03_bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20603,7 +20618,7 @@ GameObject:
   - component: {fileID: 3227569736487020389}
   - component: {fileID: 3227569736487020388}
   - component: {fileID: 3227569736487020391}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: stove_turner_right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20928,7 +20943,7 @@ GameObject:
   - component: {fileID: 1957591748172745629}
   - component: {fileID: 5535511373952434368}
   - component: {fileID: 4155292278966749343}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: light_CableConnector_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20985,7 +21000,7 @@ GameObject:
   - component: {fileID: 6313732184975497245}
   - component: {fileID: 8647558216830028140}
   - component: {fileID: 7329123969779244373}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: truck_cab_door_left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21004,7 +21019,7 @@ GameObject:
   - component: {fileID: 7571288476358306557}
   - component: {fileID: 5014926501767585514}
   - component: {fileID: 7302395323410695250}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: truck_wall_wheelCover&bumpers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21023,7 +21038,7 @@ GameObject:
   - component: {fileID: 6276722799875286524}
   - component: {fileID: 96159109199402081}
   - component: {fileID: 5668804966884620882}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: truck_cab_ACvent03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21042,7 +21057,7 @@ GameObject:
   - component: {fileID: 609532841810879592}
   - component: {fileID: 8000126506964145131}
   - component: {fileID: 9027446837145166810}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: truck_cab_gauge_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21061,7 +21076,7 @@ GameObject:
   - component: {fileID: 6848311995200691355}
   - component: {fileID: 7209967078288482587}
   - component: {fileID: 4787672356537429985}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: light_Bracket_Cable_04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21080,7 +21095,7 @@ GameObject:
   - component: {fileID: 2747271537311375432}
   - component: {fileID: 6207406952815968147}
   - component: {fileID: 6206839442557937457}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: light_Bracket_Cable_05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21336,7 +21351,7 @@ GameObject:
   - component: {fileID: 7929143229471820481}
   - component: {fileID: 2663642165773651330}
   - component: {fileID: 9011915498093536171}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: sink
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21395,7 +21410,7 @@ GameObject:
   - component: {fileID: 8973140210692841166}
   - component: {fileID: 9032880677518003715}
   - component: {fileID: 4032684771922699039}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: truck_cab_ACvent02_divider02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21427,7 +21442,7 @@ GameObject:
   - component: {fileID: 3165012215130036915}
   - component: {fileID: 4972824727808691552}
   - component: {fileID: 5084003937871353344}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: truck_cab_ACvent03_divider03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21459,7 +21474,7 @@ GameObject:
   - component: {fileID: 3195559251102367144}
   - component: {fileID: 1921276279519831439}
   - component: {fileID: 1403871053575917687}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: truck_cab_AC_buttons
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21477,7 +21492,7 @@ GameObject:
   - component: {fileID: 3577329525085813874}
   - component: {fileID: 6995449756729495736}
   - component: {fileID: 5628679883903648335}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: truck_wall_trim_interior
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21561,7 +21576,7 @@ GameObject:
   - component: {fileID: 6228767869481199945}
   - component: {fileID: 3303978090341775620}
   - component: {fileID: 3739287647076194398}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Crate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21580,7 +21595,7 @@ GameObject:
   - component: {fileID: 6955966974600690107}
   - component: {fileID: 5537879397448906043}
   - component: {fileID: 5070647955950098584}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: truck_cab_AC_sliderTrack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21653,7 +21668,7 @@ GameObject:
   - component: {fileID: 774790436189549852}
   - component: {fileID: 3709495196162872971}
   - component: {fileID: 9215168424364856800}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: truck_cab_ACvent01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21749,7 +21764,7 @@ GameObject:
   - component: {fileID: 1772714740471254305}
   - component: {fileID: 6653751016096676197}
   - component: {fileID: 490356736734890269}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: light_LightSwitch_Frame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21768,7 +21783,7 @@ GameObject:
   - component: {fileID: 6657901069438750427}
   - component: {fileID: 3385392160290289803}
   - component: {fileID: 4810210594257862554}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: truck_cab_stereo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21830,7 +21845,7 @@ GameObject:
   - component: {fileID: 2116757424681906714}
   - component: {fileID: 7236405247262902112}
   - component: {fileID: 194057312777022440}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: fridge_fan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21870,7 +21885,7 @@ GameObject:
   - component: {fileID: 4488045166453876002}
   - component: {fileID: 362130062784664945}
   - component: {fileID: 3633911936624526497}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: fridge_fan_blade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21965,7 +21980,7 @@ GameObject:
   - component: {fileID: 6370846729358323583}
   - component: {fileID: 6016831512767692767}
   - component: {fileID: 8252714216073046150}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: truck_cab_mirror_side
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21984,7 +21999,7 @@ GameObject:
   - component: {fileID: 3174970390241197589}
   - component: {fileID: 2291937115950098231}
   - component: {fileID: 2732999724794155390}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: sink_faucet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22211,7 +22226,7 @@ GameObject:
   - component: {fileID: 4216672443130706634}
   - component: {fileID: 4216672443130706633}
   - component: {fileID: 4216672443130706632}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: stove_turner_left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22394,7 +22409,7 @@ GameObject:
   - component: {fileID: 5469936461949516440}
   - component: {fileID: 3104189995861349429}
   - component: {fileID: 282375677980967695}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Truck_Shelf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22451,7 +22466,7 @@ GameObject:
   - component: {fileID: 8016716103664898852}
   - component: {fileID: 6118255718039290224}
   - component: {fileID: 7171271206353771302}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: truck_cab_steering_wheel_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22484,7 +22499,7 @@ GameObject:
   - component: {fileID: 685079259128624934}
   - component: {fileID: 4490076661128710502}
   - component: {fileID: 7755232582381725593}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: sink_door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22555,7 +22570,7 @@ GameObject:
   - component: {fileID: 5880695344999514290}
   - component: {fileID: 886650673688105761}
   - component: {fileID: 2618398214129276113}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: truck_cab_ACvent01_divider01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22574,7 +22589,7 @@ GameObject:
   - component: {fileID: 3401321326212040407}
   - component: {fileID: 7046350771546753181}
   - component: {fileID: 511684735836058617}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: garbage_Drawer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22704,7 +22719,7 @@ GameObject:
   - component: {fileID: 7315782482600166384}
   - component: {fileID: 4632158102998371091}
   - component: {fileID: 4595436671741233065}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: FireExtinguisher
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22869,66 +22884,15 @@ PrefabInstance:
       propertyPath: recipeManager
       value: 
       objectReference: {fileID: 287736177}
-    - target: {fileID: 6305245613539072671, guid: 1933dfb2dc9e8574f9778bcb61d10a37,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 0.5612535
-      objectReference: {fileID: 0}
-    - target: {fileID: 6305245613539072671, guid: 1933dfb2dc9e8574f9778bcb61d10a37,
-        type: 3}
-      propertyPath: m_Center.x
-      value: 0.00000042017953
-      objectReference: {fileID: 0}
-    - target: {fileID: 6305245613539072671, guid: 1933dfb2dc9e8574f9778bcb61d10a37,
-        type: 3}
-      propertyPath: m_Center.y
-      value: 0.32668874
-      objectReference: {fileID: 0}
-    - target: {fileID: 6305245613539072671, guid: 1933dfb2dc9e8574f9778bcb61d10a37,
-        type: 3}
-      propertyPath: m_Center.z
-      value: -0.0000001500641
-      objectReference: {fileID: 0}
-    - target: {fileID: 2267427030794472382, guid: 1933dfb2dc9e8574f9778bcb61d10a37,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 0.04845845
-      objectReference: {fileID: 0}
-    - target: {fileID: 2267427030794472382, guid: 1933dfb2dc9e8574f9778bcb61d10a37,
-        type: 3}
-      propertyPath: m_Center.x
-      value: 0.0066754525
-      objectReference: {fileID: 0}
-    - target: {fileID: 2267427030794472382, guid: 1933dfb2dc9e8574f9778bcb61d10a37,
-        type: 3}
-      propertyPath: m_Center.y
-      value: 0.024228988
-      objectReference: {fileID: 0}
-    - target: {fileID: 2267427030794472382, guid: 1933dfb2dc9e8574f9778bcb61d10a37,
-        type: 3}
-      propertyPath: m_Center.z
-      value: -0.0057123927
-      objectReference: {fileID: 0}
-    - target: {fileID: 2267427030794472382, guid: 1933dfb2dc9e8574f9778bcb61d10a37,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 0.5260511
-      objectReference: {fileID: 0}
-    - target: {fileID: 2267427030794472382, guid: 1933dfb2dc9e8574f9778bcb61d10a37,
-        type: 3}
-      propertyPath: m_Size.z
-      value: 0.47326154
-      objectReference: {fileID: 0}
-    - target: {fileID: 8427225503832987362, guid: 1933dfb2dc9e8574f9778bcb61d10a37,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.13
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 1849267467252898933, guid: 1933dfb2dc9e8574f9778bcb61d10a37, type: 3}
-    - {fileID: 3381002149827056618, guid: 1933dfb2dc9e8574f9778bcb61d10a37, type: 3}
-    - {fileID: 7741301755826811330, guid: 1933dfb2dc9e8574f9778bcb61d10a37, type: 3}
-    - {fileID: 8425950434136058226, guid: 1933dfb2dc9e8574f9778bcb61d10a37, type: 3}
+    - target: {fileID: 1093113296, guid: 1933dfb2dc9e8574f9778bcb61d10a37, type: 3}
+      propertyPath: recipeManager
+      value: 
+      objectReference: {fileID: 287736179}
+    - target: {fileID: 1093113296, guid: 1933dfb2dc9e8574f9778bcb61d10a37, type: 3}
+      propertyPath: container
+      value: 
+      objectReference: {fileID: 1425020828}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1933dfb2dc9e8574f9778bcb61d10a37, type: 3}
 --- !u!4 &4719049364282886500
 Transform:
@@ -22956,7 +22920,7 @@ GameObject:
   - component: {fileID: 3894121540182082043}
   - component: {fileID: 8817905635564976174}
   - component: {fileID: 3786451527266950871}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: light_CableConnector_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23583,7 +23547,7 @@ GameObject:
   - component: {fileID: 7734087089140449461}
   - component: {fileID: 7353221643586292325}
   - component: {fileID: 1669679994071511131}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: light_Bracket_Cable_08
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23602,7 +23566,7 @@ GameObject:
   - component: {fileID: 5233574909964538659}
   - component: {fileID: 6557677471360823479}
   - component: {fileID: 8687601626575830179}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: truck_door_window
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23629,7 +23593,7 @@ GameObject:
   - component: {fileID: 820427719233292811}
   - component: {fileID: 3540137903305350478}
   - component: {fileID: 8094708010678062820}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: window_counter_stand02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23675,7 +23639,7 @@ GameObject:
   - component: {fileID: 8084215594410188976}
   - component: {fileID: 5196907485717724747}
   - component: {fileID: 2462371060213295164}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: window_counter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23708,7 +23672,7 @@ GameObject:
   - component: {fileID: 2298666961374027249}
   - component: {fileID: 9176806763195073696}
   - component: {fileID: 3255280482169334422}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: truck_cab_ACvent02_divider01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23964,7 +23928,7 @@ GameObject:
   - component: {fileID: 2267320583396858131}
   - component: {fileID: 1091920817713106120}
   - component: {fileID: 4885504640503110284}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: truck_counter_pole_04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23983,7 +23947,7 @@ GameObject:
   - component: {fileID: 2386112776589791267}
   - component: {fileID: 4083068768556188673}
   - component: {fileID: 9089419431568370920}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: truck_cab_gauge_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24054,7 +24018,7 @@ GameObject:
   - component: {fileID: 2497196882952891607}
   - component: {fileID: 6041983593711180738}
   - component: {fileID: 3848172127144761475}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: truck_counter_bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24165,7 +24129,7 @@ GameObject:
   - component: {fileID: 3896712819158674318}
   - component: {fileID: 322727571405733778}
   - component: {fileID: 1336500624423370323}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: truck_cab_doorHandle_left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24197,7 +24161,7 @@ GameObject:
   - component: {fileID: 4621316833085572408}
   - component: {fileID: 6566613224484096237}
   - component: {fileID: 8899368935796919590}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: light_LightSwitch_Box
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24254,7 +24218,7 @@ GameObject:
   - component: {fileID: 6679228636264207473}
   - component: {fileID: 3977627247275959898}
   - component: {fileID: 3504573871342930435}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: truck_cab_AC_slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24286,7 +24250,7 @@ GameObject:
   - component: {fileID: 290093594395056757}
   - component: {fileID: 6635306079743567551}
   - component: {fileID: 5949750628737171028}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: light_Bracket_Cable_09
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24340,7 +24304,7 @@ GameObject:
   - component: {fileID: 6608397797999645283}
   - component: {fileID: 2776481100542804312}
   - component: {fileID: 7882005074567028028}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: window_counterFrame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24360,7 +24324,7 @@ GameObject:
   - component: {fileID: 4402794086851691698}
   - component: {fileID: 1194315997028379782}
   - component: {fileID: 5993406009661388702}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: stove
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24455,7 +24419,7 @@ GameObject:
   - component: {fileID: 8567074346993193932}
   - component: {fileID: 74012609051353947}
   - component: {fileID: 2690348220753020192}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: light_Light_Long_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24594,7 +24558,7 @@ GameObject:
   - component: {fileID: 2766866835454907717}
   - component: {fileID: 4954138863419172099}
   - component: {fileID: 7804445468857144430}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: vent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24672,7 +24636,7 @@ GameObject:
   - component: {fileID: 8531099142616339442}
   - component: {fileID: 1108640324080145562}
   - component: {fileID: 4092395444399830983}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: light_Light_Long_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24790,7 +24754,7 @@ GameObject:
   - component: {fileID: 5533513402956894406}
   - component: {fileID: 2399603963297480681}
   - component: {fileID: 2412147325853181201}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: light_Bracket_Cable_07
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24809,7 +24773,7 @@ GameObject:
   - component: {fileID: 9173652353572410920}
   - component: {fileID: 665428108024162565}
   - component: {fileID: 1733921419820709749}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: truck_cab_steering_wheel_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24966,7 +24930,7 @@ GameObject:
   - component: {fileID: 6188671493171286685}
   - component: {fileID: 4897482221564879342}
   - component: {fileID: 6483633092676533820}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: truck_cab_ACvent03_divider01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25052,7 +25016,7 @@ GameObject:
   - component: {fileID: 2428499639307694830}
   - component: {fileID: 1480391016753654391}
   - component: {fileID: 6988509155906947778}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: truck_cab_steering_wheel_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25085,7 +25049,7 @@ GameObject:
   - component: {fileID: 7903721347056472885}
   - component: {fileID: 3259987246557188451}
   - component: {fileID: 7768944399595078812}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: truck_cab_switches02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25168,7 +25132,7 @@ GameObject:
   - component: {fileID: 4125609942224442148}
   - component: {fileID: 3531310752307932756}
   - component: {fileID: 3114726019867873184}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Truck_ShelfHolder_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25225,7 +25189,7 @@ GameObject:
   - component: {fileID: 299313259990296558}
   - component: {fileID: 8321721234747343447}
   - component: {fileID: 4254952478155592642}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: truck_door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25244,7 +25208,7 @@ GameObject:
   - component: {fileID: 2725058425787447661}
   - component: {fileID: 261061978188808793}
   - component: {fileID: 99021995309096296}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: truck_glass_doorL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25301,7 +25265,7 @@ GameObject:
   - component: {fileID: 3540261140483041272}
   - component: {fileID: 6493845510088980827}
   - component: {fileID: 25807451849189744}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: truck_cab_wiper_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25328,7 +25292,7 @@ GameObject:
   - component: {fileID: 7200446430540952517}
   - component: {fileID: 166300167567580631}
   - component: {fileID: 6800206341218733970}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: window_hinge02_bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25439,7 +25403,7 @@ GameObject:
   - component: {fileID: 6342318007553366432}
   - component: {fileID: 8334177973574178016}
   - component: {fileID: 3290563107144184802}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: truck_wheel_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25540,7 +25504,7 @@ GameObject:
   - component: {fileID: 6020007292565116286}
   - component: {fileID: 2579824327346769062}
   - component: {fileID: 7301369767644698916}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: light_Bracket_Cable_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25645,7 +25609,7 @@ GameObject:
   - component: {fileID: 6624657717417328751}
   - component: {fileID: 5703138415493796837}
   - component: {fileID: 3784048190336630073}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: truck_cab_ACvent03_divider02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25694,7 +25658,7 @@ GameObject:
   - component: {fileID: 5818994262526036700}
   - component: {fileID: 1703253194300225605}
   - component: {fileID: 1845053852789212046}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: sink_lever_right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25748,7 +25712,7 @@ GameObject:
   - component: {fileID: 5123558948928437036}
   - component: {fileID: 2216220402612307408}
   - component: {fileID: 1165225392365179182}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: truck_wall_floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25851,7 +25815,7 @@ GameObject:
   - component: {fileID: 2233771065847948861}
   - component: {fileID: 7079648942579824119}
   - component: {fileID: 1940135390586511407}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: truck_glass_sideL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25883,7 +25847,7 @@ GameObject:
   - component: {fileID: 2587877553561577626}
   - component: {fileID: 8201099975967934806}
   - component: {fileID: 4992211020256462942}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: truck_wall_backCounter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26093,7 +26057,7 @@ GameObject:
   - component: {fileID: 3937837007481505411}
   - component: {fileID: 290087132615724087}
   - component: {fileID: 6786182743976523844}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: window_counter_stand01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26126,7 +26090,7 @@ GameObject:
   - component: {fileID: 5792367808537563989}
   - component: {fileID: 9125349786113180646}
   - component: {fileID: 352297907947953043}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: truck_cab_switches01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26303,7 +26267,7 @@ GameObject:
   - component: {fileID: 2288773719156347523}
   - component: {fileID: 904116607540519715}
   - component: {fileID: 5319627963973268147}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: window_hinge01_top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26373,7 +26337,7 @@ GameObject:
   - component: {fileID: 6859666940932881680}
   - component: {fileID: 1996268384536479403}
   - component: {fileID: 8584244662117919292}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: truck_cab_AC_dial
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26392,7 +26356,7 @@ GameObject:
   - component: {fileID: 6042272276595178756}
   - component: {fileID: 8671977274508606696}
   - component: {fileID: 8844996583069928751}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: truck_cab_grill_divier
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26410,7 +26374,7 @@ GameObject:
   - component: {fileID: 2325975580978629470}
   - component: {fileID: 4532885709976724646}
   - component: {fileID: 9078747940300617746}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: truck_wall_trim
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26615,7 +26579,7 @@ GameObject:
   - component: {fileID: 6764150836241366431}
   - component: {fileID: 2524704552930914875}
   - component: {fileID: 3890608946459530674}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: light_Outlit_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26693,7 +26657,7 @@ GameObject:
   - component: {fileID: 8142833475017372005}
   - component: {fileID: 597556928364624691}
   - component: {fileID: 286001017863989166}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: truck_cab_radio_walkey
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26712,7 +26676,7 @@ GameObject:
   - component: {fileID: 1606311234977716473}
   - component: {fileID: 3228000587734124447}
   - component: {fileID: 3638657168281815765}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: truck_wall_doorTrim02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26739,7 +26703,7 @@ GameObject:
   - component: {fileID: 6096384480553485348}
   - component: {fileID: 5071443748015539443}
   - component: {fileID: 8333130429656588008}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: window_hinge03_top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26785,7 +26749,7 @@ GameObject:
   - component: {fileID: 1816677946957452262}
   - component: {fileID: 3822098001644513867}
   - component: {fileID: 755337168351021395}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: garbage_Counter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26878,7 +26842,7 @@ GameObject:
   - component: {fileID: 4990375460302616220}
   - component: {fileID: 444655081328979775}
   - component: {fileID: 6496913006150799715}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: truck_cab_headlight_left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27203,7 +27167,7 @@ GameObject:
   - component: {fileID: 158969154786832698}
   - component: {fileID: 4363902241324285313}
   - component: {fileID: 3564442902795799683}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: window_spring_top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27243,7 +27207,7 @@ GameObject:
   - component: {fileID: 7812338623033726503}
   - component: {fileID: 248303293584434285}
   - component: {fileID: 3858327324541864163}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: light_Bracket_Cable_06
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27262,7 +27226,7 @@ GameObject:
   - component: {fileID: 3237859006460350622}
   - component: {fileID: 7348516040889306719}
   - component: {fileID: 2171156652310132081}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: stove_burner_left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27281,7 +27245,7 @@ GameObject:
   - component: {fileID: 789937122715234371}
   - component: {fileID: 514173078870797117}
   - component: {fileID: 4675534638773604150}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: garbage_Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27441,7 +27405,7 @@ GameObject:
   - component: {fileID: 7988750089447912109}
   - component: {fileID: 5469345886400095413}
   - component: {fileID: 7221622251380286442}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: truck_cab_chair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27526,7 +27490,7 @@ GameObject:
   - component: {fileID: 5943843433801207364}
   - component: {fileID: 3289647707480240914}
   - component: {fileID: 8992538156954528754}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: window_hinge04_bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27559,7 +27523,7 @@ GameObject:
   - component: {fileID: 4191917745307533894}
   - component: {fileID: 5455062146793236025}
   - component: {fileID: 7106027094118005430}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: truck_cab_ACvent01_divider03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27578,7 +27542,7 @@ GameObject:
   - component: {fileID: 2610489895814073960}
   - component: {fileID: 5120773882034583584}
   - component: {fileID: 4816800332885653757}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: window_awning
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27690,7 +27654,7 @@ GameObject:
   - component: {fileID: 157851160}
   - component: {fileID: 157851161}
   - component: {fileID: 157851162}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: truck_wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27833,7 +27797,7 @@ GameObject:
   - component: {fileID: 7672509673040896731}
   - component: {fileID: 8547161473737586119}
   - component: {fileID: 3604353532190758227}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: truck_glass_windshield
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27893,7 +27857,7 @@ GameObject:
   - component: {fileID: 2760615414197545922}
   - component: {fileID: 3318283493995676891}
   - component: {fileID: 8968458606856422946}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Generator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28093,7 +28057,7 @@ GameObject:
   - component: {fileID: 2134864848694725290}
   - component: {fileID: 2719200127822303010}
   - component: {fileID: 6313489557751155187}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: light_LightSwitch_Switch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28216,7 +28180,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9122088055903933766}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28250,7 +28214,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9122088055927901177}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Garbage Can
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28286,7 +28250,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9122088055973348822}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Sink
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28325,7 +28289,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9122088056396799196}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Truck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28341,7 +28305,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9122088056411603035}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28374,7 +28338,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9122088056468219727}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Fridge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28431,7 +28395,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9122088056648392253}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28466,7 +28430,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9122088056662099925}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Stove
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28501,7 +28465,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9122088056731732741}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Utilities
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28532,7 +28496,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9122088056840397841}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Vent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28563,7 +28527,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9122088057077271756}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Wheels
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28599,7 +28563,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9122088057081062032}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Counter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28647,7 +28611,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9122088057097620664}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28680,7 +28644,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9122088057254105541}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Glass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28726,7 +28690,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9122088057579076593}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Window
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28759,7 +28723,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9122088057713653301}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Shelf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28930,7 +28894,7 @@ GameObject:
   - component: {fileID: 3411978549480669522}
   - component: {fileID: 2811190201325481422}
   - component: {fileID: 5883004781659593979}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Truck_ShelfHolder_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}

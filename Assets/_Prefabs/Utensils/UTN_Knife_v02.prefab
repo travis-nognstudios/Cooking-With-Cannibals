@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4801101433426175243}
   - component: {fileID: 1340504889389522278}
   - component: {fileID: 988322820}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Blade-Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,7 +109,8 @@ GameObject:
   - component: {fileID: 6221340713427976527}
   - component: {fileID: 5656769813652256713}
   - component: {fileID: 6157441636572960211}
-  m_Layer: 0
+  - component: {fileID: 1889163892}
+  m_Layer: 10
   m_Name: UTN_Knife_v02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -233,7 +234,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8afa0b205791c9f4496bf2814aeac078, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  precisionGrab: 0
+  precisionGrab: 1
   rightSnapHandle: {fileID: 0}
   leftSnapHandle: {fileID: 0}
   throwVelocityWithAttachDistance: 0
@@ -253,6 +254,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18055ba762aa3994f9c10208cd088bc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1889163892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8078394168550695312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72ae90a88ba40e04f9fa180ed0ee7a61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObjPos: {x: 0, y: 0, z: 0}
 --- !u!1 &8619932809859388002
 GameObject:
   m_ObjectHideFlags: 0
@@ -265,7 +279,7 @@ GameObject:
   - component: {fileID: 3040579616228018012}
   - component: {fileID: 3714446118231589747}
   - component: {fileID: 1219650454}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Blade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
