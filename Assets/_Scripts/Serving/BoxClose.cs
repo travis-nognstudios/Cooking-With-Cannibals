@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class BoxClose : MonoBehaviour
 {
@@ -12,7 +10,6 @@ public class BoxClose : MonoBehaviour
         if (other.gameObject.name == "Styrofoam_Top")
         {
             isClosed = true;
-            
         }
     }
 
@@ -21,7 +18,6 @@ public class BoxClose : MonoBehaviour
         if (other.gameObject.name == "Styrofoam_Top")
         {
             isClosed = false;
-
         }
     }
 }
