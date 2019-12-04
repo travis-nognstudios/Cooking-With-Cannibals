@@ -147,6 +147,7 @@ namespace Cooking
                 {
                     cookTimes[typeIndex] += Time.deltaTime;
                     float timeCooked = cookTimes[typeIndex];
+                    PlayCookingSound();
   
                     // If cook state reached, update allMechanics and add to steps
                     if (!isCooked && timeCooked >= timeToCook && timeCooked < timeToOvercook)
@@ -160,6 +161,11 @@ namespace Cooking
                     }
                 }
             }
+        }
+
+        public void OnTriggerExit(Collider other)
+        {
+            StopCookingSound();
         }
 
         private void MakeCooked(CookType cookType)
@@ -192,6 +198,26 @@ namespace Cooking
 
             //ToDo Change later
             rend.sharedMaterial = burntMat;
+        }
+
+        public void PlayCookingSound()
+        {
+            AudioSource audioSource = GetComponent<AudioSource>();
+            GetComponent<GrabBasedAudio>().SetCookSound();
+            if (!audioSource.isPlaying)
+            {
+                audioSource.Play();
+            }
+        }
+
+        public void StopCookingSound()
+        {
+            AudioSource audioSource = GetComponent<AudioSource>();
+            GetComponent<GrabBasedAudio>().SetDropSound();
+            if (audioSource.isPlaying)
+            {
+                audioSource.Stop();
+            }
         }
     }
 }
