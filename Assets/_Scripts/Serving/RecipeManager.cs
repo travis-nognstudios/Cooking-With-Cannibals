@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Recipes;
 
-namespace Recipes
+namespace Serving
 {
     public class RecipeManager : MonoBehaviour
     {
