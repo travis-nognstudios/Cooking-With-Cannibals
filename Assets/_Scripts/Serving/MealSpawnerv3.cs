@@ -17,7 +17,8 @@ namespace Serving
 
         private GameObject spawnedMeal;
         private float destroyTimer = 0f;
-        private const float destroyTime = 3f;
+
+        public float spawnedMealDestroyTime = 3f;
         private bool startedDestroyTimer;
 
         void Start()
@@ -67,7 +68,7 @@ namespace Serving
             if (startedDestroyTimer)
             {
                 destroyTimer += Time.deltaTime;
-                if (destroyTimer > destroyTime)
+                if (destroyTimer > spawnedMealDestroyTime)
                 {
                     DestroySpawnedMeal();
                 }
