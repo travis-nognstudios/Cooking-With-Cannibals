@@ -18,7 +18,7 @@ public class GrabBasedAudio : MonoBehaviour
     {
         soundSource = this.GetComponent<AudioSource>();
         soundSource.clip = dropSound;
-        Debug.Log("Start works");
+        //Debug.Log("Start works");
     }
 
     public void SetInteractSound()
