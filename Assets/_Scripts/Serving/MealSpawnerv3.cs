@@ -113,7 +113,7 @@ namespace Serving
                 }
             }
 
-            if (containsMainIngredient && numToppingsContains == numToppingsShouldHave)
+            if (containsMainIngredient && numToppingsContains == numToppingsShouldHave && inBoxNames.Count == numToppingsShouldHave + 1)
             {
                 return true;
             }

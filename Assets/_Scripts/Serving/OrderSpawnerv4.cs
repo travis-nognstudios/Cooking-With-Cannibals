@@ -15,6 +15,11 @@ namespace Serving
         private float timeSinceLastSpawn;
         private RecipeManager recipeManager;
 
+        // Separate logic for first spawn
+        public float firstSpawnTime = 3f;
+        private float firstSpawnTimer = 0f;
+        private bool firstSpawnDone;
+
         // Track which points have tickets
         // and how old each ticket is
         // and the corresponding recipe
@@ -42,12 +47,21 @@ namespace Serving
                 ticketReferences.Add(new GameObject());
             }
 
-            // Spawn a ticket at the start
-            SpawnTicket();
         }
 
         void Update()
         {
+            // First spawn
+            if (!firstSpawnDone)
+            {
+                firstSpawnTimer += Time.deltaTime;
+                if (firstSpawnTimer > firstSpawnTime)
+                {
+                    SpawnTicket();
+                    firstSpawnDone = true;
+                }
+            }
+
             // Update spawn timer
             timeSinceLastSpawn += Time.deltaTime;
             if (timeSinceLastSpawn >= ticketSpawnInterval)
@@ -75,6 +89,7 @@ namespace Serving
 
             // Find an empty spawn point
             // Generate a ticket there and keep a reference
+            // Add spring joint to the spawn point's ridigbody
             int spawnIndex = GenerateSpawnPointIndex();
             if (spawnIndex != -1)
             {
@@ -83,6 +98,7 @@ namespace Serving
 
                 GameObject spawnPoint = ticketSpawnPoints[spawnIndex];
                 ticketReferences[spawnIndex] = Instantiate(ticket, spawnPoint.transform.position + ticketOffset, ticket.transform.rotation);
+                ticketReferences[spawnIndex].GetComponent<SpringJoint>().connectedBody = spawnPoint.GetComponent<Rigidbody>();
             }
         }
 
