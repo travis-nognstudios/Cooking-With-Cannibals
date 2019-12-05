@@ -6,7 +6,12 @@ ModelImporter:
   - first:
       74: 1827226128182048838
     second: Take 001
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Npc
+    second: {fileID: 2100000, guid: 78e50d51b4220954a8b41f22ff8997a6, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -31,7 +36,8 @@ ModelImporter:
     animationPositionError: 0.5
     animationScaleError: 0.5
     animationWrapMode: 0
-    extraExposedTransformPaths: []
+    extraExposedTransformPaths:
+    - NPC_and_Rig
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
@@ -80,7 +86,7 @@ ModelImporter:
     useFileUnits: 1
     keepQuads: 0
     weldVertices: 1
-    preserveHierarchy: 0
+    preserveHierarchy: 1
     skinWeightsMode: 0
     maxBonesPerVertex: 4
     minBoneWeight: 0.001
@@ -284,11 +290,16 @@ ModelImporter:
     skeleton:
     - name: NPC_Idle(Clone)
       parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: NPC_and_Rig
+      parentName: NPC_Idle(Clone)
       position: {x: -0, y: 0, z: 0}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: QuickRigCharacter_Reference
-      parentName: NPC_Idle(Clone)
+      parentName: NPC_and_Rig
       position: {x: -0.00012649536, y: -0.030392079, z: 0.02971714}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
@@ -405,7 +416,7 @@ ModelImporter:
       rotation: {x: -0, y: 6.6613366e-16, z: 0.000000044703473, w: 1}
       scale: {x: 1.0000017, y: 1.0000019, z: 1.0000015}
     - name: QuickRigCharacter_Guides
-      parentName: NPC_Idle(Clone)
+      parentName: NPC_and_Rig
       position: {x: -0, y: 0, z: 0}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
@@ -525,7 +536,7 @@ ModelImporter:
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: NPC_Male
-      parentName: NPC_Idle(Clone)
+      parentName: NPC_and_Rig
       position: {x: -0, y: 0, z: 0}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
@@ -554,7 +565,7 @@ ModelImporter:
     globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
-    hasExtraRoot: 0
+    hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 3
