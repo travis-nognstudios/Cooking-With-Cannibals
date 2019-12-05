@@ -1,23 +1,26 @@
 ﻿using UnityEngine;
 
-public class BoxClose : MonoBehaviour
+namespace Serving
 {
-    [HideInInspector]
-    public bool isClosed = false;
-
-    private void OnTriggerEnter(Collider other)
+    public class BoxClose : MonoBehaviour
     {
-        if (other.gameObject.name == "Styrofoam_Top")
+        [HideInInspector]
+        public bool isClosed;
+
+        private void OnTriggerEnter(Collider other)
         {
-            isClosed = true;
+            if (other.gameObject.name == "Styrofoam_Top")
+            {
+                isClosed = true;
+            }
         }
-    }
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.name == "Styrofoam_Top")
+        private void OnTriggerExit(Collider other)
         {
-            isClosed = false;
+            if (other.gameObject.name == "Styrofoam_Top")
+            {
+                isClosed = false;
+            }
         }
     }
 }
