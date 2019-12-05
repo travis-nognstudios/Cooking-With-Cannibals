@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.21003553, g: 0.4078651, b: 0.96617913, a: 1}
+  m_IndirectSpecularColor: {r: 0.20992339, g: 0.4078908, b: 0.9656894, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1146,7 +1146,6 @@ GameObject:
   - component: {fileID: 287736180}
   - component: {fileID: 287736179}
   - component: {fileID: 287736178}
-  - component: {fileID: 287736181}
   m_Layer: 0
   m_Name: RecipeManager
   m_TagString: Untagged
@@ -1161,17 +1160,16 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 287736177}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea3b428679d704ad2a16a49403c60685, type: 3}
+  m_Script: {fileID: 11500000, guid: 70f4bbde2eace46aab760eeec6b8c207, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBetweenOrders: 10
-  orderTickets:
-  - {fileID: 3707048209541631882, guid: 3e72d472dcc293944b07ff0876483c09, type: 3}
-  - {fileID: 3707048209541631882, guid: 39e3d0ea6ba4acf4bbb820ad541d18a5, type: 3}
-  recipeManager: {fileID: 287736179}
-  spawnPoint: {fileID: 0}
+  ticketSpawnPoints:
+  - {fileID: 1373427894}
+  - {fileID: 1098981944}
+  - {fileID: 1105943683}
+  ticketSpawnInterval: 2
 --- !u!114 &287736179
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1187,6 +1185,8 @@ MonoBehaviour:
   recipes:
   - recipeObject: {fileID: 5751473966101214552, guid: d13cc6226be686a47913693e403b9b6b,
       type: 3}
+    recipeTicket: {fileID: 3707048209541631882, guid: 3e72d472dcc293944b07ff0876483c09,
+      type: 3}
     mainIngredient:
       gameObject: {fileID: 2939510643366467758, guid: 1c7a985f6308655409f5ad5db5cfc1e9,
         type: 3}
@@ -1199,6 +1199,17 @@ MonoBehaviour:
     - {fileID: 5189456436152974811, guid: 8ff381d7adb72ee4eb5e29037ec3cc83, type: 3}
     - {fileID: 2348498024574583594, guid: 66a0a90c134bb5a4e80636e13f698594, type: 3}
     - {fileID: 4408773072892888073, guid: 81f39ee7eeef39c4d859996cae177f24, type: 3}
+  - recipeObject: {fileID: 339473280935750257, guid: 9e59ed0b8a285624a8bee207ff9bcf54,
+      type: 3}
+    recipeTicket: {fileID: 3707048209541631882, guid: 39e3d0ea6ba4acf4bbb820ad541d18a5,
+      type: 3}
+    mainIngredient:
+      gameObject: {fileID: 2939510643366467758, guid: 1c7a985f6308655409f5ad5db5cfc1e9,
+        type: 3}
+      steps:
+      - cookType: 1
+        cookState: 1
+    toppings: []
   dubiousFood: {fileID: 4739242246537071886, guid: a65eeb3e639109c4588b19a04f68e358,
     type: 3}
 --- !u!4 &287736180
@@ -1215,26 +1226,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &287736181
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 287736177}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b404fc99cd428a442b20b6ecb9173ace, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawntime: 5
-  orderTickets:
-  - {fileID: 3707048209541631882, guid: 3e72d472dcc293944b07ff0876483c09, type: 3}
-  - {fileID: 3707048209541631882, guid: 39e3d0ea6ba4acf4bbb820ad541d18a5, type: 3}
-  recipeManager: {fileID: 287736179}
-  spawnPoint1: {fileID: 1373427894}
-  spawnPoint2: {fileID: 1098981944}
-  spawnPoint3: {fileID: 1105943683}
 --- !u!1001 &292888328
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14915,6 +14906,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: UTN_Pan_v02
       objectReference: {fileID: 0}
+    - target: {fileID: 1620943992, guid: 5e66dbd97a8187b47bdf338af66d3848, type: 3}
+      propertyPath: m_Size.y
+      value: 0.07496309
+      objectReference: {fileID: 0}
+    - target: {fileID: 1620943992, guid: 5e66dbd97a8187b47bdf338af66d3848, type: 3}
+      propertyPath: m_Center.y
+      value: 0.0027276278
+      objectReference: {fileID: 0}
     - target: {fileID: 220707697861522845, guid: 5e66dbd97a8187b47bdf338af66d3848,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -14978,14 +14977,6 @@ PrefabInstance:
       propertyPath: ignoredColliders.Array.data[0]
       value: 
       objectReference: {fileID: 1246856759}
-    - target: {fileID: 1620943992, guid: 5e66dbd97a8187b47bdf338af66d3848, type: 3}
-      propertyPath: m_Size.y
-      value: 0.07496309
-      objectReference: {fileID: 0}
-    - target: {fileID: 1620943992, guid: 5e66dbd97a8187b47bdf338af66d3848, type: 3}
-      propertyPath: m_Center.y
-      value: 0.0027276278
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e66dbd97a8187b47bdf338af66d3848, type: 3}
 --- !u!4 &1620943990 stripped
