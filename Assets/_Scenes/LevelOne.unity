@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.20992339, g: 0.4078908, b: 0.9656894, a: 1}
+  m_IndirectSpecularColor: {r: 0.21004027, g: 0.4078709, b: 0.9661834, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1169,7 +1169,7 @@ MonoBehaviour:
   - {fileID: 1373427894}
   - {fileID: 1098981944}
   - {fileID: 1105943683}
-  ticketSpawnInterval: 10
+  ticketSpawnInterval: 3
 --- !u!114 &287736179
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1194,11 +1194,11 @@ MonoBehaviour:
       - cookType: 1
         cookState: 1
     toppings:
-    - {fileID: 6347608639245709512, guid: 985da931209ea964ebe9bedea154ad19, type: 3}
     - {fileID: 8910713308699699820, guid: d5fd951864b23c84bbf59394777dcdfc, type: 3}
-    - {fileID: 5189456436152974811, guid: 8ff381d7adb72ee4eb5e29037ec3cc83, type: 3}
     - {fileID: 2348498024574583594, guid: 66a0a90c134bb5a4e80636e13f698594, type: 3}
+    - {fileID: 5189456436152974811, guid: 8ff381d7adb72ee4eb5e29037ec3cc83, type: 3}
     - {fileID: 4408773072892888073, guid: 81f39ee7eeef39c4d859996cae177f24, type: 3}
+    - {fileID: 6347608639245709512, guid: 985da931209ea964ebe9bedea154ad19, type: 3}
   - recipeObject: {fileID: 339473280935750257, guid: 9e59ed0b8a285624a8bee207ff9bcf54,
       type: 3}
     recipeTicket: {fileID: 3707048209541631882, guid: 39e3d0ea6ba4acf4bbb820ad541d18a5,
@@ -13862,6 +13862,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1377602067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1377602051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f77dea1195d04e1aba3af797ad903e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  recipeManager: {fileID: 287736177}
 --- !u!1001 &1401121205
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23897,10 +23910,15 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4739242246537071886, guid: a65eeb3e639109c4588b19a04f68e358,
         type: 3}
+    - target: {fileID: 6305245613539072670, guid: 1933dfb2dc9e8574f9778bcb61d10a37,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1093113296, guid: 1933dfb2dc9e8574f9778bcb61d10a37, type: 3}
       propertyPath: recipeManager
       value: 
-      objectReference: {fileID: 287736179}
+      objectReference: {fileID: 0}
     - target: {fileID: 1093113296, guid: 1933dfb2dc9e8574f9778bcb61d10a37, type: 3}
       propertyPath: container
       value: 

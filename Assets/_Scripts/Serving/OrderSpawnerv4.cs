@@ -122,6 +122,7 @@ namespace Serving
 
         public void DespawnTicket(Recipe finishedrecipe)
         {
+
             // Get all ticket indices that match the finished recipe
             List<int> ticketIndicesMatchingRecipe = new List<int>();
             for (int i=0; i<ticketSpawnPoints.Length; ++i)
@@ -132,26 +133,14 @@ namespace Serving
                 }
             }
 
-            // If multiple tickets exist for the same recipe
-            // Find oldest one's index
-            // Otherwise get the index of the matching recipe
-            int ticketIndex;
-            if (ticketIndicesMatchingRecipe.Count > 1)
+            // Find oldest matching tickets's index
+            int ticketIndex = 0;
+            for (int i = 0; i < ticketIndicesMatchingRecipe.Count; ++i)
             {
-                int oldestTicketIndex = 0;
-                for (int i = 0; i < ticketIndicesMatchingRecipe.Count; ++i)
+                if (ticketIndicesMatchingRecipe[i] > ticketIndicesMatchingRecipe[ticketIndex])
                 {
-                    if (ticketIndicesMatchingRecipe[i] > ticketIndicesMatchingRecipe[oldestTicketIndex])
-                    {
-                        oldestTicketIndex = i;
-                    }
+                    ticketIndex = i;
                 }
-
-                ticketIndex = oldestTicketIndex;
-            }
-            else
-            {
-                ticketIndex = ticketIndicesMatchingRecipe[0];
             }
 
             // Despawn ticket
