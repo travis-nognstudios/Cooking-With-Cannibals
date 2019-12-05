@@ -18,8 +18,6 @@ namespace Serving
         void Start()
         {
             orderSpawner = recipeManager.GetComponent<OrderSpawnerv4>();
-            queuedRecipes = orderSpawner.GetQueuedRecipes();
-
             dubiousFood = recipeManager.GetComponent<RecipeManager>().dubiousFood;
         }
 
@@ -27,12 +25,11 @@ namespace Serving
         {
             if (BoxIsClosed())
             {
-                despawnIngredients();
-
                 // Check all recipes to see if any match
                 Recipe matchingRecipe = new Recipe();
                 bool foundMatchingRecipe = false;
 
+                queuedRecipes = orderSpawner.GetQueuedRecipes();
                 foreach (Recipe queuedRecipe in queuedRecipes)
                 {
                     if (RecipeIsReady(queuedRecipe))
@@ -42,14 +39,21 @@ namespace Serving
                     }
                 }
 
+                
                 if (foundMatchingRecipe)
                 {
+                    despawnIngredients();
                     spawnMeal(matchingRecipe);
                     orderSpawner.DespawnTicket(matchingRecipe);
                 }
+                else if (GetInBoxNames().Count > 0)
+                {
+                    despawnIngredients();
+                    spawnDubiousFood();
+                }
                 else
                 {
-                    spawnDubiousFood();
+                    // Debug.Log("Empty Box and no recipes matched");
                 }
 
             }
@@ -112,12 +116,13 @@ namespace Serving
 
         private List<string> GetInBoxNames()
         {
-
             List<string> inBoxNames = new List<string>();
-
             foreach (GameObject item in inBox)
             {
-                inBoxNames.Add(item.name);
+                if (item != null)
+                {
+                    inBoxNames.Add(item.name);
+                }
             }
 
             return inBoxNames;
@@ -127,7 +132,10 @@ namespace Serving
         {
             foreach (GameObject item in inBox)
             {
-                Destroy(item);
+                if (item != null)
+                {
+                    Destroy(item);
+                }
             }
         }
 

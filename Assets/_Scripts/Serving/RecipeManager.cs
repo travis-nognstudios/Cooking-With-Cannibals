@@ -3,7 +3,7 @@ using System.Collections;
 using Recipes;
 
 namespace Serving
-{
+{ 
     public class RecipeManager : MonoBehaviour
     {
         public Recipe[] recipes;
