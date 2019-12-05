@@ -42,6 +42,8 @@ namespace Serving
                 ticketReferences.Add(new GameObject());
             }
 
+            // Spawn a ticket at the start
+            SpawnTicket();
         }
 
         void Update()

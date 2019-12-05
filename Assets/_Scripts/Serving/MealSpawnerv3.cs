@@ -15,6 +15,11 @@ namespace Serving
         private GameObject dubiousFood;
         private List<GameObject> inBox = new List<GameObject>();
 
+        private GameObject spawnedMeal;
+        private float destroyTimer = 0f;
+        private const float destroyTime = 3f;
+        private bool startedDestroyTimer;
+
         void Start()
         {
             orderSpawner = recipeManager.GetComponent<OrderSpawnerv4>();
@@ -23,6 +28,7 @@ namespace Serving
 
         void Update()
         {
+            // Meal spawning
             if (BoxIsClosed())
             {
                 // Check all recipes to see if any match
@@ -42,20 +48,29 @@ namespace Serving
                 
                 if (foundMatchingRecipe)
                 {
-                    despawnIngredients();
-                    spawnMeal(matchingRecipe);
+                    DespawnIngredients();
+                    SpawnMeal(matchingRecipe);
                     orderSpawner.DespawnTicket(matchingRecipe);
                 }
                 else if (GetInBoxNames().Count > 0)
                 {
-                    despawnIngredients();
-                    spawnDubiousFood();
+                    DespawnIngredients();
+                    SpawnDubiousFood();
                 }
                 else
                 {
                     // Debug.Log("Empty Box and no recipes matched");
                 }
+            }
 
+            // Spawned meal destroying
+            if (startedDestroyTimer)
+            {
+                destroyTimer += Time.deltaTime;
+                if (destroyTimer > destroyTime)
+                {
+                    DestroySpawnedMeal();
+                }
             }
         }
 
@@ -128,7 +143,7 @@ namespace Serving
             return inBoxNames;
         }
 
-        private void despawnIngredients()
+        private void DespawnIngredients()
         {
             foreach (GameObject item in inBox)
             {
@@ -139,20 +154,39 @@ namespace Serving
             }
         }
 
-        private void spawnMeal(Recipe recipe)
+        private void SpawnMeal(Recipe recipe)
         {
             Collider myCollider = GetComponent<Collider>();
             Vector3 mealSpawnOffset = new Vector3(0, 0.3f, 0);
 
-            Instantiate(recipe.recipeObject, myCollider.transform.position + mealSpawnOffset, myCollider.transform.rotation);
+            spawnedMeal = Instantiate(recipe.recipeObject, myCollider.transform.position + mealSpawnOffset, myCollider.transform.rotation);
+            StartDestroyTimer();
         }
 
-        private void spawnDubiousFood()
+        private void SpawnDubiousFood()
         {
             Collider myCollider = GetComponent<Collider>();
             Vector3 mealSpawnOffset = new Vector3(0, 0.1f, 0);
 
-            Instantiate(dubiousFood, myCollider.transform.position + mealSpawnOffset, myCollider.transform.rotation);
+            spawnedMeal = Instantiate(dubiousFood, myCollider.transform.position + mealSpawnOffset, myCollider.transform.rotation);
+            StartDestroyTimer();
+        }
+
+        private void StartDestroyTimer()
+        {
+            startedDestroyTimer = true;
+        }
+
+        private void StopDestroyTimer()
+        {
+            startedDestroyTimer = false;
+            destroyTimer = 0f;
+        }
+
+        private void DestroySpawnedMeal()
+        {
+            Destroy(spawnedMeal);
+            StopDestroyTimer();
         }
     }
 }
