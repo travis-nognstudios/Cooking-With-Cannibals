@@ -2,6 +2,7 @@
 using System.Collections;
 using Recipes;
 using UnityEngine.SceneManagement;
+using Serving;
 
 namespace Recipes
 {
@@ -44,7 +45,7 @@ namespace Recipes
             i = Random.Range(0, recipeManager.recipes.Length);
             if (SceneManager.GetActiveScene().name == lvl1Name && canSpawn == true)
             {
-                Debug.Log("cansapwn");
+                //Debug.Log("cansapwn");
                 StartCoroutine(SpawnOrder(i));
                 
             }
@@ -65,7 +66,7 @@ namespace Recipes
         {
             canSpawn = false;
             yield return new WaitForSeconds(timeBetweenOrders);
-            Debug.Log("Spawn Ticket");
+            //Debug.Log("Spawn Ticket");
             Instantiate(orderTickets[i], spawnPoint.transform.position, spawnPoint.transform.rotation);
             canSpawn = true;
 
