@@ -9,15 +9,15 @@ namespace Serving
     {
         public GameObject recipeManager;
         public GameObject meal;
-        public GameObject mealBox;
+        
 
         private Recipe myRecipe;
+        private GameObject dubiousFood;
         private List<GameObject> inBox = new List<GameObject>();
 
         void Start()
         {
             Recipe[] recipes = recipeManager.GetComponent<RecipeManager>().recipes;
-
             foreach(Recipe recipe in recipes)
             {
                 if (recipe.recipeObject.Equals(meal))
@@ -30,22 +30,32 @@ namespace Serving
                 }
             }
 
-
+            dubiousFood = recipeManager.GetComponent<RecipeManager>().dubiousFood;
         }
 
         void Update()
         {
-            if (recipeIsReady())
+            if (BoxIsClosed())
             {
                 despawnIngredients();
-                spawnMeal();
+
+                if (recipeIsReady())
+                {
+                    spawnMeal();
+                }
+                else
+                {
+                    spawnDubiousFood();
+                }
             }
         }
 
         private void OnTriggerEnter(Collider other)
         {
             GameObject item = other.gameObject;
-            if (!inBox.Contains(item))
+
+            // Only add interactables (default layer)
+            if (!inBox.Contains(item) && item.layer == 0)
             {
                 inBox.Add(item);
             }
@@ -75,7 +85,6 @@ namespace Serving
             {
                 if (inBoxNames.Contains(topping.name))
                 {
-                    Debug.Log(topping.name);
                     numToppingsContains += 1;
                 }
             }
@@ -89,6 +98,12 @@ namespace Serving
             {
                 return false;
             }     
+        }
+
+        private bool BoxIsClosed()
+        {
+            BoxClose boxCloseScript = GetComponentInChildren<BoxClose>();
+            return boxCloseScript.isClosed;
         }
 
         private List<string> GetInBoxNames()
@@ -115,10 +130,17 @@ namespace Serving
         private void spawnMeal()
         {
             Collider myCollider = GetComponent<Collider>();
-            Vector3 mealSpawnOffset = new Vector3(0, 0.1f, 0);
+            Vector3 mealSpawnOffset = new Vector3(0, 0.3f, 0);
 
             Instantiate(meal, myCollider.transform.position + mealSpawnOffset, myCollider.transform.rotation);
-            
+        }
+
+        private void spawnDubiousFood()
+        {
+            Collider myCollider = GetComponent<Collider>();
+            Vector3 mealSpawnOffset = new Vector3(0, 0.1f, 0);
+
+            Instantiate(dubiousFood, myCollider.transform.position + mealSpawnOffset, myCollider.transform.rotation);
         }
     }
 }

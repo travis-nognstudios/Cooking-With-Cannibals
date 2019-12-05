@@ -1,17 +1,26 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class BoxClose : MonoBehaviour
+namespace Serving
 {
-
-    private void OnTriggerEnter(Collider other)
+    public class BoxClose : MonoBehaviour
     {
-        if (other.gameObject.name == "Styrofoam_Bottom")
+        [HideInInspector]
+        public bool isClosed;
+
+        private void OnTriggerEnter(Collider other)
         {
-            transform.parent.GetComponent<BoxParent>().BoxClosed(this);
-            Debug.Log("Box Closed");
-            
+            if (other.gameObject.name == "Styrofoam_Top")
+            {
+                isClosed = true;
+            }
+        }
+
+        private void OnTriggerExit(Collider other)
+        {
+            if (other.gameObject.name == "Styrofoam_Top")
+            {
+                isClosed = false;
+            }
         }
     }
 }
