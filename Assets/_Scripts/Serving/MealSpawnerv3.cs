@@ -21,6 +21,12 @@ namespace Serving
         public float spawnedMealDestroyTime = 3f;
         private bool startedDestroyTimer;
 
+        
+        private const float spawnCooldown = 3f;
+        private float cooldownTimer = 0f;
+        private bool startedCooldownTimer;
+        
+
         void Start()
         {
             orderSpawner = recipeManager.GetComponent<OrderSpawnerv4>();
@@ -39,6 +45,15 @@ namespace Serving
                 queuedRecipes = orderSpawner.GetQueuedRecipes();
                 foreach (Recipe queuedRecipe in queuedRecipes)
                 {
+                    // DEBUG
+                    if (queuedRecipe.recipeObject.name.Contains("recipe_siskabob_v05"))
+                    {
+                        foreach (GameObject topping in queuedRecipe.toppings)
+                        {
+                            Debug.Log("Topping should have:" + topping);
+                        }
+                    }
+
                     if (RecipeIsReady(queuedRecipe))
                     {
                         matchingRecipe = queuedRecipe;
@@ -62,6 +77,7 @@ namespace Serving
                 {
                     // Debug.Log("Empty Box and no recipes matched");
                 }
+
             }
 
             // Spawned meal destroying
@@ -73,6 +89,18 @@ namespace Serving
                     DestroySpawnedMeal();
                 }
             }
+
+            // Cooldown between spawn
+            /*
+            if (startedCooldownTimer)
+            {
+                cooldownTimer += Time.deltaTime;
+                if (cooldownTimer > spawnCooldown)
+                {
+                    StopCooldownTimer();
+                }
+            }
+            */
         }
 
         private void OnTriggerEnter(Collider other)
@@ -101,16 +129,28 @@ namespace Serving
             string mainIngredientNameShouldBe = recipe.mainIngredient.gameObject.name;
             int numToppingsShouldHave = recipe.toppings.Length;
 
-            if (inBoxNames.Contains(mainIngredientNameShouldBe))
+            // if (inBoxNames.Contains(mainIngredientNameShouldBe))
+            if (ListContainsName(inBoxNames, mainIngredientNameShouldBe))
             {
                 containsMainIngredient = true;
+                //ToDo: Check cookstate
             }
 
             foreach(GameObject topping in recipe.toppings)
             {
-                if (inBoxNames.Contains(topping.name))
+                // if (inBoxNames.Contains(topping.name))
+                if (ListContainsName(inBoxNames, topping.name))
                 {
                     numToppingsContains += 1;
+                }
+            }
+
+            // DEBUG
+            if (recipe.recipeObject.name.Contains("recipe_siskabob_v05"))
+            {
+                foreach (string thingInBox in inBoxNames)
+                {
+                    Debug.Log("In box: " + thingInBox);
                 }
             }
 
@@ -162,6 +202,7 @@ namespace Serving
 
             spawnedMeal = Instantiate(recipe.recipeObject, myCollider.transform.position + mealSpawnOffset, myCollider.transform.rotation);
             StartDestroyTimer();
+            StartCooldownTimer();
         }
 
         private void SpawnDubiousFood()
@@ -171,6 +212,7 @@ namespace Serving
 
             spawnedMeal = Instantiate(dubiousFood, myCollider.transform.position + mealSpawnOffset, myCollider.transform.rotation);
             StartDestroyTimer();
+            StartCooldownTimer();
         }
 
         private void StartDestroyTimer()
@@ -184,10 +226,34 @@ namespace Serving
             destroyTimer = 0f;
         }
 
+        private void StartCooldownTimer()
+        {
+            startedCooldownTimer = true;
+        }
+
+        private void StopCooldownTimer()
+        {
+            startedCooldownTimer = false;
+            cooldownTimer = 0f;
+        }
+
         private void DestroySpawnedMeal()
         {
             Destroy(spawnedMeal);
             StopDestroyTimer();
+        }
+
+        bool ListContainsName(List<string> l, string n)
+        {
+            foreach (string listname in l)
+            {
+                if (listname.Contains(n))
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
     }
 }
