@@ -160,7 +160,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
+  m_DynamicOccludee: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -283,10 +283,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   choppedObject:
   - {fileID: 2348498024574583594, guid: 66a0a90c134bb5a4e80636e13f698594, type: 3}
-  cuttingChops: 5
+  - {fileID: 2348498024574583594, guid: 66a0a90c134bb5a4e80636e13f698594, type: 3}
+  - {fileID: 2348498024574583594, guid: 66a0a90c134bb5a4e80636e13f698594, type: 3}
+  cuttingChops: 6
   canChop: 0
   progressSlider: {fileID: 1693725081}
   progressBar: {fileID: 7955473246070547470}
+  cam: {fileID: 0}
 --- !u!135 &294677267742033907
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -582,6 +585,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_MaxValue
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 585976991809471338, guid: 787970f732f8061469b0ce960b76f067,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 787970f732f8061469b0ce960b76f067, type: 3}
