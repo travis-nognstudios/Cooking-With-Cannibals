@@ -936,6 +936,8 @@ GameObject:
   - component: {fileID: 682800902}
   - component: {fileID: 682800900}
   - component: {fileID: 682800901}
+  - component: {fileID: 2077197367}
+  - component: {fileID: 6626059816907578353}
   m_Layer: 10
   m_Name: UTN_Pan_v02
   m_TagString: Cooktop
@@ -994,7 +996,8 @@ MonoBehaviour:
   disableWhenIdle: 1
   allowedNearTouchControllers: 0
   allowedTouchControllers: 0
-  ignoredColliders: []
+  ignoredColliders:
+  - {fileID: 1620943992}
   isGrabbable: 1
   holdButtonToGrab: 1
   stayGrabbedOnTeleport: 1
@@ -1064,8 +1067,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.29855084, y: 0.072651386, z: 0.25183415}
-  m_Center: {x: 0.0015726686, y: 0.0015717745, z: 0.26091504}
+  m_Size: {x: 0.29855084, y: 0.088456035, z: 0.25183415}
+  m_Center: {x: 0.0015726686, y: -0.004018843, z: 0.26091504}
 --- !u!82 &682800902
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1212,7 +1215,41 @@ MonoBehaviour:
   soundSource: {fileID: 0}
   dropSound: {fileID: 8300000, guid: 5b88425e3ca5eac439b334321424576a, type: 3}
   interactSound: {fileID: 8300000, guid: b60ba7413e70c3e40ba663482b2479e4, type: 3}
+  cookSound: {fileID: 0}
   dropSpeed: 0
+--- !u!114 &2077197367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4859693620423587014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66344e5da397b4d23bb9ac5dcb4e551d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObjPos: {x: 0, y: 0, z: 0}
+--- !u!114 &6626059816907578353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4859693620423587014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abc4b5dd2be1cea4aaea2850b910d3f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nearTouchHighlight: {r: 0, g: 0, b: 0, a: 0}
+  touchHighlight: {r: 0, g: 1, b: 1, a: 1}
+  grabHighlight: {r: 0, g: 0, b: 0, a: 0}
+  useHighlight: {r: 0, g: 0, b: 0, a: 0}
+  objectToMonitor: {fileID: 0}
+  objectToHighlight: {fileID: 0}
+  objectHighlighter: {fileID: 0}
+  objectToAffect: {fileID: 0}
 --- !u!1 &5090101059237130363
 GameObject:
   m_ObjectHideFlags: 0
