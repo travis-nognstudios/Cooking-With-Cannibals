@@ -184,10 +184,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   choppedObject:
   - {fileID: 4408773072892888073, guid: 81f39ee7eeef39c4d859996cae177f24, type: 3}
-  cuttingChops: 3
+  - {fileID: 4408773072892888073, guid: 81f39ee7eeef39c4d859996cae177f24, type: 3}
+  - {fileID: 4408773072892888073, guid: 81f39ee7eeef39c4d859996cae177f24, type: 3}
+  - {fileID: 4408773072892888073, guid: 81f39ee7eeef39c4d859996cae177f24, type: 3}
+  cuttingChops: 7
   canChop: 0
   progressSlider: {fileID: 6038669049473516016}
   progressBar: {fileID: 4443413759060300903}
+  cam: {fileID: 0}
 --- !u!135 &1201946217
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -435,7 +439,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_UiScaleMode: 0
-  m_ReferencePixelsPerUnit: 100
+  m_ReferencePixelsPerUnit: 0
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
   m_ScreenMatchMode: 0
@@ -443,7 +447,7 @@ MonoBehaviour:
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
-  m_DynamicPixelsPerUnit: 1
+  m_DynamicPixelsPerUnit: 0
 --- !u!114 &5705150040338807672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -582,6 +586,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_MaxValue
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 585976991809471338, guid: 787970f732f8061469b0ce960b76f067,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 585976991171093467, guid: 787970f732f8061469b0ce960b76f067,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 787970f732f8061469b0ce960b76f067, type: 3}

@@ -19,7 +19,7 @@ public class Cutting : MonoBehaviour
     private Slider progressSlider;
     [SerializeField]
     private GameObject progressBar;
-
+    public Camera cam;
     private void Start()
     {
         progressSlider.maxValue = cuttingChops;
@@ -32,7 +32,7 @@ public class Cutting : MonoBehaviour
     //private void OnTriggerEnter(Collider other)
     private void Update()
     {
-        
+        progressBar.transform.LookAt(transform.position + cam.transform.rotation * Vector3.forward, cam.transform.rotation * Vector3.up);
         if (chopped)
         {
             chopped = false;
