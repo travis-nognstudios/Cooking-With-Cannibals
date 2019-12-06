@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1776460243838128793}
   - component: {fileID: 3394223461953145668}
   - component: {fileID: 5947606497958859291}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: bun_bot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 8767439310119044510}
   - component: {fileID: 1923515990140533548}
   - component: {fileID: 3431266195679895600}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: retopoHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -167,7 +167,7 @@ GameObject:
   - component: {fileID: 2833865188520311011}
   - component: {fileID: 6171649367946421241}
   - component: {fileID: 4251786251503627786}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: TOP_Cheese
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -243,7 +243,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1853888538114645083}
-  m_Layer: 0
+  - component: {fileID: 3029914876861009235}
+  - component: {fileID: 7262623417566386698}
+  - component: {fileID: 3830613250650738151}
+  - component: {fileID: 6233247622149702418}
+  - component: {fileID: 5898941834143981553}
+  m_Layer: 10
   m_Name: recipe_handburger_v02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -269,6 +274,100 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &3029914876861009235
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3450052075905035848}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &7262623417566386698
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3450052075905035848}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3155132, y: 0.209921, z: 0.32621187}
+  m_Center: {x: 0.006222546, y: -0.017106593, z: -0.0074205697}
+--- !u!114 &3830613250650738151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3450052075905035848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3abaf4521bf2344ea21ed3020b98eb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  disableWhenIdle: 1
+  allowedNearTouchControllers: 0
+  allowedTouchControllers: 0
+  ignoredColliders: []
+  isGrabbable: 1
+  holdButtonToGrab: 1
+  stayGrabbedOnTeleport: 1
+  validDrop: 1
+  grabOverrideButton: 0
+  allowedGrabControllers: 0
+  grabAttachMechanicScript: {fileID: 5898941834143981553}
+  secondaryGrabActionScript: {fileID: 6233247622149702418}
+  isUsable: 0
+  holdButtonToUse: 1
+  useOnlyIfGrabbed: 0
+  pointerActivatesUseAction: 0
+  useOverrideButton: 0
+  allowedUseControllers: 0
+  objectHighlighter: {fileID: 0}
+  touchHighlightColor: {r: 0, g: 0, b: 0, a: 0}
+  usingState: 0
+--- !u!114 &6233247622149702418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3450052075905035848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18055ba762aa3994f9c10208cd088bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5898941834143981553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3450052075905035848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8afa0b205791c9f4496bf2814aeac078, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  precisionGrab: 1
+  rightSnapHandle: {fileID: 0}
+  leftSnapHandle: {fileID: 0}
+  throwVelocityWithAttachDistance: 0
+  throwMultiplier: 1
+  onGrabCollisionDelay: 0
+  destroyImmediatelyOnThrow: 1
+  breakForce: 1500
 --- !u!1 &4884300934513792611
 GameObject:
   m_ObjectHideFlags: 0
@@ -280,7 +379,7 @@ GameObject:
   - component: {fileID: 1582720854693451683}
   - component: {fileID: 8257673657417246337}
   - component: {fileID: 8833071018548237205}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: TOP_Lettuce
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -358,7 +457,7 @@ GameObject:
   - component: {fileID: 3433984404628008017}
   - component: {fileID: 6909905833117237239}
   - component: {fileID: 4397340748085256786}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: bun_top
   m_TagString: Untagged
   m_Icon: {fileID: 0}

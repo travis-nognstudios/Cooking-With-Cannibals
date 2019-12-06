@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2213508864862417999}
   - component: {fileID: 2673708198456539838}
   - component: {fileID: 7224988005742705746}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: eyeball.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 3573864520202386170}
   - component: {fileID: 6175743883431115820}
   - component: {fileID: 2136785150327917893}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Bone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -165,7 +165,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2087021966364023752}
-  m_Layer: 0
+  - component: {fileID: 6521896190794416389}
+  - component: {fileID: 1565047203050184014}
+  - component: {fileID: 2647204305327893373}
+  - component: {fileID: 8307587653870560992}
+  - component: {fileID: 2208880190327024100}
+  - component: {fileID: -4521277964489894130}
+  m_Layer: 10
   m_Name: Recipe_dubiousFood_v04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -191,6 +197,113 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &6521896190794416389
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3075341390100982235}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &1565047203050184014
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3075341390100982235}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.10083532, z: 0.27017367}
+  m_Center: {x: 0, y: 0.0403471, z: 0.007251978}
+--- !u!114 &2647204305327893373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3075341390100982235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3abaf4521bf2344ea21ed3020b98eb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  disableWhenIdle: 1
+  allowedNearTouchControllers: 0
+  allowedTouchControllers: 0
+  ignoredColliders: []
+  isGrabbable: 1
+  holdButtonToGrab: 1
+  stayGrabbedOnTeleport: 1
+  validDrop: 1
+  grabOverrideButton: 0
+  allowedGrabControllers: 0
+  grabAttachMechanicScript: {fileID: 0}
+  secondaryGrabActionScript: {fileID: 0}
+  isUsable: 0
+  holdButtonToUse: 1
+  useOnlyIfGrabbed: 0
+  pointerActivatesUseAction: 0
+  useOverrideButton: 0
+  allowedUseControllers: 0
+  objectHighlighter: {fileID: 0}
+  touchHighlightColor: {r: 0, g: 0, b: 0, a: 0}
+  usingState: 0
+--- !u!114 &8307587653870560992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3075341390100982235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8afa0b205791c9f4496bf2814aeac078, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  precisionGrab: 1
+  rightSnapHandle: {fileID: 0}
+  leftSnapHandle: {fileID: 0}
+  throwVelocityWithAttachDistance: 0
+  throwMultiplier: 1
+  onGrabCollisionDelay: 0
+  destroyImmediatelyOnThrow: 1
+  breakForce: 1500
+--- !u!114 &2208880190327024100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3075341390100982235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18055ba762aa3994f9c10208cd088bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-4521277964489894130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3075341390100982235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca3436cb9288bf44bbebb1b4a29f60f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time: 5
 --- !u!1 &6343620680935959434
 GameObject:
   m_ObjectHideFlags: 0
@@ -202,7 +315,7 @@ GameObject:
   - component: {fileID: 2858784743577726843}
   - component: {fileID: 8194071006848789897}
   - component: {fileID: 2952621998602014670}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Plate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -280,7 +393,7 @@ GameObject:
   - component: {fileID: 4794679735371233289}
   - component: {fileID: 594821443080749745}
   - component: {fileID: 6021107710206406378}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Dubious
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -358,7 +471,7 @@ GameObject:
   - component: {fileID: 4412267765798556947}
   - component: {fileID: 1971423994674910291}
   - component: {fileID: 7988508128545141602}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Arm_Finger.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5760591420381714930}
   - component: {fileID: 1156789495389210770}
   - component: {fileID: 7158512591300553769}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SuspiciousMeat01.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87,7 +87,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1603214374959458534}
-  m_Layer: 0
+  - component: {fileID: 3617090087507039577}
+  - component: {fileID: 6313572519334405133}
+  - component: {fileID: 3086462978059490208}
+  - component: {fileID: 174545502610647289}
+  - component: {fileID: 5462626333913509751}
+  m_Layer: 10
   m_Name: recipe_siskabob_v05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117,6 +122,100 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3617090087507039577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2334161078186203893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3abaf4521bf2344ea21ed3020b98eb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  disableWhenIdle: 1
+  allowedNearTouchControllers: 0
+  allowedTouchControllers: 0
+  ignoredColliders: []
+  isGrabbable: 1
+  holdButtonToGrab: 1
+  stayGrabbedOnTeleport: 1
+  validDrop: 1
+  grabOverrideButton: 0
+  allowedGrabControllers: 0
+  grabAttachMechanicScript: {fileID: 3086462978059490208}
+  secondaryGrabActionScript: {fileID: 6313572519334405133}
+  isUsable: 0
+  holdButtonToUse: 1
+  useOnlyIfGrabbed: 0
+  pointerActivatesUseAction: 0
+  useOverrideButton: 0
+  allowedUseControllers: 0
+  objectHighlighter: {fileID: 0}
+  touchHighlightColor: {r: 0, g: 0, b: 0, a: 0}
+  usingState: 0
+--- !u!114 &6313572519334405133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2334161078186203893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18055ba762aa3994f9c10208cd088bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3086462978059490208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2334161078186203893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8afa0b205791c9f4496bf2814aeac078, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  precisionGrab: 1
+  rightSnapHandle: {fileID: 0}
+  leftSnapHandle: {fileID: 0}
+  throwVelocityWithAttachDistance: 0
+  throwMultiplier: 1
+  onGrabCollisionDelay: 0
+  destroyImmediatelyOnThrow: 1
+  breakForce: 1500
+--- !u!54 &174545502610647289
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2334161078186203893}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &5462626333913509751
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2334161078186203893}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.15981749, y: 0.31304651, z: 0.10227102}
+  m_Center: {x: 0.0028773397, y: 0.0071856678, z: 0.005754739}
 --- !u!1 &2391919800199287479
 GameObject:
   m_ObjectHideFlags: 0
@@ -128,7 +227,7 @@ GameObject:
   - component: {fileID: 1046530939228378587}
   - component: {fileID: 4183709331138381003}
   - component: {fileID: 5376045489984095037}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Arm_Finger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -206,7 +305,7 @@ GameObject:
   - component: {fileID: 989292935664268539}
   - component: {fileID: 6932733660831784996}
   - component: {fileID: 5041449858224221011}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Kabob
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -284,7 +383,7 @@ GameObject:
   - component: {fileID: 8218924597109969561}
   - component: {fileID: 3986196991166619583}
   - component: {fileID: 5464693753859432316}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Bow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -362,7 +461,7 @@ GameObject:
   - component: {fileID: 4623471560343932623}
   - component: {fileID: 6800086910186145461}
   - component: {fileID: 6187337466746756463}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BowKnot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -440,7 +539,7 @@ GameObject:
   - component: {fileID: 5011776603386265801}
   - component: {fileID: 642879378673552341}
   - component: {fileID: 102642306038597506}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Red Pepper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -518,7 +617,7 @@ GameObject:
   - component: {fileID: 1581852663194629071}
   - component: {fileID: 6773296502118907192}
   - component: {fileID: 6492747880728774258}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BowString01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -596,7 +695,7 @@ GameObject:
   - component: {fileID: 7228384371550538777}
   - component: {fileID: 5286439000050976042}
   - component: {fileID: 1817687365511194965}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: eyeball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -674,7 +773,7 @@ GameObject:
   - component: {fileID: 3721732960441422462}
   - component: {fileID: 2984491160732927343}
   - component: {fileID: 7733452418923032472}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Onion
   m_TagString: Untagged
   m_Icon: {fileID: 0}

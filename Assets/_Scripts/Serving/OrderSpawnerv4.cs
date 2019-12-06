@@ -152,20 +152,39 @@ namespace Serving
             }
 
             // Find oldest matching tickets's index
+            /*
             int ticketIndex = 0;
             for (int i = 0; i < ticketIndicesMatchingRecipe.Count; ++i)
             {
                 if (ticketIndicesMatchingRecipe[i] > ticketIndicesMatchingRecipe[ticketIndex])
+                //if(ticketAges[i] > ticketAges[ticketIndex])
                 {
                     ticketIndex = i;
                 }
             }
+            */
+
+            int oldestTicketIndex = ticketIndicesMatchingRecipe[0];
+            int currentTicketIndex;
+
+            for (int i=0; i<ticketIndicesMatchingRecipe.Count; ++i)
+            {
+                currentTicketIndex = ticketIndicesMatchingRecipe[i];
+
+                float oldestAge = ticketAges[oldestTicketIndex];
+                float currentAge = ticketAges[currentTicketIndex];
+
+                if (currentAge > oldestAge)
+                {
+                    oldestTicketIndex = currentTicketIndex;
+                }
+            }
 
             // Despawn ticket
-            spawnPointContainsTicket[ticketIndex] = false;
-            ticketAges[ticketIndex] = 0f;
-            spawnedTicketRecipes[ticketIndex] = new Recipe();
-            Destroy(ticketReferences[ticketIndex]);
+            spawnPointContainsTicket[oldestTicketIndex] = false;
+            ticketAges[oldestTicketIndex] = 0f;
+            spawnedTicketRecipes[oldestTicketIndex] = new Recipe();
+            Destroy(ticketReferences[oldestTicketIndex]);
         }
     }
 }

@@ -14,6 +14,20 @@ AudioMixerEffectController:
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
   m_Bypass: 0
+--- !u!244 &-4320649595115433778
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 1dd89d1cb9c574246a31e8161ddd5105
+  m_EffectName: Attenuation
+  m_MixLevel: 86a05e345c7fbc446b7a41a97340e468
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
 --- !u!243 &-3626078851918088244
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -29,6 +43,25 @@ AudioMixerGroupController:
   m_Send: 00000000000000000000000000000000
   m_Effects:
   - {fileID: 7010840677303807296}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
+--- !u!243 &-1808278313863143050
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: VOX
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: 3197371f821a8ed42ba3b7a64400df74
+  m_Children: []
+  m_Volume: a060732b1eb1a2a4396033275b0d6a99
+  m_Pitch: c0f838f8d8298564eb5652650922e8db
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: -4320649595115433778}
   m_UserColorIndex: 0
   m_Mute: 0
   m_Solo: 0
@@ -54,6 +87,7 @@ AudioMixerController:
     - 9cd35d6cd0603424faa5aa7073bd7e6d
     - 7444824159cbed84c9a6174057d7f58f
     - 74c5c9e90d53e384cb48205caf79f7e5
+    - 3197371f821a8ed42ba3b7a64400df74
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
@@ -69,6 +103,7 @@ AudioMixerGroupController:
   m_Children:
   - {fileID: 3331995723753839347}
   - {fileID: -3626078851918088244}
+  - {fileID: -1808278313863143050}
   m_Volume: 836ecc008136e4d40be879ccc46d7382
   m_Pitch: c9388fba039632541b6ec9b675407401
   m_Send: 00000000000000000000000000000000
