@@ -120,6 +120,7 @@ GameObject:
   - component: {fileID: 7516238354780614238}
   - component: {fileID: 9014204880822580820}
   - component: {fileID: 3154368414592833120}
+  - component: {fileID: 8191612089159240349}
   m_Layer: 0
   m_Name: ING_tomatoWhole_v04
   m_TagString: Untagged
@@ -464,6 +465,26 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &8191612089159240349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4658496001639258226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abc4b5dd2be1cea4aaea2850b910d3f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nearTouchHighlight: {r: 0, g: 0, b: 0, a: 0}
+  touchHighlight: {r: 0, g: 1, b: 1, a: 1}
+  grabHighlight: {r: 0, g: 0, b: 0, a: 0}
+  useHighlight: {r: 0, g: 0, b: 0, a: 0}
+  objectToMonitor: {fileID: 0}
+  objectToHighlight: {fileID: 0}
+  objectHighlighter: {fileID: 0}
+  objectToAffect: {fileID: 0}
 --- !u!1001 &585976992598059753
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -589,6 +610,37 @@ PrefabInstance:
     - target: {fileID: 585976991809471338, guid: 787970f732f8061469b0ce960b76f067,
         type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 585976991171093467, guid: 787970f732f8061469b0ce960b76f067,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 585976992546084166, guid: 787970f732f8061469b0ce960b76f067,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.3773585
+      objectReference: {fileID: 0}
+    - target: {fileID: 585976992546084166, guid: 787970f732f8061469b0ce960b76f067,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.3773585
+      objectReference: {fileID: 0}
+    - target: {fileID: 585976992546084166, guid: 787970f732f8061469b0ce960b76f067,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.3773585
+      objectReference: {fileID: 0}
+    - target: {fileID: 585976992546084166, guid: 787970f732f8061469b0ce960b76f067,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b17d305f3d581214ea40e6ede5209ad9,
+        type: 3}
+    - target: {fileID: 585976992546084166, guid: 787970f732f8061469b0ce960b76f067,
+        type: 3}
+      propertyPath: m_Type
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

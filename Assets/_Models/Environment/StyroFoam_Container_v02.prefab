@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 309633449449219528}
-  - component: {fileID: 189609176}
+  - component: {fileID: 1082251580}
   m_Layer: 10
   m_Name: StyroFoam_Container_v02
   m_TagString: Untagged
@@ -33,7 +33,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -59.641003, z: 0}
---- !u!114 &189609176
+--- !u!114 &1082251580
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -42,7 +42,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3609441740759046107}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72ae90a88ba40e04f9fa180ed0ee7a61, type: 3}
+  m_Script: {fileID: 11500000, guid: 66344e5da397b4d23bb9ac5dcb4e551d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   ObjPos: {x: 0, y: 0, z: 0}
@@ -61,9 +61,10 @@ GameObject:
   - component: {fileID: 1093113300}
   - component: {fileID: 1093113301}
   - component: {fileID: 1093113302}
-  - component: {fileID: 1093113296}
   - component: {fileID: 1093113298}
   - component: {fileID: 1093113299}
+  - component: {fileID: 581405988}
+  - component: {fileID: 581405995}
   m_Layer: 10
   m_Name: Styrofoam_Top
   m_TagString: Untagged
@@ -141,7 +142,7 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
-  m_AngularDrag: 10
+  m_AngularDrag: 100
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -158,8 +159,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.673694, y: 0.051753473, z: 0.53907675}
-  m_Center: {x: -0.0006732644, y: -0.08842977, z: 0.26846403}
+  m_Size: {x: 0.673694, y: 0.03540877, z: 0.056760293}
+  m_Center: {x: -0.00067325967, y: -0.09660202, z: 0.5096232}
 --- !u!65 &1093113301
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -171,8 +172,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.673694, y: 0.12657893, z: 0.5390767}
-  m_Center: {x: -0.0006732793, y: -0.06313837, z: 0.26846403}
+  m_Size: {x: 0.673694, y: 0.07309807, z: 0.029062487}
+  m_Center: {x: -0.0006732882, y: -0.08987921, z: 0.52347225}
 --- !u!59 &1093113302
 HingeJoint:
   m_ObjectHideFlags: 0
@@ -184,7 +185,7 @@ HingeJoint:
   m_Anchor: {x: 1, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.99999994, y: 0.13000004, z: 0.27250525}
+  m_ConnectedAnchor: {x: 0.99999994, y: 0.12999998, z: 0.27250525}
   m_UseSpring: 0
   m_Spring:
     spring: 0
@@ -195,10 +196,10 @@ HingeJoint:
     targetVelocity: 0
     force: 0
     freeSpin: 0
-  m_UseLimits: 0
+  m_UseLimits: 1
   m_Limits:
-    min: 0
-    max: 0
+    min: -90
+    max: 100
     bounciness: 0
     bounceMinVelocity: 0.2
     contactDistance: 0
@@ -208,24 +209,6 @@ HingeJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!114 &1093113296
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4544655198247583517}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac34eae8fff136941b1afe5b45a82ecc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  orderTickets:
-  - {fileID: 3707048209541631882, guid: 3e72d472dcc293944b07ff0876483c09, type: 3}
-  - {fileID: 3707048209541631882, guid: 39e3d0ea6ba4acf4bbb820ad541d18a5, type: 3}
-  recipeManager: {fileID: 0}
-  i: 0
-  container: {fileID: 0}
 --- !u!114 &1093113298
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -281,6 +264,32 @@ MonoBehaviour:
   velocityLimit: Infinity
   angularVelocityLimit: Infinity
   maxDistanceDelta: 10
+--- !u!65 &581405988
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4544655198247583517}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 0.053954024, y: 0.055446863, z: 0.5854174}
+  m_Center: {x: 0.3205962, y: -0.0755775, z: 0.24529512}
+--- !u!65 &581405995
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4544655198247583517}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 0.05417579, y: 0.055446852, z: 0.5854174}
+  m_Center: {x: -0.30857444, y: -0.07557778, z: 0.24529512}
 --- !u!1 &5627479314101062287
 GameObject:
   m_ObjectHideFlags: 0
@@ -293,6 +302,7 @@ GameObject:
   - component: {fileID: 6967398349980080969}
   - component: {fileID: 3206772090605896889}
   - component: {fileID: 86778297254769114}
+  - component: {fileID: 13088217}
   m_Layer: 0
   m_Name: Styrofoam_BottomLip
   m_TagString: Untagged
@@ -368,11 +378,24 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5627479314101062287}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: -0.000000029802322, z: 0}
+--- !u!114 &13088217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5627479314101062287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b02fb0840b5f74040899091770cc277b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isClosed: 0
 --- !u!1 &6305245613539072668
 GameObject:
   m_ObjectHideFlags: 0
@@ -385,7 +408,6 @@ GameObject:
   - component: {fileID: 3434575672702400699}
   - component: {fileID: 7170871118690814306}
   - component: {fileID: 6305245613539072671}
-  - component: {fileID: 6305245613539072670}
   - component: {fileID: 2267427030794472382}
   - component: {fileID: 658769510}
   - component: {fileID: 658769511}
@@ -394,6 +416,10 @@ GameObject:
   - component: {fileID: 2909115951674864906}
   - component: {fileID: 4878377358496748933}
   - component: {fileID: 1601567209782305268}
+  - component: {fileID: 1377602066}
+  - component: {fileID: 1377602064}
+  - component: {fileID: 1377602065}
+  - component: {fileID: 1377602067}
   m_Layer: 10
   m_Name: Styrofoam_Bottom
   m_TagString: Untagged
@@ -473,23 +499,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.67504466, y: 0.5989996, z: 0.5450115}
-  m_Center: {x: 0.00000042017953, y: 0.30782035, z: -0.00000015006411}
---- !u!114 &6305245613539072670
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6305245613539072668}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3270a6a97411c04ca12fd943b721980, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  recipeManager: {fileID: 0}
-  meal: {fileID: 5751473966101214552, guid: d13cc6226be686a47913693e403b9b6b, type: 3}
-  mealBox: {fileID: 0}
+  m_Size: {x: 0.6495647, y: 0.7086078, z: 0.5124181}
+  m_Center: {x: 0.0022289925, y: 0.3327655, z: 0.002038891}
 --- !u!65 &2267427030794472382
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -501,8 +512,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.5260517, y: 0.014180216, z: 0.4732621}
-  m_Center: {x: 0.006675453, y: 0.0070898677, z: -0.005712401}
+  m_Size: {x: 0.5115309, y: 0.006695499, z: 0.4732621}
+  m_Center: {x: 0.013935659, y: 0.0033475095, z: -0.0057124}
 --- !u!54 &658769510
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -534,7 +545,8 @@ MonoBehaviour:
   disableWhenIdle: 1
   allowedNearTouchControllers: 0
   allowedTouchControllers: 0
-  ignoredColliders: []
+  ignoredColliders:
+  - {fileID: 6305245613539072671}
   isGrabbable: 1
   holdButtonToGrab: 1
   stayGrabbedOnTeleport: 1
@@ -624,5 +636,167 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.6392666, y: 0.12904269, z: 0.05504625}
-  m_Center: {x: -0.0047608796, y: 0.064521104, z: -0.20532165}
+  m_Size: {x: 0.6392666, y: 0.12904269, z: 0.09499146}
+  m_Center: {x: -0.004764662, y: 0.064521104, z: -0.22529379}
+--- !u!82 &1377602066
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6305245613539072668}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: -3626078851918088244, guid: 59a6f156d9a934541b005d249c83b841,
+    type: 2}
+  m_audioClip: {fileID: 8300000, guid: b60ba7413e70c3e40ba663482b2479e4, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.67
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 20
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &1377602064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6305245613539072668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 850f6fcbe5c7a48459b95e618d503bd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  disableWhenIdle: 1
+  allowedNearTouchControllers: 0
+  allowedTouchControllers: 0
+  ignoredColliders: []
+  isGrabbable: 0
+  holdButtonToGrab: 1
+  stayGrabbedOnTeleport: 1
+  validDrop: 1
+  grabOverrideButton: 0
+  allowedGrabControllers: 0
+  grabAttachMechanicScript: {fileID: 0}
+  secondaryGrabActionScript: {fileID: 0}
+  isUsable: 0
+  holdButtonToUse: 1
+  useOnlyIfGrabbed: 0
+  pointerActivatesUseAction: 0
+  useOverrideButton: 0
+  allowedUseControllers: 0
+  objectHighlighter: {fileID: 0}
+  touchHighlightColor: {r: 0, g: 0, b: 0, a: 0}
+  usingState: 0
+  dropSpeed: 1
+--- !u!114 &1377602065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6305245613539072668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 135d1269a4cca2747b04e6de0a48c783, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundSource: {fileID: 0}
+  dropSound: {fileID: 8300000, guid: b60ba7413e70c3e40ba663482b2479e4, type: 3}
+  interactSound: {fileID: 8300000, guid: b60ba7413e70c3e40ba663482b2479e4, type: 3}
+  cookSound: {fileID: 0}
+  dropSpeed: 1
+--- !u!114 &1377602067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6305245613539072668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f77dea1195d04e1aba3af797ad903e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  recipeManager: {fileID: 0}
+  spawnedMealDestroyTime: 8
