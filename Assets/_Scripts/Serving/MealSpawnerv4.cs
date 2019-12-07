@@ -5,9 +5,10 @@ using Recipes;
 
 namespace Serving
 {
-    public class MealSpawnerv3 : MonoBehaviour
+    public class MealSpawnerv4 : MonoBehaviour
     {
         public GameObject recipeManager;
+        public Collider foodArea;
 
         private OrderSpawnerv4 orderSpawner;
 
@@ -35,6 +36,7 @@ namespace Serving
             // Meal spawning
             if (BoxIsClosed() && !spawnerOnCooldown)
             {
+                GetInBoxItems();
                 StartSpawnerCooldown();
 
                 List<string> inBoxNames = GetInBoxNames();
@@ -86,6 +88,7 @@ namespace Serving
             }
         }
 
+        /*
         private void OnTriggerEnter(Collider other)
         {
             GameObject item = other.gameObject;
@@ -107,6 +110,7 @@ namespace Serving
                 inBox.Remove(item);
             }
         }
+        */
 
         private bool RecipeIsReady(Recipe recipe)
         {
@@ -149,15 +153,33 @@ namespace Serving
             return boxCloseScript.isClosed;
         }
 
+        private void GetInBoxItems()
+        {
+            inBox.Clear();
+
+            Vector3 center = foodArea.bounds.center;
+            Vector3 size = foodArea.bounds.size;
+            Vector3 halfSize = new Vector3(size[0] / 2, size[1] / 2, size[2] / 2);
+            Quaternion orientation = foodArea.gameObject.transform.rotation;
+            LayerMask foodLayer = LayerMask.GetMask("Default");
+
+            Collider[] collidersInBox = Physics.OverlapBox(center, halfSize, orientation, foodLayer);
+            foreach (Collider c in collidersInBox)
+            {
+                GameObject gameObject = c.gameObject;
+                if (!inBox.Contains(gameObject))
+                {
+                    inBox.Add(gameObject);
+                }
+            }
+        }
+
         private List<string> GetInBoxNames()
         {
             List<string> inBoxNames = new List<string>();
             foreach (GameObject item in inBox)
             {
-                if (item != null)
-                {
-                    inBoxNames.Add(item.name);
-                }
+                inBoxNames.Add(item.name);
             }
 
             return inBoxNames;
@@ -181,7 +203,7 @@ namespace Serving
             Collider myCollider = GetComponent<Collider>();
             Vector3 mealSpawnOffset = new Vector3(0, 0.3f, 0);
 
-            spawnedMeal = Instantiate(recipe.recipeObject, myCollider.transform.position + mealSpawnOffset, myCollider.transform.rotation);
+            spawnedMeal = Instantiate(recipe.recipeObject, myCollider.transform.position + mealSpawnOffset, recipe.recipeObject.transform.rotation);
             Destroy(spawnedMeal, spawnedMealDestroyTime);
         }
 

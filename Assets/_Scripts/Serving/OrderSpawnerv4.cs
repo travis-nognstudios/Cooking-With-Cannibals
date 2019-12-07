@@ -46,7 +46,6 @@ namespace Serving
                 spawnedTicketRecipes.Add(new Recipe());
                 ticketReferences.Add(new GameObject());
             }
-
         }
 
         void Update()
@@ -62,20 +61,24 @@ namespace Serving
                 }
             }
 
-            // Update spawn timer
-            timeSinceLastSpawn += Time.deltaTime;
-            if (timeSinceLastSpawn >= ticketSpawnInterval)
+            // After first spawn
+            else
             {
-                timeSinceLastSpawn = 0;
-                SpawnTicket();
-            }
-
-            // Update ticket ages
-            for (int i=0; i<ticketSpawnPoints.Length; ++i)
-            {
-                if (spawnPointContainsTicket[i] == true)
+                // Update spawn timer
+                timeSinceLastSpawn += Time.deltaTime;
+                if (timeSinceLastSpawn >= ticketSpawnInterval)
                 {
-                    ticketAges[i] += Time.deltaTime;
+                    timeSinceLastSpawn = 0;
+                    SpawnTicket();
+                }
+
+                // Update ticket ages
+                for (int i = 0; i < ticketSpawnPoints.Length; ++i)
+                {
+                    if (spawnPointContainsTicket[i] == true)
+                    {
+                        ticketAges[i] += Time.deltaTime;
+                    }
                 }
             }
         }
