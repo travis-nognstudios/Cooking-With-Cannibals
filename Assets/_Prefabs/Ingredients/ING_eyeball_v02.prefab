@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 9183064515921608070}
   - component: {fileID: 6150384442892524372}
   - component: {fileID: 4340628710346173070}
-  - component: {fileID: 8552267888674458925}
   - component: {fileID: 1385574802246416885}
   m_Layer: 0
   m_Name: ING_eyeball_v02
@@ -130,7 +129,7 @@ SphereCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8402248041553566408}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: aad520891218d6441bd72382e354429b, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -145,7 +144,7 @@ SphereCollider:
   m_GameObject: {fileID: 8402248041553566408}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.010000002
   m_Center: {x: -0.0000000013969839, y: -0.0000000023283064, z: -0.00008786004}
@@ -364,26 +363,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &8552267888674458925
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8402248041553566408}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abc4b5dd2be1cea4aaea2850b910d3f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nearTouchHighlight: {r: 0, g: 0, b: 0, a: 0}
-  touchHighlight: {r: 0, g: 1, b: 1, a: 1}
-  grabHighlight: {r: 0, g: 0, b: 0, a: 0}
-  useHighlight: {r: 0, g: 0, b: 0, a: 0}
-  objectToMonitor: {fileID: 0}
-  objectToHighlight: {fileID: 0}
-  objectHighlighter: {fileID: 0}
-  objectToAffect: {fileID: 0}
 --- !u!65 &1385574802246416885
 BoxCollider:
   m_ObjectHideFlags: 0
