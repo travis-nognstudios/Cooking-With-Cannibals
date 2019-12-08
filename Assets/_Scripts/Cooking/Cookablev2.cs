@@ -20,9 +20,9 @@ namespace Cooking
         cookTimes tracks the times on each CORRESPONDING allMechanics element
         */
 
-        private List<CookMechanic> steps;
-        private List<CookMechanic> allMechanics;
-        private List<float> cookTimes;
+        private List<CookMechanic> steps = new List<CookMechanic>();
+        private List<CookMechanic> allMechanics = new List<CookMechanic>();
+        private List<float> cookTimes = new List<float>();
 
         [Header("Cook Times")]
         public CookTime[] stateChangeTimes;
@@ -35,25 +35,12 @@ namespace Cooking
 
         #endregion Variables
 
-
-        // Use this for initialization
         void Start()
         {
-            // ==============================
-            // ==============================
-            // Testing Only
-            // Remove later
+            // Initialize with uncooked material
             rend = GetComponent<Renderer>();
             rend.enabled = true;
             rend.sharedMaterial = uncookedMat;
-            // ==============================
-            // ==============================
-
-
-            // Instantiate objects
-            steps = new List<CookMechanic>();
-            allMechanics = new List<CookMechanic>();
-            cookTimes = new List<float>();
 
             // Populate cookmechanics and their respective cooktimes
             foreach(CookType cooktype in Enum.GetValues(typeof(CookType)))
@@ -70,7 +57,6 @@ namespace Cooking
 
         }
 
-        // Update is called once per frame
         void Update() {}
 
         // Get the index on allMechanics given the cookType
@@ -126,7 +112,6 @@ namespace Cooking
         {
             if (other.gameObject.CompareTag("Cooktop"))
             {
-
                 // Get cooktop's type
                 CookTop cookTop = other.gameObject.GetComponent<CookTop>();
                 CookType cookTopType = cookTop.cookType;
@@ -163,7 +148,7 @@ namespace Cooking
             }
         }
 
-        public void OnTriggerExit(Collider other)
+        public void OnTriggerExit()
         {
             StopCookingSound();
         }

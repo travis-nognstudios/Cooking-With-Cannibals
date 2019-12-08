@@ -2,7 +2,7 @@
 using UnityEngine;
 using Cooking;
 
-namespace Recipes
+namespace Serving
 {
     [System.Serializable]
     public struct Recipe

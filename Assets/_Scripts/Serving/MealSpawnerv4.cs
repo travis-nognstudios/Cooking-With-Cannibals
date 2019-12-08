@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Recipes;
 
 namespace Serving
 {
@@ -38,13 +37,6 @@ namespace Serving
             {
                 GetInBoxItems();
                 StartSpawnerCooldown();
-
-                List<string> inBoxNames = GetInBoxNames();
-                Debug.Log("Number of items in box: " + inBoxNames.Count);
-                foreach(string itemname in inBoxNames)
-                {
-                    Debug.Log("In Box: " + itemname);
-                }
 
                 // Check all recipes to see if any match
                 Recipe matchingRecipe = new Recipe();

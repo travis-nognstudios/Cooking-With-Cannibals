@@ -9,12 +9,23 @@ namespace Supplies
         public float spawnInterval = 10f;
         public SupplyArea[] ingredients;
 
+        private List<SupplyPoint> supplyPoints = new List<SupplyPoint>();
         private float timeSinceLastSpawn = 0f;
 
         // Use this for initialization
         void Start()
         {
-            CheckSpawnPoints();
+            // Get starting positions for all ingredients
+            foreach (SupplyArea area in ingredients)
+            {
+                foreach (GameObject spawnPoint in area.spawnPoints)
+                {
+                    Vector3 position = spawnPoint.transform.position;
+
+                    SupplyPoint point = new SupplyPoint(area.objectToSpawn, position);
+                    supplyPoints.Add(point);
+                }
+            }
         }
 
         // Update is called once per frame
@@ -33,6 +44,33 @@ namespace Supplies
 
         void CheckSpawnPoints()
         {
+            foreach (SupplyPoint point in supplyPoints)
+            {
+                GameObject objectToSpawn = point.objectToSpawn;
+                Vector3 position = point.point;
+                Quaternion rotation = objectToSpawn.transform.rotation;
+                float radius = 0.1f;
+
+                // Get names of all objects near the point
+                List<string> objectsAtPoint = new List<string>();
+                Collider[] colliders = Physics.OverlapSphere(point.point, radius);
+                foreach(Collider c in colliders)
+                {
+                    string item = c.gameObject.name;
+                    if (!objectsAtPoint.Contains(item))
+                    {
+                        objectsAtPoint.Add(item);
+                    }
+                }
+
+                // If desired object doesn't exist near point, spawn new one
+                if (!ListContainsName(objectsAtPoint, objectToSpawn.gameObject.name))
+                {
+                    Instantiate(objectToSpawn, position, rotation);
+                }
+            }
+
+            /*
             foreach (SupplyArea ingredientArea in ingredients)
             {
                 GameObject item = ingredientArea.objectToSpawn;
@@ -40,14 +78,11 @@ namespace Supplies
 
                 foreach (GameObject spawnpoint in ingredientArea.spawnPoints)
                 {
-                    // Get names of all objects near spawn point
-                    // If it doesn't contain the designated object, instantiate it
-                    
                     Vector3 spawnposition = spawnpoint.transform.position;
                     float radius = 0.1f;
 
+                    // Get names of all objects near spawn point
                     List<string> objectsAtPoint = new List<string>();
-
                     Collider[] colliders = Physics.OverlapSphere(spawnposition, radius);
                     foreach(Collider c in colliders)
                     {
@@ -58,19 +93,23 @@ namespace Supplies
                         }
                     }
 
+                    // If it doesn't contain the designated object, instantiate it
                     if (!ListContainsName(objectsAtPoint, ingredientName))
                     {
                         Instantiate(item, spawnposition, item.transform.rotation);
                     }
                 }
             }
+            */
         }
 
-        bool ListContainsName(List<string> l, string n)
+        bool ListContainsName(List<string> list, string name)
         {
-            foreach (string listname in l)
+            foreach (string listitem in list)
             {
-                if (listname.Contains(n))
+                // Check if one string is a substring of another
+                // Allows them to have numbers at the end and still match
+                if (listitem.Contains(name) || name.Contains(listitem))
                 {
                     return true;
                 }

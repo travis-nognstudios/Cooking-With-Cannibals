@@ -8,9 +8,12 @@ namespace Supplies
     public struct SupplyPoint
     {
         public GameObject objectToSpawn;
-        public GameObject spawnArea;
-        public int maxSpawnNumber;
-        [HideInInspector]
-        public int numberSpawned;
+        public Vector3 point;
+
+        public SupplyPoint(GameObject objectToSpawn, Vector3 point)
+        {
+            this.objectToSpawn = objectToSpawn;
+            this.point = point;
+        }
     }
 }
