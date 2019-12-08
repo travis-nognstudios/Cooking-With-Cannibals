@@ -26,7 +26,12 @@ public class Cutting : MonoBehaviour
         numberChops = 0;
         chopped = false;
         canChop = true;
-        //Debug.Log(numberChops);
+        
+        if (cam == null)
+        {
+            GameObject camObject = GameObject.Find("CenterEyeAnchor");
+            cam = (Camera)camObject.GetComponent<Camera>();
+        }
     }
 
     //private void OnTriggerEnter(Collider other)

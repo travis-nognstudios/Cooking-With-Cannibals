@@ -22,29 +22,17 @@ public class ObjectRespawn : MonoBehaviour
 
     void Start()
     {
-       
-       
-            //ObjPos = Original.transform.position;
-            //ObjRot = Original.transform.rotation;
-
-            ObjPos = this.transform.position;
-            ObjRot = this.transform.rotation;
-        //Debug.Log("At Start Position: " + ObjPos + "   Rotation: " + ObjRot);
+        ObjPos = this.transform.position;
+        ObjRot = this.transform.rotation;
        
     }
 
-    private void OnTriggerEnter(Collider col)
+    private void OnTriggerEnter(Collider collider)
     {
-    
-        if (col.gameObject.tag == "destroy")
+        if (collider.gameObject.tag == "destroy")
         {
             this.transform.position = ObjPos;
             this.transform.rotation = ObjRot;
-
-
-            //Original.transform.position = ObjPos;
-            //Original.transform.rotation = ObjRot;
-
         }
     }
 }
