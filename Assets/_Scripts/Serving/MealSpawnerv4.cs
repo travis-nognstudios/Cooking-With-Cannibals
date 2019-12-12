@@ -23,7 +23,7 @@ namespace Serving
         public float spawnerCooldownTime = 1f;
         private float spawnerCooldown = 0f;
         private bool spawnerOnCooldown;
-        
+
         void Start()
         {
             orderSpawner = recipeManager.GetComponent<OrderSpawnerv4>();
@@ -120,7 +120,7 @@ namespace Serving
                 //ToDo: Check cookstate
             }
 
-            foreach(GameObject topping in recipe.toppings)
+            foreach (GameObject topping in recipe.toppings)
             {
                 if (ListContainsName(inBoxNames, topping.name))
                 {
@@ -136,7 +136,7 @@ namespace Serving
             else
             {
                 return false;
-            }     
+            }
         }
 
         private bool BoxIsClosed()
