@@ -11,8 +11,10 @@ namespace Serving
 
         public GameObject[] ticketSpawnPoints;
         public float ticketSpawnInterval;
+        public int numberOfTickets = 10;
 
         private float timeSinceLastSpawn;
+        private int numTicketsSpawned;
         private RecipeManager recipeManager;
 
         // Separate logic for first spawn
@@ -53,23 +55,27 @@ namespace Serving
             // After first spawn
             else
             {
-                // Update spawn timer
-                timeSinceLastSpawn += Time.deltaTime;
-                if (timeSinceLastSpawn >= ticketSpawnInterval)
+                if (numTicketsSpawned < numberOfTickets)
                 {
-                    timeSinceLastSpawn = 0;
-                    SpawnTicket();
-                }
-
-                // Update ticket ages
-                foreach (TicketPoint point in ticketPoints)
-                {
-                    if (point.ContainsTicket())
+                    // Update spawn timer
+                    timeSinceLastSpawn += Time.deltaTime;
+                    if (timeSinceLastSpawn >= ticketSpawnInterval)
                     {
-                        point.AddTicketAge(Time.deltaTime);
+                        timeSinceLastSpawn = 0;
+                        SpawnTicket();
                     }
                 }
             }
+
+            // Update ticket ages
+            foreach (TicketPoint point in ticketPoints)
+            {
+                if (point.ContainsTicket())
+                {
+                    point.AddTicketAge(Time.deltaTime);
+                }
+            }
+            
         }
 
         private void SpawnTicket()
@@ -83,6 +89,7 @@ namespace Serving
             if (spawnIndex != -1)
             {
                 ticketPoints[spawnIndex].SetTicket(ticket, recipe);
+                numTicketsSpawned += 1;
             }
         }
 

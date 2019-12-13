@@ -6,33 +6,28 @@ public class ObjectRespawn : MonoBehaviour
 {
     #region Variables
 
-    [SerializeField]
-
-   
-    //private GameObject Original;
-
-    private Vector3 ObjPos;
-    private Quaternion ObjRot;
-    
-    Vector3 Offset = new Vector3(0, 0.1f, 0);
-    
-
+    private Vector3 startingPosition;
+    private Quaternion startingRotation;
+    private Rigidbody rb;
 
     #endregion
 
     void Start()
     {
-        ObjPos = this.transform.position;
-        ObjRot = this.transform.rotation;
-       
+        rb = gameObject.GetComponent<Rigidbody>();
+        startingPosition = this.transform.position;
+        startingRotation = this.transform.rotation;
     }
 
-    private void OnTriggerEnter(Collider collider)
+    void OnTriggerEnter(Collider c)
     {
-        if (collider.gameObject.tag == "destroy")
+        if (c.gameObject.tag == "destroy")
         {
-            this.transform.position = ObjPos;
-            this.transform.rotation = ObjRot;
+            this.transform.position = startingPosition;
+            this.transform.rotation = startingRotation;
+
+            rb.velocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
         }
     }
 }

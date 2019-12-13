@@ -9,6 +9,9 @@ namespace Supplies
         public float spawnInterval = 10f;
         public SupplyArea[] ingredients;
 
+        // Camera is used by the chopping UI
+        public Camera CenterEyeCamera;
+
         private List<SupplyPoint> supplyPoints = new List<SupplyPoint>();
         private float timeSinceLastSpawn = 0f;
 
@@ -64,43 +67,13 @@ namespace Supplies
                 }
 
                 // If desired object doesn't exist near point, spawn new one
+                // Set its camera on the Cutting script to the center eye camera
                 if (!ListContainsName(objectsAtPoint, objectToSpawn.gameObject.name))
                 {
-                    Instantiate(objectToSpawn, position, rotation);
+                    GameObject spawnedItem = Instantiate(objectToSpawn, position, rotation);
+                    spawnedItem.GetComponent<Cutting>().cam = CenterEyeCamera;
                 }
             }
-
-            /*
-            foreach (SupplyArea ingredientArea in ingredients)
-            {
-                GameObject item = ingredientArea.objectToSpawn;
-                string ingredientName = item.gameObject.name;
-
-                foreach (GameObject spawnpoint in ingredientArea.spawnPoints)
-                {
-                    Vector3 spawnposition = spawnpoint.transform.position;
-                    float radius = 0.1f;
-
-                    // Get names of all objects near spawn point
-                    List<string> objectsAtPoint = new List<string>();
-                    Collider[] colliders = Physics.OverlapSphere(spawnposition, radius);
-                    foreach(Collider c in colliders)
-                    {
-                        string objName = c.gameObject.name;
-                        if (!objectsAtPoint.Contains(objName))
-                        {
-                            objectsAtPoint.Add(objName);
-                        }
-                    }
-
-                    // If it doesn't contain the designated object, instantiate it
-                    if (!ListContainsName(objectsAtPoint, ingredientName))
-                    {
-                        Instantiate(item, spawnposition, item.transform.rotation);
-                    }
-                }
-            }
-            */
         }
 
         bool ListContainsName(List<string> list, string name)
