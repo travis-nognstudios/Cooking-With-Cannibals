@@ -6,28 +6,27 @@ namespace Serving
 {
     public class MealSpawnerv4 : MonoBehaviour
     {
-        public GameObject recipeManager;
+        public GameObject gameManager;
         public Collider foodArea;
 
-        private OrderSpawnerv4 orderSpawner;
+        private OrderSpawnerv5 orderSpawner;
 
         private List<Recipe> queuedRecipes;
         private GameObject dubiousFood;
         private List<GameObject> inBox = new List<GameObject>();
 
         private GameObject spawnedMeal;
-        private float destroyTimer = 0f;
 
         public float spawnedMealDestroyTime = 3f;
-
         public float spawnerCooldownTime = 1f;
-        private float spawnerCooldown = 0f;
+
+        private float spawnerCooldown;
         private bool spawnerOnCooldown;
 
         void Start()
         {
-            orderSpawner = recipeManager.GetComponent<OrderSpawnerv4>();
-            dubiousFood = recipeManager.GetComponent<RecipeManager>().dubiousFood;
+            orderSpawner = gameManager.GetComponent<OrderSpawnerv5>();
+            dubiousFood = gameManager.GetComponent<RecipeManager>().dubiousFood;
         }
 
         void Update()
@@ -80,30 +79,6 @@ namespace Serving
             }
         }
 
-        /*
-        private void OnTriggerEnter(Collider other)
-        {
-            GameObject item = other.gameObject;
-
-            // Only add interactables (default layer)
-            if (!inBox.Contains(item) && item.layer == 0)
-            {
-                Debug.Log("Added to box: " + item.name);
-                inBox.Add(item);
-            }
-        }
-
-        private void OnTriggerExit(Collider other)
-        {
-            GameObject item = other.gameObject;
-            if (inBox.Contains(item))
-            {
-                Debug.Log("Removed from box: " + item.name);
-                inBox.Remove(item);
-            }
-        }
-        */
-
         private bool RecipeIsReady(Recipe recipe)
         {
             List<string> inBoxNames = GetInBoxNames();
@@ -129,6 +104,7 @@ namespace Serving
                 }
             }
 
+            //ToDo: Allow multiple of the same ingredient
             if (containsMainIngredient && numToppingsContains == numToppingsShouldHave && inBoxNames.Count == numToppingsShouldHave + 1)
             {
                 return true;
@@ -158,10 +134,10 @@ namespace Serving
             Collider[] collidersInBox = Physics.OverlapBox(center, halfSize, orientation, foodLayer);
             foreach (Collider c in collidersInBox)
             {
-                GameObject gameObject = c.gameObject;
-                if (!inBox.Contains(gameObject))
+                GameObject ingredient = c.gameObject;
+                if (!inBox.Contains(ingredient))
                 {
-                    inBox.Add(gameObject);
+                    inBox.Add(ingredient);
                 }
             }
         }

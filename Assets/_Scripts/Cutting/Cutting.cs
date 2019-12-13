@@ -20,22 +20,16 @@ public class Cutting : MonoBehaviour
     [SerializeField]
     private GameObject progressBar;
     public Camera cam;
-    private void Start()
+
+    void Start()
     {
         progressSlider.maxValue = cuttingChops;
         numberChops = 0;
         chopped = false;
-        canChop = true;
-        
-        if (cam == null)
-        {
-            GameObject camObject = GameObject.Find("CenterEyeAnchor");
-            cam = (Camera)camObject.GetComponent<Camera>();
-        }
+        canChop = true; 
     }
 
-    //private void OnTriggerEnter(Collider other)
-    private void Update()
+    void Update()
     {
         progressBar.transform.LookAt(transform.position + cam.transform.rotation * Vector3.forward, cam.transform.rotation * Vector3.up);
         if (chopped)

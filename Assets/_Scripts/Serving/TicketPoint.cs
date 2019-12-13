@@ -21,10 +21,6 @@ namespace Serving
 
         public void SetTicket(GameObject ticketReference, Recipe recipe)
         {
-            this.ticketReference = ticketReference;
-            this.ticketAge = 0f;
-            this.recipe = recipe;
-
             // Instantiate ticket object
             // Create spring joint to spawn point
             Vector3 ticketOffset = new Vector3(0, -0.1f, 0);
@@ -33,6 +29,11 @@ namespace Serving
 
             GameObject createdTicket = UnityEngine.Object.Instantiate(ticketReference, position, rotation);
             createdTicket.GetComponent<SpringJoint>().connectedBody = spawnPoint.GetComponent<Rigidbody>();
+
+            // Set values
+            this.ticketReference = createdTicket;
+            this.ticketAge = 0f;
+            this.recipe = recipe;
         }
 
         public void DestroyTicket()
