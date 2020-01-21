@@ -9,6 +9,8 @@ namespace Serving
         public GameObject gameManager;
         public Collider foodArea;
 
+        public TipJar tipJar;
+
         private OrderSpawnerv5 orderSpawner;
 
         private List<Recipe> queuedRecipes;
@@ -65,6 +67,7 @@ namespace Serving
                 else
                 {
                     // Debug.Log("Empty Box and no recipes matched");
+                    // DO NOTHING
                 }
             }
 
@@ -92,8 +95,7 @@ namespace Serving
             {
                 recipeRater.FindMistakes();
                 int tipAmount = recipeRater.GetTipAmount();
-
-                Debug.Log("Tip: $" + tipAmount);
+                tipJar.AddTip(tipAmount);
                 return true;
             }
         }
