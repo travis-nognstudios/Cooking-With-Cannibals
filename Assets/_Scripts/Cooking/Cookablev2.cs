@@ -204,5 +204,10 @@ namespace Cooking
                 audioSource.Stop();
             }
         }
+
+        public List<CookMechanic> GetSteps()
+        {
+            return this.steps;
+        }
     }
 }
