@@ -15,6 +15,10 @@ namespace Serving
         private int numMistakes = 0;
         private int tipAmount;
 
+        private int numMissingToppings = 0;
+        private int numExtraToppings = 0;
+        private bool cookedWrong = false;
+
         public RecipeRating(List<GameObject> itemsInBox, Recipe recipe)
         {
             this.itemsInBox = itemsInBox;
@@ -72,8 +76,8 @@ namespace Serving
             {
                 if (!ListContainsName(itemsInBoxNames, toppingName))
                 {
+                    numMissingToppings++;
                     numMistakes++;
-                    Debug.Log("Mistake: Missing Topping - " + toppingName);
                 }
             }
 
@@ -82,8 +86,8 @@ namespace Serving
             {
                 if (!NameEquals(itemInBox, mainIngredientShouldHave) && !ListContainsName(toppingsShouldHaveNames, itemInBox))
                 {
+                    numExtraToppings++;
                     numMistakes++;
-                    Debug.Log("Mistake: Extra topping - " + itemInBox);
                 }
             }
 
@@ -91,8 +95,8 @@ namespace Serving
             // Wrong number of steps/wrong order
             if (cookStepsShouldBe.Length != cookStepsAre.Count)
             {
+                cookedWrong = true;
                 numMistakes++;
-                Debug.Log("Mistake: wrong number of cook steps - should be " + cookStepsShouldBe.Length + " but is " + cookStepsAre.Count);
             }
             else if (cookStepsShouldBe.Length > 0)
             {
@@ -101,8 +105,8 @@ namespace Serving
                 {
                     if (!cookStepsShouldBe[i].Equals(cookStepsAre[i]))
                     {
+                        cookedWrong = true;
                         numMistakes++;
-                        Debug.Log("Mistake: Cooked in wrong order");
                         break;
                     }
                 }
@@ -167,6 +171,21 @@ namespace Serving
         public int GetTipAmount()
         {
             return this.tipAmount;
+        }
+
+        public int GetNumMissingToppings()
+        {
+            return this.numMissingToppings;
+        }
+
+        public int GetNumExtraToppings()
+        {
+            return this.numExtraToppings;
+        }
+
+        public bool GetCookedWrong()
+        {
+            return this.cookedWrong;
         }
     }
 }
