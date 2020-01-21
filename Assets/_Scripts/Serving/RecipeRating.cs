@@ -73,6 +73,7 @@ namespace Serving
                 if (!ListContainsName(itemsInBoxNames, toppingName))
                 {
                     numMistakes++;
+                    Debug.Log("Mistake: Missing Topping - " + toppingName);
                 }
             }
 
@@ -82,6 +83,7 @@ namespace Serving
                 if (!NameEquals(itemInBox, mainIngredientShouldHave) && !ListContainsName(toppingsShouldHaveNames, itemInBox))
                 {
                     numMistakes++;
+                    Debug.Log("Mistake: Extra topping - " + itemInBox);
                 }
             }
 
@@ -90,15 +92,17 @@ namespace Serving
             if (cookStepsShouldBe.Length != cookStepsAre.Count)
             {
                 numMistakes++;
+                Debug.Log("Mistake: wrong number of cook steps - should be " + cookStepsShouldBe.Length + " but is " + cookStepsAre.Count);
             }
-            else
+            else if (cookStepsShouldBe.Length > 0)
             {
                 int numSteps = cookStepsShouldBe.Length;
                 for (int i=0; i<numSteps; ++i)
                 {
-                    if (cookStepsShouldBe[i].Equals(cookStepsAre[i]))
+                    if (!cookStepsShouldBe[i].Equals(cookStepsAre[i]))
                     {
                         numMistakes++;
+                        Debug.Log("Mistake: Cooked in wrong order");
                         break;
                     }
                 }
