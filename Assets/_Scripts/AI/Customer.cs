@@ -9,11 +9,11 @@ namespace AI
         private Vector3 startPosition;
         private Vector3 endPosition;
 
-        public Vector3 orderingPosition;
+        public GameObject orderingPoint;
 
         void Start()
         {
-            //animator = GetComponent<Animator>();
+            animator = GetComponent<Animator>();
             startPosition = transform.position;
             endPosition = startPosition;
         }
@@ -25,12 +25,21 @@ namespace AI
 
         public void GoToOrderingPosition()
         {
-            transform.position = orderingPosition;
+            Vector3 current = transform.position;
+            Vector3 target = orderingPoint.transform.position;
+
+            Vector3 newPos = new Vector3(target.x, current.y, target.z);
+            transform.position = newPos;
+
         }
 
         public void GoToEndPosition()
         {
-            transform.position = endPosition;
+            Vector3 current = transform.position;
+            Vector3 target = endPosition;
+
+            Vector3 newPos = new Vector3(target.x, current.y, target.z);
+            transform.position = newPos;
         }
     }
 }
