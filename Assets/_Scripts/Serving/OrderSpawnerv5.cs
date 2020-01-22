@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using AI;
 
 namespace Serving
 {
@@ -24,6 +25,11 @@ namespace Serving
 
         private List<TicketPoint> ticketPoints = new List<TicketPoint>();
 
+        // Customer management
+        public Customer[] allCustomers;
+        private List<Customer> newCustomers = new List<Customer>();
+        private List<Customer> waitingCustomers = new List<Customer>();
+        private List<Customer> doneCustomers = new List<Customer>();
 
         #endregion Variables
 
@@ -31,11 +37,18 @@ namespace Serving
         {
             recipeManager = GetComponent<RecipeManager>();
 
+            // Register ticketp spawn points
             for (int i=0; i<ticketSpawnPoints.Length; ++i)
             {
                 GameObject spawnPoint = ticketSpawnPoints[i];
                 TicketPoint ticketPoint = new TicketPoint(spawnPoint);
                 ticketPoints.Add(ticketPoint);
+            }
+
+            // Register every customer as a new customer
+            for (int i=0; i<allCustomers.Length; ++i)
+            {
+                newCustomers.Add(allCustomers[i]);
             }
         }
 
@@ -84,13 +97,21 @@ namespace Serving
             Recipe recipe = GetRandomRecipe();
             GameObject ticket = recipe.recipeTicket;
 
+            // Attach a customer to order
+            Customer customer = newCustomers[newCustomers.Count - 1];
+            newCustomers.RemoveAt(newCustomers.Count - 1);
+            waitingCustomers.Add(customer);
+            customer.GoToOrderingPosition();
+
             // Get an empty point and create ticket there
             int spawnIndex = GenerateSpawnPointIndex();
             if (spawnIndex != -1)
             {
                 ticketPoints[spawnIndex].SetTicket(ticket, recipe);
+                ticketPoints[spawnIndex].SetCustomer(customer);
                 numTicketsSpawned += 1;
             }
+
         }
 
         private Recipe GetRandomRecipe()
@@ -155,7 +176,10 @@ namespace Serving
 
             // Despawn oldest matching ticket
             int oldestPointIndex = ticketAges.IndexOf(ticketAges.Max());
+            Customer customer = ticketPoints[oldestPointIndex].GetCustomer();
+
             ticketPoints[oldestPointIndex].DestroyTicket();
+            customer.GoToEndPosition();
         }
     }
 }

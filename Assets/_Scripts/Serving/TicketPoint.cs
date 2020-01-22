@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using AI;
 
 namespace Serving
 {
@@ -11,12 +12,16 @@ namespace Serving
         public float ticketAge;
         public Recipe recipe;
 
+        private Customer customer;
+
         public TicketPoint(GameObject spawnPoint)
         {
             this.spawnPoint = spawnPoint;
             this.ticketReference = null;
             this.ticketAge = 0f;
             this.recipe = new Recipe();
+
+            this.customer = null;
         }
 
         public void SetTicket(GameObject ticketReference, Recipe recipe)
@@ -36,6 +41,16 @@ namespace Serving
             this.recipe = recipe;
         }
 
+        public void SetCustomer(Customer customer)
+        {
+            this.customer = customer;
+        }
+
+        public Customer GetCustomer()
+        {
+            return this.customer;
+        }
+
         public void DestroyTicket()
         {
             if (this.ticketReference != null)
@@ -45,6 +60,8 @@ namespace Serving
                 this.ticketReference = null;
                 this.ticketAge = 0f;
                 this.recipe = new Recipe();
+
+                this.customer = null;
             }
         }
 
