@@ -16,20 +16,22 @@ namespace Serving
 
         private float timeSinceLastSpawn;
         private int numTicketsSpawned;
+        private int numActiveTickets;
         private RecipeManager recipeManager;
 
         // Separate logic for first spawn
         public float firstSpawnTime = 3f;
-        private float firstSpawnTimer = 0f;
+        private float firstSpawnTimer;
         private bool firstSpawnDone;
 
         private List<TicketPoint> ticketPoints = new List<TicketPoint>();
 
         // Customer management
         public Customer[] allCustomers;
+        public GameObject[] orderingPositions;
+
         private List<Customer> newCustomers = new List<Customer>();
         private List<Customer> waitingCustomers = new List<Customer>();
-        private List<Customer> doneCustomers = new List<Customer>();
 
         #endregion Variables
 
@@ -75,7 +77,12 @@ namespace Serving
                     if (timeSinceLastSpawn >= ticketSpawnInterval)
                     {
                         timeSinceLastSpawn = 0;
-                        SpawnTicket();
+
+                        // Spawn ticket if there is an empty spot
+                        if (numActiveTickets < ticketPoints.Count)
+                        {
+                            SpawnTicket();
+                        }
                     }
                 }
             }
@@ -101,15 +108,18 @@ namespace Serving
             Customer customer = newCustomers[newCustomers.Count - 1];
             newCustomers.RemoveAt(newCustomers.Count - 1);
             waitingCustomers.Add(customer);
-            customer.GoToOrderingPosition();
 
             // Get an empty point and create ticket there
+            // Customer goes to corresponding ordering position
             int spawnIndex = GenerateSpawnPointIndex();
             if (spawnIndex != -1)
             {
                 ticketPoints[spawnIndex].SetTicket(ticket, recipe);
                 ticketPoints[spawnIndex].SetCustomer(customer);
+                customer.GoToOrderingPosition(orderingPositions[spawnIndex]);
+
                 numTicketsSpawned += 1;
+                numActiveTickets += 1;
             }
 
         }
@@ -180,6 +190,9 @@ namespace Serving
 
             ticketPoints[oldestPointIndex].DestroyTicket();
             customer.GoToEndPosition();
+            waitingCustomers.Remove(customer);
+
+            numActiveTickets -= 1;
         }
     }
 }

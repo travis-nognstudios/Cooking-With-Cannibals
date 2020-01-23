@@ -9,8 +9,6 @@ namespace AI
         private Vector3 startPosition;
         private Vector3 endPosition;
 
-        public GameObject orderingPoint;
-
         void Start()
         {
             animator = GetComponent<Animator>();
@@ -23,7 +21,7 @@ namespace AI
 
         }
 
-        public void GoToOrderingPosition()
+        public void GoToOrderingPosition(GameObject orderingPoint)
         {
             Vector3 current = transform.position;
             Vector3 target = orderingPoint.transform.position;
