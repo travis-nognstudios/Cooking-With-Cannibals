@@ -9,6 +9,8 @@ namespace Serving
         public GameObject gameManager;
         public Collider foodArea;
 
+        public TipJar tipJar;
+
         private OrderSpawnerv5 orderSpawner;
 
         private List<Recipe> queuedRecipes;
@@ -44,7 +46,7 @@ namespace Serving
                 queuedRecipes = orderSpawner.GetQueuedRecipes();
                 foreach (Recipe queuedRecipe in queuedRecipes)
                 {
-                    if (RecipeIsReady(queuedRecipe))
+                    if (RecipeIsReadyBasedOnRater(queuedRecipe))
                     {
                         matchingRecipe = queuedRecipe;
                         foundMatchingRecipe = true;
@@ -65,6 +67,7 @@ namespace Serving
                 else
                 {
                     // Debug.Log("Empty Box and no recipes matched");
+                    // DO NOTHING
                 }
             }
 
@@ -79,6 +82,24 @@ namespace Serving
             }
         }
 
+        private bool RecipeIsReadyBasedOnRater(Recipe recipe)
+        {
+            RecipeRating recipeRater = new RecipeRating(inBox, recipe);
+            bool isValidRecipe = recipeRater.GetIsValidRecipe();
+
+            if (!isValidRecipe)
+            {
+                return false;
+            }
+            else
+            {
+                recipeRater.FindMistakes();
+                int tipAmount = recipeRater.GetTipAmount();
+                tipJar.AddTip(tipAmount);
+                return true;
+            }
+        }
+
         private bool RecipeIsReady(Recipe recipe)
         {
             List<string> inBoxNames = GetInBoxNames();
@@ -88,7 +109,6 @@ namespace Serving
             string mainIngredientNameShouldBe = recipe.mainIngredient.gameObject.name;
             int numToppingsShouldHave = recipe.toppings.Length;
 
-            // if (inBoxNames.Contains(mainIngredientNameShouldBe))
             if (ListContainsName(inBoxNames, mainIngredientNameShouldBe))
             {
                 containsMainIngredient = true;
