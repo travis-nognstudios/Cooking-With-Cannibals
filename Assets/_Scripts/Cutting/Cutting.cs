@@ -8,7 +8,7 @@ public class Cutting : MonoBehaviour
 {
     [SerializeField]
     private GameObject[] choppedObject;
-    [SerializeField, Tooltip("Amount of slices for object to become cut")]
+    [SerializeField, Tooltip("Amount of slices for object to get cut")]
     private int cuttingChops;
     [HideInInspector]
     private int numberChops;
@@ -37,10 +37,11 @@ public class Cutting : MonoBehaviour
             chopped = false;
             canChop = false;
             progressBar.SetActive(false);
-            for (int i = 0; i < choppedObject.Length; i++)
+            GameObject newChoppedObj = Instantiate(choppedObject[0], transform.position, Quaternion.identity);
+            newChoppedObj.name = choppedObject[0].name;
+            for (int i = 1; i < choppedObject.Length; i++)
             {
-                GameObject newChoppedObj = Instantiate(choppedObject[i], transform.position, transform.rotation);
-                newChoppedObj.name = choppedObject[i].name;
+                InstantiateNextTo(newChoppedObj, choppedObject[i]);
             }
             
 
@@ -48,6 +49,14 @@ public class Cutting : MonoBehaviour
             //Instantiate(choppedObject, transform.position, transform.rotation);
         }
 
+    }
+    void InstantiateNextTo(GameObject orig, GameObject prefab)
+    {
+        Transform t = orig.transform;
+        Mesh m = orig.GetComponent<MeshFilter>().sharedMesh;
+        // spawn prefab object next to original (in the x direction)
+        float x = m.bounds.size.x * t.localScale.x;
+        Instantiate(prefab, t.position + new Vector3(x, 0, 0), Quaternion.identity);
     }
     public void Chop()
     {

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using AI;
 
 namespace Serving
 {
@@ -15,15 +16,22 @@ namespace Serving
 
         private float timeSinceLastSpawn;
         private int numTicketsSpawned;
+        private int numActiveTickets;
         private RecipeManager recipeManager;
 
         // Separate logic for first spawn
         public float firstSpawnTime = 3f;
-        private float firstSpawnTimer = 0f;
+        private float firstSpawnTimer;
         private bool firstSpawnDone;
 
         private List<TicketPoint> ticketPoints = new List<TicketPoint>();
 
+        // Customer management
+        public Customer[] allCustomers;
+        public GameObject[] orderingPositions;
+
+        private List<Customer> newCustomers = new List<Customer>();
+        private List<Customer> waitingCustomers = new List<Customer>();
 
         #endregion Variables
 
@@ -31,11 +39,18 @@ namespace Serving
         {
             recipeManager = GetComponent<RecipeManager>();
 
+            // Register ticketp spawn points
             for (int i=0; i<ticketSpawnPoints.Length; ++i)
             {
                 GameObject spawnPoint = ticketSpawnPoints[i];
                 TicketPoint ticketPoint = new TicketPoint(spawnPoint);
                 ticketPoints.Add(ticketPoint);
+            }
+
+            // Register every customer as a new customer
+            for (int i=0; i<allCustomers.Length; ++i)
+            {
+                newCustomers.Add(allCustomers[i]);
             }
         }
 
@@ -62,7 +77,12 @@ namespace Serving
                     if (timeSinceLastSpawn >= ticketSpawnInterval)
                     {
                         timeSinceLastSpawn = 0;
-                        SpawnTicket();
+
+                        // Spawn ticket if there is an empty spot
+                        if (numActiveTickets < ticketPoints.Count)
+                        {
+                            SpawnTicket();
+                        }
                     }
                 }
             }
@@ -84,13 +104,24 @@ namespace Serving
             Recipe recipe = GetRandomRecipe();
             GameObject ticket = recipe.recipeTicket;
 
+            // Attach a customer to order
+            Customer customer = newCustomers[newCustomers.Count - 1];
+            newCustomers.RemoveAt(newCustomers.Count - 1);
+            waitingCustomers.Add(customer);
+
             // Get an empty point and create ticket there
+            // Customer goes to corresponding ordering position
             int spawnIndex = GenerateSpawnPointIndex();
             if (spawnIndex != -1)
             {
                 ticketPoints[spawnIndex].SetTicket(ticket, recipe);
+                ticketPoints[spawnIndex].SetCustomer(customer);
+                customer.GoToOrderingPosition(orderingPositions[spawnIndex]);
+
                 numTicketsSpawned += 1;
+                numActiveTickets += 1;
             }
+
         }
 
         private Recipe GetRandomRecipe()
@@ -155,7 +186,13 @@ namespace Serving
 
             // Despawn oldest matching ticket
             int oldestPointIndex = ticketAges.IndexOf(ticketAges.Max());
+            Customer customer = ticketPoints[oldestPointIndex].GetCustomer();
+
             ticketPoints[oldestPointIndex].DestroyTicket();
+            customer.GoToEndPosition();
+            waitingCustomers.Remove(customer);
+
+            numActiveTickets -= 1;
         }
     }
 }
