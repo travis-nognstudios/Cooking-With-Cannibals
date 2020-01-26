@@ -8,13 +8,13 @@ namespace Sequence
         protected override void CreateNodes()
         {
             SequenceNode bruceIntro = GetComponent<PlayHeroIntro>();
-            //SequenceNode awningOpen = new SequenceNode();
-            //SequenceNode gameplayLoop = new SequenceNode();
+            SequenceNode awningOpen = GetComponent<AwningOpenSequence>();
+            SequenceNode gameplayLoop = GetComponent<PlayGameLoop>();
             SequenceNode bruceOutro = GetComponent<PlayHeroOutro>();
 
             nodes.Add(bruceIntro);
-            //nodes.Add(awningOpen);
-            //nodes.Add(gameplayLoop);
+            nodes.Add(awningOpen);
+            nodes.Add(gameplayLoop);
             nodes.Add(bruceOutro);
         }
 
