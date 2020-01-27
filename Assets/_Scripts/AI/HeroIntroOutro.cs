@@ -8,9 +8,6 @@ namespace AI
 
         private enum OutroType { BEST, GOOD, BAD }
 
-        public bool isPlayingIntro;
-        public bool isPlayingOutro;
-
         private OutroType outroType;
 
         public float introTime;
@@ -19,8 +16,16 @@ namespace AI
         public float badOutroTime;
 
         private float timeTracker;
+
+        [HideInInspector]
         public bool introDone;
+        [HideInInspector]
         public bool outroDone;
+
+        [HideInInspector]
+        public bool isPlayingIntro;
+        [HideInInspector]
+        public bool isPlayingOutro;
 
         void Start()
         {
