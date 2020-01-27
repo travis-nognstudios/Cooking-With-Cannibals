@@ -3,19 +3,24 @@ using System.Collections.Generic;
 
 namespace Sequence
 {
-    public abstract class SequenceManager : MonoBehaviour
+    public class SequenceManager : MonoBehaviour
     {
-        protected List<SequenceNode> nodes = new List<SequenceNode>();
-        protected int currentNodeIndex;
-        protected int numNodes;
+        public MonoBehaviour[] sequenceSteps;
+        private List<SequenceNode> nodes = new List<SequenceNode>();
+
+        private int currentNodeIndex;
+        private int numNodes;
 
         void Start()
         {
             Debug.Log("Starting sequence");
 
-            CreateNodes();
-            numNodes = nodes.Count;
+            foreach(MonoBehaviour step in sequenceSteps)
+            {
+                nodes.Add(step as SequenceNode);
+            }
 
+            numNodes = nodes.Count;
             nodes[0].Play();
         }
 
@@ -27,7 +32,5 @@ namespace Sequence
                 nodes[currentNodeIndex].Play();
             }
         }
-
-        protected abstract void CreateNodes();
     }
 }
