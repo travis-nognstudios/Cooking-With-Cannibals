@@ -16,12 +16,12 @@ namespace Serving
 
         private float timeSinceLastSpawn;
         private int numTicketsSpawned;
+        private int numTicketsCompleted;
         private int numActiveTickets;
         private RecipeManager recipeManager;
 
-        // Separate logic for first spawn
-        public float firstSpawnTime = 3f;
-        private float firstSpawnTimer;
+        // Logic to start spawning
+        private bool spawnAllowed;
         private bool firstSpawnDone;
 
         private List<TicketPoint> ticketPoints = new List<TicketPoint>();
@@ -56,32 +56,31 @@ namespace Serving
 
         void Update()
         {
-            // First spawn
-            if (!firstSpawnDone)
+            if (spawnAllowed)
             {
-                firstSpawnTimer += Time.deltaTime;
-                if (firstSpawnTimer > firstSpawnTime)
+                // First spawn
+                if (!firstSpawnDone)
                 {
                     SpawnTicket();
                     firstSpawnDone = true;
                 }
-            }
 
-            // After first spawn
-            else
-            {
-                if (numTicketsSpawned < numberOfTickets)
+                // After first spawn
+                else
                 {
-                    // Update spawn timer
-                    timeSinceLastSpawn += Time.deltaTime;
-                    if (timeSinceLastSpawn >= ticketSpawnInterval)
+                    if (numTicketsSpawned < numberOfTickets)
                     {
-                        timeSinceLastSpawn = 0;
-
-                        // Spawn ticket if there is an empty spot
-                        if (numActiveTickets < ticketPoints.Count)
+                        // Update spawn timer
+                        timeSinceLastSpawn += Time.deltaTime;
+                        if (timeSinceLastSpawn >= ticketSpawnInterval)
                         {
-                            SpawnTicket();
+                            timeSinceLastSpawn = 0;
+
+                            // Spawn ticket if there is an empty spot
+                            if (numActiveTickets < ticketPoints.Count)
+                            {
+                                SpawnTicket();
+                            }
                         }
                     }
                 }
@@ -193,6 +192,17 @@ namespace Serving
             waitingCustomers.Remove(customer);
 
             numActiveTickets -= 1;
+            numTicketsCompleted += 1;
+        }
+
+        public int GetNumTicketsCompleted()
+        {
+            return numTicketsCompleted;
+        }
+
+        public void StartSpawning()
+        {
+            spawnAllowed = true;
         }
     }
 }
