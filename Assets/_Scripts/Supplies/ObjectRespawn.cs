@@ -9,7 +9,7 @@ public class ObjectRespawn : MonoBehaviour
     private Vector3 startingPosition;
     private Quaternion startingRotation;
     private Rigidbody rb;
-
+    public Rigidbody connected;
     #endregion
 
     void Start()
@@ -28,6 +28,11 @@ public class ObjectRespawn : MonoBehaviour
 
             rb.velocity = Vector3.zero;
             rb.angularVelocity = Vector3.zero;
+            if (connected!= null)
+            {
+                connected.velocity = Vector3.zero;
+                connected.angularVelocity = Vector3.zero;
+            }
         }
     }
 }
