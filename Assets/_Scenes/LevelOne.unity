@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.21004027, g: 0.4078709, b: 0.9661834, a: 1}
+  m_IndirectSpecularColor: {r: 0.21003553, g: 0.4078651, b: 0.96617913, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1215,8 +1215,8 @@ MonoBehaviour:
   - {fileID: 1373427894}
   - {fileID: 1098981944}
   - {fileID: 1105943683}
-  ticketSpawnInterval: 2
-  numberOfTickets: 8
+  ticketSpawnInterval: 30
+  numberOfTickets: 6
   allCustomers:
   - {fileID: 1233857463}
   - {fileID: 1294768961}
@@ -1224,8 +1224,6 @@ MonoBehaviour:
   - {fileID: 2071281876}
   - {fileID: 2058016877}
   - {fileID: 1100177449}
-  - {fileID: 2137366322}
-  - {fileID: 711158134}
   orderingPositions:
   - {fileID: 537869913}
   - {fileID: 469584188}
@@ -3380,7 +3378,7 @@ PrefabInstance:
     - target: {fileID: 3246514191540762899, guid: c5fc80dc10bb4804dac056eadcf5ccd8,
         type: 3}
       propertyPath: m_BoundingSphereOverride.x
-      value: NaN
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3246514191540762899, guid: c5fc80dc10bb4804dac056eadcf5ccd8,
         type: 3}
@@ -3390,12 +3388,12 @@ PrefabInstance:
     - target: {fileID: 3246514191540762899, guid: c5fc80dc10bb4804dac056eadcf5ccd8,
         type: 3}
       propertyPath: m_BoundingSphereOverride.y
-      value: 1.05e-43
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3246514191540762899, guid: c5fc80dc10bb4804dac056eadcf5ccd8,
         type: 3}
       propertyPath: m_BoundingSphereOverride.z
-      value: 1.3273e-41
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5fc80dc10bb4804dac056eadcf5ccd8, type: 3}
@@ -3445,7 +3443,7 @@ GameObject:
   - component: {fileID: 877344419}
   - component: {fileID: 877344418}
   - component: {fileID: 877344420}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: window_awning_parent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3995,17 +3993,12 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 59e3c9eceac805849b7828e4c53806f9,
         type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: -8239383092434865840, guid: 59e3c9eceac805849b7828e4c53806f9,
         type: 3}
       propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 5848347829668218498, guid: 59e3c9eceac805849b7828e4c53806f9,
-        type: 3}
-      propertyPath: m_Layer
-      value: 10
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 59e3c9eceac805849b7828e4c53806f9,
         type: 3}
@@ -4072,6 +4065,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 2be94b3baf924b4418e18aaf1c7982f8, type: 2}
+    - target: {fileID: 5848347829668218498, guid: 59e3c9eceac805849b7828e4c53806f9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 59e3c9eceac805849b7828e4c53806f9, type: 3}
 --- !u!4 &1009567931 stripped
@@ -9494,7 +9492,7 @@ GameObject:
   - component: {fileID: 1266055134}
   - component: {fileID: 1266055133}
   - component: {fileID: 1266055132}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: PiggyBankCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15019,9 +15017,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 287736177}
   foodArea: {fileID: 1377602065}
-  tipJar: {fileID: 0}
-  spawnedMealDestroyTime: 5
-  spawnerCooldownTime: 1
+  tipJar: {fileID: 1009567933}
+  spawnedMealDestroyTime: 15
+  spawnerCooldownTime: 3
 --- !u!1 &1388118161
 GameObject:
   m_ObjectHideFlags: 0
@@ -15405,7 +15403,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8138375899935023652, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
         type: 3}
@@ -19120,7 +19118,7 @@ GameObject:
   - component: {fileID: 2132482622}
   - component: {fileID: 2132482624}
   - component: {fileID: 2132482623}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: TipUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26744,7 +26742,7 @@ PrefabInstance:
     - target: {fileID: 3609441740759046107, guid: 1933dfb2dc9e8574f9778bcb61d10a37,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6305245613539072671, guid: 1933dfb2dc9e8574f9778bcb61d10a37,
         type: 3}
@@ -32044,13 +32042,13 @@ GameObject:
   - component: {fileID: 2610489895814073960}
   - component: {fileID: 5120773882034583584}
   - component: {fileID: 4816800332885653757}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: window_awning
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!23 &8671977274508606696
 MeshRenderer:
   m_ObjectHideFlags: 0
