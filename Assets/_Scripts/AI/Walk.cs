@@ -62,8 +62,6 @@ namespace AI
             Vector3 direction = destination - transform.position;
             float angle = Vector3.Angle(transform.forward, direction);
 
-            Debug.Log(gameObject.name + " " + angle);
-
             bool facing = angle < 0.5;
             if (facing)
             {
