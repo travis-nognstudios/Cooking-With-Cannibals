@@ -58,6 +58,9 @@ namespace Sequence
             if (complete)
             {
                 Debug.Log("End of Game loop");
+
+                orderSpawner.StopSpawning();
+                orderSpawner.RemoveAllTickets();
             }
 
             return complete;

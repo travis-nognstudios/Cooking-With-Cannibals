@@ -235,5 +235,22 @@ namespace Serving
         {
             spawnAllowed = true;
         }
+
+        public void StopSpawning()
+        {
+            spawnAllowed = false;
+        }
+
+        public void RemoveAllTickets()
+        {
+            foreach (TicketPoint point in ticketPoints)
+            {
+                Customer customer = point.GetCustomer();
+                customer.GoToEndPosition();
+                waitingCustomers.Remove(customer);
+
+                point.DestroyTicket();
+            }
+        }
     }
 }
