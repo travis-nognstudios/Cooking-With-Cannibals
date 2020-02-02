@@ -42,8 +42,9 @@ namespace AI
 
         public void GoTo(Vector3 newPos)
         {
-            Walk walk = GetComponent<Walk>();
-            walk.To(newPos);
+            transform.position = newPos;
+            //Walk walk = GetComponent<Walk>();
+            //walk.To(newPos);
         }
     }
 }
