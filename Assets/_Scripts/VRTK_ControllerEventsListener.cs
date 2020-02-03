@@ -1,9 +1,12 @@
 ﻿namespace VRTK
 {
     using UnityEngine;
+    using AI;
 
     public class VRTK_ControllerEventsListener : MonoBehaviour
     {
+
+        public Hero hero;
         public enum EventQuickSelect
         {
             Custom,
@@ -530,7 +533,8 @@
         {
             if (buttonOneButtonEvents)
             {
-                DebugLogger(VRTK_ControllerReference.GetRealIndex(e.controllerReference), "BUTTON ONE", "pressed down", e);
+                hero.TellAJoke();
+               
             }
         }
 
@@ -538,7 +542,7 @@
         {
             if (buttonOneButtonEvents)
             {
-                DebugLogger(VRTK_ControllerReference.GetRealIndex(e.controllerReference), "BUTTON ONE", "released", e);
+                //DebugLogger(VRTK_ControllerReference.GetRealIndex(e.controllerReference), "BUTTON ONE", "released", e);
             }
         }
 
@@ -546,7 +550,7 @@
         {
             if (buttonOneButtonEvents)
             {
-                DebugLogger(VRTK_ControllerReference.GetRealIndex(e.controllerReference), "BUTTON ONE", "touched", e);
+                //DebugLogger(VRTK_ControllerReference.GetRealIndex(e.controllerReference), "BUTTON ONE", "touched", e);
             }
         }
 
@@ -554,7 +558,7 @@
         {
             if (buttonOneButtonEvents)
             {
-                DebugLogger(VRTK_ControllerReference.GetRealIndex(e.controllerReference), "BUTTON ONE", "untouched", e);
+                //DebugLogger(VRTK_ControllerReference.GetRealIndex(e.controllerReference), "BUTTON ONE", "untouched", e);
             }
         }
 

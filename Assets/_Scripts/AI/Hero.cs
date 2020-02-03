@@ -75,7 +75,7 @@ namespace AI
 
             if (objectName.Contains("Knife") || objectName.Contains("knife"))
             {
-                FreezeObjectOnHero(collision);
+                //FreezeObjectOnHero(collision);
                 ReactToThrownKnife();
             }
             else if (objectSpeed > fastThrowSpeed)
