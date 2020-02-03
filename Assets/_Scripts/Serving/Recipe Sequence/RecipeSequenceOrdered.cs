@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace Serving
 {
-    public class RecipeSequenceOrdered : RecipeSequence
+    public class RecipeSequenceOrdered : MonoBehaviour, RecipeSequence
     {
         public GameObject[] recipes;
         private List<Recipe> fullRecipes = new List<Recipe>();
@@ -22,8 +22,7 @@ namespace Serving
             }
         }
         
-
-        public override Recipe[] GetRecipes()
+        public Recipe[] GetRecipes()
         {
             return fullRecipes.ToArray();
         }

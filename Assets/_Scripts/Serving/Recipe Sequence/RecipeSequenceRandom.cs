@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Serving
 {
-    public class RecipeSequenceRandom : RecipeSequence
+    public class RecipeSequenceRandom : MonoBehaviour, RecipeSequence
     {
         private List<Recipe> recipes = new List<Recipe>();
         public int seed;
@@ -27,7 +27,6 @@ namespace Serving
 
                 recipes.Add(randomRecipe);
             }
-            
         }
 
         void Update()
@@ -35,7 +34,7 @@ namespace Serving
             
         }
 
-        public override Recipe[] GetRecipes()
+        public Recipe[] GetRecipes()
         {
             return recipes.ToArray();
         }

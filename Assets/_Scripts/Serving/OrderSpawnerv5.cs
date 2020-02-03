@@ -14,7 +14,7 @@ namespace Serving
 
         [Header("Recipes")]
         public int numberOfTickets = 10;
-        public RecipeSequence[] sequences;
+        public MonoBehaviour[] sequences;
 
         private float timeSinceLastSpawn;
         private int numTicketsSpawned;
@@ -43,9 +43,11 @@ namespace Serving
             recipeManager = GetComponent<RecipeManager>();
 
             // Build up recipe sequence
-            foreach (RecipeSequence seq in sequences)
+            foreach (MonoBehaviour sequenceScript in sequences)
             {
+                RecipeSequence seq = sequenceScript as RecipeSequence;
                 Recipe[] seqRecipes = seq.GetRecipes();
+
                 foreach (Recipe seqRec in seqRecipes)
                 {
                     sequencedRecipes.Add(seqRec);

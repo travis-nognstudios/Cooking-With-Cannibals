@@ -1,10 +1,7 @@
-﻿using System;
-using UnityEngine;
-
-namespace Serving
+﻿namespace Serving
 {
-    public abstract class RecipeSequence : MonoBehaviour
+    public interface RecipeSequence
     {
-        public abstract Recipe[] GetRecipes();
+        Recipe[] GetRecipes();
     }
 }
