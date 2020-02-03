@@ -1112,6 +1112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   orderSpawner: {fileID: 287736182}
+  timeLimitInMinutes: 5
 --- !u!114 &128857025
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1868,6 +1869,8 @@ GameObject:
   - component: {fileID: 287736179}
   - component: {fileID: 287736181}
   - component: {fileID: 287736182}
+  - component: {fileID: 287736184}
+  - component: {fileID: 287736183}
   - component: {fileID: 287736178}
   m_Layer: 0
   m_Name: GameManager
@@ -2033,6 +2036,9 @@ MonoBehaviour:
   - {fileID: 1105943683}
   ticketSpawnInterval: 30
   numberOfTickets: 6
+  sequences:
+  - {fileID: 287736184}
+  - {fileID: 287736183}
   allCustomers:
   - {fileID: 1233857463}
   - {fileID: 1294768961}
@@ -2044,6 +2050,36 @@ MonoBehaviour:
   - {fileID: 537869913}
   - {fileID: 469584188}
   - {fileID: 1323837399}
+--- !u!114 &287736183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 287736177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74bb08b94d2714598820418afc5e9194, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  seed: 2020
+  numRecipes: 3
+--- !u!114 &287736184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 287736177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3c9f2f92dd754a06ac325981bb39d35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  recipes:
+  - {fileID: 2273475477494426701, guid: d17bbaca35493d74fb9cdf3ed8ec17f3, type: 3}
+  - {fileID: 2334161078186203893, guid: dc851b58c602c094daf26814d4bba78d, type: 3}
+  - {fileID: 3450052075905035848, guid: cb185d1dafd2eda47a94f11d433edf8b, type: 3}
 --- !u!1001 &292888328
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6375,22 +6411,22 @@ PrefabInstance:
     - target: {fileID: 3246514191540762899, guid: c5fc80dc10bb4804dac056eadcf5ccd8,
         type: 3}
       propertyPath: m_BoundingSphereOverride.x
-      value: 9.1837e-41
+      value: 2.873928e+23
       objectReference: {fileID: 0}
     - target: {fileID: 3246514191540762899, guid: c5fc80dc10bb4804dac056eadcf5ccd8,
         type: 3}
       propertyPath: m_BoundingSphereOverride.w
-      value: 6e-45
+      value: 4.9640194e+28
       objectReference: {fileID: 0}
     - target: {fileID: 3246514191540762899, guid: c5fc80dc10bb4804dac056eadcf5ccd8,
         type: 3}
       propertyPath: m_BoundingSphereOverride.y
-      value: -1.309e-42
+      value: 2.0112544e-19
       objectReference: {fileID: 0}
     - target: {fileID: 3246514191540762899, guid: c5fc80dc10bb4804dac056eadcf5ccd8,
         type: 3}
       propertyPath: m_BoundingSphereOverride.z
-      value: -6.08e-43
+      value: 5.083283e+31
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5fc80dc10bb4804dac056eadcf5ccd8, type: 3}
@@ -10773,7 +10809,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0
+      value: -0.216
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
         type: 3}
@@ -10783,7 +10819,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.038
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 0a2f74bbc09b1c44aa10c98f3db6fc10,
         type: 3}
@@ -15453,8 +15489,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.41147387, y: 2.1801696, z: 1}
-  m_Center: {x: -0.8846839, y: 0.5900848, z: 0}
+  m_Size: {x: 0.34237337, y: 1.851233, z: 0.7811846}
+  m_Center: {x: -0.85013366, y: 0.8795347, z: 0.017274886}
 --- !u!114 &2076901896
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24510,8 +24546,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.04497671, y: 0.5525062, z: 2.1524003}
-  m_Center: {x: -0.5020871, y: 1.104596, z: -1.0380994}
+  m_Size: {x: 0.04497671, y: 0.5072956, z: 2.1524003}
+  m_Center: {x: -0.5020871, y: 1.1272013, z: -1.0380994}
 --- !u!65 &4699382688116292347
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24536,8 +24572,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.04497671, y: 2.6135898, z: 0.74527144}
-  m_Center: {x: -0.5020871, y: 0.07405436, z: -1.7416638}
+  m_Size: {x: 0.04497671, y: 2.6135898, z: 0.62852216}
+  m_Center: {x: -0.5020871, y: 0.07405436, z: -1.8000385}
 --- !u!65 &4699382688116292349
 BoxCollider:
   m_ObjectHideFlags: 0
