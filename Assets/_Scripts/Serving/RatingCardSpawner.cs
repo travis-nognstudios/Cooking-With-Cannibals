@@ -17,11 +17,11 @@ namespace Serving
         [Header("Scene Objects")]
         public TipJar tipjar;
         public RatingCardPoint cardPoint;
+     
 
         // Use this for initialization
         void Start()
         {
-            
         }
 
         // Update is called once per frame
@@ -29,7 +29,7 @@ namespace Serving
         {
 
         }
-
+        
         public void SpawnCard()
         {
             GameObject selectedCard;
@@ -39,7 +39,7 @@ namespace Serving
             {
                 selectedCard = bestRatingCard;
             }
-            else if (tip <= failIfBelowTip)
+            else if (tip < failIfBelowTip)
             {
                 selectedCard = failRatingCard;
             }

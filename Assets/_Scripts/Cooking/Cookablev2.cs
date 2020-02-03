@@ -33,6 +33,10 @@ namespace Cooking
         public Material burntMat;
         Renderer rend;
 
+        //private GameObject obj = this.GameObject;
+        //public ParticleSystem cookingpartical;
+        //public ParticleSystem burningpartical; 
+
         #endregion Variables
 
         void Start()
@@ -133,7 +137,8 @@ namespace Cooking
                     cookTimes[typeIndex] += Time.deltaTime;
                     float timeCooked = cookTimes[typeIndex];
                     PlayCookingSound();
-  
+                    
+        
                     // If cook state reached, update allMechanics and add to steps
                     if (!isCooked && timeCooked >= timeToCook && timeCooked < timeToOvercook)
                     {
@@ -142,6 +147,7 @@ namespace Cooking
                     }
                     else if (!isOvercooked && timeCooked >= timeToOvercook)
                     {
+                        
                         MakeOvercooked(cookTopType);
                     }
                 }
@@ -151,6 +157,7 @@ namespace Cooking
         public void OnTriggerExit()
         {
             StopCookingSound();
+           
         }
 
         private void MakeCooked(CookType cookType)
@@ -209,5 +216,7 @@ namespace Cooking
         {
             return this.steps;
         }
+
+
     }
 }
