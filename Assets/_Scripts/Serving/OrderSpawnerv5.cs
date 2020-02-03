@@ -246,8 +246,12 @@ namespace Serving
             foreach (TicketPoint point in ticketPoints)
             {
                 Customer customer = point.GetCustomer();
-                customer.GoToEndPosition();
-                waitingCustomers.Remove(customer);
+
+                if (customer != null)
+                {
+                    customer.GoToEndPosition();
+                    waitingCustomers.Remove(customer);
+                }
 
                 point.DestroyTicket();
             }
