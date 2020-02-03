@@ -15,23 +15,22 @@ namespace Serving
 
         void Start()
         {
+                       
+        }
+
+        public void LoadRecipes()
+        {
             recipeManager = GetComponent<RecipeManager>();
+            System.Random rnJesus = new System.Random(seed);
             int maxRecipes = recipeManager.recipes.Length;
 
-            System.Random rnJesus = new System.Random(seed);
-
-            for (int i=0; i<numRecipes; ++i)
+            for (int i = 0; i < numRecipes; ++i)
             {
                 int randomNumber = rnJesus.Next(maxRecipes);
                 Recipe randomRecipe = recipeManager.recipes[randomNumber];
 
                 recipes.Add(randomRecipe);
             }
-        }
-
-        void Update()
-        {
-            
         }
 
         public Recipe[] GetRecipes()

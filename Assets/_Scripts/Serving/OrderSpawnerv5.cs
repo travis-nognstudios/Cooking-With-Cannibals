@@ -46,7 +46,14 @@ namespace Serving
             foreach (MonoBehaviour sequenceScript in sequences)
             {
                 RecipeSequence seq = sequenceScript as RecipeSequence;
+                seq.LoadRecipes();
                 Recipe[] seqRecipes = seq.GetRecipes();
+
+                Debug.Log($"{seqRecipes.Length} recipes found in sequence");
+                foreach (Recipe r in seqRecipes)
+                {
+                    Debug.Log(r.recipeObject.name);
+                }
 
                 foreach (Recipe seqRec in seqRecipes)
                 {
@@ -115,7 +122,7 @@ namespace Serving
         private void SpawnTicket()
         {
             // Get a random recipe from the recipe manager
-            Recipe recipe = GetRandomRecipe();
+            Recipe recipe = GetSequencedRecipe();
             // Recipe recipe = GetSequencedRecipe();
             GameObject ticket = recipe.recipeTicket;
 

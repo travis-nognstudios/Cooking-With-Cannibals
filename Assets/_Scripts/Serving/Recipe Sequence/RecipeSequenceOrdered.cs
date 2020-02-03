@@ -13,6 +13,11 @@ namespace Serving
 
         void Start()
         {
+            
+        }
+
+        public void LoadRecipes()
+        {
             recipeManager = GetComponent<RecipeManager>();
 
             foreach (GameObject recipeObj in recipes)
