@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.20992339, g: 0.4078908, b: 0.9656894, a: 1}
+  m_IndirectSpecularColor: {r: 0.21003553, g: 0.4078651, b: 0.96617913, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3822,6 +3822,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: FX Stove Fire RIGHT
+      objectReference: {fileID: 0}
+    - target: {fileID: 2582747982744769376, guid: 6d43cb48ab61c9141ac1835be9a13f2c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Heatsource
       objectReference: {fileID: 0}
     - target: {fileID: 2582747982744769381, guid: 6d43cb48ab61c9141ac1835be9a13f2c,
         type: 3}
@@ -11808,7 +11813,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -1808278313863143050, guid: 59a6f156d9a934541b005d249c83b841,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 2503104c7a399a544956e0754a41b80b, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 34e58ead5899dbe49ad9863b1b0f44c1, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -15503,7 +15508,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db9142e552e4b4f6397dbb9076a46817, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  introTime: 9
+  introTime: 6.5
   bestOutroTime: 5
   goodOutroTime: 5
   badOutroTime: 5
@@ -15878,6 +15883,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: FX Stove Fire LEFT
+      objectReference: {fileID: 0}
+    - target: {fileID: 2582747982744769376, guid: 6d43cb48ab61c9141ac1835be9a13f2c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Heatsource
       objectReference: {fileID: 0}
     - target: {fileID: 2582747982744769381, guid: 6d43cb48ab61c9141ac1835be9a13f2c,
         type: 3}
@@ -17572,13 +17582,27 @@ GameObject:
   - component: {fileID: 1811975355879067416}
   - component: {fileID: 5119673347287186998}
   - component: {fileID: 6185943996413222973}
+  - component: {fileID: 885070351637475641}
   m_Layer: 10
   m_Name: stove_burner_right
-  m_TagString: Untagged
+  m_TagString: Heatsource
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &885070351637475641
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 885070351637475640}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.1659204, y: 0.079550415, z: 0.16592047}
+  m_Center: {x: -0.0000017136335, y: 0.019106433, z: -0.0000038444996}
 --- !u!23 &886650673688105761
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -17920,7 +17944,7 @@ HingeJoint:
     targetVelocity: 0
     force: 0
     freeSpin: 0
-  m_UseLimits: 1
+  m_UseLimits: 0
   m_Limits:
     min: 0
     max: 90
@@ -29651,13 +29675,27 @@ GameObject:
   - component: {fileID: 3237859006460350622}
   - component: {fileID: 7348516040889306719}
   - component: {fileID: 2171156652310132081}
+  - component: {fileID: 8489501443112805268}
   m_Layer: 10
   m_Name: stove_burner_left
-  m_TagString: Untagged
+  m_TagString: Heatsource
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &8489501443112805268
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8489501443112805267}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.1659204, y: 0.079550415, z: 0.16592047}
+  m_Center: {x: -0.0000017136335, y: 0.019106433, z: -0.0000038444996}
 --- !u!1 &8498556186559743987
 GameObject:
   m_ObjectHideFlags: 0

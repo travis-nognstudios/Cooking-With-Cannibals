@@ -8,8 +8,6 @@ namespace Serving
 {
     public class OrderSpawnerv5 : MonoBehaviour
     {
-        #region Variables
-
         [Header("Tickets")]
         public GameObject[] ticketSpawnPoints;
         public float ticketSpawnInterval;
@@ -39,9 +37,7 @@ namespace Serving
 
         private List<Recipe> sequencedRecipes = new List<Recipe>();
         private int sequenceIndex;
-
-        #endregion Variables
-
+        
         void Start()
         {
             recipeManager = GetComponent<RecipeManager>();
@@ -54,12 +50,6 @@ namespace Serving
                 {
                     sequencedRecipes.Add(seqRec);
                 }
-            }
-
-            for (int i=0; i<sequencedRecipes.Count; ++i)
-            {
-                Recipe r = sequencedRecipes[i];
-                Debug.Log(i + ": " + r.recipeObject.name);
             }
 
             // Register ticketp spawn points
@@ -123,7 +113,8 @@ namespace Serving
         private void SpawnTicket()
         {
             // Get a random recipe from the recipe manager
-            Recipe recipe = GetSequencedRecipe();
+            Recipe recipe = GetRandomRecipe();
+            // Recipe recipe = GetSequencedRecipe();
             GameObject ticket = recipe.recipeTicket;
 
             // Attach a customer to order

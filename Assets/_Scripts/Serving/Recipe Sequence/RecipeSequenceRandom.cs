@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace Serving
 {
@@ -17,7 +18,7 @@ namespace Serving
             recipeManager = GetComponent<RecipeManager>();
             int maxRecipes = recipeManager.recipes.Length;
 
-            Random rnJesus = new Random(seed);
+            System.Random rnJesus = new System.Random(seed);
 
             for (int i=0; i<numRecipes; ++i)
             {
@@ -26,6 +27,7 @@ namespace Serving
 
                 recipes.Add(randomRecipe);
             }
+            
         }
 
         void Update()
