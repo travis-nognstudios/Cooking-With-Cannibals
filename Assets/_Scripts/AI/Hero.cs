@@ -13,6 +13,8 @@ namespace AI
         private Collision objectStuckOnHero;
         private bool isPointing;
 
+        private bool toldJoke;
+
         void Start()
         {
             //animator = GetComponent<Animator>();
@@ -33,6 +35,12 @@ namespace AI
         public void StopPointing()
         {
             isPointing = false;
+        }
+
+        public void TellAJoke()
+        {
+            Debug.Log("Telling a joke");
+            
         }
 
         public void ReactToThrownItem()
