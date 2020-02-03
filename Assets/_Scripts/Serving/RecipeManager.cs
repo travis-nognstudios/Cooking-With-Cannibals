@@ -9,7 +9,7 @@ namespace Serving
         public GameObject dubiousFood;
 
         // Use this for initialization
-    void Start()
+        void Start()
         {
 
         }
@@ -18,6 +18,19 @@ namespace Serving
         void Update()
         {
 
+        }
+
+        public Recipe GetFullRecipe(GameObject finishedMeal)
+        {
+            foreach (Recipe recipe in recipes)
+            {
+                if (recipe.recipeObject == finishedMeal)
+                {
+                    return recipe;
+                }
+            }
+
+            return new Recipe();
         }
     }
 }

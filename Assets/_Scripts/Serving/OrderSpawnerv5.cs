@@ -10,9 +10,13 @@ namespace Serving
     {
         #region Variables
 
+        [Header("Tickets")]
         public GameObject[] ticketSpawnPoints;
         public float ticketSpawnInterval;
+
+        [Header("Recipes")]
         public int numberOfTickets = 10;
+        public RecipeSequence[] sequences;
 
         private float timeSinceLastSpawn;
         private int numTicketsSpawned;
@@ -26,18 +30,37 @@ namespace Serving
 
         private List<TicketPoint> ticketPoints = new List<TicketPoint>();
 
-        // Customer management
+        [Header("Ordering and Customers")]
         public Customer[] allCustomers;
         public GameObject[] orderingPositions;
 
         private List<Customer> newCustomers = new List<Customer>();
         private List<Customer> waitingCustomers = new List<Customer>();
 
+        private List<Recipe> sequencedRecipes = new List<Recipe>();
+        private int sequenceIndex;
+
         #endregion Variables
 
         void Start()
         {
             recipeManager = GetComponent<RecipeManager>();
+
+            // Build up recipe sequence
+            foreach (RecipeSequence seq in sequences)
+            {
+                Recipe[] seqRecipes = seq.GetRecipes();
+                foreach (Recipe seqRec in seqRecipes)
+                {
+                    sequencedRecipes.Add(seqRec);
+                }
+            }
+
+            for (int i=0; i<sequencedRecipes.Count; ++i)
+            {
+                Recipe r = sequencedRecipes[i];
+                Debug.Log(i + ": " + r.recipeObject.name);
+            }
 
             // Register ticketp spawn points
             for (int i=0; i<ticketSpawnPoints.Length; ++i)
@@ -100,7 +123,7 @@ namespace Serving
         private void SpawnTicket()
         {
             // Get a random recipe from the recipe manager
-            Recipe recipe = GetRandomRecipe();
+            Recipe recipe = GetSequencedRecipe();
             GameObject ticket = recipe.recipeTicket;
 
             // Attach a customer to order
@@ -129,6 +152,14 @@ namespace Serving
             Recipe pickedRecipe = recipeManager.recipes[Random.Range(0, numRecipes)];
 
             return pickedRecipe;
+        }
+
+        private Recipe GetSequencedRecipe()
+        {
+            Recipe r = sequencedRecipes[sequenceIndex];
+            sequenceIndex += 1;
+
+            return r;
         }
 
         private int GenerateSpawnPointIndex()
@@ -203,6 +234,27 @@ namespace Serving
         public void StartSpawning()
         {
             spawnAllowed = true;
+        }
+
+        public void StopSpawning()
+        {
+            spawnAllowed = false;
+        }
+
+        public void RemoveAllTickets()
+        {
+            foreach (TicketPoint point in ticketPoints)
+            {
+                Customer customer = point.GetCustomer();
+
+                if (customer != null)
+                {
+                    customer.GoToEndPosition();
+                    waitingCustomers.Remove(customer);
+                }
+
+                point.DestroyTicket();
+            }
         }
     }
 }
