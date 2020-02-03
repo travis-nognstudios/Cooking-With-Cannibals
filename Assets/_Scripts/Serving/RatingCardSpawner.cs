@@ -17,8 +17,7 @@ namespace Serving
         [Header("Scene Objects")]
         public TipJar tipjar;
         public RatingCardPoint cardPoint;
-        public ParticleSystem particals;
-        public int num;
+     
 
         // Use this for initialization
         void Start()
@@ -39,7 +38,6 @@ namespace Serving
                 selectedCard = goodRatingCard;
             }
 
-            particals.Emit(num);
             cardPoint.SetCard(selectedCard);
         }
 
@@ -48,7 +46,7 @@ namespace Serving
         {
 
         }
-        /*
+        
         public void SpawnCard()
         {
             GameObject selectedCard;
@@ -67,9 +65,7 @@ namespace Serving
                 selectedCard = goodRatingCard;
             }
 
-            particals.Emit(num);
             cardPoint.SetCard(selectedCard);
         }
-        */
     }
 }
