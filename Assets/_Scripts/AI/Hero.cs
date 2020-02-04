@@ -13,6 +13,8 @@ namespace AI
         private Collision objectStuckOnHero;
         private bool isPointing;
 
+        public AudioSource myAudioSource;
+        public AudioClip jokeClip;
         private bool toldJoke;
 
         void Start()
@@ -39,8 +41,8 @@ namespace AI
 
         public void TellAJoke()
         {
-            Debug.Log("Telling a joke");
-            
+            myAudioSource.clip = jokeClip;
+            myAudioSource.Play();
         }
 
         public void ReactToThrownItem()

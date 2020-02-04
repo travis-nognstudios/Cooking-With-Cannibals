@@ -10,12 +10,19 @@ namespace AI
 
         private OutroType outroType;
 
+        [Header("Audio Times")]
         public float introTime;
         public float bestOutroTime;
         public float goodOutroTime;
         public float badOutroTime;
 
         private float timeTracker;
+
+        [Header("Audio Clips")]
+        public AudioClip introClip;
+        public AudioClip bestOutroClip;
+        public AudioClip goodOutroClip;
+        public AudioClip badOutroClip;
 
         [HideInInspector]
         public bool introDone;
