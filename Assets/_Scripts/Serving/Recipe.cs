@@ -9,6 +9,7 @@ namespace Serving
     {
         public GameObject recipeObject;
         public GameObject recipeTicket;
+        public float serveTime;
         public CookableIngredient mainIngredient;
         public GameObject[] toppings;
     }

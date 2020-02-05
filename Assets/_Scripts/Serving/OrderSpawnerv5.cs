@@ -61,7 +61,7 @@ namespace Serving
                 }
             }
 
-            // Register ticketp spawn points
+            // Register ticket spawn points
             for (int i=0; i<ticketSpawnPoints.Length; ++i)
             {
                 GameObject spawnPoint = ticketSpawnPoints[i];
@@ -116,7 +116,15 @@ namespace Serving
                     point.AddTicketAge(Time.deltaTime);
                 }
             }
-            
+
+            // Destroy expired tickets
+            foreach (TicketPoint point in ticketPoints)
+            {
+                if (point.HasExpired())
+                {
+                    DespawnTicketAtPoint(point);
+                }
+            }
         }
 
         private void SpawnTicket()
@@ -222,6 +230,17 @@ namespace Serving
             customer.GoToEndPosition();
             waitingCustomers.Remove(customer);
 
+            numActiveTickets -= 1;
+            numTicketsCompleted += 1;
+        }
+
+        public void DespawnTicketAtPoint(TicketPoint point)
+        {
+            Customer customer = point.GetCustomer();
+            customer.GoToEndPosition();
+            waitingCustomers.Remove(customer);
+
+            point.DestroyTicket();
             numActiveTickets -= 1;
             numTicketsCompleted += 1;
         }

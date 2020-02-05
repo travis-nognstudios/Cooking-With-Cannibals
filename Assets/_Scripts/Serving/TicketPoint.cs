@@ -13,6 +13,7 @@ namespace Serving
         public Recipe recipe;
 
         private Customer customer;
+        private float timeUntilExpire;
 
         public TicketPoint(GameObject spawnPoint)
         {
@@ -22,6 +23,7 @@ namespace Serving
             this.recipe = new Recipe();
 
             this.customer = null;
+            this.timeUntilExpire = 99999f;
         }
 
         public void SetTicket(GameObject ticketReference, Recipe recipe)
@@ -39,6 +41,7 @@ namespace Serving
             this.ticketReference = createdTicket;
             this.ticketAge = 0f;
             this.recipe = recipe;
+            this.timeUntilExpire = recipe.serveTime;
         }
 
         public void SetCustomer(Customer customer)
@@ -62,6 +65,7 @@ namespace Serving
                 this.recipe = new Recipe();
 
                 this.customer = null;
+                this.timeUntilExpire = 99999f;
             }
         }
 
@@ -73,7 +77,14 @@ namespace Serving
         public void AddTicketAge(float age)
         {
             this.ticketAge += age;
+            this.timeUntilExpire -= age;
+
+            Debug.Log($"Ticket expires in: {timeUntilExpire}");
         }
 
+        public bool HasExpired()
+        {
+            return timeUntilExpire <= 0;
+        }
     }
 }
