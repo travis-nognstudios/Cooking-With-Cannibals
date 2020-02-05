@@ -35,20 +35,25 @@ public class ObjectRespawn : MonoBehaviour
     {
         if (c.gameObject.CompareTag("destroy"))
         {
-            this.transform.position = startingPosition;
-            this.transform.rotation = startingRotation;
+            Respawn();
+        }
+    }
 
-            rb.velocity = Vector3.zero;
-            rb.angularVelocity = Vector3.zero;
+    public void Respawn()
+    {
+        this.transform.position = startingPosition;
+        this.transform.rotation = startingRotation;
 
-            if (connected!= null)
-            {
-                connected.transform.position = connectedstartingPosition;
-                connected.transform.rotation = connectedstartingRotation;
+        rb.velocity = Vector3.zero;
+        rb.angularVelocity = Vector3.zero;
 
-                connected.velocity = Vector3.zero;
-                connected.angularVelocity = Vector3.zero;
-            }
+        if (connected != null)
+        {
+            connected.transform.position = connectedstartingPosition;
+            connected.transform.rotation = connectedstartingRotation;
+
+            connected.velocity = Vector3.zero;
+            connected.angularVelocity = Vector3.zero;
         }
     }
 }

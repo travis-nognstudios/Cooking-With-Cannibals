@@ -53,7 +53,7 @@ namespace AI
 
         public void ReactToThrownKnife()
         {
-            //animator.setTrigger("reactToThrownKnife");
+            animator.SetTrigger("OnKnifeHit");
             Debug.Log("Bruce: You threw a knife at me!");
 
         }
@@ -77,8 +77,9 @@ namespace AI
 
             if (objectName.Contains("Knife") || objectName.Contains("knife"))
             {
-                //FreezeObjectOnHero(collision);
                 ReactToThrownKnife();
+                ObjectRespawn respawner = thrownObject.GetComponent<ObjectRespawn>();
+                respawner.Respawn();
             }
             else if (objectSpeed > fastThrowSpeed)
             {
