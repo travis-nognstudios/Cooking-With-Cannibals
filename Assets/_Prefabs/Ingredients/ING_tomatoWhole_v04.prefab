@@ -114,13 +114,13 @@ GameObject:
   - component: {fileID: 6742759396855336563}
   - component: {fileID: 8910585859136273080}
   - component: {fileID: 3388409513986867653}
-  - component: {fileID: 7427462099697140260}
   - component: {fileID: 294677267742033907}
   - component: {fileID: 5484873113438654069}
   - component: {fileID: 7516238354780614238}
   - component: {fileID: 9014204880822580820}
   - component: {fileID: 3154368414592833120}
   - component: {fileID: 8191612089159240349}
+  - component: {fileID: 6876446096909938732}
   m_Layer: 0
   m_Name: ING_tomatoWhole_v04
   m_TagString: Untagged
@@ -270,29 +270,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &7427462099697140260
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4658496001639258226}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1dad8484f1e2e65488f9804c903aea70, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  choppedObject:
-  - {fileID: 2348498024574583594, guid: 66a0a90c134bb5a4e80636e13f698594, type: 3}
-  - {fileID: 2348498024574583594, guid: 66a0a90c134bb5a4e80636e13f698594, type: 3}
-  - {fileID: 2348498024574583594, guid: 66a0a90c134bb5a4e80636e13f698594, type: 3}
-  - {fileID: 2348498024574583594, guid: 66a0a90c134bb5a4e80636e13f698594, type: 3}
-  - {fileID: 2348498024574583594, guid: 66a0a90c134bb5a4e80636e13f698594, type: 3}
-  cuttingChops: 5
-  canChop: 0
-  progressSlider: {fileID: 1693725081}
-  progressBar: {fileID: 7955473246070547470}
-  cam: {fileID: 0}
 --- !u!135 &294677267742033907
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -487,6 +464,24 @@ MonoBehaviour:
   objectToHighlight: {fileID: 0}
   objectHighlighter: {fileID: 0}
   objectToAffect: {fileID: 0}
+--- !u!114 &6876446096909938732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4658496001639258226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee34cfa6578f742ffb84ac02a692311d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  choppedObject: {fileID: 8618347274667456112, guid: 597b1c163524d4da89b0c32b9982f706,
+    type: 3}
+  numChopsNeeded: 3
+  progressSlider: {fileID: 1693725081}
+  progressBar: {fileID: 7955473246070547470}
+  cam: {fileID: 0}
 --- !u!1001 &585976992598059753
 PrefabInstance:
   m_ObjectHideFlags: 0

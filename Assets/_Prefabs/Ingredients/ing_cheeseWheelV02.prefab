@@ -114,12 +114,12 @@ GameObject:
   - component: {fileID: 2693944796835023203}
   - component: {fileID: 7513651367581710466}
   - component: {fileID: 2990642650530281447}
-  - component: {fileID: 337436399945529697}
   - component: {fileID: 4661397448400645764}
   - component: {fileID: 9148262283302360488}
   - component: {fileID: 2783193593117606133}
   - component: {fileID: 8150306522921896384}
   - component: {fileID: 7102890355257000880}
+  - component: {fileID: 6665283547597582160}
   m_Layer: 0
   m_Name: ing_cheeseWheelV02
   m_TagString: Untagged
@@ -269,30 +269,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &337436399945529697
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8576903648623118118}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1dad8484f1e2e65488f9804c903aea70, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  choppedObject:
-  - {fileID: 5189456436152974811, guid: 8ff381d7adb72ee4eb5e29037ec3cc83, type: 3}
-  - {fileID: 5189456436152974811, guid: 8ff381d7adb72ee4eb5e29037ec3cc83, type: 3}
-  - {fileID: 5189456436152974811, guid: 8ff381d7adb72ee4eb5e29037ec3cc83, type: 3}
-  - {fileID: 5189456436152974811, guid: 8ff381d7adb72ee4eb5e29037ec3cc83, type: 3}
-  - {fileID: 5189456436152974811, guid: 8ff381d7adb72ee4eb5e29037ec3cc83, type: 3}
-  - {fileID: 5189456436152974811, guid: 8ff381d7adb72ee4eb5e29037ec3cc83, type: 3}
-  cuttingChops: 6
-  canChop: 0
-  progressSlider: {fileID: 4938593461504828693}
-  progressBar: {fileID: 3093669832924819586}
-  cam: {fileID: 0}
 --- !u!65 &4661397448400645764
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -467,6 +443,24 @@ MonoBehaviour:
   interactSound: {fileID: 8300000, guid: c5d67b32416ccb34298447bcb849691d, type: 3}
   cookSound: {fileID: 8300000, guid: 3a58ff49945f2dd418b930da25bdd418, type: 3}
   dropSpeed: 1
+--- !u!114 &6665283547597582160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8576903648623118118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee34cfa6578f742ffb84ac02a692311d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  choppedObject: {fileID: 1722741909034585323, guid: 52a975d7e1fcd4cd3b9968f74ac867d3,
+    type: 3}
+  numChopsNeeded: 4
+  progressSlider: {fileID: 4938593461504828693}
+  progressBar: {fileID: 3093669832924819586}
+  cam: {fileID: 0}
 --- !u!1001 &5523847935917309541
 PrefabInstance:
   m_ObjectHideFlags: 0
