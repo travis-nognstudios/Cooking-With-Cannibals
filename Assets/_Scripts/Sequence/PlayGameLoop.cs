@@ -76,5 +76,15 @@ namespace Sequence
         {
             return orderSpawner.numberOfTickets == orderSpawner.GetNumTicketsCompleted();
         }
+
+        public float GetTotalTime()
+        {
+            return timeLimitInSeconds;
+        }
+
+        public float GetTimeLeft()
+        {
+            return timeLimitInSeconds - timer;
+        }
     }
 }
