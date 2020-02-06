@@ -76,6 +76,7 @@ namespace Serving
             {
                 if (!ListContainsName(itemsInBoxNames, toppingName))
                 {
+                    Debug.Log($"{toppingName} topping missing");
                     numMissingToppings++;
                     numMistakes++;
                 }
@@ -86,6 +87,7 @@ namespace Serving
             {
                 if (!NameEquals(itemInBox, mainIngredientShouldHave) && !ListContainsName(toppingsShouldHaveNames, itemInBox))
                 {
+                    Debug.Log($"{itemInBox} topping extra");
                     numExtraToppings++;
                     numMistakes++;
                 }

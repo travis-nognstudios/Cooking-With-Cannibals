@@ -155,6 +155,7 @@ namespace Serving
             foreach (Collider c in collidersInBox)
             {
                 GameObject ingredient = c.gameObject;
+
                 if (!inBox.Contains(ingredient))
                 {
                     inBox.Add(ingredient);
