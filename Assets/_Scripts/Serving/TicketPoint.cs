@@ -78,8 +78,6 @@ namespace Serving
         {
             this.ticketAge += age;
             this.timeUntilExpire -= age;
-
-            Debug.Log($"Ticket expires in: {timeUntilExpire}");
         }
 
         public bool HasExpired()

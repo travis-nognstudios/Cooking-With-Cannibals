@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -67,28 +68,22 @@ namespace Supplies
                 }
 
                 // If desired object doesn't exist near point, spawn new one
-                // Set its camera on the Cutting script to the center eye camera
+                // Set its camera on the Cutting script to the center eye camera, if cuttable
                 if (!ListContainsName(objectsAtPoint, objectToSpawn.gameObject.name))
                 {
                     GameObject spawnedItem = Instantiate(objectToSpawn, position, rotation);
-                    spawnedItem.GetComponent<Cutting>().cam = CenterEyeCamera;
+                    Cutting cutScript = spawnedItem.GetComponent<Cutting>();
+                    if (cutScript != null)
+                    {
+                        spawnedItem.GetComponent<Cutting>().cam = CenterEyeCamera;
+                    }
                 }
             }
         }
 
-        bool ListContainsName(List<string> list, string name)
+        bool ListContainsName(List<String> list, string name)
         {
-            foreach (string listitem in list)
-            {
-                // Check if one string is a substring of another
-                // Allows them to have numbers at the end and still match
-                if (listitem.Contains(name) || name.Contains(listitem))
-                {
-                    return true;
-                }
-            }
-
-            return false;
+            return list.Contains(name) || list.Contains(name + "(Clone)");
         }
     }
 }

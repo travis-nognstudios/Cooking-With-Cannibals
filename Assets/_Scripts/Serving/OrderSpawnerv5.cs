@@ -49,12 +49,6 @@ namespace Serving
                 seq.LoadRecipes();
                 Recipe[] seqRecipes = seq.GetRecipes();
 
-                Debug.Log($"{seqRecipes.Length} recipes found in sequence");
-                foreach (Recipe r in seqRecipes)
-                {
-                    Debug.Log(r.recipeObject.name);
-                }
-
                 foreach (Recipe seqRec in seqRecipes)
                 {
                     sequencedRecipes.Add(seqRec);
