@@ -71,6 +71,8 @@ namespace Serving
                 this.recipe = new Recipe();
 
                 this.ticketTiming.EndTimer();
+                this.ticketTiming = new TicketTiming();
+
                 this.customer = null;
                 this.timeUntilExpire = 99999f;
             }
@@ -85,7 +87,7 @@ namespace Serving
         {
             this.ticketAge += age;
             this.timeUntilExpire -= age;
-            this.ticketTiming.UpdateTimer(timeUntilExpire + ticketAge, ticketAge);
+            this.ticketTiming.UpdateTimer(timeUntilExpire + ticketAge, timeUntilExpire);
         }
 
         public bool HasExpired()

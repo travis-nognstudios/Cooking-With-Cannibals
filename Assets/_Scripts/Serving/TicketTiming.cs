@@ -33,8 +33,8 @@ namespace Serving
 
         public void UpdateTimer(float totalTime, float timeLeft)
         {
-            float angle = timeLeft / totalTime;
-            timerImage.fillAmount = angle;
+            float fillAmount = timeLeft / totalTime;
+            timerImage.fillAmount = fillAmount;
         }
     }
 }
