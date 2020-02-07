@@ -2,6 +2,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using SceneObjects;
 
 namespace Cooking
 {
@@ -109,6 +110,14 @@ namespace Cooking
             }
 
             return -1;
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.CompareTag("Hand"))
+            {
+                other.gameObject.GetComponent<HandAnimations>().PlaySOS();
+            }
         }
 
         // Cook
