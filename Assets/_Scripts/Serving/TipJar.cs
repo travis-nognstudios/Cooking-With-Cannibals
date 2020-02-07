@@ -29,10 +29,10 @@ namespace Serving
             amountInJar += amount;
 
             // Don't overfill
-            if (amountInJar > capacity)
-            {
-                amountInJar = capacity;
-            }
+            //if (amountInJar > capacity)
+            //{
+            //    amountInJar = capacity;
+            //}
 
             UpdateUI();
         }
