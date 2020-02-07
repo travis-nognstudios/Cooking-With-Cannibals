@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using SceneObjects;
 
 namespace Cooking
 {
@@ -33,6 +34,11 @@ namespace Cooking
             if (other.gameObject.CompareTag("Heatsource"))
             {
                 MakeHot();
+            }
+
+            if (other.CompareTag("Hand"))
+            {
+                other.gameObject.GetComponent<HandAnimations>().PlaySOS();
             }
         }
 

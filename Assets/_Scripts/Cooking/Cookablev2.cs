@@ -59,10 +59,7 @@ namespace Cooking
                 allMechanics.Add(mechanic);
                 cookTimes.Add(0);
             }
-
         }
-
-        void Update() {}
 
         // Get the index on allMechanics given the cookType
         private int GetCookTypeIndex(CookType lookingFor)
@@ -112,14 +109,6 @@ namespace Cooking
             return -1;
         }
 
-        private void OnTriggerEnter(Collider other)
-        {
-            if (other.CompareTag("Hand"))
-            {
-                other.gameObject.GetComponent<HandAnimations>().PlaySOS();
-            }
-        }
-
         // Cook
         void OnTriggerStay(Collider other)
         {
@@ -166,7 +155,6 @@ namespace Cooking
         public void OnTriggerExit()
         {
             StopCookingSound();
-           
         }
 
         private void MakeCooked(CookType cookType)
@@ -204,20 +192,28 @@ namespace Cooking
         public void PlayCookingSound()
         {
             AudioSource audioSource = GetComponent<AudioSource>();
-            GetComponent<GrabBasedAudio>().SetCookSound();
-            if (!audioSource.isPlaying)
+
+            if (audioSource != null)
             {
-                audioSource.Play();
+                GetComponent<GrabBasedAudio>().SetCookSound();
+                if (!audioSource.isPlaying)
+                {
+                    audioSource.Play();
+                }
             }
         }
 
         public void StopCookingSound()
         {
             AudioSource audioSource = GetComponent<AudioSource>();
-            GetComponent<GrabBasedAudio>().SetDropSound();
-            if (audioSource.isPlaying)
+
+            if (audioSource != null)
             {
-                audioSource.Stop();
+                GetComponent<GrabBasedAudio>().SetDropSound();
+                if (audioSource.isPlaying)
+                {
+                    audioSource.Stop();
+                }
             }
         }
 

@@ -14,38 +14,54 @@ namespace Audio
         public override void OnInteractableObjectGrabbed(InteractableObjectEventArgs e)
         {
             base.OnInteractableObjectGrabbed(e);
-            // Debug.Log("Im Grabbed");
-            GetComponent<GrabBasedAudio>().SetInteractSound();
+            GrabBasedAudio audio = GetComponent<GrabBasedAudio>();
+
+            if (audio != null)
+            {
+                audio.SetInteractSound();
+            }
         }
 
 
         public override void OnInteractableObjectUngrabbed(InteractableObjectEventArgs e)
         {
             base.OnInteractableObjectUngrabbed(e);
-            // Debug.Log("Not grabbed");
-            GetComponent<GrabBasedAudio>().SetDropSound();
+            GrabBasedAudio audio = GetComponent<GrabBasedAudio>();
+            if (audio != null)
+            {
+                GetComponent<GrabBasedAudio>().SetDropSound();
+            }
         }
 
-        public virtual void Grabbed(VRTK_InteractGrab other)
+        public override void Grabbed(VRTK_InteractGrab other)
         {
-
-            // Debug.Log("Im Grabbed method");
-            GetComponent<GrabBasedAudio>().SetInteractSound();
+            GrabBasedAudio audio = GetComponent<GrabBasedAudio>();
+            if (audio != null)
+            {
+                audio.SetInteractSound();
+            }
         }
 
 
-        public virtual void Ungrabbed(VRTK_InteractGrab other)
+        public override void Ungrabbed(VRTK_InteractGrab other)
         {
-            // Debug.Log("Not grabbed method");
-            GetComponent<GrabBasedAudio>().SetDropSound();
+            GrabBasedAudio audio = GetComponent<GrabBasedAudio>();
+            if (audio != null)
+            {
+                audio.SetDropSound();
+            }
         }
 
         private void OnCollisionEnter(Collision other)
         {
             if (other.relativeVelocity.magnitude > dropSpeed)
             {
-                GetComponent<GrabBasedAudio>().soundSource.Play();
-                // Debug.Log("Something should be playing");
+                GrabBasedAudio audio = GetComponent<GrabBasedAudio>();
+
+                if (audio != null)
+                {
+                    audio.soundSource.Play();
+                }
             }
         }
     }

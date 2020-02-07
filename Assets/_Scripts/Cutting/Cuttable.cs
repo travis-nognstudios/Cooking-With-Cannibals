@@ -29,8 +29,10 @@ namespace Cut
 
         void Update()
         {
-            progressBar.transform.LookAt(transform.position + cam.transform.rotation * Vector3.forward, cam.transform.rotation * Vector3.up);
-
+            if (cam != null)
+            {
+                progressBar.transform.LookAt(transform.position + cam.transform.rotation * Vector3.forward, cam.transform.rotation * Vector3.up);
+            }
         }
 
         void Chop()

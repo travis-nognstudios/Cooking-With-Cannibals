@@ -16,9 +16,7 @@ public class GrabBasedAudio : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        soundSource = this.GetComponent<AudioSource>();
         soundSource.clip = dropSound;
-        //Debug.Log("Start works");
     }
 
     public void SetInteractSound()
