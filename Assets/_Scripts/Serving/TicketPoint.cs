@@ -11,9 +11,11 @@ namespace Serving
         public GameObject ticketReference;
         public float ticketAge;
         public Recipe recipe;
+        public TicketTiming ticketTiming;
 
         private Customer customer;
         private float timeUntilExpire;
+
 
         public TicketPoint(GameObject spawnPoint)
         {
@@ -21,6 +23,7 @@ namespace Serving
             this.ticketReference = null;
             this.ticketAge = 0f;
             this.recipe = new Recipe();
+            this.ticketTiming = new TicketTiming();
 
             this.customer = null;
             this.timeUntilExpire = 99999f;
@@ -42,6 +45,9 @@ namespace Serving
             this.ticketAge = 0f;
             this.recipe = recipe;
             this.timeUntilExpire = recipe.serveTime;
+            this.ticketTiming = spawnPoint.GetComponent<TicketTiming>();
+
+            ticketTiming.StartTimer();
         }
 
         public void SetCustomer(Customer customer)
@@ -64,6 +70,7 @@ namespace Serving
                 this.ticketAge = 0f;
                 this.recipe = new Recipe();
 
+                this.ticketTiming.EndTimer();
                 this.customer = null;
                 this.timeUntilExpire = 99999f;
             }
@@ -78,6 +85,7 @@ namespace Serving
         {
             this.ticketAge += age;
             this.timeUntilExpire -= age;
+            this.ticketTiming.UpdateTimer(timeUntilExpire + ticketAge, ticketAge);
         }
 
         public bool HasExpired()
