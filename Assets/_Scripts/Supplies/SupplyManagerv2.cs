@@ -2,6 +2,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Cut;
 
 namespace Supplies
 {
@@ -72,10 +73,11 @@ namespace Supplies
                 if (!ListContainsName(objectsAtPoint, objectToSpawn.gameObject.name))
                 {
                     GameObject spawnedItem = Instantiate(objectToSpawn, position, rotation);
-                    Cutting cutScript = spawnedItem.GetComponent<Cutting>();
+                    Cuttable cutScript = spawnedItem.GetComponent<Cuttable>();
+
                     if (cutScript != null)
                     {
-                        spawnedItem.GetComponent<Cutting>().cam = CenterEyeCamera;
+                        cutScript.cam = CenterEyeCamera;
                     }
                 }
             }
