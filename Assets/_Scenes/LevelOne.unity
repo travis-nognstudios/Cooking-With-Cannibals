@@ -937,6 +937,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ING_LettuceHead_V02
       objectReference: {fileID: 0}
+    - target: {fileID: 4936778699229291145, guid: 796a02e18f0eac143a5cbd1663bc8966,
+        type: 3}
+      propertyPath: objectHighlighter
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8182158559840895934, guid: 796a02e18f0eac143a5cbd1663bc8966,
         type: 3}
       propertyPath: cam
@@ -6012,6 +6017,26 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 81724924}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &638607722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 638607709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abc4b5dd2be1cea4aaea2850b910d3f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nearTouchHighlight: {r: 0, g: 0, b: 0, a: 0}
+  touchHighlight: {r: 0, g: 0, b: 0, a: 0}
+  grabHighlight: {r: 0, g: 0, b: 0, a: 0}
+  useHighlight: {r: 0, g: 0, b: 0, a: 0}
+  objectToMonitor: {fileID: 0}
+  objectToHighlight: {fileID: 0}
+  objectHighlighter: {fileID: 0}
+  objectToAffect: {fileID: 0}
 --- !u!1001 &643817023
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17406,7 +17431,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85fc657548f9f964599998b8eeb8355b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  screenFade: {fileID: 8497995869027009774}
+  screenFade: {fileID: 0}
   color: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &1957088048
 GameObject:
@@ -32930,6 +32955,8 @@ GameObject:
   - component: {fileID: 3822098001644513867}
   - component: {fileID: 755337168351021395}
   - component: {fileID: 7970232086281746311}
+  - component: {fileID: 7970232086281746313}
+  - component: {fileID: 7970232086281746312}
   m_Layer: 10
   m_Name: garbage_Counter
   m_TagString: Untagged
@@ -32950,6 +32977,32 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.5358337, y: 0.96095985, z: 0.038200736}
   m_Center: {x: 0.2679168, y: 0.47657922, z: -0.046765387}
+--- !u!65 &7970232086281746312
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7970232086281746310}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.056355715, y: 1.0000091, z: 0.49024332}
+  m_Center: {x: 0.028177798, y: 0.50000453, z: -0.24512154}
+--- !u!65 &7970232086281746313
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7970232086281746310}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.044607878, y: 1.0000091, z: 0.49024332}
+  m_Center: {x: 0.5135298, y: 0.50000453, z: -0.24512154}
 --- !u!4 &7987430087780562670
 Transform:
   m_ObjectHideFlags: 0
@@ -33556,18 +33609,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.1659204, y: 0.079550415, z: 0.16592047}
   m_Center: {x: -0.0000017136335, y: 0.019106433, z: -0.0000038444996}
---- !u!114 &8497995869027009774 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7052999089153532371, guid: 05bd58d162518234183b3d0c5c793848,
-    type: 3}
-  m_PrefabInstance: {fileID: 1445580139851277629}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df8e1d778abf442e4bec449c360e9e1c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!20 &8497995869027009779 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 8497995867533947710, guid: 05bd58d162518234183b3d0c5c793848,
