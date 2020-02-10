@@ -13,7 +13,7 @@ namespace Sequence
 
         void Start()
         {
-            Debug.Log("Starting sequence");
+            //Debug.Log("Starting sequence");
 
             foreach(MonoBehaviour step in sequenceSteps)
             {

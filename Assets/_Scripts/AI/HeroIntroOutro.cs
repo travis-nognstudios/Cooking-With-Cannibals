@@ -71,7 +71,7 @@ namespace AI
 
         public void PlayIntro()
         {
-            Debug.Log("Playing Hero Intro");
+            //Debug.Log("Playing Hero Intro");
 
             isPlayingIntro = true;
             timeTracker = 0f;
