@@ -34,6 +34,11 @@ namespace Cooking
         public Material burntMat;
         Renderer rend;
 
+        [Header("UI")]
+        public GameObject canvas;
+        public CookUI cookUI;
+        public Camera cam;
+
         private CookTop last_touched_cookTop = null;
 
         #endregion Variables
@@ -56,6 +61,25 @@ namespace Cooking
 
                 allMechanics.Add(mechanic);
                 cookTimes.Add(0);
+            }
+
+            // Find camera for cook UI
+            if (cam == null)
+            {
+                GameObject centerEyeAnchor = GameObject.FindWithTag("MainCamera");
+                if (centerEyeAnchor != null)
+                {
+                    cam = centerEyeAnchor.GetComponent<Camera>();
+                }
+            }
+        }
+
+        private void Update()
+        {
+            if (cam != null)
+            {
+                cookUI.transform.LookAt(transform.position + cam.transform.rotation * Vector3.forward);
+
             }
         }
 
@@ -107,6 +131,14 @@ namespace Cooking
             return -1;
         }
 
+        void OnTriggerEnter(Collider other)
+        {
+            if (other.gameObject.CompareTag("Cooktop"))
+            { 
+                canvas.SetActive(true);
+            }
+        }
+
         // Cook
         void OnTriggerStay(Collider other)
         {
@@ -133,6 +165,9 @@ namespace Cooking
                 {
                     cookTimes[typeIndex] += Time.deltaTime;
                     float timeCooked = cookTimes[typeIndex];
+
+                    // Side effects
+                    cookUI.UpdateFill(timeToOvercook, timeCooked);
                     PlayCookingSound();
                     
         
@@ -161,14 +196,19 @@ namespace Cooking
             }
         }
 
-        public void OnTriggerExit()
+        public void OnTriggerExit(Collider other)
         {
-            StopCookingSound();
-            // Stops particle system
-            if (last_touched_cookTop != null)
+            if (other.gameObject.CompareTag("Cooktop"))
             {
-                last_touched_cookTop.smoke.clearSmoke();
-                last_touched_cookTop = null;
+                canvas.SetActive(false);
+                StopCookingSound();
+
+                // Stops particle system
+                if (last_touched_cookTop != null)
+                {
+                    last_touched_cookTop.smoke.clearSmoke();
+                    last_touched_cookTop = null;
+                }
             }
         }
 
@@ -236,7 +276,6 @@ namespace Cooking
         {
             return this.steps;
         }
-
 
     }
 }
