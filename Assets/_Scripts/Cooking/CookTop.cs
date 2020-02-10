@@ -13,6 +13,7 @@ namespace Cooking
 
         [Header("Cooktop Settings")]
         public CookType cookType;
+        public Smoke smoke;
 
         #endregion Variables
 

@@ -34,9 +34,7 @@ namespace Cooking
         public Material burntMat;
         Renderer rend;
 
-        //private GameObject obj = this.GameObject;
-        //public ParticleSystem cookingpartical;
-        //public ParticleSystem burningpartical; 
+        private CookTop last_touched_cookTop = null;
 
         #endregion Variables
 
@@ -116,6 +114,7 @@ namespace Cooking
             {
                 // Get cooktop's type
                 CookTop cookTop = other.gameObject.GetComponent<CookTop>();
+                last_touched_cookTop = cookTop;
                 CookType cookTopType = cookTop.cookType;
                 int typeIndex = GetCookTypeIndex(cookTopType);
 
@@ -148,6 +147,16 @@ namespace Cooking
                         
                         MakeOvercooked(cookTopType);
                     }
+
+                    // Starts particle system for cookingSmoke and Updates to buring with state
+                    if (isOvercooked)
+                    {
+                        cookTop.smoke.burnSmoke();
+                    }
+                    else
+                    {
+                        cookTop.smoke.cookSmoke();
+                    }
                 }
             }
         }
@@ -155,6 +164,12 @@ namespace Cooking
         public void OnTriggerExit()
         {
             StopCookingSound();
+            // Stops particle system
+            if (last_touched_cookTop != null)
+            {
+                last_touched_cookTop.smoke.clearSmoke();
+                last_touched_cookTop = null;
+            }
         }
 
         private void MakeCooked(CookType cookType)

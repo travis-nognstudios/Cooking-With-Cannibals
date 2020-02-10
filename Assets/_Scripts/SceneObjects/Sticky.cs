@@ -30,9 +30,9 @@ public class Sticky : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter(Collider other)
+    void OnCollisionEnter(Collision other)
     {
-        if (other == stickTo)
+        if (other.collider == stickTo)
         {
             Stick();
         }
