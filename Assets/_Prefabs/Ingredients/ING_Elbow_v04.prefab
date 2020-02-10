@@ -296,13 +296,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stateChangeTimes:
   - cookType: 1
-    timeToCook: 10
-    timeToOverCook: 25
+    timeToCook: 15
+    timeToOverCook: 35
   uncookedMat: {fileID: 2100000, guid: 4a3fb9f199f4e12458b4562e343870cb, type: 2}
   cookedMat: {fileID: 2100000, guid: 7f1e0c8e02b9f8c4d8e6caac1d258754, type: 2}
   burntMat: {fileID: 2100000, guid: e09cc7d82bf3b1841ac841a02c843457, type: 2}
   canvas: {fileID: 7937371485283422153}
   cookUI: {fileID: 6370739939781888604}
+  cam: {fileID: 0}
 --- !u!114 &-8437340519511000784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -471,16 +472,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8942909618641731007}
     m_Modifications:
-    - target: {fileID: 8794757175939375550, guid: 6c0a6816936b04f42822cf1aa7ded59f,
-        type: 3}
-      propertyPath: m_Name
-      value: CookingUI
-      objectReference: {fileID: 0}
-    - target: {fileID: 8794757175939375550, guid: 6c0a6816936b04f42822cf1aa7ded59f,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3410697302078619019, guid: 6c0a6816936b04f42822cf1aa7ded59f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -600,6 +591,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.68232965
+      objectReference: {fileID: 0}
+    - target: {fileID: 8794757175939375550, guid: 6c0a6816936b04f42822cf1aa7ded59f,
+        type: 3}
+      propertyPath: m_Name
+      value: CookingUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 8794757175939375550, guid: 6c0a6816936b04f42822cf1aa7ded59f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3914276155653630153, guid: 6c0a6816936b04f42822cf1aa7ded59f,
         type: 3}

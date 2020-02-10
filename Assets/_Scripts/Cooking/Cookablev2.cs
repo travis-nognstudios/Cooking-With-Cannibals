@@ -222,8 +222,9 @@ namespace Cooking
             currentState.cookState = CookState.Cooked;
             allMechanics[typeIndex] = currentState;
 
-            //ToDo Change later
+            // Update look and UI
             rend.sharedMaterial = cookedMat;
+            cookUI.SetCookedIcon();
         }
 
         private void MakeOvercooked(CookType cookType)
@@ -240,8 +241,9 @@ namespace Cooking
             int typeIndexSteps = GetStepIndex(cookType);
             steps[typeIndexSteps] = currentState;
 
-            //ToDo Change later
+            // Update look and UI
             rend.sharedMaterial = burntMat;
+            cookUI.SetOvercookedIcon();
         }
 
         public void PlayCookingSound()
