@@ -9,6 +9,7 @@ namespace Cooking
 
         public ParticleSystem cookingSmoke;
         public ParticleSystem burningSmoke;
+        //public ParticleSystem roomSmoke;
 
 
         void Start()
@@ -24,6 +25,7 @@ namespace Cooking
                 cookingSmoke.Stop();
             if (burningSmoke.isPlaying)
                 burningSmoke.Stop();
+            
         }
 
         public void cookSmoke()
@@ -40,7 +42,21 @@ namespace Cooking
                 cookingSmoke.Stop();
             if (!burningSmoke.isPlaying)
                 burningSmoke.Play();
+            //StartCoroutine(Coroutine());
+        }
+        /*
+        public void emptyroomSmoke()
+        {
+            if (roomSmoke.isPlaying)
+                roomSmoke.Stop();
         }
 
+        IEnumerator Coroutine()
+        {
+            yield return new WaitForSeconds(5);
+            roomSmoke.Play();
+            
+        }
+        */
     }
 }
