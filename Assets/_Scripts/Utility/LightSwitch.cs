@@ -17,8 +17,6 @@ public class LightSwitch : MonoBehaviour
                 isOn = true;
                 transform.position = new Vector3(-0.4937657f, -0.1230854f, 0);
                 transform.Rotate(0, 0, -21.76f, Space.Self);
-
-                LevelManager.Instance.LoadNextScene();
             }
             else
             {
