@@ -10,7 +10,6 @@ public class PlayButton : MonoBehaviour
         if (interactableObject.IsTouched())
         {
 
-            Debug.Log("TOuched");
             LevelManager.Instance.LoadScene(1);
         }
     }

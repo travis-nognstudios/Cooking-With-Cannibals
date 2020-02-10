@@ -39,17 +39,21 @@ public class LevelManager : Singleton<LevelManager>
     IEnumerator LoadNextLevel()
     {
         yield return new WaitForSeconds(screenFade.fadeTime);
+        loading = false;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        
     }
 
     IEnumerator LoadLevel(int i)
     {
         yield return new WaitForSeconds(screenFade.fadeTime);
+        loading = false;
         SceneManager.LoadScene(i);
+        
     }
     // Update is called once per frame
     void Update()
     {
-        
+        screenFade = FindObjectOfType<OVRScreenFade>();
     }
 }

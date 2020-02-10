@@ -13,8 +13,10 @@ public class PauseHandle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (gameObject.transform.rotation.x < -80)
+        //Debug.Log(gameObject.transform.eulerAngles.x);
+        if (gameObject.transform.localEulerAngles.x == 270f)
         {
+            
             LevelManager.Instance.LoadScene(0);
         }
     }
