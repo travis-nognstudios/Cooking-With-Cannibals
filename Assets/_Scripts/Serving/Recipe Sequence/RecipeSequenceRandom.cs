@@ -15,11 +15,18 @@ namespace Serving
 
         void Start()
         {
-                       
+            
         }
 
         public void LoadRecipes()
         {
+            // Set seed
+            if (seed == 0)
+            {
+                 seed = DateTime.UtcNow.Millisecond;
+            }
+
+            // Generate random recipes
             recipeManager = GetComponent<RecipeManager>();
             System.Random rnJesus = new System.Random(seed);
             int maxRecipes = recipeManager.recipes.Length;

@@ -17,13 +17,13 @@ namespace Cooking
         }
 
 
-        public void clearSmoke()
+        public void ClearSmoke()
         {
             cookingSmoke.Stop();
             burningSmoke.Stop();
         }
 
-        public void cookSmoke()
+        public void CookSmoke()
         {
             // Burn smoke takes precedence
             if (!cookingSmoke.isPlaying && !burningSmoke.isPlaying)
@@ -32,7 +32,7 @@ namespace Cooking
             }
         }
 
-        public void burnSmoke()
+        public void BurnSmoke()
         {
             if (cookingSmoke.isPlaying)
             {

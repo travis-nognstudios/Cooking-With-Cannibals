@@ -146,9 +146,9 @@ namespace Cooking
             {
                 // Get cooktop's type
                 CookTop cookTop = other.gameObject.GetComponent<CookTop>();
-                last_touched_cookTop = cookTop;
                 CookType cookTopType = cookTop.cookType;
                 int typeIndex = GetCookTypeIndex(cookTopType);
+
 
                 // State change properties
                 int timeIndex = GetCookTimeIndex(cookTopType);
@@ -183,14 +183,18 @@ namespace Cooking
                         MakeOvercooked(cookTopType);
                     }
 
-                    // Starts particle system for cookingSmoke and Updates to buring with state
+                    // Smoke effect
+                    last_touched_cookTop = cookTop;
+
                     if (isOvercooked)
                     {
-                        cookTop.smoke.burnSmoke();
+                        //cookTop.smoke.burnSmoke();
+                        cookTop.GetComponent<Smoke>().BurnSmoke();
                     }
                     else
                     {
-                        cookTop.smoke.cookSmoke();
+                        //cookTop.smoke.cookSmoke();
+                        cookTop.GetComponent<Smoke>().CookSmoke();
                     }
                 }
             }
@@ -203,10 +207,10 @@ namespace Cooking
                 canvas.SetActive(false);
                 StopCookingSound();
 
-                // Stops particle system
+                // Stop smoke
                 if (last_touched_cookTop != null)
                 {
-                    last_touched_cookTop.smoke.clearSmoke();
+                    last_touched_cookTop.GetComponent<Smoke>().ClearSmoke();
                     last_touched_cookTop = null;
                 }
             }

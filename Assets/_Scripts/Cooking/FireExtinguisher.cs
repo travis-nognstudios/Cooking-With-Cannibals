@@ -9,7 +9,7 @@ namespace Cooking
     {
         #region Variables
 
-
+        public ParticleSystem foam;
 
         #endregion Variables
 
@@ -23,5 +23,20 @@ namespace Cooking
 
         }
 
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.CompareTag("Cooktop"))
+            {
+                foam.Play();
+            }
+        }
+
+        private void OnTriggerExit(Collider other)
+        {
+            if (other.CompareTag("Cooktop"))
+            {
+                foam.Stop();
+            }
+        }
     }
 }
