@@ -17,7 +17,6 @@ namespace Cooking
 
         #endregion Variables
 
-        #region MonoBehavior
         // Start is called before the first frame update
         void Start()
         {
@@ -30,49 +29,74 @@ namespace Cooking
 
         }
 
+        
         void OnTriggerEnter(Collider other)
         {
+            /*
+            // Stove interactions
             if (other.gameObject.CompareTag("Heatsource"))
             {
-                MakeHot();
-            }
+                StoveBurner burner = other.gameObject.GetComponent<StoveBurner>();
 
+                if (burner.IsOn())
+                {
+                    MakeHot();
+                }
+            }
+            */
+
+            // Hand interactions
             if (other.CompareTag("Hand"))
             {
                 other.gameObject.GetComponent<HandAnimations>().PlaySOS();
             }
         }
 
+        
         void OnTriggerExit(Collider other)
         {
-            if (other.gameObject.CompareTag("Heatsource"))
+            if (other.CompareTag("Heatsource"))
             {
                 MakeCold();
             }
         }
 
-        #endregion MonoBehavior
+        private void OnTriggerStay(Collider other)
+        {
+            if (other.CompareTag("Heatsource"))
+            {
+                StoveBurner burner = other.gameObject.GetComponent<StoveBurner>();
+                SyncHeat(burner);
+            }
+        }
 
-        #region Private Methods
+        private void SyncHeat(StoveBurner burner)
+        {
+            
+            if (burner.IsOn() && !IsHot())
+            {
+                MakeHot();
+            }
+            else if (!burner.IsOn() && IsHot())
+            {
+                MakeCold();
+            }
+        }
+
         private void MakeHot()
         {
             hot = true;
-            //Debug.Log("Now hot");
         }
 
         private void MakeCold()
         {
             hot = false;
-            //Debug.Log("Now cold");
         }
 
-        #endregion Private Methods
 
-        #region Properties
         public bool IsHot()
         {
             return hot;
         }
-        #endregion Properties
     }
 }
