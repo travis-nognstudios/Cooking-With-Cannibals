@@ -48,7 +48,11 @@ namespace Cooking
             // Hand interactions
             if (other.CompareTag("Hand"))
             {
-                other.gameObject.GetComponent<HandAnimations>().PlaySOS();
+                HandAnimations anim = other.gameObject.GetComponent<HandAnimations>();
+                if (anim != null)
+                {
+                    anim.PlaySOS();
+                }
             }
         }
 

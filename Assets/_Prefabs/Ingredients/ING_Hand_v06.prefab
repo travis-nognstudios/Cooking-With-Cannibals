@@ -1046,8 +1046,7 @@ GameObject:
   - component: {fileID: -7150444269241262857}
   - component: {fileID: 6301190787016969409}
   - component: {fileID: -7341163807226659783}
-  - component: {fileID: 2222589707326831866}
-  - component: {fileID: 3414836934495399804}
+  - component: {fileID: 18830117841099690}
   m_Layer: 0
   m_Name: ING_Hand_v06
   m_TagString: Hand
@@ -1436,26 +1435,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.23572606, y: 0.3378828, z: 0.116058275}
   m_Center: {x: -0.025045324, y: -0.07189956, z: -0.028262043}
---- !u!95 &2222589707326831866
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6243981089210176850}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 2a7c3ea3596c01449a7630e072d0221c, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &3414836934495399804
+--- !u!114 &18830117841099690
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1464,10 +1444,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 6243981089210176850}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95d269210f87c934ebe8423a52bb8f8e, type: 3}
+  m_Script: {fileID: 11500000, guid: a2cb66874de1e144cbd3e943a9dedcf1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 2222589707326831866}
+  poses: 090000000a000000130000001400000015000000
 --- !u!1 &6583490677781158278
 GameObject:
   m_ObjectHideFlags: 0
@@ -1921,6 +1901,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3911814468952266081}
     m_Modifications:
+    - target: {fileID: 8794757175939375550, guid: 6c0a6816936b04f42822cf1aa7ded59f,
+        type: 3}
+      propertyPath: m_Name
+      value: CookingUI
+      objectReference: {fileID: 0}
     - target: {fileID: 3410697302078619019, guid: 6c0a6816936b04f42822cf1aa7ded59f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2040,11 +2025,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.21679433
-      objectReference: {fileID: 0}
-    - target: {fileID: 8794757175939375550, guid: 6c0a6816936b04f42822cf1aa7ded59f,
-        type: 3}
-      propertyPath: m_Name
-      value: CookingUI
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c0a6816936b04f42822cf1aa7ded59f, type: 3}
