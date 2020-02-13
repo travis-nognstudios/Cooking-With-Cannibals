@@ -190,7 +190,10 @@ namespace Serving
         private void SpawnMeal(Recipe recipe)
         {
             Collider myCollider = GetComponent<Collider>();
-            Vector3 mealSpawnOffset = new Vector3(0, 0.3f, 0);
+            Vector3 mealSpawnOffsetTopOfBox = new Vector3(0, 0.3f, 0);
+            Vector3 mealSpawnOffsetInsideBox = new Vector3(0, 0, 0);
+
+            Vector3 mealSpawnOffset = mealSpawnOffsetInsideBox;
 
             spawnedMeal = Instantiate(recipe.recipeObject, myCollider.transform.position + mealSpawnOffset, recipe.recipeObject.transform.rotation);
             Destroy(spawnedMeal, spawnedMealDestroyTime);
@@ -199,9 +202,13 @@ namespace Serving
         private void SpawnDubiousFood()
         {
             Collider myCollider = GetComponent<Collider>();
-            Vector3 mealSpawnOffset = new Vector3(0, 0.1f, 0);
+            Vector3 mealSpawnOffsetToopOfBox = new Vector3(0, 0.1f, 0);
+            Vector3 mealSpawnOffsetInsideBox = new Vector3(0, 0, 0);
 
-            spawnedMeal = Instantiate(dubiousFood, myCollider.transform.position + mealSpawnOffset, myCollider.transform.rotation);
+            Vector3 mealSpawnOffset = mealSpawnOffsetInsideBox;
+
+            spawnedMeal = Instantiate(dubiousFood, myCollider.transform.position + mealSpawnOffset, dubiousFood.transform.rotation);
+            Destroy(spawnedMeal, spawnedMealDestroyTime);
         }
 
         private void StartSpawnerCooldown()
