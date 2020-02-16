@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 417451222055216264}
   - component: {fileID: 2975526116253520204}
   - component: {fileID: 7950039359279316620}
-  - component: {fileID: 4492099936878070506}
   - component: {fileID: 4368594994787104600}
   m_Layer: 0
   m_Name: ING_Arm_v03
@@ -218,7 +217,6 @@ MonoBehaviour:
   objectToHighlight: {fileID: 0}
   objectHighlighter: {fileID: 0}
   objectToAffect: {fileID: 0}
-  shaderProperty: Color_72E286ED
 --- !u!82 &417451222055216264
 AudioSource:
   m_ObjectHideFlags: 0
@@ -367,28 +365,6 @@ MonoBehaviour:
   touchHighlightColor: {r: 0, g: 0, b: 0, a: 0}
   usingState: 0
   dropSpeed: 1
---- !u!114 &4492099936878070506
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1776778994532524765}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 074d8dcfb56f345f1abde6a7cb765705, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stateChangeTimes:
-  - cookType: 1
-    timeToCook: 30
-    timeToOverCook: 50
-  uncookedMat: {fileID: 2100000, guid: 4a3fb9f199f4e12458b4562e343870cb, type: 2}
-  cookedMat: {fileID: 2100000, guid: 7f1e0c8e02b9f8c4d8e6caac1d258754, type: 2}
-  burntMat: {fileID: 2100000, guid: e09cc7d82bf3b1841ac841a02c843457, type: 2}
-  canvas: {fileID: 0}
-  cookUI: {fileID: 0}
-  cam: {fileID: 0}
 --- !u!114 &4368594994787104600
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -638,15 +614,15 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8630054009267123421, guid: b06c866c78fc8634a8c035ad537b09b2,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5846332415484992871, guid: b06c866c78fc8634a8c035ad537b09b2,
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8630054009267123421, guid: b06c866c78fc8634a8c035ad537b09b2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b06c866c78fc8634a8c035ad537b09b2, type: 3}

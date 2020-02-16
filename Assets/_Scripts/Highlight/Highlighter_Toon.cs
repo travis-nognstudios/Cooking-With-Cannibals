@@ -8,11 +8,10 @@ namespace Highlight
 {
     public class Highlighter_Toon : VRTK_InteractObjectHighlighter
     {
+        private string shaderProperty = "_isHighlighted";
 
-        [Header("Shader Variables")]
-        public string shaderProperty = "Color_72E286ED";
-        
-        private Color baseColor = new Color(1, 1, 1);
+        private readonly float ON = 1;
+        private readonly float OFF = 0;
 
         private Renderer rend;
         private Material mat;
@@ -47,7 +46,7 @@ namespace Highlight
                 cookable = GetComponent<Cookablev2>();
             }
 
-            propBlock.SetColor(shaderProperty, touchHighlight);
+            propBlock.SetFloat(shaderProperty, ON);
             rend.SetPropertyBlock(propBlock);
             isHighlighted = true;
         }
@@ -56,7 +55,7 @@ namespace Highlight
         {
             if (isHighlighted)
             {
-                propBlock.SetColor(shaderProperty, baseColor);
+                propBlock.SetFloat(shaderProperty, OFF);
                 rend.SetPropertyBlock(propBlock);
                 isHighlighted = false;
             }
