@@ -267,9 +267,9 @@ GameObject:
   - component: {fileID: 926518128747357540}
   - component: {fileID: 926518128747357543}
   - component: {fileID: 926518128747357542}
-  - component: {fileID: 926518128747357537}
+  - component: {fileID: 1490270022912625690}
   - component: {fileID: 926518128747357536}
-  - component: {fileID: 926518128747357539}
+  - component: {fileID: 5645833915451519294}
   m_Layer: 10
   m_Name: sink_lever-left
   m_TagString: Untagged
@@ -377,7 +377,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: -1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.25126588, y: 0.42347682, z: -0.19018912}
+  m_ConnectedAnchor: {x: 0.25126588, y: 1.0074768, z: -0.19018912}
   m_UseSpring: 0
   m_Spring:
     spring: 0
@@ -434,7 +434,7 @@ MonoBehaviour:
   objectHighlighter: {fileID: 0}
   touchHighlightColor: {r: 0, g: 0, b: 0, a: 0}
   usingState: 0
---- !u!114 &926518128747357537
+--- !u!114 &1490270022912625690
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -443,7 +443,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 926518128747357538}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7668d60aac28b44ab5e626253713906, type: 3}
+  m_Script: {fileID: 11500000, guid: 8afa0b205791c9f4496bf2814aeac078, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   precisionGrab: 1
@@ -452,10 +452,8 @@ MonoBehaviour:
   throwVelocityWithAttachDistance: 0
   throwMultiplier: 1
   onGrabCollisionDelay: 0
-  detachDistance: 1
-  velocityLimit: Infinity
-  angularVelocityLimit: Infinity
-  maxDistanceDelta: 10
+  destroyImmediatelyOnThrow: 1
+  breakForce: 1500
 --- !u!114 &926518128747357536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -468,7 +466,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18055ba762aa3994f9c10208cd088bc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &926518128747357539
+--- !u!114 &5645833915451519294
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -477,17 +475,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 926518128747357538}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abc4b5dd2be1cea4aaea2850b910d3f9, type: 3}
+  m_Script: {fileID: 11500000, guid: b6a08144e37d22d4e8f8f51d2c5d4a4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   nearTouchHighlight: {r: 0, g: 0, b: 0, a: 0}
-  touchHighlight: {r: 0.31835172, g: 0.84103245, b: 0.9245283, a: 0}
+  touchHighlight: {r: 0, g: 1, b: 1, a: 0}
   grabHighlight: {r: 0, g: 0, b: 0, a: 0}
   useHighlight: {r: 0, g: 0, b: 0, a: 0}
   objectToMonitor: {fileID: 0}
   objectToHighlight: {fileID: 0}
   objectHighlighter: {fileID: 0}
   objectToAffect: {fileID: 0}
+  shaderProperty: Color_72E286ED
 --- !u!1 &2367901930119325357
 GameObject:
   m_ObjectHideFlags: 0
@@ -986,9 +985,9 @@ GameObject:
   - component: {fileID: 4559262985065079939}
   - component: {fileID: 4559262985065079938}
   - component: {fileID: 4559262985065079965}
-  - component: {fileID: 4559262985065079964}
+  - component: {fileID: 6708263512103574245}
   - component: {fileID: 4559262985065079967}
-  - component: {fileID: 4559262985065079966}
+  - component: {fileID: 1008550644987366301}
   m_Layer: 10
   m_Name: sink_door
   m_TagString: Untagged
@@ -1096,7 +1095,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 1, z: 0}
   m_Axis: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.39880395, y: 0.7583809, z: 0.3168231}
+  m_ConnectedAnchor: {x: 0.39880395, y: 1.3423809, z: 0.3168231}
   m_UseSpring: 0
   m_Spring:
     spring: 0
@@ -1153,7 +1152,7 @@ MonoBehaviour:
   objectHighlighter: {fileID: 0}
   touchHighlightColor: {r: 0, g: 0, b: 0, a: 0}
   usingState: 0
---- !u!114 &4559262985065079964
+--- !u!114 &6708263512103574245
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1162,7 +1161,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4559262985065079961}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7668d60aac28b44ab5e626253713906, type: 3}
+  m_Script: {fileID: 11500000, guid: cbbb9e0352572da4cb0b5e95b03abfdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   precisionGrab: 1
@@ -1172,9 +1171,18 @@ MonoBehaviour:
   throwMultiplier: 1
   onGrabCollisionDelay: 0
   detachDistance: 1
-  velocityLimit: Infinity
-  angularVelocityLimit: Infinity
-  maxDistanceDelta: 10
+  originDeadzone: 0
+  rotateAround: 1
+  rotationAction: 0
+  rotationFriction: 1
+  releaseDecelerationDamper: 1
+  resetToOrignOnReleaseSpeed: 0
+  angleLimits:
+    minimum: -180
+    maximum: 180
+  minMaxThreshold: 1
+  minMaxNormalizedThreshold: 0.01
+  originRotation: {x: 0, y: 0, z: 0, w: 0}
 --- !u!114 &4559262985065079967
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1187,7 +1195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18055ba762aa3994f9c10208cd088bc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4559262985065079966
+--- !u!114 &1008550644987366301
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1196,17 +1204,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 4559262985065079961}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abc4b5dd2be1cea4aaea2850b910d3f9, type: 3}
+  m_Script: {fileID: 11500000, guid: b6a08144e37d22d4e8f8f51d2c5d4a4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   nearTouchHighlight: {r: 0, g: 0, b: 0, a: 0}
-  touchHighlight: {r: 0.31835172, g: 0.84103245, b: 0.9245283, a: 0}
+  touchHighlight: {r: 0, g: 1, b: 1, a: 0}
   grabHighlight: {r: 0, g: 0, b: 0, a: 0}
   useHighlight: {r: 0, g: 0, b: 0, a: 0}
   objectToMonitor: {fileID: 0}
   objectToHighlight: {fileID: 0}
   objectHighlighter: {fileID: 0}
   objectToAffect: {fileID: 0}
+  shaderProperty: Color_72E286ED
 --- !u!1 &7120096665237707540
 GameObject:
   m_ObjectHideFlags: 0
@@ -1222,9 +1231,9 @@ GameObject:
   - component: {fileID: 7120096665237707550}
   - component: {fileID: 7120096665237707545}
   - component: {fileID: 7120096665237707544}
-  - component: {fileID: 7120096665237707547}
+  - component: {fileID: 4559233930365679655}
   - component: {fileID: 7120096665237707546}
-  - component: {fileID: 7120096665237707541}
+  - component: {fileID: 7986929217060348801}
   m_Layer: 10
   m_Name: sink_lever_right
   m_TagString: Untagged
@@ -1332,7 +1341,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.009065032, y: 0.42347682, z: -0.19018924}
+  m_ConnectedAnchor: {x: 0.009065032, y: 1.0074768, z: -0.19018924}
   m_UseSpring: 0
   m_Spring:
     spring: 0
@@ -1389,7 +1398,7 @@ MonoBehaviour:
   objectHighlighter: {fileID: 0}
   touchHighlightColor: {r: 0, g: 0, b: 0, a: 0}
   usingState: 0
---- !u!114 &7120096665237707547
+--- !u!114 &4559233930365679655
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1398,7 +1407,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7120096665237707540}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7668d60aac28b44ab5e626253713906, type: 3}
+  m_Script: {fileID: 11500000, guid: 8afa0b205791c9f4496bf2814aeac078, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   precisionGrab: 1
@@ -1407,10 +1416,8 @@ MonoBehaviour:
   throwVelocityWithAttachDistance: 0
   throwMultiplier: 1
   onGrabCollisionDelay: 0
-  detachDistance: 1
-  velocityLimit: Infinity
-  angularVelocityLimit: Infinity
-  maxDistanceDelta: 10
+  destroyImmediatelyOnThrow: 1
+  breakForce: 1500
 --- !u!114 &7120096665237707546
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1423,7 +1430,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18055ba762aa3994f9c10208cd088bc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &7120096665237707541
+--- !u!114 &7986929217060348801
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1432,17 +1439,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 7120096665237707540}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abc4b5dd2be1cea4aaea2850b910d3f9, type: 3}
+  m_Script: {fileID: 11500000, guid: b6a08144e37d22d4e8f8f51d2c5d4a4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   nearTouchHighlight: {r: 0, g: 0, b: 0, a: 0}
-  touchHighlight: {r: 0.31835172, g: 0.84103245, b: 0.9245283, a: 0}
+  touchHighlight: {r: 0, g: 1, b: 1, a: 0}
   grabHighlight: {r: 0, g: 0, b: 0, a: 0}
   useHighlight: {r: 0, g: 0, b: 0, a: 0}
   objectToMonitor: {fileID: 0}
   objectToHighlight: {fileID: 0}
   objectHighlighter: {fileID: 0}
   objectToAffect: {fileID: 0}
+  shaderProperty: Color_72E286ED
 --- !u!1 &8996376129582031173
 GameObject:
   m_ObjectHideFlags: 0

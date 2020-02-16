@@ -9,8 +9,6 @@ namespace Cooking
     public class Cookablev2 : MonoBehaviour
     {
 
-        #region Variables
-
         /*
         steps = all the cook steps made on this object
         allMechanics = all possible cooking that can be done
@@ -32,7 +30,9 @@ namespace Cooking
         public Material uncookedMat;
         public Material cookedMat;
         public Material burntMat;
-        Renderer rend;
+        
+        private Renderer rend;
+        private Material currentStateMat;
 
         [Header("UI")]
         public GameObject canvas;
@@ -41,14 +41,15 @@ namespace Cooking
 
         private CookTop last_touched_cookTop = null;
 
-        #endregion Variables
 
         void Start()
         {
             // Initialize with uncooked material
             rend = GetComponent<Renderer>();
             rend.enabled = true;
-            rend.sharedMaterial = uncookedMat;
+            
+            rend.material = uncookedMat;
+            currentStateMat = uncookedMat;
 
             // Populate cookmechanics and their respective cooktimes
             foreach(CookType cooktype in Enum.GetValues(typeof(CookType)))
@@ -227,7 +228,8 @@ namespace Cooking
             allMechanics[typeIndex] = currentState;
 
             // Update look and UI
-            rend.sharedMaterial = cookedMat;
+            rend.material = cookedMat;
+            currentStateMat = cookedMat;
             cookUI.SetCookedIcon();
         }
 
@@ -246,7 +248,8 @@ namespace Cooking
             steps[typeIndexSteps] = currentState;
 
             // Update look and UI
-            rend.sharedMaterial = burntMat;
+            rend.material = burntMat;
+            currentStateMat = burntMat;
             cookUI.SetOvercookedIcon();
         }
 
@@ -281,6 +284,11 @@ namespace Cooking
         public List<CookMechanic> GetSteps()
         {
             return this.steps;
+        }
+
+        public Material GetCurrentStateMat()
+        {
+            return currentStateMat;
         }
 
     }
