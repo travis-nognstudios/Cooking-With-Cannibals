@@ -292,7 +292,7 @@ GameObject:
   - component: {fileID: 3249731631412897832}
   - component: {fileID: 3249731631412897833}
   - component: {fileID: 3249731631412897834}
-  - component: {fileID: 3249731631412897835}
+  - component: {fileID: 8170703568570489580}
   m_Layer: 10
   m_Name: stove_turner_left
   m_TagString: Untagged
@@ -371,8 +371,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.011733115, y: 0.1274159, z: 0.02535336}
-  m_Center: {x: 0.00072541833, y: -0.0014295578, z: -0.006493306}
+  m_Size: {x: 0.015985727, y: 0.12540019, z: 0.02535336}
+  m_Center: {x: 0.00030088425, y: -0.00042170286, z: -0.006493306}
 --- !u!54 &3249731631412897832
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -460,7 +460,10 @@ MonoBehaviour:
   connectedBurner: {fileID: 7083379470017180022}
   isOn: 0
   snapThreshold: 0.1
---- !u!114 &3249731631412897835
+  mat: {fileID: 2100000, guid: 6c7041b6ef6291044b38c7bb310f19c6, type: 2}
+  touchColor: {r: 0, g: 0.9612417, b: 1, a: 0}
+  untouchColor: {r: 1, g: 1, b: 1, a: 0}
+--- !u!114 &8170703568570489580
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -469,7 +472,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3249731631412897828}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7668d60aac28b44ab5e626253713906, type: 3}
+  m_Script: {fileID: 11500000, guid: 8afa0b205791c9f4496bf2814aeac078, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   precisionGrab: 1
@@ -478,10 +481,8 @@ MonoBehaviour:
   throwVelocityWithAttachDistance: 0
   throwMultiplier: 1
   onGrabCollisionDelay: 0
-  detachDistance: 1
-  velocityLimit: Infinity
-  angularVelocityLimit: Infinity
-  maxDistanceDelta: 10
+  destroyImmediatelyOnThrow: 1
+  breakForce: 1500
 --- !u!1 &4275988760485737856
 GameObject:
   m_ObjectHideFlags: 0
@@ -496,8 +497,8 @@ GameObject:
   - component: {fileID: 1521993639131003258}
   - component: {fileID: 4275988760485737861}
   - component: {fileID: 4275988760485737867}
-  - component: {fileID: 4275988760485737863}
   - component: {fileID: 4275988760485737860}
+  - component: {fileID: 3875998165673472739}
   m_Layer: 10
   m_Name: stove_turner_right
   m_TagString: Untagged
@@ -576,8 +577,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.0116961, y: 0.12550694, z: 0.025177557}
-  m_Center: {x: -0.0002977252, y: 0.00054344535, z: -0.006405404}
+  m_Size: {x: 0.017706454, y: 0.12464887, z: 0.025177557}
+  m_Center: {x: 0.00013330579, y: 0.000114411116, z: -0.006405404}
 --- !u!54 &4275988760485737861
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -630,28 +631,9 @@ MonoBehaviour:
   connectedBurner: {fileID: 2005678842384507865}
   isOn: 0
   snapThreshold: 0.1
---- !u!114 &4275988760485737863
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4275988760485737856}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7668d60aac28b44ab5e626253713906, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  precisionGrab: 1
-  rightSnapHandle: {fileID: 0}
-  leftSnapHandle: {fileID: 0}
-  throwVelocityWithAttachDistance: 0
-  throwMultiplier: 1
-  onGrabCollisionDelay: 0
-  detachDistance: 1
-  velocityLimit: Infinity
-  angularVelocityLimit: Infinity
-  maxDistanceDelta: 10
+  mat: {fileID: 2100000, guid: 6c7041b6ef6291044b38c7bb310f19c6, type: 2}
+  touchColor: {r: 0, g: 0.87835574, b: 1, a: 0}
+  untouchColor: {r: 1, g: 1, b: 1, a: 0}
 --- !u!59 &4275988760485737860
 HingeJoint:
   m_ObjectHideFlags: 0
@@ -687,6 +669,26 @@ HingeJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &3875998165673472739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4275988760485737856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8afa0b205791c9f4496bf2814aeac078, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  precisionGrab: 1
+  rightSnapHandle: {fileID: 0}
+  leftSnapHandle: {fileID: 0}
+  throwVelocityWithAttachDistance: 0
+  throwMultiplier: 1
+  onGrabCollisionDelay: 0
+  destroyImmediatelyOnThrow: 1
+  breakForce: 1500
 --- !u!1 &4949780958908933502
 GameObject:
   m_ObjectHideFlags: 0
@@ -1048,15 +1050,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d43cb48ab61c9141ac1835be9a13f2c, type: 3}
---- !u!198 &3767893407235123502 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 2582747982744769378, guid: 6d43cb48ab61c9141ac1835be9a13f2c,
-    type: 3}
-  m_PrefabInstance: {fileID: 1701793912677661260}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3767893407235123497 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2582747982744769381, guid: 6d43cb48ab61c9141ac1835be9a13f2c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1701793912677661260}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &3767893407235123502 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 2582747982744769378, guid: 6d43cb48ab61c9141ac1835be9a13f2c,
     type: 3}
   m_PrefabInstance: {fileID: 1701793912677661260}
   m_PrefabAsset: {fileID: 0}

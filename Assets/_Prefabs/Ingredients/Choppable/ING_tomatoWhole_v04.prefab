@@ -111,7 +111,7 @@ GameObject:
   - component: {fileID: 839378212496658519}
   - component: {fileID: 6384586267779869870}
   - component: {fileID: 4450442957977043276}
-  - component: {fileID: 6742759396855336563}
+  - component: {fileID: 4772391040913497290}
   - component: {fileID: 8910585859136273080}
   - component: {fileID: 3388409513986867653}
   - component: {fileID: 294677267742033907}
@@ -210,7 +210,7 @@ MonoBehaviour:
   validDrop: 1
   grabOverrideButton: 0
   allowedGrabControllers: 0
-  grabAttachMechanicScript: {fileID: 6742759396855336563}
+  grabAttachMechanicScript: {fileID: 0}
   secondaryGrabActionScript: {fileID: 8910585859136273080}
   isUsable: 0
   holdButtonToUse: 1
@@ -221,7 +221,7 @@ MonoBehaviour:
   objectHighlighter: {fileID: 0}
   touchHighlightColor: {r: 0, g: 0, b: 0, a: 0}
   usingState: 0
---- !u!114 &6742759396855336563
+--- !u!114 &4772391040913497290
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -230,7 +230,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4658496001639258226}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8afa0b205791c9f4496bf2814aeac078, type: 3}
+  m_Script: {fileID: 11500000, guid: 5ec2ac476f2fc9a45a4e69712580a603, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   precisionGrab: 1
@@ -239,8 +239,6 @@ MonoBehaviour:
   throwVelocityWithAttachDistance: 0
   throwMultiplier: 1
   onGrabCollisionDelay: 0
-  destroyImmediatelyOnThrow: 1
-  breakForce: 1500
 --- !u!114 &8910585859136273080
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -593,15 +591,15 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 355892274220143194, guid: b06c866c78fc8634a8c035ad537b09b2,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -0.099998474
-      objectReference: {fileID: 0}
     - target: {fileID: 8630054009267123421, guid: b06c866c78fc8634a8c035ad537b09b2,
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 355892274220143194, guid: b06c866c78fc8634a8c035ad537b09b2,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.099998474
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b06c866c78fc8634a8c035ad537b09b2, type: 3}

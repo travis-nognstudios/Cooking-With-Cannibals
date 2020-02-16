@@ -17,6 +17,11 @@ namespace Cooking
         private float rotationOnGrab;
         private float rotationOnUngrab;
 
+        public Material mat;
+        public Color touchColor;
+        public Color untouchColor;
+        private MaterialPropertyBlock _propBlock;
+
         #endregion Variables
 
         public override void Grabbed(VRTK_InteractGrab currentGrabbingObject = null)
@@ -31,6 +36,28 @@ namespace Cooking
             TriggerSnap();
 
             base.Ungrabbed(previousGrabbingObject);
+        }
+
+        public override void StartTouching(VRTK_InteractTouch currentTouchingObject = null)
+        {
+            // TODO: REFACTOR
+            _propBlock = new MaterialPropertyBlock();
+            GetComponent<Renderer>().GetPropertyBlock(_propBlock);
+            _propBlock.SetColor("Color_72E286ED", touchColor);
+            GetComponent<Renderer>().SetPropertyBlock(_propBlock);
+
+            base.StartTouching(currentTouchingObject);
+        }
+
+        public override void StopTouching(VRTK_InteractTouch previousTouchingObject = null)
+        {
+            // TODO: REFACTOR
+            _propBlock = new MaterialPropertyBlock();
+            GetComponent<Renderer>().GetPropertyBlock(_propBlock);
+            _propBlock.SetColor("Color_72E286ED", untouchColor);
+            GetComponent<Renderer>().SetPropertyBlock(_propBlock);
+
+            base.StopTouching(previousTouchingObject);
         }
 
         private void TriggerSnap()

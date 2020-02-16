@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2712668666081880822}
   - component: {fileID: 4460624957298014165}
   - component: {fileID: 7600979442973973334}
-  - component: {fileID: 2086472499674692667}
+  - component: {fileID: 6264451488939657770}
   - component: {fileID: 1808983592010628256}
   - component: {fileID: 417451222055216264}
   - component: {fileID: 2975526116253520204}
@@ -154,7 +154,7 @@ MonoBehaviour:
   validDrop: 1
   grabOverrideButton: 0
   allowedGrabControllers: 0
-  grabAttachMechanicScript: {fileID: 2086472499674692667}
+  grabAttachMechanicScript: {fileID: 0}
   secondaryGrabActionScript: {fileID: 1808983592010628256}
   isUsable: 0
   holdButtonToUse: 1
@@ -165,7 +165,7 @@ MonoBehaviour:
   objectHighlighter: {fileID: 0}
   touchHighlightColor: {r: 0, g: 0, b: 0, a: 0}
   usingState: 0
---- !u!114 &2086472499674692667
+--- !u!114 &6264451488939657770
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -174,7 +174,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1776778994532524765}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8afa0b205791c9f4496bf2814aeac078, type: 3}
+  m_Script: {fileID: 11500000, guid: 5ec2ac476f2fc9a45a4e69712580a603, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   precisionGrab: 1
@@ -183,8 +183,6 @@ MonoBehaviour:
   throwVelocityWithAttachDistance: 0
   throwMultiplier: 1
   onGrabCollisionDelay: 0
-  destroyImmediatelyOnThrow: 1
-  breakForce: 1500
 --- !u!114 &1808983592010628256
 MonoBehaviour:
   m_ObjectHideFlags: 0

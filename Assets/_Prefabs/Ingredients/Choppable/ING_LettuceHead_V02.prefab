@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4935134197832695660}
   - component: {fileID: 1675786616309334933}
   - component: {fileID: 4936778699229291145}
-  - component: {fileID: 6296951496815302485}
+  - component: {fileID: 1136090785335503289}
   - component: {fileID: 6695448365365260654}
   - component: {fileID: 4043890168924672007}
   - component: {fileID: 1201946217}
@@ -111,7 +111,7 @@ MonoBehaviour:
   validDrop: 1
   grabOverrideButton: 0
   allowedGrabControllers: 0
-  grabAttachMechanicScript: {fileID: 6296951496815302485}
+  grabAttachMechanicScript: {fileID: 0}
   secondaryGrabActionScript: {fileID: 6695448365365260654}
   isUsable: 0
   holdButtonToUse: 1
@@ -122,7 +122,7 @@ MonoBehaviour:
   objectHighlighter: {fileID: 0}
   touchHighlightColor: {r: 0, g: 0, b: 0, a: 0}
   usingState: 0
---- !u!114 &6296951496815302485
+--- !u!114 &1136090785335503289
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -131,7 +131,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1116119751818147657}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8afa0b205791c9f4496bf2814aeac078, type: 3}
+  m_Script: {fileID: 11500000, guid: 5ec2ac476f2fc9a45a4e69712580a603, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   precisionGrab: 1
@@ -140,8 +140,6 @@ MonoBehaviour:
   throwVelocityWithAttachDistance: 0
   throwMultiplier: 1
   onGrabCollisionDelay: 0
-  destroyImmediatelyOnThrow: 1
-  breakForce: 1500
 --- !u!114 &6695448365365260654
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -478,16 +476,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 355892273256623781, guid: b06c866c78fc8634a8c035ad537b09b2,
-        type: 3}
-      propertyPath: m_MaxValue
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 355892273256623781, guid: b06c866c78fc8634a8c035ad537b09b2,
-        type: 3}
-      propertyPath: m_Value
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1608874819208307037, guid: b06c866c78fc8634a8c035ad537b09b2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -603,14 +591,24 @@ PrefabInstance:
       propertyPath: m_AnchorMax.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 355892273256623787, guid: b06c866c78fc8634a8c035ad537b09b2,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 355892273431492287, guid: b06c866c78fc8634a8c035ad537b09b2,
         type: 3}
       propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 355892273256623781, guid: b06c866c78fc8634a8c035ad537b09b2,
+        type: 3}
+      propertyPath: m_MaxValue
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 355892273256623781, guid: b06c866c78fc8634a8c035ad537b09b2,
+        type: 3}
+      propertyPath: m_Value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 355892273256623787, guid: b06c866c78fc8634a8c035ad537b09b2,
+        type: 3}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 355892274220143194, guid: b06c866c78fc8634a8c035ad537b09b2,
