@@ -4,12 +4,17 @@ using UnityEngine;
 
 namespace Serving
 {
-    public class MealSpawnerv4 : MonoBehaviour
+    public class MealSpawnerv5 : MonoBehaviour
     {
+        [Header("Scene")]
         public GameObject gameManager;
         public Collider foodArea;
-
+        public GameObject box;
         public TipJar tipJar;
+
+        [Header("Timers")]
+        public float spawnedMealDestroyTime = 10f;
+        public float spawnerCooldownTime = 1f;
 
         private OrderSpawnerv5 orderSpawner;
 
@@ -19,8 +24,6 @@ namespace Serving
 
         private GameObject spawnedMeal;
 
-        public float spawnedMealDestroyTime = 3f;
-        public float spawnerCooldownTime = 1f;
 
         private float spawnerCooldown;
         private bool spawnerOnCooldown;
@@ -189,26 +192,25 @@ namespace Serving
 
         private void SpawnMeal(Recipe recipe)
         {
-            Collider myCollider = GetComponent<Collider>();
-            Vector3 mealSpawnOffsetTopOfBox = new Vector3(0, 0.3f, 0);
-            Vector3 mealSpawnOffsetInsideBox = new Vector3(0, 0, 0);
-
-            Vector3 mealSpawnOffset = mealSpawnOffsetInsideBox;
-
-            spawnedMeal = Instantiate(recipe.recipeObject, myCollider.transform.position + mealSpawnOffset, recipe.recipeObject.transform.rotation);
-            Destroy(spawnedMeal, spawnedMealDestroyTime);
+            Spawn(recipe.recipeObject);
         }
 
         private void SpawnDubiousFood()
         {
+            Spawn(dubiousFood);
+        }
+
+        private void Spawn(GameObject item)
+        {
             Collider myCollider = GetComponent<Collider>();
-            Vector3 mealSpawnOffsetToopOfBox = new Vector3(0, 0.1f, 0);
-            Vector3 mealSpawnOffsetInsideBox = new Vector3(0, 0, 0);
 
-            Vector3 mealSpawnOffset = mealSpawnOffsetInsideBox;
+            //box.SetActive(false);
+            spawnedMeal = Instantiate(item, myCollider.transform.position, item.transform.rotation);
 
-            spawnedMeal = Instantiate(dubiousFood, myCollider.transform.position + mealSpawnOffset, dubiousFood.transform.rotation);
-            Destroy(spawnedMeal, spawnedMealDestroyTime);
+            FinishedMeal finishedMeal = spawnedMeal.GetComponent<FinishedMeal>();
+            finishedMeal.PlayFinishFX();
+
+            //Destroy(spawnedMeal, spawnedMealDestroyTime);
         }
 
         private void StartSpawnerCooldown()
