@@ -115,8 +115,9 @@ GameObject:
   - component: {fileID: 7756143968038905662}
   - component: {fileID: 7851827760356758164}
   - component: {fileID: 2993036176902815663}
-  - component: {fileID: 2818707817392887267}
+  - component: {fileID: 8427215205007953049}
   - component: {fileID: 1883799256586870685}
+  - component: {fileID: 5830528012193374015}
   - component: {fileID: -7909941372226533226}
   - component: {fileID: 3363978753738144341}
   - component: {fileID: 17953325318347244}
@@ -277,7 +278,7 @@ MonoBehaviour:
   objectHighlighter: {fileID: 0}
   touchHighlightColor: {r: 0, g: 0, b: 0, a: 0}
   usingState: 0
---- !u!114 &2818707817392887267
+--- !u!114 &8427215205007953049
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -286,7 +287,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1829854901749176789}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ec2ac476f2fc9a45a4e69712580a603, type: 3}
+  m_Script: {fileID: 11500000, guid: 8afa0b205791c9f4496bf2814aeac078, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   precisionGrab: 1
@@ -295,6 +296,8 @@ MonoBehaviour:
   throwVelocityWithAttachDistance: 0
   throwMultiplier: 1
   onGrabCollisionDelay: 0
+  destroyImmediatelyOnThrow: 1
+  breakForce: 1500
 --- !u!114 &1883799256586870685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -307,6 +310,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18055ba762aa3994f9c10208cd088bc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5830528012193374015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1829854901749176789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6a08144e37d22d4e8f8f51d2c5d4a4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nearTouchHighlight: {r: 0, g: 0, b: 0, a: 0}
+  touchHighlight: {r: 0, g: 1, b: 1, a: 0}
+  grabHighlight: {r: 0, g: 0, b: 0, a: 0}
+  useHighlight: {r: 0, g: 0, b: 0, a: 0}
+  objectToMonitor: {fileID: 0}
+  objectToHighlight: {fileID: 0}
+  objectHighlighter: {fileID: 0}
+  objectToAffect: {fileID: 0}
+  shaderProperty: Color_72E286ED
 --- !u!114 &-7909941372226533226
 MonoBehaviour:
   m_ObjectHideFlags: 0

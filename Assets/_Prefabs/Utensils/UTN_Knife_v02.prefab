@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 1340504889389522278}
   - component: {fileID: 988322820}
   - component: {fileID: 8048963613647311245}
+  - component: {fileID: 1219784912060122209}
   m_Layer: 10
   m_Name: Blade-Handle
   m_TagString: Untagged
@@ -137,6 +138,27 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.040915094, y: 0.028193245, z: 0.13750327}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1219784912060122209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1560937452318611890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6a08144e37d22d4e8f8f51d2c5d4a4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nearTouchHighlight: {r: 0, g: 0, b: 0, a: 0}
+  touchHighlight: {r: 0, g: 1, b: 1, a: 0}
+  grabHighlight: {r: 0, g: 0, b: 0, a: 0}
+  useHighlight: {r: 0, g: 0, b: 0, a: 0}
+  objectToMonitor: {fileID: 6221340713427976527}
+  objectToHighlight: {fileID: 0}
+  objectHighlighter: {fileID: 0}
+  objectToAffect: {fileID: 0}
+  shaderProperty: Color_72E286ED
 --- !u!1 &8078394168550695312
 GameObject:
   m_ObjectHideFlags: 0
@@ -448,6 +470,7 @@ GameObject:
   - component: {fileID: 1762474729}
   - component: {fileID: 7215846087573256707}
   - component: {fileID: 8416671962877848112}
+  - component: {fileID: 4135242123499080618}
   m_Layer: 10
   m_Name: Blade
   m_TagString: Knife
@@ -567,3 +590,24 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.011514367, y: 0.08676611, z: 0.008514211}
   m_Center: {x: 0.00000003306195, y: -0.033694826, z: -0.08322515}
+--- !u!114 &4135242123499080618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8619932809859388002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6a08144e37d22d4e8f8f51d2c5d4a4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nearTouchHighlight: {r: 0, g: 0, b: 0, a: 0}
+  touchHighlight: {r: 0, g: 1, b: 1, a: 0}
+  grabHighlight: {r: 0, g: 0, b: 0, a: 0}
+  useHighlight: {r: 0, g: 0, b: 0, a: 0}
+  objectToMonitor: {fileID: 6221340713427976527}
+  objectToHighlight: {fileID: 0}
+  objectHighlighter: {fileID: 0}
+  objectToAffect: {fileID: 0}
+  shaderProperty: Color_72E286ED

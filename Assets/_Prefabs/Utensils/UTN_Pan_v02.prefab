@@ -562,6 +562,7 @@ GameObject:
   - component: {fileID: 1774501490936627294}
   - component: {fileID: 1744484787688714915}
   - component: {fileID: 2596932099894425649}
+  - component: {fileID: 8725173976533203047}
   m_Layer: 10
   m_Name: Pan-Handle
   m_TagString: Untagged
@@ -642,6 +643,27 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.040915094, y: 0.028193241, z: 0.13750325}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8725173976533203047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2585083166719088932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6a08144e37d22d4e8f8f51d2c5d4a4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nearTouchHighlight: {r: 0, g: 0, b: 0, a: 0}
+  touchHighlight: {r: 0, g: 1, b: 1, a: 0}
+  grabHighlight: {r: 0, g: 0, b: 0, a: 0}
+  useHighlight: {r: 0, g: 0, b: 0, a: 0}
+  objectToMonitor: {fileID: 2138565209}
+  objectToHighlight: {fileID: 0}
+  objectHighlighter: {fileID: 0}
+  objectToAffect: {fileID: 0}
+  shaderProperty: Color_72E286ED
 --- !u!1 &3265017261773484882
 GameObject:
   m_ObjectHideFlags: 0

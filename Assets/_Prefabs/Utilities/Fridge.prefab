@@ -418,6 +418,7 @@ GameObject:
   - component: {fileID: 4881820085043377499}
   - component: {fileID: 4881820085043377498}
   - component: {fileID: 7392375704533679594}
+  - component: {fileID: 158874825405160386}
   m_Layer: 10
   m_Name: fridge_door
   m_TagString: Untagged
@@ -627,6 +628,27 @@ MonoBehaviour:
   minMaxThreshold: 1
   minMaxNormalizedThreshold: 0.01
   originRotation: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &158874825405160386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4881820085043377502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6a08144e37d22d4e8f8f51d2c5d4a4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nearTouchHighlight: {r: 0, g: 0, b: 0, a: 0}
+  touchHighlight: {r: 0, g: 1, b: 1, a: 0}
+  grabHighlight: {r: 0, g: 0, b: 0, a: 0}
+  useHighlight: {r: 0, g: 0, b: 0, a: 0}
+  objectToMonitor: {fileID: 0}
+  objectToHighlight: {fileID: 0}
+  objectHighlighter: {fileID: 0}
+  objectToAffect: {fileID: 0}
+  shaderProperty: Color_72E286ED
 --- !u!1 &5604159031238394190
 GameObject:
   m_ObjectHideFlags: 0
