@@ -55,6 +55,26 @@ namespace Serving
                 }
             }
 
+            // DEBUG-START
+            Debug.Log($"Total recipes: {sequencedRecipes.Count}");
+
+            foreach (Recipe r in sequencedRecipes)
+            {
+                Debug.Log(System.DateTime.Now.Millisecond);
+                Debug.Log($"Recipe: {r.recipeObject.name}");
+                RecipeVariation v = r.CreateVariation();
+
+                Debug.Log($"Main: {r.mainIngredient.gameObject} x{v.mainIngredientAmount}");
+
+                for (int i = 0; i < r.toppings.Length; ++i)
+                {
+                    Debug.Log($"Topping: {r.toppings[i].name} x{v.toppingAmount[i]}");
+                }
+
+                Debug.Log("\n");
+            }
+            // DEBUG-END
+
             // Register ticket spawn points
             for (int i=0; i<ticketSpawnPoints.Length; ++i)
             {
@@ -125,7 +145,6 @@ namespace Serving
         {
             // Get a random recipe from the recipe manager
             Recipe recipe = GetSequencedRecipe();
-            // Recipe recipe = GetSequencedRecipe();
             GameObject ticket = recipe.recipeTicket;
 
             // Attach a customer to order
@@ -146,14 +165,6 @@ namespace Serving
                 numActiveTickets += 1;
             }
 
-        }
-
-        private Recipe GetRandomRecipe()
-        {
-            int numRecipes = recipeManager.recipes.Length;
-            Recipe pickedRecipe = recipeManager.recipes[Random.Range(0, numRecipes)];
-
-            return pickedRecipe;
         }
 
         private Recipe GetSequencedRecipe()

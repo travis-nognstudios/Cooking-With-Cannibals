@@ -1,8 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-[System.Serializable]
-public class CookableTopping
+namespace Cooking
 {
-    public GameObject gameObject;
+    [System.Serializable]
+    public struct CookableTopping
+    {
+        public GameObject gameObject;
+    }
 }

@@ -28,13 +28,16 @@ namespace Serving
 
             // Generate random recipes
             recipeManager = GetComponent<RecipeManager>();
-            System.Random rnJesus = new System.Random(seed);
             int maxRecipes = recipeManager.recipes.Length;
+
+            UnityEngine.Random.InitState(seed);
 
             for (int i = 0; i < numRecipes; ++i)
             {
-                int randomNumber = rnJesus.Next(maxRecipes);
+                int randomNumber = UnityEngine.Random.Range(0, maxRecipes);
+
                 Recipe randomRecipe = recipeManager.recipes[randomNumber];
+                randomRecipe.CreateVariation();
 
                 recipes.Add(randomRecipe);
             }
