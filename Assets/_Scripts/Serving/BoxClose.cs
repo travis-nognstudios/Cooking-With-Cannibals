@@ -2,16 +2,23 @@
 
 namespace Serving
 {
-    public class BoxClose : MonoBehaviour
+    public class BoxClose : MealReadyCheck
     {
-        [HideInInspector]
-        public bool isClosed;
+        public override void MakeNotReady()
+        {
+            isReady = false;
+        }
+
+        public override void MakeReady()
+        {
+            isReady = true;
+        }
 
         private void OnTriggerEnter(Collider other)
         {
             if (other.gameObject.name == "Styrofoam_Top")
             {
-                isClosed = true;
+                MakeReady();
             }
         }
 
@@ -19,7 +26,7 @@ namespace Serving
         {
             if (other.gameObject.name == "Styrofoam_Top")
             {
-                isClosed = false;
+                MakeNotReady();
             }
         }
     }

@@ -9,7 +9,7 @@ namespace Serving
         [Header("Scene")]
         public GameObject gameManager;
         public Collider foodArea;
-        public GameObject box;
+        public MealReadyCheck readyCheck;
         public TipJar tipJar;
 
         [Header("Timers")]
@@ -20,10 +20,9 @@ namespace Serving
 
         private List<Recipe> queuedRecipes;
         private GameObject dubiousFood;
-        private List<GameObject> inBox = new List<GameObject>();
+        private List<GameObject> inFoodArea = new List<GameObject>();
 
         private GameObject spawnedMeal;
-
 
         private float spawnerCooldown;
         private bool spawnerOnCooldown;
@@ -37,9 +36,9 @@ namespace Serving
         void Update()
         {
             // Meal spawning
-            if (BoxIsClosed() && !spawnerOnCooldown)
+            if (MealIsReady() && !spawnerOnCooldown)
             {
-                GetInBoxItems();
+                GetInFoodAreaItems();
                 StartSpawnerCooldown();
 
                 // Check all recipes to see if any match
@@ -62,7 +61,7 @@ namespace Serving
                     SpawnMeal(matchingRecipe);
                     orderSpawner.DespawnTicket(matchingRecipe);
                 }
-                else if (GetInBoxNames().Count > 0)
+                else if (GetInFoodAreaNames().Count > 0)
                 {
                     DespawnIngredients();
                     SpawnDubiousFood();
@@ -87,7 +86,7 @@ namespace Serving
 
         private bool RecipeIsReadyBasedOnRater(Recipe recipe)
         {
-            RecipeRating recipeRater = new RecipeRating(inBox, recipe);
+            RecipeRating recipeRater = new RecipeRating(inFoodArea, recipe);
             bool isValidRecipe = recipeRater.GetIsValidRecipe();
 
             if (!isValidRecipe)
@@ -103,50 +102,23 @@ namespace Serving
             }
         }
 
-        private bool RecipeIsReady(Recipe recipe)
+        private bool MealIsReady()
         {
-            List<string> inBoxNames = GetInBoxNames();
-            bool containsMainIngredient = false;
-            int numToppingsContains = 0;
-
-            string mainIngredientNameShouldBe = recipe.mainIngredient.gameObject.name;
-            int numToppingsShouldHave = recipe.toppings.Length;
-
-            if (ListContainsName(inBoxNames, mainIngredientNameShouldBe))
-            {
-                containsMainIngredient = true;
-                //ToDo: Check cookstate
-            }
-
-            foreach (GameObject topping in recipe.toppings)
-            {
-                if (ListContainsName(inBoxNames, topping.name))
-                {
-                    numToppingsContains += 1;
-                    //ToDo: Check cookstate
-                }
-            }
-
-            //ToDo: Allow multiple of the same ingredient
-            if (containsMainIngredient && numToppingsContains == numToppingsShouldHave && inBoxNames.Count == numToppingsShouldHave + 1)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return readyCheck.IsReady();
         }
 
+        /*
         private bool BoxIsClosed()
         {
             BoxClose boxCloseScript = GetComponentInChildren<BoxClose>();
-            return boxCloseScript.isClosed;
+            //return boxCloseScript.isClosed;
+            return false;
         }
+        */
 
-        private void GetInBoxItems()
+        private void GetInFoodAreaItems()
         {
-            inBox.Clear();
+            inFoodArea.Clear();
 
             Vector3 center = foodArea.bounds.center;
             Vector3 size = foodArea.bounds.size;
@@ -159,27 +131,27 @@ namespace Serving
             {
                 GameObject ingredient = c.gameObject;
 
-                if (!inBox.Contains(ingredient))
+                if (!inFoodArea.Contains(ingredient))
                 {
-                    inBox.Add(ingredient);
+                    inFoodArea.Add(ingredient);
                 }
             }
         }
 
-        private List<string> GetInBoxNames()
+        private List<string> GetInFoodAreaNames()
         {
-            List<string> inBoxNames = new List<string>();
-            foreach (GameObject item in inBox)
+            List<string> inFoodAreaNames = new List<string>();
+            foreach (GameObject item in inFoodArea)
             {
-                inBoxNames.Add(item.name);
+                inFoodAreaNames.Add(item.name);
             }
 
-            return inBoxNames;
+            return inFoodAreaNames;
         }
 
         private void DespawnIngredients()
         {
-            foreach (GameObject item in inBox)
+            foreach (GameObject item in inFoodArea)
             {
                 if (item != null)
                 {
@@ -187,7 +159,7 @@ namespace Serving
                 }
             }
 
-            inBox.Clear();
+            inFoodArea.Clear();
         }
 
         private void SpawnMeal(Recipe recipe)
@@ -202,10 +174,10 @@ namespace Serving
 
         private void Spawn(GameObject item)
         {
-            Collider myCollider = GetComponent<Collider>();
+            Collider foodAreaCollider = foodArea.GetComponent<Collider>();
 
             //box.SetActive(false);
-            spawnedMeal = Instantiate(item, myCollider.transform.position, item.transform.rotation);
+            spawnedMeal = Instantiate(item, foodAreaCollider.transform.position, item.transform.rotation);
 
             FinishedMeal finishedMeal = spawnedMeal.GetComponent<FinishedMeal>();
             finishedMeal.PlayFinishFX();
