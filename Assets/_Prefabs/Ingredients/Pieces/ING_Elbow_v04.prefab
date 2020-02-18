@@ -116,11 +116,11 @@ GameObject:
   - component: {fileID: 576808509779818456}
   - component: {fileID: 2289677492587154806}
   - component: {fileID: 2826338385268315343}
-  - component: {fileID: 4309752172947648033}
   - component: {fileID: -8437340519511000784}
   - component: {fileID: 7393992158214174478}
   - component: {fileID: -1245398284996716652}
   - component: {fileID: 5779373723657532747}
+  - component: {fileID: 5889095230453469869}
   m_Layer: 0
   m_Name: ING_Elbow_v04
   m_TagString: Untagged
@@ -287,7 +287,6 @@ MonoBehaviour:
   objectToHighlight: {fileID: 0}
   objectHighlighter: {fileID: 0}
   objectToAffect: {fileID: 0}
-  shaderProperty: Color_72E286ED
 --- !u!54 &2826338385268315343
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -304,28 +303,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &4309752172947648033
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8618766652159351097}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 074d8dcfb56f345f1abde6a7cb765705, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stateChangeTimes:
-  - cookType: 1
-    timeToCook: 15
-    timeToOverCook: 35
-  uncookedMat: {fileID: 2100000, guid: 4a3fb9f199f4e12458b4562e343870cb, type: 2}
-  cookedMat: {fileID: 2100000, guid: 7f1e0c8e02b9f8c4d8e6caac1d258754, type: 2}
-  burntMat: {fileID: 2100000, guid: e09cc7d82bf3b1841ac841a02c843457, type: 2}
-  canvas: {fileID: 7937371485283422153}
-  cookUI: {fileID: 6370739939781888604}
-  cam: {fileID: 0}
 --- !u!114 &-8437340519511000784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -487,6 +464,31 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.020884383, y: 0.020000001, z: 0.019295814}
   m_Center: {x: 0.00044219242, y: 0, z: -0.00031424456}
+--- !u!114 &5889095230453469869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8618766652159351097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 082ca8bd09cd61441b4fec67c78d83d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stateChangeTimes:
+  - cookType: 1
+    timeToCook: 5
+    timeToOverCook: 15
+  - cookType: 3
+    timeToCook: 5
+    timeToOverCook: 15
+  uncookedMat: {fileID: 2100000, guid: 4a3fb9f199f4e12458b4562e343870cb, type: 2}
+  cookedMat: {fileID: 2100000, guid: 7f1e0c8e02b9f8c4d8e6caac1d258754, type: 2}
+  burntMat: {fileID: 2100000, guid: e09cc7d82bf3b1841ac841a02c843457, type: 2}
+  canvas: {fileID: 7937371485283422153}
+  cookUI: {fileID: 6370739939781888604}
+  cam: {fileID: 0}
 --- !u!1001 &7997049878103086158
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -120,7 +120,7 @@ GameObject:
   - component: {fileID: 4191504794140477832}
   - component: {fileID: 5567745026517507226}
   - component: {fileID: 7226168654493813887}
-  - component: {fileID: 25720428985472483}
+  - component: {fileID: 8620351761023743560}
   m_Layer: 0
   m_Name: ING_burgerBun_TopV01
   m_TagString: Untagged
@@ -275,7 +275,6 @@ MonoBehaviour:
   objectToHighlight: {fileID: 0}
   objectHighlighter: {fileID: 0}
   objectToAffect: {fileID: 0}
-  shaderProperty: Color_72E286ED
 --- !u!54 &157152870749266628
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -466,7 +465,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &25720428985472483
+--- !u!114 &8620351761023743560
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -475,11 +474,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 8910713308699699820}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 074d8dcfb56f345f1abde6a7cb765705, type: 3}
+  m_Script: {fileID: 11500000, guid: 082ca8bd09cd61441b4fec67c78d83d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   stateChangeTimes:
   - cookType: 1
+    timeToCook: 5
+    timeToOverCook: 15
+  - cookType: 3
     timeToCook: 5
     timeToOverCook: 15
   uncookedMat: {fileID: 2100000, guid: 4a3fb9f199f4e12458b4562e343870cb, type: 2}

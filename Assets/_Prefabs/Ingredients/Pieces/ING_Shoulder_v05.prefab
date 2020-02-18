@@ -118,10 +118,10 @@ GameObject:
   - component: {fileID: 8427215205007953049}
   - component: {fileID: 1883799256586870685}
   - component: {fileID: 5830528012193374015}
-  - component: {fileID: -7909941372226533226}
   - component: {fileID: 3363978753738144341}
   - component: {fileID: 17953325318347244}
   - component: {fileID: -3255112752008540578}
+  - component: {fileID: 6207895486166532526}
   m_Layer: 0
   m_Name: ING_Shoulder_v05
   m_TagString: Untagged
@@ -330,29 +330,6 @@ MonoBehaviour:
   objectToHighlight: {fileID: 0}
   objectHighlighter: {fileID: 0}
   objectToAffect: {fileID: 0}
-  shaderProperty: Color_72E286ED
---- !u!114 &-7909941372226533226
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1829854901749176789}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 074d8dcfb56f345f1abde6a7cb765705, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stateChangeTimes:
-  - cookType: 1
-    timeToCook: 20
-    timeToOverCook: 40
-  uncookedMat: {fileID: 2100000, guid: 4a3fb9f199f4e12458b4562e343870cb, type: 2}
-  cookedMat: {fileID: 2100000, guid: 7f1e0c8e02b9f8c4d8e6caac1d258754, type: 2}
-  burntMat: {fileID: 2100000, guid: e09cc7d82bf3b1841ac841a02c843457, type: 2}
-  canvas: {fileID: 1485138095808116029}
-  cookUI: {fileID: 160899715622030603}
-  cam: {fileID: 0}
 --- !u!114 &3363978753738144341
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -501,6 +478,31 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &6207895486166532526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1829854901749176789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 082ca8bd09cd61441b4fec67c78d83d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stateChangeTimes:
+  - cookType: 1
+    timeToCook: 5
+    timeToOverCook: 15
+  - cookType: 3
+    timeToCook: 5
+    timeToOverCook: 15
+  uncookedMat: {fileID: 2100000, guid: 4a3fb9f199f4e12458b4562e343870cb, type: 2}
+  cookedMat: {fileID: 2100000, guid: 7f1e0c8e02b9f8c4d8e6caac1d258754, type: 2}
+  burntMat: {fileID: 2100000, guid: e09cc7d82bf3b1841ac841a02c843457, type: 2}
+  canvas: {fileID: 1485138095808116029}
+  cookUI: {fileID: 160899715622030603}
+  cam: {fileID: 0}
 --- !u!1001 &3794829377722733337
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -7,44 +7,18 @@ namespace Cooking
 {
     public class CookTop : MonoBehaviour
     {
-        #region Variables
-
         private bool hot;
 
         [Header("Cooktop Settings")]
         public CookType cookType;
-        public Smoke smoke;
 
-        #endregion Variables
-
-        // Start is called before the first frame update
         void Start()
         {
             MakeCold();
         }
-
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
-
         
         void OnTriggerEnter(Collider other)
         {
-            /*
-            // Stove interactions
-            if (other.gameObject.CompareTag("Heatsource"))
-            {
-                StoveBurner burner = other.gameObject.GetComponent<StoveBurner>();
-
-                if (burner.IsOn())
-                {
-                    MakeHot();
-                }
-            }
-            */
-
             // Hand interactions
             if (other.CompareTag("Hand"))
             {
@@ -69,19 +43,19 @@ namespace Cooking
         {
             if (other.CompareTag("Heatsource"))
             {
-                StoveBurner burner = other.gameObject.GetComponent<StoveBurner>();
-                SyncHeat(burner);
+                HeatSource heatSource = other.gameObject.GetComponent<HeatSource>();
+                SyncHeat(heatSource);
             }
         }
 
-        private void SyncHeat(StoveBurner burner)
+        private void SyncHeat(HeatSource heatSource)
         {
             
-            if (burner.IsOn() && !IsHot())
+            if (heatSource.IsOn() && !IsHot())
             {
                 MakeHot();
             }
-            else if (!burner.IsOn() && IsHot())
+            else if (!heatSource.IsOn() && IsHot())
             {
                 MakeCold();
             }

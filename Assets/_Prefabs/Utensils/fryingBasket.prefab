@@ -11,14 +11,14 @@ GameObject:
   - component: {fileID: 3640160845519302718}
   - component: {fileID: 6893761281724495417}
   - component: {fileID: 5954525143037990552}
-  - component: {fileID: 4464803711043827314}
   - component: {fileID: -3190323183160112856}
-  - component: {fileID: 2138958523274949668}
-  - component: {fileID: 663768557671048668}
+  - component: {fileID: 4464803711043827314}
   - component: {fileID: 9071549778139636369}
+  - component: {fileID: 5235622630797606698}
+  - component: {fileID: 399316050952479958}
   m_Layer: 0
   m_Name: fryingBasket
-  m_TagString: Untagged
+  m_TagString: Cooktop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -75,7 +75,7 @@ MonoBehaviour:
   allowedTouchControllers: 0
   ignoredColliders: []
   isGrabbable: 1
-  holdButtonToGrab: 0
+  holdButtonToGrab: 1
   stayGrabbedOnTeleport: 1
   validDrop: 1
   grabOverrideButton: 0
@@ -91,18 +91,6 @@ MonoBehaviour:
   objectHighlighter: {fileID: 0}
   touchHighlightColor: {r: 0, g: 0, b: 0, a: 0}
   usingState: 0
---- !u!114 &4464803711043827314
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 351046404331815469}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18055ba762aa3994f9c10208cd088bc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &-3190323183160112856
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123,7 +111,7 @@ MonoBehaviour:
   onGrabCollisionDelay: 0
   destroyImmediatelyOnThrow: 1
   breakForce: 1500
---- !u!114 &2138958523274949668
+--- !u!114 &4464803711043827314
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -132,44 +120,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 351046404331815469}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 850f6fcbe5c7a48459b95e618d503bd3, type: 3}
+  m_Script: {fileID: 11500000, guid: 18055ba762aa3994f9c10208cd088bc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  disableWhenIdle: 1
-  allowedNearTouchControllers: 0
-  allowedTouchControllers: 0
-  ignoredColliders: []
-  isGrabbable: 0
-  holdButtonToGrab: 1
-  stayGrabbedOnTeleport: 1
-  validDrop: 1
-  grabOverrideButton: 0
-  allowedGrabControllers: 0
-  grabAttachMechanicScript: {fileID: 0}
-  secondaryGrabActionScript: {fileID: 0}
-  isUsable: 0
-  holdButtonToUse: 1
-  useOnlyIfGrabbed: 0
-  pointerActivatesUseAction: 0
-  useOverrideButton: 0
-  allowedUseControllers: 0
-  objectHighlighter: {fileID: 0}
-  touchHighlightColor: {r: 0, g: 0, b: 0, a: 0}
-  usingState: 0
-  dropSpeed: 1
---- !u!114 &663768557671048668
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 351046404331815469}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66344e5da397b4d23bb9ac5dcb4e551d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  connected: {fileID: 0}
 --- !u!114 &9071549778139636369
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -184,6 +137,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cookingSmoke: {fileID: 2498373568621686341}
   burningSmoke: {fileID: 3760456685671312815}
+--- !u!114 &5235622630797606698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 351046404331815469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03c9ec7af641e4323970e08ac63799ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cookType: 3
+--- !u!65 &399316050952479958
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 351046404331815469}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.37779903, y: 0.15391374, z: 0.26241696}
+  m_Center: {x: 3.594726, y: 0.9343139, z: -1.8021798}
 --- !u!1 &888708652826400466
 GameObject:
   m_ObjectHideFlags: 0
@@ -195,7 +174,7 @@ GameObject:
   - component: {fileID: 5607445880020457738}
   - component: {fileID: 4139299280752484229}
   - component: {fileID: 7411391695350862707}
-  - component: {fileID: 6397414871621793258}
+  - component: {fileID: 3354119112918551404}
   m_Layer: 0
   m_Name: FryerBasket_Handle
   m_TagString: Untagged
@@ -263,26 +242,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &6397414871621793258
-MonoBehaviour:
+--- !u!65 &3354119112918551404
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 888708652826400466}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b6a08144e37d22d4e8f8f51d2c5d4a4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nearTouchHighlight: {r: 0, g: 0, b: 0, a: 0}
-  touchHighlight: {r: 0, g: 1, b: 1, a: 0}
-  grabHighlight: {r: 0, g: 0, b: 0, a: 0}
-  useHighlight: {r: 0, g: 0, b: 0, a: 0}
-  objectToMonitor: {fileID: 0}
-  objectToHighlight: {fileID: 0}
-  objectHighlighter: {fileID: 0}
-  objectToAffect: {fileID: 0}
+  serializedVersion: 2
+  m_Size: {x: 0.15909918, y: 0.028193243, z: 0.0409151}
+  m_Center: {x: 0.01079794, y: 0, z: 0}
 --- !u!1 &4572441913964203307
 GameObject:
   m_ObjectHideFlags: 0
@@ -331,7 +303,7 @@ GameObject:
   - component: {fileID: 1193747272168502459}
   m_Layer: 0
   m_Name: FryerBasket
-  m_TagString: Untagged
+  m_TagString: Cooktop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -784,6 +756,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: FX GrillSmoke Burnt
       objectReference: {fileID: 0}
+    - target: {fileID: 5072642901256366149, guid: 59f8861c0ec0f6841bff9820fabb8c8a,
+        type: 3}
+      propertyPath: SizeModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5072642901256366149, guid: 59f8861c0ec0f6841bff9820fabb8c8a,
+        type: 3}
+      propertyPath: SizeModule.separateAxes
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 382549696725434806, guid: 59f8861c0ec0f6841bff9820fabb8c8a,
         type: 3}
       propertyPath: m_LocalRotation.x
@@ -853,16 +835,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 0.08
-      objectReference: {fileID: 0}
-    - target: {fileID: 5072642901256366149, guid: 59f8861c0ec0f6841bff9820fabb8c8a,
-        type: 3}
-      propertyPath: SizeModule.enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5072642901256366149, guid: 59f8861c0ec0f6841bff9820fabb8c8a,
-        type: 3}
-      propertyPath: SizeModule.separateAxes
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 59f8861c0ec0f6841bff9820fabb8c8a, type: 3}

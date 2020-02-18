@@ -1,20 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using SceneObjects;
 
 namespace Cooking
 {
 
-    public class StoveBurner : HeatSource
+    public class DeepFryer : HeatSource
     {
-        [Header("FX")]
-        public ParticleSystem flame;
+        [Header("Refill Mechanic")]
+        public float maxFillAmount;
+        public float currentFillAmount;
+        public GameObject refillItem;
+        public int refillItemFillValue;
 
         // Start is called before the first frame update
         void Start()
         {
-            
+            TurnOn();
         }
 
         // Update is called once per frame
@@ -23,26 +25,13 @@ namespace Cooking
 
         }
 
-        public void UpdateStove(bool on)
-        {
-            if (on)
-            {
-                TurnOn();
-            }
-            else
-            {
-                TurnOff();
-            }
-        }
         public override void TurnOn()
         {
-            flame.Play();
             isOn = true;
         }
 
         public override void TurnOff()
         {
-            flame.Stop();
             isOn = false;
         }
         

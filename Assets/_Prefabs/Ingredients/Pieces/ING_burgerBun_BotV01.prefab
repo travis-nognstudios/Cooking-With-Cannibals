@@ -120,7 +120,7 @@ GameObject:
   - component: {fileID: 546498717357320025}
   - component: {fileID: 6901277372735250714}
   - component: {fileID: 7975426029683853219}
-  - component: {fileID: 7939671716038685212}
+  - component: {fileID: 6661908590545108442}
   m_Layer: 0
   m_Name: ING_burgerBun_BotV01
   m_TagString: Untagged
@@ -275,7 +275,6 @@ MonoBehaviour:
   objectToHighlight: {fileID: 0}
   objectHighlighter: {fileID: 0}
   objectToAffect: {fileID: 0}
-  shaderProperty: Color_72E286ED
 --- !u!54 &3490166847625958650
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -466,7 +465,7 @@ MonoBehaviour:
   touchHighlightColor: {r: 0, g: 0, b: 0, a: 0}
   usingState: 0
   dropSpeed: 1
---- !u!114 &7939671716038685212
+--- !u!114 &6661908590545108442
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -475,11 +474,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 6347608639245709512}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 074d8dcfb56f345f1abde6a7cb765705, type: 3}
+  m_Script: {fileID: 11500000, guid: 082ca8bd09cd61441b4fec67c78d83d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   stateChangeTimes:
   - cookType: 1
+    timeToCook: 5
+    timeToOverCook: 15
+  - cookType: 3
     timeToCook: 5
     timeToOverCook: 15
   uncookedMat: {fileID: 2100000, guid: 4a3fb9f199f4e12458b4562e343870cb, type: 2}

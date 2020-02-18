@@ -19,9 +19,9 @@ GameObject:
   - component: {fileID: 2206841782415187843}
   - component: {fileID: -8815066054227479765}
   - component: {fileID: -672160485438011778}
-  - component: {fileID: 9201137125930212240}
   - component: {fileID: -2982050073197135364}
   - component: {fileID: 3386054274667612808}
+  - component: {fileID: 2699108680676142489}
   m_Layer: 0
   m_Name: ING_lettuceSlice_v04
   m_TagString: Untagged
@@ -176,7 +176,6 @@ MonoBehaviour:
   objectToHighlight: {fileID: 0}
   objectHighlighter: {fileID: 0}
   objectToAffect: {fileID: 0}
-  shaderProperty: Color_72E286ED
 --- !u!54 &3081267657787005585
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -204,8 +203,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.025828034, y: 0.0017275893, z: 0.026084423}
-  m_Center: {x: -0.000009707327, y: 0.0000307706, z: 0.00042200292}
+  m_Size: {x: 0.026847718, y: 0.002376474, z: 0.026733313}
+  m_Center: {x: -0.000056058365, y: 0.00007712012, z: 0.00009755709}
 --- !u!114 &-8815066054227479765
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -257,28 +256,6 @@ MonoBehaviour:
   touchHighlightColor: {r: 0, g: 0, b: 0, a: 0}
   usingState: 0
   dropSpeed: 1
---- !u!114 &9201137125930212240
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4408773072892888073}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 074d8dcfb56f345f1abde6a7cb765705, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stateChangeTimes:
-  - cookType: 1
-    timeToCook: 5
-    timeToOverCook: 15
-  uncookedMat: {fileID: 2100000, guid: 4a3fb9f199f4e12458b4562e343870cb, type: 2}
-  cookedMat: {fileID: 2100000, guid: 7f1e0c8e02b9f8c4d8e6caac1d258754, type: 2}
-  burntMat: {fileID: 2100000, guid: e09cc7d82bf3b1841ac841a02c843457, type: 2}
-  canvas: {fileID: 7829879661673564484}
-  cookUI: {fileID: 2187032935191128327}
-  cam: {fileID: 0}
 --- !u!82 &-2982050073197135364
 AudioSource:
   m_ObjectHideFlags: 0
@@ -389,6 +366,31 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.026998809, y: 0.0043525426, z: 0.02777556}
   m_Center: {x: -0.00007475032, y: -0.0002922671, z: 0.000031749}
+--- !u!114 &2699108680676142489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4408773072892888073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 082ca8bd09cd61441b4fec67c78d83d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stateChangeTimes:
+  - cookType: 1
+    timeToCook: 5
+    timeToOverCook: 15
+  - cookType: 3
+    timeToCook: 5
+    timeToOverCook: 15
+  uncookedMat: {fileID: 2100000, guid: 4a3fb9f199f4e12458b4562e343870cb, type: 2}
+  cookedMat: {fileID: 2100000, guid: 7f1e0c8e02b9f8c4d8e6caac1d258754, type: 2}
+  burntMat: {fileID: 2100000, guid: e09cc7d82bf3b1841ac841a02c843457, type: 2}
+  canvas: {fileID: 7829879661673564484}
+  cookUI: {fileID: 2187032935191128327}
+  cam: {fileID: 0}
 --- !u!1 &7829879661673564484
 GameObject:
   m_ObjectHideFlags: 0
