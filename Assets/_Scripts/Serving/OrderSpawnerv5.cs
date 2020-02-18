@@ -36,6 +36,7 @@ namespace Serving
         private List<Customer> waitingCustomers = new List<Customer>();
 
         private List<Recipe> sequencedRecipes = new List<Recipe>();
+        private List<RecipeVariation> sequencedRecipeVariations = new List<RecipeVariation>();
         private int sequenceIndex;
         
         void Start()
@@ -55,25 +56,34 @@ namespace Serving
                 }
             }
 
-            // DEBUG-START
-            Debug.Log($"Total recipes: {sequencedRecipes.Count}");
-
-            foreach (Recipe r in sequencedRecipes)
+            // Create variations
+            foreach (Recipe seqRec in sequencedRecipes)
             {
-                Debug.Log(System.DateTime.Now.Millisecond);
-                Debug.Log($"Recipe: {r.recipeObject.name}");
-                RecipeVariation v = r.CreateVariation();
+                RecipeVariation variation = seqRec.CreateVariation();
+                sequencedRecipeVariations.Add(variation);
+            }
 
-                Debug.Log($"Main: {r.mainIngredient.gameObject} x{v.mainIngredientAmount}");
+
+            // DEBUG-START
+            Debug.Log($"Total recipes: {sequencedRecipeVariations.Count}");
+
+            foreach (RecipeVariation r in sequencedRecipeVariations)
+            {
+                int time = System.DateTime.Now.Millisecond;
+
+                Debug.Log($"{time} - Recipe: {r.recipeObject.name}");
+
+                Debug.Log($"{time} - Main: {r.mainIngredient.gameObject} x{r.mainIngredientAmount}");
 
                 for (int i = 0; i < r.toppings.Length; ++i)
                 {
-                    Debug.Log($"Topping: {r.toppings[i].name} x{v.toppingAmount[i]}");
+                    Debug.Log($"{time} - Topping: {r.toppings[i].name} x{r.toppingAmount[i]}");
                 }
 
-                Debug.Log("\n");
+                Debug.Log($"{time} - END");
             }
             // DEBUG-END
+            
 
             // Register ticket spawn points
             for (int i=0; i<ticketSpawnPoints.Length; ++i)

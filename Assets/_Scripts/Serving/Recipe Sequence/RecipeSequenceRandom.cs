@@ -35,10 +35,7 @@ namespace Serving
             for (int i = 0; i < numRecipes; ++i)
             {
                 int randomNumber = UnityEngine.Random.Range(0, maxRecipes);
-
                 Recipe randomRecipe = recipeManager.recipes[randomNumber];
-                randomRecipe.CreateVariation();
-
                 recipes.Add(randomRecipe);
             }
         }
