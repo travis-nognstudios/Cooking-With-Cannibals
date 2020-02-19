@@ -18,7 +18,7 @@ namespace Serving
 
         private OrderSpawnerv5 orderSpawner;
 
-        private List<Recipe> queuedRecipes;
+        private List<RecipeVariation> queuedRecipes;
         private GameObject dubiousFood;
         private List<GameObject> inFoodArea = new List<GameObject>();
 
@@ -42,11 +42,11 @@ namespace Serving
                 StartSpawnerCooldown();
 
                 // Check all recipes to see if any match
-                Recipe matchingRecipe = new Recipe();
+                RecipeVariation matchingRecipe = null;
                 bool foundMatchingRecipe = false;
 
                 queuedRecipes = orderSpawner.GetQueuedRecipes();
-                foreach (Recipe queuedRecipe in queuedRecipes)
+                foreach (RecipeVariation queuedRecipe in queuedRecipes)
                 {
                     if (RecipeIsReadyBasedOnRater(queuedRecipe))
                     {
@@ -84,7 +84,7 @@ namespace Serving
             }
         }
 
-        private bool RecipeIsReadyBasedOnRater(Recipe recipe)
+        private bool RecipeIsReadyBasedOnRater(RecipeVariation recipe)
         {
             RecipeRating recipeRater = new RecipeRating(inFoodArea, recipe);
             bool isValidRecipe = recipeRater.GetIsValidRecipe();
@@ -162,7 +162,7 @@ namespace Serving
             inFoodArea.Clear();
         }
 
-        private void SpawnMeal(Recipe recipe)
+        private void SpawnMeal(RecipeVariation recipe)
         {
             Spawn(recipe.recipeObject);
         }

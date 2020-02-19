@@ -9,12 +9,15 @@ namespace Serving
     {
         [Header("Recipe")]
         public GameObject recipeObject;
-        public GameObject recipeTicket;
         public float serveTime;
 
         [Header("Ingredients")]
         public CookableIngredient mainIngredient;
         public GameObject[] toppings;
+
+        [Header("Ticket")]
+        public GameObject recipeTicket;
+        private OrderTicket ticket;
 
         [Header("Variation - Main Ingredient")]
         public int mainIngredientAmount;
@@ -56,7 +59,7 @@ namespace Serving
             {
                 if (CoinFlip())
                 {
-                    toppingAmount[i] = UnityEngine.Random.Range(2, maxToppingAmount + 1);
+                    toppingAmount[i] = UnityEngine.Random.Range(0, maxToppingAmount + 1);
                 }
             }
         }
@@ -64,6 +67,12 @@ namespace Serving
         private bool CoinFlip()
         {
             return UnityEngine.Random.Range(0, 2) == 0;
+        }
+
+        public void CreateVariationTicket()
+        {
+            ticket = recipeTicket.GetComponent<OrderTicket>();
+            ticket.recipe = this;
         }
     }
 }

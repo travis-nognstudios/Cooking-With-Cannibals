@@ -3,20 +3,19 @@ using System.Collections;
 
 namespace Serving
 { 
-    public class OrderTicket : MonoBehaviour
+    public abstract class OrderTicket : MonoBehaviour
     {
-        
-        // Use this for initialization
-        void Start()
+        public TicketUILine[] UILines;
+        public RecipeVariation recipe;
+
+        public abstract void SetAmounts();
+
+        public void SetUI()
         {
-
+            foreach (TicketUILine ui in UILines)
+            {
+                ui.SetUI();
+            }
         }
-
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
-
     }
 }

@@ -43,6 +43,7 @@ namespace Serving
         {
             recipeManager = GetComponent<RecipeManager>();
 
+            /*
             // Build up recipe sequence
             foreach (MonoBehaviour sequenceScript in sequences)
             {
@@ -55,15 +56,22 @@ namespace Serving
                     sequencedRecipes.Add(seqRec);
                 }
             }
+            */
 
-            // Create variations
-            foreach (Recipe seqRec in sequencedRecipes)
+            // Get sequenced recipes - Variations
+            foreach (MonoBehaviour sequenceScript in sequences)
             {
-                RecipeVariation variation = seqRec.CreateVariation();
-                sequencedRecipeVariations.Add(variation);
+                RecipeSequence seq = sequenceScript as RecipeSequence;
+                seq.LoadRecipes();
+                RecipeVariation[] seqRecipeVariations = seq.GetRecipeVariations();
+
+                foreach (RecipeVariation recipeVariation in seqRecipeVariations)
+                {
+                    sequencedRecipeVariations.Add(recipeVariation);
+                }
             }
 
-
+            
             // DEBUG-START
             Debug.Log($"Total recipes: {sequencedRecipeVariations.Count}");
 
@@ -83,6 +91,7 @@ namespace Serving
                 Debug.Log($"{time} - END");
             }
             // DEBUG-END
+            
             
 
             // Register ticket spawn points
@@ -154,7 +163,7 @@ namespace Serving
         private void SpawnTicket()
         {
             // Get a random recipe from the recipe manager
-            Recipe recipe = GetSequencedRecipe();
+            RecipeVariation recipe = GetSequencedRecipeVariation();
             GameObject ticket = recipe.recipeTicket;
 
             // Attach a customer to order
@@ -177,11 +186,10 @@ namespace Serving
 
         }
 
-        private Recipe GetSequencedRecipe()
+        private RecipeVariation GetSequencedRecipeVariation()
         {
-            Recipe r = sequencedRecipes[sequenceIndex];
-            sequenceIndex += 1;
-
+            RecipeVariation r = sequencedRecipeVariations[sequenceIndex];
+            sequenceIndex++;
             return r;
         }
 
@@ -200,9 +208,9 @@ namespace Serving
             return -1;
         }
 
-        public List<Recipe> GetQueuedRecipes()
+        public List<RecipeVariation> GetQueuedRecipes()
         {
-            List<Recipe> queuedRecipes = new List<Recipe>();
+            List<RecipeVariation> queuedRecipes = new List<RecipeVariation>();
 
             // Get all unique recipes from non-empty ticket points
             foreach (TicketPoint point in ticketPoints)
@@ -216,7 +224,7 @@ namespace Serving
             return queuedRecipes;
         }
 
-        public void DespawnTicket(Recipe finishedrecipe)
+        public void DespawnTicket(RecipeVariation finishedrecipe)
         {
             // Find oldest matching recipe
             // Algorithm: (rednur01)

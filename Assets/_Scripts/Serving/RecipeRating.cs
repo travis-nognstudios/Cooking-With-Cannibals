@@ -9,7 +9,7 @@ namespace Serving
     {
         private List<GameObject> itemsInBox;
         private List<string> itemsInBoxNames;
-        private Recipe recipe;
+        private RecipeVariation recipe;
 
         private bool isValidRecipe;
         private int numMistakes = 0;
@@ -19,7 +19,7 @@ namespace Serving
         private int numExtraToppings = 0;
         private bool cookedWrong = false;
 
-        public RecipeRating(List<GameObject> itemsInBox, Recipe recipe)
+        public RecipeRating(List<GameObject> itemsInBox, RecipeVariation recipe)
         {
             this.itemsInBox = itemsInBox;
             this.itemsInBoxNames = GetInBoxNames();

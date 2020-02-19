@@ -10,7 +10,7 @@ namespace Serving
         public GameObject spawnPoint;
         public GameObject ticketReference;
         public float ticketAge;
-        public Recipe recipe;
+        public RecipeVariation recipe;
         public TicketTiming ticketTiming;
 
         private Customer customer;
@@ -22,14 +22,14 @@ namespace Serving
             this.spawnPoint = spawnPoint;
             this.ticketReference = null;
             this.ticketAge = 0f;
-            this.recipe = new Recipe();
-            this.ticketTiming = new TicketTiming();
+            this.recipe = null;
+            this.ticketTiming = null;
 
             this.customer = null;
             this.timeUntilExpire = 99999f;
         }
 
-        public void SetTicket(GameObject ticketReference, Recipe recipe)
+        public void SetTicket(GameObject ticketReference, RecipeVariation recipe)
         {
             // Instantiate ticket object
             // Create spring joint to spawn point
@@ -39,6 +39,11 @@ namespace Serving
 
             GameObject createdTicket = UnityEngine.Object.Instantiate(ticketReference, position, rotation);
             createdTicket.GetComponent<SpringJoint>().connectedBody = spawnPoint.GetComponent<Rigidbody>();
+
+            // Set variation UI
+            OrderTicket orderTicket = createdTicket.GetComponent<OrderTicket>();
+            orderTicket.SetAmounts();
+            orderTicket.SetUI();
 
             // Set values
             this.ticketReference = createdTicket;
@@ -68,10 +73,10 @@ namespace Serving
 
                 this.ticketReference = null;
                 this.ticketAge = 0f;
-                this.recipe = new Recipe();
+                this.recipe = null;
 
                 this.ticketTiming.EndTimer();
-                this.ticketTiming = new TicketTiming();
+                this.ticketTiming = null;
 
                 this.customer = null;
                 this.timeUntilExpire = 99999f;

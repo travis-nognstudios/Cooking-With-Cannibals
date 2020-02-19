@@ -7,8 +7,9 @@ namespace Serving
     public class RecipeSequenceRandom : MonoBehaviour, RecipeSequence
     {
         private List<Recipe> recipes = new List<Recipe>();
-        public int seed;
+        private List<RecipeVariation> recipeVariations = new List<RecipeVariation>();
 
+        public int seed;
         public int numRecipes;
 
         private RecipeManager recipeManager;
@@ -38,11 +39,26 @@ namespace Serving
                 Recipe randomRecipe = recipeManager.recipes[randomNumber];
                 recipes.Add(randomRecipe);
             }
+
+            foreach (Recipe r in recipes)
+            {
+                RecipeVariation v = r.CreateVariation();
+                v.MultiplyMain();
+                v.MultiplyToppings();
+                v.CreateVariationTicket();
+
+                recipeVariations.Add(v);
+            }
         }
 
         public Recipe[] GetRecipes()
         {
             return recipes.ToArray();
+        }
+
+        public RecipeVariation[] GetRecipeVariations()
+        {
+            return recipeVariations.ToArray();
         }
     }
 }

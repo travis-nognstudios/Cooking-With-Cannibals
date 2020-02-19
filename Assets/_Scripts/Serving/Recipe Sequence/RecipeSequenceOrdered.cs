@@ -8,6 +8,7 @@ namespace Serving
     {
         public GameObject[] recipes;
         private List<Recipe> fullRecipes = new List<Recipe>();
+        private List<RecipeVariation> recipeVariations = new List<RecipeVariation>();
 
         private RecipeManager recipeManager;
 
@@ -25,11 +26,25 @@ namespace Serving
                 Recipe fullRecipe = recipeManager.GetFullRecipe(recipeObj);
                 fullRecipes.Add(fullRecipe);
             }
+
+            foreach (Recipe r in fullRecipes)
+            {
+                RecipeVariation v = r.CreateVariation();
+                v.MultiplyMain();
+                v.MultiplyToppings();
+                v.CreateVariationTicket();
+                recipeVariations.Add(v);
+            }
         }
         
         public Recipe[] GetRecipes()
         {
             return fullRecipes.ToArray();
+        }
+
+        public RecipeVariation[] GetRecipeVariations()
+        {
+            return recipeVariations.ToArray();
         }
     }
 }

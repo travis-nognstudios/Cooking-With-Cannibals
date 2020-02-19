@@ -4,5 +4,6 @@
     {
         void LoadRecipes();
         Recipe[] GetRecipes();
+        RecipeVariation[] GetRecipeVariations();
     }
 }
