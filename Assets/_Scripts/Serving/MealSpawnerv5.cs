@@ -182,7 +182,7 @@ namespace Serving
             FinishedMeal finishedMeal = spawnedMeal.GetComponent<FinishedMeal>();
             finishedMeal.PlayFinishFX();
 
-            //Destroy(spawnedMeal, spawnedMealDestroyTime);
+            Destroy(spawnedMeal, spawnedMealDestroyTime);
         }
 
         private void StartSpawnerCooldown()
