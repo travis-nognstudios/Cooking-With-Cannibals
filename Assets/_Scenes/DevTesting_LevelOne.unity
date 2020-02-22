@@ -127,6 +127,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1295509303}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &33703549 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4936967413668149339, guid: d62baafaf03ab49f8b02e936b42c8289,
+    type: 3}
+  m_PrefabInstance: {fileID: 352895779}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb12d44b5ff0441fcb70dc7c8155388b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &35784710
 GameObject:
   m_ObjectHideFlags: 0
@@ -1399,7 +1411,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da856901f254a4d7d83e154e57ea0fa4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orderSpawner: {fileID: 0}
+  orderSpawner: {fileID: 287736179}
 --- !u!114 &128857025
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1470,7 +1482,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 860faaf187dd244cc843a77b5e139735, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawner: {fileID: 0}
+  spawner: {fileID: 287736178}
 --- !u!1001 &129661448
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2392,8 +2404,8 @@ MonoBehaviour:
     type: 3}
   perfectIfAboveTip: 18
   failIfBelowTip: 10
-  tipjar: {fileID: 0}
-  cardPoint: {fileID: 0}
+  tipjar: {fileID: 937935994}
+  cardPoint: {fileID: 1246369586}
 --- !u!114 &287736179
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2406,8 +2418,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d023caebd596445b80b0267e93e6859, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ticketManager: {fileID: 0}
-  orderFrequency: 45
+  ticketManager: {fileID: 691248366}
+  orderFrequency: 3
   totalServiceTime: 300
   numOrdersForLevel: 7
   sequences:
@@ -2510,7 +2522,7 @@ MonoBehaviour:
       type: 3}
     recipeTicket: {fileID: 1069434668478867141, guid: f82b0b6c5ef01434791f2d16dbe1f9d8,
       type: 3}
-    serveTime: 90
+    serveTime: 10
     mainIngredient:
       gameObject: {fileID: 1829854901749176789, guid: b2d1f618671fac04d8b82ea63b473e0f,
         type: 3}
@@ -2520,7 +2532,7 @@ MonoBehaviour:
       type: 3}
     recipeTicket: {fileID: 476716843242511381, guid: 3d23613e9fbbef042b35a75b4dfb95c6,
       type: 3}
-    serveTime: 120
+    serveTime: 15
     mainIngredient:
       gameObject: {fileID: 8618766652159351097, guid: 529c58aee2cbea94785f5adc9cbd5a8b,
         type: 3}
@@ -2534,7 +2546,7 @@ MonoBehaviour:
       type: 3}
     recipeTicket: {fileID: 3375091425268823413, guid: 6ae2384edf68b5f4388e5afa7588c7fb,
       type: 3}
-    serveTime: 180
+    serveTime: 20
     mainIngredient:
       gameObject: {fileID: 6243981089210176850, guid: 8e84221e3ecef894f9f2fb1d53a67ac0,
         type: 3}
@@ -2769,18 +2781,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 298985530}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &308594687 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 956224026944582533, guid: d62baafaf03ab49f8b02e936b42c8289,
-    type: 3}
-  m_PrefabInstance: {fileID: 1195065752}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &316113474 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: ebfee7480a0322a459fda2fd4430fca9,
@@ -6332,10 +6332,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 626668547}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1604b7173261b412e8d17a3c9d3b0281, type: 3}
+  m_Script: {fileID: 11500000, guid: ecccef40f7c73429f934ce1373696868, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerImage: {fileID: 2110176559}
+  spawnPoint: {fileID: 626668548}
+  currentOrderTicket: {fileID: 0}
+  ticketAge: 0
+  ticketClock: {fileID: 955546790}
+  recipe:
+    recipeObject: {fileID: 0}
+    serveTime: 0
+    mainIngredient:
+      gameObject: {fileID: 0}
+      steps: []
+    toppings: []
+    recipeTicket: {fileID: 0}
+    mainIngredientAmount: 0
+    maxMainIngredientAmount: 0
+    toppingAmount: 
+    maxToppingAmount: 0
 --- !u!4 &637936955 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4118006228934460762, guid: 796a02e18f0eac143a5cbd1663bc8966,
@@ -7345,6 +7360,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 691248365}
+  - component: {fileID: 691248366}
   m_Layer: 10
   m_Name: OrderTicketPlacement
   m_TagString: Untagged
@@ -7369,6 +7385,25 @@ Transform:
   m_Father: {fileID: 2002399107}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &691248366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 691248364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d2c97dfdcc854e768afa40d4d39343e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ticketPoints:
+  - {fileID: 1373427896}
+  - {fileID: 626668549}
+  - {fileID: 1105943685}
+  numTicketsSpawned: 0
+  numTicketsCompleted: 0
+  numTicketsMissed: 0
 --- !u!4 &698943433 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: f1da658cf5e9bfd47ab51186c6312ca7,
@@ -8442,6 +8477,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 818589889}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &830294364 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4936967413668149339, guid: d62baafaf03ab49f8b02e936b42c8289,
+    type: 3}
+  m_PrefabInstance: {fileID: 1195065752}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb12d44b5ff0441fcb70dc7c8155388b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &843111759
 GameObject:
   m_ObjectHideFlags: 0
@@ -9005,6 +9052,30 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 913086452}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &937935994 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8706807827459424024, guid: 6e54e91db84fde64386cc0a8d71c4297,
+    type: 3}
+  m_PrefabInstance: {fileID: 3641496317801130878}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58b92a6070124438c858495b63bcfdfc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &955546790 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4936967413668149339, guid: d62baafaf03ab49f8b02e936b42c8289,
+    type: 3}
+  m_PrefabInstance: {fileID: 74651606}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb12d44b5ff0441fcb70dc7c8155388b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &956245683
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10642,10 +10713,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 1105943683}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1604b7173261b412e8d17a3c9d3b0281, type: 3}
+  m_Script: {fileID: 11500000, guid: ecccef40f7c73429f934ce1373696868, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerImage: {fileID: 1838466013}
+  spawnPoint: {fileID: 1105943684}
+  currentOrderTicket: {fileID: 0}
+  ticketAge: 0
+  ticketClock: {fileID: 33703549}
+  recipe:
+    recipeObject: {fileID: 0}
+    serveTime: 0
+    mainIngredient:
+      gameObject: {fileID: 0}
+      steps: []
+    toppings: []
+    recipeTicket: {fileID: 0}
+    mainIngredientAmount: 0
+    maxMainIngredientAmount: 0
+    toppingAmount: 
+    maxToppingAmount: 0
 --- !u!1 &1126310097 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6347608639245709512, guid: 985da931209ea964ebe9bedea154ad19,
@@ -12458,10 +12544,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 1373427894}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1604b7173261b412e8d17a3c9d3b0281, type: 3}
+  m_Script: {fileID: 11500000, guid: ecccef40f7c73429f934ce1373696868, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerImage: {fileID: 308594687}
+  spawnPoint: {fileID: 1373427895}
+  currentOrderTicket: {fileID: 0}
+  ticketAge: 0
+  ticketClock: {fileID: 830294364}
+  recipe:
+    recipeObject: {fileID: 0}
+    serveTime: 0
+    mainIngredient:
+      gameObject: {fileID: 0}
+      steps: []
+    toppings: []
+    recipeTicket: {fileID: 0}
+    mainIngredientAmount: 0
+    maxMainIngredientAmount: 0
+    toppingAmount: 
+    maxToppingAmount: 0
 --- !u!1 &1388118161
 GameObject:
   m_ObjectHideFlags: 0
@@ -15810,18 +15911,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1837966135}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1838466013 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 956224026944582533, guid: d62baafaf03ab49f8b02e936b42c8289,
-    type: 3}
-  m_PrefabInstance: {fileID: 352895779}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1852942460
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19218,18 +19307,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.3686452, y: 0.29411626, z: 0.021761596}
   m_Center: {x: -0.35210454, y: -0.09576106, z: -0.0058650672}
---- !u!114 &2110176559 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 956224026944582533, guid: d62baafaf03ab49f8b02e936b42c8289,
-    type: 3}
-  m_PrefabInstance: {fileID: 74651606}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2117412448
 GameObject:
   m_ObjectHideFlags: 0
