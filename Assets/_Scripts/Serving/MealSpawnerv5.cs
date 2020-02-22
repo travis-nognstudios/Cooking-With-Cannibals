@@ -9,6 +9,7 @@ namespace Serving
         [Header("Scene")]
         public GameObject gameManager;
         public Collider foodArea;
+        public Transform spawnPoint;
         public MealReadyCheck readyCheck;
         public TipJar tipJar;
 
@@ -174,10 +175,12 @@ namespace Serving
 
         private void Spawn(GameObject item)
         {
-            Collider foodAreaCollider = foodArea.GetComponent<Collider>();
+            //Collider foodAreaCollider = foodArea.GetComponent<Collider>();
 
             //box.SetActive(false);
-            spawnedMeal = Instantiate(item, foodAreaCollider.transform.position, item.transform.rotation);
+            //spawnedMeal = Instantiate(item, foodAreaCollider.transform.position, item.transform.rotation);
+
+            spawnedMeal = Instantiate(item, spawnPoint.position, item.transform.rotation);
 
             FinishedMeal finishedMeal = spawnedMeal.GetComponent<FinishedMeal>();
             finishedMeal.PlayFinishFX();

@@ -23,14 +23,16 @@ namespace Cooking
 
         }
 
-        private void OnTriggerEnter(Collider other)
+        private void OnTriggerStay(Collider other)
         {
             if (other.CompareTag("Cooktop"))
             {
-                foam.Play();
+                if (!foam.isPlaying)
+                {
+                    foam.Play();
+                }
             }
         }
-
         private void OnTriggerExit(Collider other)
         {
             if (other.CompareTag("Cooktop"))
@@ -38,5 +40,6 @@ namespace Cooking
                 foam.Stop();
             }
         }
+        
     }
 }

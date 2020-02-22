@@ -16,7 +16,7 @@ namespace Serving
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.gameObject.name == "Styrofoam_Top")
+            if (other.CompareTag("Styrofoam_Top"))
             {
                 MakeReady();
             }
@@ -24,7 +24,7 @@ namespace Serving
 
         private void OnTriggerExit(Collider other)
         {
-            if (other.gameObject.name == "Styrofoam_Top")
+            if (other.CompareTag("Styrofoam_Top"))
             {
                 MakeNotReady();
             }
