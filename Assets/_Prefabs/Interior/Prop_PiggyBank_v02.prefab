@@ -298,11 +298,11 @@ GameObject:
   - component: {fileID: 8643398710859434206}
   - component: {fileID: 3641496318536393665}
   - component: {fileID: 3641496318536393664}
-  - component: {fileID: 3641496318536393667}
   - component: {fileID: 3641496318536393662}
   - component: {fileID: 3641496318536393663}
   - component: {fileID: 3641496318536393660}
   - component: {fileID: 3641496318536393658}
+  - component: {fileID: 8706807827459424024}
   m_Layer: 10
   m_Name: Prop_PiggyBank_v02
   m_TagString: Untagged
@@ -357,23 +357,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.52267134, y: 0.46548027, z: 0.36575374}
   m_Center: {x: 0.018095402, y: 0.22697392, z: 0.009672809}
---- !u!114 &3641496318536393667
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4731273910380559053}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a44253cf0a53ba94f9eb376b9e357f1f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  capacity: 20
-  ui: {fileID: 3641496319630438721}
-  tip1: {fileID: 7133119027149452895}
-  tip2: {fileID: 7133119026205530250}
-  tip3: {fileID: 7133119027720395281}
 --- !u!114 &3641496318536393662
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -452,6 +435,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connected: {fileID: 0}
+--- !u!114 &8706807827459424024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4731273910380559053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58b92a6070124438c858495b63bcfdfc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  capacity: 20
+  ui: {fileID: 3641496319630438721}
+  tip1: {fileID: 7133119027149452895}
+  tip2: {fileID: 7133119026205530250}
+  tip3: {fileID: 7133119027720395281}
 --- !u!1 &7178932173885154630
 GameObject:
   m_ObjectHideFlags: 0
