@@ -43,20 +43,18 @@ namespace Serving
         {
             recipeManager = GetComponent<RecipeManager>();
 
-            /*
-            // Build up recipe sequence
+            // Get sequenced recipes
             foreach (MonoBehaviour sequenceScript in sequences)
             {
                 RecipeSequence seq = sequenceScript as RecipeSequence;
                 seq.LoadRecipes();
                 Recipe[] seqRecipes = seq.GetRecipes();
 
-                foreach (Recipe seqRec in seqRecipes)
+                foreach (Recipe recipe in seqRecipes)
                 {
-                    sequencedRecipes.Add(seqRec);
+                    sequencedRecipes.Add(recipe);
                 }
             }
-            */
 
             // Get sequenced recipes - Variations
             foreach (MonoBehaviour sequenceScript in sequences)
@@ -127,7 +125,7 @@ namespace Serving
                     {
                         // Update spawn timer
                         timeSinceLastSpawn += Time.deltaTime;
-                        if (timeSinceLastSpawn >= ticketSpawnInterval)
+                        if (timeSinceLastSpawn >= ticketSpawnInterval || numActiveTickets == 0)
                         {
                             timeSinceLastSpawn = 0;
 
@@ -163,8 +161,12 @@ namespace Serving
         private void SpawnTicket()
         {
             // Get a random recipe from the recipe manager
-            RecipeVariation recipe = GetSequencedRecipeVariation();
-            GameObject ticket = recipe.recipeTicket;
+            //RecipeVariation recipe = GetSequencedRecipeVariation();
+            Recipe recipe = GetSequencedRecipe();
+
+            // Create variation
+            RecipeVariation recipeVar = recipe.CreateVariation();
+            GameObject ticket = recipeVar.recipeTicket;
 
             // Attach a customer to order
             Customer customer = newCustomers[newCustomers.Count - 1];
@@ -176,7 +178,7 @@ namespace Serving
             int spawnIndex = GenerateSpawnPointIndex();
             if (spawnIndex != -1)
             {
-                ticketPoints[spawnIndex].SetTicket(ticket, recipe);
+                ticketPoints[spawnIndex].SetTicket(ticket, recipeVar);
                 ticketPoints[spawnIndex].SetCustomer(customer);
                 customer.GoToOrderingPosition(orderingPositions[spawnIndex]);
 
@@ -184,6 +186,13 @@ namespace Serving
                 numActiveTickets += 1;
             }
 
+        }
+
+        private Recipe GetSequencedRecipe()
+        {
+            Recipe r = sequencedRecipes[sequenceIndex];
+            sequenceIndex++;
+            return r;
         }
 
         private RecipeVariation GetSequencedRecipeVariation()

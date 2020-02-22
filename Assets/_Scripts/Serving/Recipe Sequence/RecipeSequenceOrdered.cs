@@ -14,7 +14,7 @@ namespace Serving
 
         void Start()
         {
-            
+
         }
 
         public void LoadRecipes()
@@ -24,9 +24,16 @@ namespace Serving
             foreach (GameObject recipeObj in recipes)
             {
                 Recipe fullRecipe = recipeManager.GetFullRecipe(recipeObj);
+                RecipeVariation v = fullRecipe.CreateVariation();
+                v.MultiplyMain();
+                v.MultiplyToppings();
+                v.CreateVariationTicket();
+
                 fullRecipes.Add(fullRecipe);
+                recipeVariations.Add(v);
             }
 
+            /*
             foreach (Recipe r in fullRecipes)
             {
                 RecipeVariation v = r.CreateVariation();
@@ -35,6 +42,7 @@ namespace Serving
                 v.CreateVariationTicket();
                 recipeVariations.Add(v);
             }
+            */
         }
         
         public Recipe[] GetRecipes()

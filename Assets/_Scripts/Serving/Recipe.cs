@@ -18,10 +18,10 @@ namespace Serving
 
         public RecipeVariation CreateVariation()
         {
-            int seed = DateTime.Now.Millisecond;
-            UnityEngine.Random.InitState(seed);
-
             RecipeVariation variation = new RecipeVariation(this);
+            variation.MultiplyMain();
+            variation.MultiplyToppings();
+            variation.CreateVariationTicket();
             return variation;
         }
     }
