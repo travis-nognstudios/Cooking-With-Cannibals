@@ -41,10 +41,12 @@ namespace Serving
 
         public void SetTicket(RecipeVariation recipeVar)
         {
-            // Get recipe ticket
+            // Get order ticket
             currentOrderTicket = recipeVar.recipeTicket.GetComponent<OrderTicket>();
             currentOrderTicket.SetUI();
             ticketObject = currentOrderTicket.gameObject;
+
+            recipe = recipeVar;
 
             // Instantiate ticket object
             // Attach to spawn point with spring joint
@@ -70,6 +72,7 @@ namespace Serving
                 containsTicket = false;
 
                 currentOrderTicket = null;
+                recipe = null;
                 ticketAge = 0;
                 ticketClock.EndTimer();
             }

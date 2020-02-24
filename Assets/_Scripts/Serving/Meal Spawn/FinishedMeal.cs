@@ -8,11 +8,6 @@ namespace Serving
         [Header("Particles")]
         public ParticleSystem finishFX;
 
-        [Header("Tip")]
-        public ParticleSystem tipFX_3;
-        public ParticleSystem tipFX_2;
-        public ParticleSystem tipFX_1;
-
         // Use this for initialization
         void Start()
         {
@@ -28,26 +23,6 @@ namespace Serving
         public void PlayFinishFX()
         {
             finishFX.Play();
-        }
-
-
-        public void ShowTipFX(int tipAmount)
-        {
-            switch (tipAmount)
-            {
-                case 3:
-                    tipFX_3.Play();
-                    break;
-                case 2:
-                    tipFX_2.Play();
-                    break;
-                case 1:
-                    tipFX_1.Play();
-                    break;
-                default:
-                    tipFX_3.Play();
-                    break;
-            }
         }
     }
 }

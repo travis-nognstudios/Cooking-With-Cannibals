@@ -26,6 +26,10 @@ namespace Serving
                 {
                     AmountUI[i].UI.SetActive(true);
                 }
+                else
+                {
+                    AmountUI[i].UI.SetActive(false);
+                }
             }
         }
     }
