@@ -11,7 +11,10 @@ GameObject:
   - component: {fileID: 6927810991774172939}
   - component: {fileID: 1041503985851210088}
   - component: {fileID: 1226325459177772028}
-  - component: {fileID: 4816867646711611291}
+  - component: {fileID: 8092680267037690277}
+  - component: {fileID: 8156382871301546683}
+  - component: {fileID: 1109602403194255347}
+  - component: {fileID: 3976940441120322373}
   m_Layer: 0
   m_Name: diner_set06_Heater
   m_TagString: Untagged
@@ -79,8 +82,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &4816867646711611291
-BoxCollider:
+--- !u!136 &8092680267037690277
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4816867646711611290}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.011203617
+  m_Height: 0.23241507
+  m_Direction: 2
+  m_Center: {x: 0.00069364905, y: 0.000000044703487, z: -0.08381497}
+--- !u!135 &8156382871301546683
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -90,8 +107,34 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.13008407, y: 0.13008422, z: 0.3333411}
-  m_Center: {x: -0.000000014901161, y: 0.000000052154057, z: -0.027620476}
+  m_Radius: 0.01783632
+  m_Center: {x: -0.000000014901161, y: 0.0000033658, z: 0.03979218}
+--- !u!135 &1109602403194255347
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4816867646711611290}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.040391948
+  m_Center: {x: 0.00077876076, y: -0.00010400639, z: 0.074227504}
+--- !u!135 &3976940441120322373
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4816867646711611290}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.07561624
+  m_Center: {x: 0.0020565987, y: 0.000000044703487, z: 0.11249923}
 --- !u!1 &7844001928309192779
 GameObject:
   m_ObjectHideFlags: 0
