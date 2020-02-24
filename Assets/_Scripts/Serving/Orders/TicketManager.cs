@@ -11,7 +11,7 @@ namespace Serving
 
         [Header("Counters")]
         public int numTicketsSpawned;
-        public int numTicketsCompleted;
+        public int numTicketsCompleted; // missed OR served
         public int numTicketsMissed;
 
         private int numActiveTickets;

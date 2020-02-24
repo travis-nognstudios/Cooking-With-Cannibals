@@ -91,9 +91,7 @@ namespace Serving
             // Check end of service
             timeSinceServiceStarted += Time.deltaTime;
             bool timedOut = timeSinceServiceStarted > totalServiceTime;
-
-            ordersCompleted = ticketManager.numTicketsCompleted + ticketManager.numTicketsMissed;
-            bool allOrdersCompleted = ordersCompleted == numOrdersForLevel;
+            bool allOrdersCompleted = ticketManager.numTicketsCompleted == numOrdersForLevel;
 
             if (allOrdersCompleted || timedOut)
             {
