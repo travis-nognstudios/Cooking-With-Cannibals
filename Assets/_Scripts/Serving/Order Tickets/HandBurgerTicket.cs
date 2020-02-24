@@ -10,10 +10,13 @@ namespace Serving
             int handAmount = recipe.mainIngredientAmount;
             UILines[0].amount = handAmount;
 
-            int bunAmount = recipe.toppingAmount[0];
+            int cheeseAmount = recipe.toppingAmount[0];
             int tomatoAmount = recipe.toppingAmount[1];
-            int cheeseAmount = recipe.toppingAmount[2];
-            int lettuceAmount = recipe.toppingAmount[3];
+            int lettuceAmount = recipe.toppingAmount[2];
+            int topBunAmount = recipe.toppingAmount[3];
+            int bottomBunAmount = recipe.toppingAmount[4];
+
+            int bunAmount = Mathf.Min(topBunAmount, bottomBunAmount);
 
             UILines[1].amount = cheeseAmount;
             UILines[2].amount = tomatoAmount;
