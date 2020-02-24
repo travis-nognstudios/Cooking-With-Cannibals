@@ -47,6 +47,7 @@ namespace Serving
                 bool foundMatchingRecipe = false;
 
                 queuedRecipes = orderSpawner.GetQueuedRecipes();
+
                 foreach (RecipeVariation queuedRecipe in queuedRecipes)
                 {
                     if (RecipeIsReadyBasedOnRater(queuedRecipe))

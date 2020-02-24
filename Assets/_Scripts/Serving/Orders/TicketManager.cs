@@ -94,30 +94,45 @@ namespace Serving
             List<float> agesOfMatchingTickets = new List<float>();
             foreach (TicketPointv2 ticket in ticketPoints)
             {
-                float ticketAge = ticket.ticketAge;
-                RecipeVariation ticketRecipe = ticket.recipe;
-                bool matchingRecipe = ticketRecipe.Equals(recipeVar);
-
-                if (matchingRecipe)
+                if (ticket.ContainsTicket())
                 {
-                    agesOfMatchingTickets.Add(ticketAge);
+                    float ticketAge = ticket.ticketAge;
+                    RecipeVariation ticketRecipe = ticket.recipe;
+                    bool matchingRecipe = ticketRecipe.Equals(recipeVar);
+
+                    if (matchingRecipe)
+                    {
+                        agesOfMatchingTickets.Add(ticketAge);
+                    }
+                    else
+                    {
+                        // For non-matching recipes, set age to 0
+                        agesOfMatchingTickets.Add(0f);
+                    }
                 }
                 else
                 {
-                    // For non-matching recipes, set age to 0
+                    // For empty points, set age to 0
                     agesOfMatchingTickets.Add(0f);
                 }
             }
 
+            Debug.Log("Matching ticket ages:");
+            for (int i=0; i<agesOfMatchingTickets.Count; ++i)
+            {
+                Debug.Log($"{i} = {agesOfMatchingTickets[i]}");
+            }
 
             int oldest = 0;
             for (int i=1; i<agesOfMatchingTickets.Count; ++i)
             {
-                if (agesOfMatchingTickets[oldest] > agesOfMatchingTickets[i])
+                if (agesOfMatchingTickets[i] > agesOfMatchingTickets[oldest])
                 {
                     oldest = i;
                 }
             }
+
+            Debug.Log($"Matching recipe index: {oldest}");
 
             return oldest;
         }
@@ -143,8 +158,11 @@ namespace Serving
             List<RecipeVariation> recipes = new List<RecipeVariation>();
             foreach (TicketPointv2 ticketPoint in ticketPoints)
             {
-                RecipeVariation recipeVar = ticketPoint.recipe;
-                recipes.Add(recipeVar);
+                if (ticketPoint.ContainsTicket())
+                {
+                    RecipeVariation recipeVar = ticketPoint.recipe;
+                    recipes.Add(recipeVar);
+                }
             }
 
             return recipes;

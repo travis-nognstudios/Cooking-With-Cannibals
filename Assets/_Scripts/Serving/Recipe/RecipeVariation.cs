@@ -75,6 +75,11 @@ namespace Serving
 
         public bool Equals(RecipeVariation other)
         {
+            if (other == null)
+            {
+                return false;
+            }
+
             bool baseRecipeMatches = EqualsBaseRecipe(other);
 
             int numToppings = toppings.Length;
@@ -104,6 +109,11 @@ namespace Serving
 
         public bool EqualsBaseRecipe(RecipeVariation other)
         {
+            if (other == null)
+            {
+                return false;
+            }
+
             bool nameMatches = other.recipeObject.name == recipeObject.name;
             bool mainIngredientMatches = other.mainIngredient.gameObject.name == mainIngredient.gameObject.name;
             bool toppingNumberMatches = other.toppings.Length == toppings.Length;
