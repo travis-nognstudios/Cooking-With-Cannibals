@@ -218,8 +218,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6910487005952432273}
-  - component: {fileID: 3469184374834093543}
   - component: {fileID: 2118270261}
+  - component: {fileID: 6731041036049177851}
   m_Layer: 0
   m_Name: Prop_Clock_v01
   m_TagString: Untagged
@@ -243,21 +243,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3469184374834093543
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7619424855505087106}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1fc2ea46fdc8c4cc69fc2db1324cfcd6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameLoop: {fileID: 0}
-  clockHand: {fileID: 8651729809661982055}
-  clockRed: {fileID: 3800881681743963223}
 --- !u!54 &2118270261
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -274,6 +259,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &6731041036049177851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7619424855505087106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ece5bd09c3ca445669f1ca8de03b70ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  orderSpawner: {fileID: 0}
+  clockHand: {fileID: 8651729809661982055}
+  clockRed: {fileID: 3800881681743963223}
 --- !u!1 &8346218672892093649
 GameObject:
   m_ObjectHideFlags: 0

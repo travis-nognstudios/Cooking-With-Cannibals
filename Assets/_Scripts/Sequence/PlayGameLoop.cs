@@ -7,84 +7,30 @@ namespace Sequence
     public class PlayGameLoop : MonoBehaviour, SequenceNode
     {
         public OrderSpawnerv5 orderSpawner;
-        private bool allOrdersCompleted;
-
-        [Range(0,10)]
-        public float timeLimitInMinutes;
-        private float timeLimitInSeconds;
-        private bool isTimed;
-
-        private float timer;
-        private bool timeLimitReached;
-
-
+        private bool serviceOver;
+     
         void Start()
         {
-            isTimed = timeLimitInMinutes != 0;
-            timeLimitInSeconds = timeLimitInMinutes * 60;
+ 
         }
 
         void Update()
         {
-            if (isTimed && !timeLimitReached)
+            if (!serviceOver)
             {
-                timer += Time.deltaTime;
-
-                if (timer >= timeLimitInSeconds)
-                {
-                    timeLimitReached = true;
-                }
-            }
-
-            if (!allOrdersCompleted)
-            {
-                allOrdersCompleted = CheckAllComplete();
+                serviceOver = orderSpawner.IsServiceOver();
             }
         }
 
         public bool IsComplete()
         {
-            bool complete;
-
-            if (isTimed)
-            {
-                complete = allOrdersCompleted || timeLimitReached;
-            }
-            else
-            {
-                complete = allOrdersCompleted;
-            }
-
-            if (complete)
-            {
-                Debug.Log("End of Game loop");
-
-                orderSpawner.StopSpawning();
-                orderSpawner.RemoveAllTickets();
-            }
-
-            return complete;
+            return serviceOver;
         }
 
         public void Play()
         {
             orderSpawner.StartSpawning();
             Debug.Log("Start of Game Loop");
-        }
-
-        private bool CheckAllComplete()
-        {
-            return orderSpawner.numberOfTickets == orderSpawner.GetNumTicketsCompleted();
-        }
-
-        public float GetTotalTime()
-        {
-            return timeLimitInSeconds;
-        }
-
-        public float GetTimeLeft()
-        {
-            return timeLimitInSeconds - timer;
         }
     }
 }
