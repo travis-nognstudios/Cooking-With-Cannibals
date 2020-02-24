@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 4330690870478332176}
   - component: {fileID: 1394136209236727633}
   - component: {fileID: 4476802989359948244}
-  - component: {fileID: 4225563514007210054}
   m_Layer: 0
   m_Name: ING_Ear_v02
   m_TagString: Untagged
@@ -145,26 +144,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18055ba762aa3994f9c10208cd088bc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4225563514007210054
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2938236372182217799}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b6a08144e37d22d4e8f8f51d2c5d4a4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nearTouchHighlight: {r: 0, g: 0, b: 0, a: 0}
-  touchHighlight: {r: 0, g: 0, b: 0, a: 0}
-  grabHighlight: {r: 0, g: 0, b: 0, a: 0}
-  useHighlight: {r: 0, g: 0, b: 0, a: 0}
-  objectToMonitor: {fileID: 0}
-  objectToHighlight: {fileID: 0}
-  objectHighlighter: {fileID: 0}
-  objectToAffect: {fileID: 0}
 --- !u!1 &3879963249927552913
 GameObject:
   m_ObjectHideFlags: 0
@@ -177,6 +156,7 @@ GameObject:
   - component: {fileID: 735416074373249453}
   - component: {fileID: 2487802299450165930}
   - component: {fileID: 4015360385411264499}
+  - component: {fileID: 1543106431772867500}
   m_Layer: 0
   m_Name: ING_Ear
   m_TagString: Untagged
@@ -258,12 +238,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stateChangeTimes: []
-  uncookedMat: {fileID: 2100000, guid: 47136a08197a7dd45a764f8096a67dc2, type: 2}
-  cookedMat: {fileID: 2100000, guid: 361b6f4424db89d42b1dd60488b3a127, type: 2}
-  burntMat: {fileID: 2100000, guid: a2009358cf759f3499d937e3441c689b, type: 2}
+  uncookedMat: {fileID: 2100000, guid: 2c6698dc26685e74785bd171d8adc0fa, type: 2}
+  cookedMat: {fileID: 2100000, guid: 980af48681b8c204fa8debc0115d864b, type: 2}
+  burntMat: {fileID: 2100000, guid: d835d2c71f440f742b2e3e89258cf3bf, type: 2}
   canvas: {fileID: 7674353266099490394}
   cookUI: {fileID: 2253341720586070790}
   cam: {fileID: 0}
+--- !u!114 &1543106431772867500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3879963249927552913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6a08144e37d22d4e8f8f51d2c5d4a4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nearTouchHighlight: {r: 0, g: 0, b: 0, a: 0}
+  touchHighlight: {r: 0, g: 1, b: 1, a: 0}
+  grabHighlight: {r: 0, g: 0, b: 0, a: 0}
+  useHighlight: {r: 0, g: 0, b: 0, a: 0}
+  objectToMonitor: {fileID: 4330690870478332176}
+  objectToHighlight: {fileID: 3879963249927552913}
+  objectHighlighter: {fileID: 0}
+  objectToAffect: {fileID: 0}
 --- !u!1 &7674353266099490394
 GameObject:
   m_ObjectHideFlags: 0
