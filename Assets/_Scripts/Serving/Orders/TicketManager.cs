@@ -117,12 +117,6 @@ namespace Serving
                 }
             }
 
-            Debug.Log("Matching ticket ages:");
-            for (int i=0; i<agesOfMatchingTickets.Count; ++i)
-            {
-                Debug.Log($"{i} = {agesOfMatchingTickets[i]}");
-            }
-
             int oldest = 0;
             for (int i=1; i<agesOfMatchingTickets.Count; ++i)
             {
@@ -131,8 +125,6 @@ namespace Serving
                     oldest = i;
                 }
             }
-
-            Debug.Log($"Matching recipe index: {oldest}");
 
             return oldest;
         }

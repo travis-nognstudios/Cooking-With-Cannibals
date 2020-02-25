@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 2206182937338791508}
   - component: {fileID: 7986227876391495498}
   - component: {fileID: 6120448035249919810}
-  - component: {fileID: 1866985952726916761}
   - component: {fileID: 4330690870478332176}
   - component: {fileID: 1394136209236727633}
   - component: {fileID: 4476802989359948244}
@@ -62,19 +61,6 @@ BoxCollider:
   m_GameObject: {fileID: 2938236372182217799}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.5327542, y: 0.10064269, z: 0.76936626}
-  m_Center: {x: -0.008066417, y: 0.259257, z: -0.013137304}
---- !u!65 &1866985952726916761
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2938236372182217799}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.5327542, y: 0.10064269, z: 0.76936626}
@@ -157,6 +143,7 @@ GameObject:
   - component: {fileID: 2487802299450165930}
   - component: {fileID: 4015360385411264499}
   - component: {fileID: 1543106431772867500}
+  - component: {fileID: 2668113642738396722}
   m_Layer: 0
   m_Name: ING_Ear
   m_TagString: Untagged
@@ -264,6 +251,19 @@ MonoBehaviour:
   objectToHighlight: {fileID: 3879963249927552913}
   objectHighlighter: {fileID: 0}
   objectToAffect: {fileID: 0}
+--- !u!65 &2668113642738396722
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3879963249927552913}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.00465196, y: 0.0018184565, z: 0.006853337}
+  m_Center: {x: -0.000031270316, y: 0.0054719155, z: -0.00012755136}
 --- !u!1 &7674353266099490394
 GameObject:
   m_ObjectHideFlags: 0
@@ -370,11 +370,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 157443271636226070}
     m_Modifications:
-    - target: {fileID: 8794757175939375550, guid: 6c0a6816936b04f42822cf1aa7ded59f,
-        type: 3}
-      propertyPath: m_Name
-      value: CookingUI
-      objectReference: {fileID: 0}
     - target: {fileID: 3410697302078619019, guid: 6c0a6816936b04f42822cf1aa7ded59f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -494,6 +489,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.15166165
+      objectReference: {fileID: 0}
+    - target: {fileID: 8794757175939375550, guid: 6c0a6816936b04f42822cf1aa7ded59f,
+        type: 3}
+      propertyPath: m_Name
+      value: CookingUI
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c0a6816936b04f42822cf1aa7ded59f, type: 3}

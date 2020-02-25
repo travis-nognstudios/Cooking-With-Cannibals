@@ -66,8 +66,14 @@ namespace Serving
                 }
             }
 
-            cookStepsAre = mainIngredientIs.GetComponent<Cookablev2>().GetSteps();
+            // Get cookable main ingredient
+            Cookablev2 cookable = mainIngredientIs.GetComponent<Cookablev2>();
+            if (cookable == null)
+            {
+                cookable = mainIngredientIs.GetComponentInChildren<Cookablev2>();
+            }
 
+            cookStepsAre = cookable.GetSteps();
 
             // COUNT MISTAKES
             // Each missing topping = 1 mistake
