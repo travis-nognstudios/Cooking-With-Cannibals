@@ -8,6 +8,7 @@ namespace Audio
     public class ImpactEffect : VRTK.VRTK_InteractableObject
     {
         public float dropSpeed = 1f;
+        public bool isPlayingSomething;
 
         
 
@@ -60,9 +61,18 @@ namespace Audio
 
                 if (audio != null)
                 {
-                    audio.soundSource.Play();
+                    StartCoroutine("PlayCollisionSFX");
                 }
             }
         }
-    }
+
+        IEnumerator PlayCollisionSFX()
+        {
+            GrabBasedAudio audio = GetComponent<GrabBasedAudio>();
+            isPlayingSomething = true;
+            audio.soundSource.Play();
+            yield return new WaitForSeconds(audio.dropSound.length);
+            isPlayingSomething = false;
+        }
+    } 
 }

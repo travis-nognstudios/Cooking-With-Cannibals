@@ -15,19 +15,25 @@ namespace Cooking
 
         private float rotationOnGrab;
         private float rotationOnUngrab;
+        public AudioSource audioSource;
+
+        public void Start()
+        {
+            audioSource = this.GetComponent<AudioSource>();
+        }
 
 
         public override void Grabbed(VRTK_InteractGrab currentGrabbingObject = null)
         {
             rotationOnGrab = transform.rotation.z;
-
+            audioSource.Play();
             base.Grabbed(currentGrabbingObject);
         }
         public override void Ungrabbed(VRTK_InteractGrab previousGrabbingObject = null)
         {
             rotationOnUngrab = transform.rotation.z;
             TriggerSnap();
-
+            audioSource.Stop();
             base.Ungrabbed(previousGrabbingObject);
         }
 

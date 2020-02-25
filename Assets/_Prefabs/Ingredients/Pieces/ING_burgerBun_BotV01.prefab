@@ -338,8 +338,8 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 20
+  MinDistance: 0.3
+  MaxDistance: 1
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -497,6 +497,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1966847152803181262}
     m_Modifications:
+    - target: {fileID: 8794757175939375550, guid: 6c0a6816936b04f42822cf1aa7ded59f,
+        type: 3}
+      propertyPath: m_Name
+      value: CookingUI
+      objectReference: {fileID: 0}
     - target: {fileID: 3410697302078619019, guid: 6c0a6816936b04f42822cf1aa7ded59f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -616,11 +621,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.15166165
-      objectReference: {fileID: 0}
-    - target: {fileID: 8794757175939375550, guid: 6c0a6816936b04f42822cf1aa7ded59f,
-        type: 3}
-      propertyPath: m_Name
-      value: CookingUI
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c0a6816936b04f42822cf1aa7ded59f, type: 3}

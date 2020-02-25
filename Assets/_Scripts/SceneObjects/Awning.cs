@@ -12,10 +12,12 @@ namespace SceneObjects
         private float timer;
 
         Animator animator;
+        public AudioSource audioSource;
         
         void Start()
         {
             animator = GetComponent<Animator>();
+            audioSource = GetComponent<AudioSource>();
         }
 
         void Update()
@@ -26,6 +28,7 @@ namespace SceneObjects
                 if (timer >= openTime)
                 {
                     isOpen = true;
+                    audioSource.Stop();
                 }
             }
         }
@@ -34,11 +37,13 @@ namespace SceneObjects
         {
             animator.SetTrigger("open");
             startedOpening = true;
+            this.audioSource.Play();
         }
 
         public void DoneOpening()
         {
             isOpen = true;
+            this.audioSource.Stop();
         }
     }
 }

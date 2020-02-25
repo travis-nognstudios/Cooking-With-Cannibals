@@ -10,11 +10,13 @@ namespace Cooking
     {
         [Header("FX")]
         public ParticleSystem flame;
+        public AudioSource audioSource;
+
 
         // Start is called before the first frame update
         void Start()
         {
-            
+            audioSource = GetComponent<AudioSource>();
         }
 
         // Update is called once per frame
@@ -37,12 +39,14 @@ namespace Cooking
         public override void TurnOn()
         {
             flame.Play();
+            audioSource.Play();
             isOn = true;
         }
 
         public override void TurnOff()
         {
             flame.Stop();
+            audioSource.Stop();
             isOn = false;
         }
         
