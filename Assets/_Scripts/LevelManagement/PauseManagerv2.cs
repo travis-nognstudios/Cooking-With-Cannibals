@@ -10,7 +10,7 @@ namespace LevelManagement
         public bool pausable;
         public bool isPaused;
         public float fadeTime = 2;
-        public float pauseCooldown = 1;
+        public float pauseCooldown;
         public PostProcessLayer pauseNoir;
 
         [Header("Player")]

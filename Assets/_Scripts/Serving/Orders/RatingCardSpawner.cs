@@ -17,7 +17,10 @@ namespace Serving
         [Header("Scene Objects")]
         public TipJar tipjar;
         public RatingCardPoint cardPoint;
-     
+
+        [Header("Audio")]
+        public AudioSource audioSource;
+        public AudioClip tootyHorn;
 
         // Use this for initialization
         void Start()
@@ -32,6 +35,9 @@ namespace Serving
         
         public void SpawnCard()
         {
+            audioSource.clip = tootyHorn;
+            audioSource.Play();
+
             GameObject selectedCard;
             int tip = tipjar.GetAmountInJar();
 
