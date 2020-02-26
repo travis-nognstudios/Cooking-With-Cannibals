@@ -16,7 +16,7 @@ namespace LevelManagement
         [Header("Player")]
         public GameObject player;
         public Transform pausePoint;
-            
+
         private Vector3 originalPosition;
         private Quaternion originalRotation;
 

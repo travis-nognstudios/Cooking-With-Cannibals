@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using SceneObjects;
+using LevelManagement;
 
 namespace Cooking
 {
@@ -164,7 +165,7 @@ namespace Cooking
 
                 if (cookTop.IsHot())
                 {
-                    cookTimes[typeIndex] += Time.deltaTime;
+                    cookTimes[typeIndex] += PauseTimer.DeltaTime();
                     float timeCooked = cookTimes[typeIndex];
 
                     // Side effects

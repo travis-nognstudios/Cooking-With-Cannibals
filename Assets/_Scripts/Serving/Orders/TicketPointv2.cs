@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using AI;
+using LevelManagement;
 
 namespace Serving
 {
@@ -34,7 +35,7 @@ namespace Serving
         {
             if (containsTicket)
             {
-                ticketAge += Time.deltaTime;
+                ticketAge += PauseTimer.DeltaTime();
                 ticketClock.UpdateTimer(ticketFullTime, ticketFullTime - ticketAge);
             }
         }

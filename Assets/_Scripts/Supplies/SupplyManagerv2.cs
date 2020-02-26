@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Cut;
+using LevelManagement;
 
 namespace Supplies
 {
@@ -36,7 +37,7 @@ namespace Supplies
         // Update is called once per frame
         void Update()
         {
-            timeSinceLastSpawn += Time.deltaTime;
+            timeSinceLastSpawn += PauseTimer.DeltaTime();
 
             // At every interval, check spawn points
             if (timeSinceLastSpawn >= spawnInterval)

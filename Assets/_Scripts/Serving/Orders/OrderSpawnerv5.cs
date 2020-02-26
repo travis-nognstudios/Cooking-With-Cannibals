@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using AI;
+using LevelManagement;
 
 namespace Serving
 {
@@ -89,7 +90,7 @@ namespace Serving
         void Update()
         {
             // Check end of service
-            timeSinceServiceStarted += Time.deltaTime;
+            timeSinceServiceStarted += PauseTimer.DeltaTime();
             bool timedOut = timeSinceServiceStarted > totalServiceTime;
             bool allOrdersCompleted = ticketManager.numTicketsCompleted == numOrdersForLevel;
 
