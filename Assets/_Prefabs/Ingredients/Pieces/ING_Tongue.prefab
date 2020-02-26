@@ -289,7 +289,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 082ca8bd09cd61441b4fec67c78d83d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stateChangeTimes: []
+  stateChangeTimes:
+  - cookType: 1
+    timeToCook: 10
+    timeToOverCook: 25
+  - cookType: 3
+    timeToCook: 10
+    timeToOverCook: 25
   uncookedMat: {fileID: 2100000, guid: 3a5942c013afbc847a7f2a1db9597b6e, type: 2}
   cookedMat: {fileID: 2100000, guid: 905d9fb14d26ae842bd4982565866805, type: 2}
   burntMat: {fileID: 2100000, guid: 4737522987d0c66469e25dbef0447870, type: 2}
@@ -336,6 +342,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4211287001646614185}
     m_Modifications:
+    - target: {fileID: 8794757175939375550, guid: 6c0a6816936b04f42822cf1aa7ded59f,
+        type: 3}
+      propertyPath: m_Name
+      value: CookingUI
+      objectReference: {fileID: 0}
     - target: {fileID: 3410697302078619019, guid: 6c0a6816936b04f42822cf1aa7ded59f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -455,11 +466,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.15166165
-      objectReference: {fileID: 0}
-    - target: {fileID: 8794757175939375550, guid: 6c0a6816936b04f42822cf1aa7ded59f,
-        type: 3}
-      propertyPath: m_Name
-      value: CookingUI
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c0a6816936b04f42822cf1aa7ded59f, type: 3}

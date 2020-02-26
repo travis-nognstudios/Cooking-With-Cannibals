@@ -170,7 +170,6 @@ namespace Cooking
                     // Side effects
                     cookUI.UpdateFill(timeToOvercook, timeCooked);
                     PlayCookingSound();
-                    
         
                     // If cook state reached, update allMechanics and add to steps
                     if (!isCooked && timeCooked >= timeToCook && timeCooked < timeToOvercook)

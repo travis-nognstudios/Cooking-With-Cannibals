@@ -22,7 +22,12 @@ namespace Cooking
         // Update is called once per frame
         void Update()
         {
+            if (!isOn)
+            {
+                TurnOn();
+            }
 
+            Debug.Log($"Deepfryer is On: {isOn}");
         }
 
         public override void TurnOn()
