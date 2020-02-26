@@ -17,16 +17,17 @@ namespace LevelManagement
         // Update is called once per frame
         void Update()
         {
+            //Debug.Log($"Handle rotation: {gameObject.transform.localEulerAngles.x}");
+
             if (DoorHandleTurned())
             {
                 pauseManager.SetPause();
-                //LevelManager.Instance.LoadScene(0);
             }
         }
 
         private bool DoorHandleTurned()
         {
-            return gameObject.transform.localEulerAngles.x < 315 && gameObject.transform.localEulerAngles.x > 0;
+            return gameObject.transform.localEulerAngles.x < 315 && gameObject.transform.localEulerAngles.x > 270;
         }
     }
 }

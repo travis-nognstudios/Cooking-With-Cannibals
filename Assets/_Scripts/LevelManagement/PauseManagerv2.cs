@@ -165,7 +165,10 @@ namespace LevelManagement
 
         private void TeleportToPause()
         {
-            ColorOff();
+            if (goToPoint == pausePoint)
+            {
+                ColorOff();
+            }
 
             float x = player.transform.position.x;
             float y = player.transform.position.y;
