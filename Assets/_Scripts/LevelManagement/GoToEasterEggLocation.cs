@@ -8,29 +8,23 @@ namespace LevelManagement
     {
         [Header("Pause Management")]
         public PauseManagerv2 pauseManager;
-        public Transform lemonadeStand;
 
         [Header("Me")]
         public VRTK_InteractableObject interactable;
 
-        // Use this for initialization
         void Start()
         {
 
         }
 
-        // Update is called once per frame
         void Update()
         {
             if (interactable.IsTouched())
             {
-                Teleport();
+                pauseManager.SetLocationToEasterEgg();
+                pauseManager.SetPause();
             }
         }
 
-        void Teleport()
-        {
-            pauseManager.SetPause();
-        }
     }
 }

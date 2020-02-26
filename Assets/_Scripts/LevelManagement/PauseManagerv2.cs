@@ -17,7 +17,7 @@ namespace LevelManagement
         public GameObject player;
         public Transform pausePoint;
         public Transform easterEggPoint;
-        private Transform goingTo;
+        private Transform goToPoint;
 
         private Vector3 originalPosition;
         private Quaternion originalRotation;
@@ -39,6 +39,7 @@ namespace LevelManagement
         void Start()
         {
             ColorOn();
+            SetLocationToPauseArea();
         }
 
         // Update is called once per frame
@@ -79,7 +80,15 @@ namespace LevelManagement
             }
         }
 
-        public void SetLocation
+        public void SetLocationToPauseArea()
+        {
+            goToPoint = pausePoint;
+        }
+
+        public void SetLocationToEasterEgg()
+        {
+            goToPoint = easterEggPoint;
+        }
 
         public void SetPause()
         {
@@ -165,8 +174,8 @@ namespace LevelManagement
             originalPosition = new Vector3(x,y,z);
             originalRotation = player.transform.rotation;
 
-            player.transform.position = pausePoint.position;
-            player.transform.rotation = pausePoint.rotation;
+            player.transform.position = goToPoint.position;
+            player.transform.rotation = goToPoint.rotation;
 
             if (!keyboardMode)
             {
