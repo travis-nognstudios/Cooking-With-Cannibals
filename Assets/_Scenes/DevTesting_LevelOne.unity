@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 112000000, guid: cd074c13bb22a72409b0ff7d7eb8ea13,
     type: 2}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -219,6 +219,8 @@ MonoBehaviour:
   pausable: 1
   isPaused: 0
   fadeTime: 1
+  pauseCooldown: 0
+  pauseNoir: {fileID: 716714917}
   player: {fileID: 1498578520}
   pausePoint: {fileID: 1838431885}
 --- !u!1001 &44017876
@@ -2463,6 +2465,8 @@ MonoBehaviour:
   failIfBelowTip: 10
   tipjar: {fileID: 3641496317801130879}
   cardPoint: {fileID: 1246369586}
+  audioSource: {fileID: 0}
+  tootyHorn: {fileID: 0}
 --- !u!114 &287736179
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2815,16 +2819,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1966847152803181262, guid: 985da931209ea964ebe9bedea154ad19,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6661908590545108442, guid: 985da931209ea964ebe9bedea154ad19,
         type: 3}
       propertyPath: cam
       value: 
       objectReference: {fileID: 2096657115}
+    - target: {fileID: 1966847152803181262, guid: 985da931209ea964ebe9bedea154ad19,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7939671716038685212, guid: 985da931209ea964ebe9bedea154ad19,
         type: 3}
       propertyPath: cam
@@ -9886,16 +9890,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1966847152803181262, guid: 985da931209ea964ebe9bedea154ad19,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6661908590545108442, guid: 985da931209ea964ebe9bedea154ad19,
         type: 3}
       propertyPath: cam
       value: 
       objectReference: {fileID: 2096657115}
+    - target: {fileID: 1966847152803181262, guid: 985da931209ea964ebe9bedea154ad19,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7939671716038685212, guid: 985da931209ea964ebe9bedea154ad19,
         type: 3}
       propertyPath: cam
