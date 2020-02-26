@@ -16,6 +16,8 @@ namespace LevelManagement
         [Header("Player")]
         public GameObject player;
         public Transform pausePoint;
+        public Transform easterEggPoint;
+        private Transform goingTo;
 
         private Vector3 originalPosition;
         private Quaternion originalRotation;
@@ -76,6 +78,8 @@ namespace LevelManagement
                 }
             }
         }
+
+        public void SetLocation
 
         public void SetPause()
         {
@@ -153,13 +157,13 @@ namespace LevelManagement
         private void TeleportToPause()
         {
             ColorOff();
+
             float x = player.transform.position.x;
             float y = player.transform.position.y;
             float z = player.transform.position.z;
 
             originalPosition = new Vector3(x,y,z);
             originalRotation = player.transform.rotation;
-
 
             player.transform.position = pausePoint.position;
             player.transform.rotation = pausePoint.rotation;
