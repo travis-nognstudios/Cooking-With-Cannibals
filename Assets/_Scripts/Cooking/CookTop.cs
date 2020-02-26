@@ -19,7 +19,7 @@ namespace Cooking
 
         private void Update()
         {
-            Debug.Log($"Hot Fryer: {hot}");
+
         }
 
         void OnTriggerEnter(Collider other)
@@ -49,14 +49,12 @@ namespace Cooking
             if (other.CompareTag("Heatsource"))
             {
                 HeatSource heatSource = other.gameObject.GetComponent<HeatSource>();
-                Debug.Log($"Heatsource: {heatSource}");
                 SyncHeat(heatSource);
             }
         }
 
         private void SyncHeat(HeatSource heatSource)
         {
-            Debug.Log($"Heatsource: {heatSource.IsOn()} Hot: {IsHot()}");
             if (heatSource.IsOn() && !IsHot())
             {
                 MakeHot();

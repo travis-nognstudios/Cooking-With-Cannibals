@@ -26,8 +26,6 @@ namespace Cooking
             {
                 TurnOn();
             }
-
-            Debug.Log($"Deepfryer is On: {isOn}");
         }
 
         public override void TurnOn()
