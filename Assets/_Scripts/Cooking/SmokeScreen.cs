@@ -7,13 +7,8 @@ namespace Cooking
 {
     public class SmokeScreen : MonoBehaviour
     {
-        #region Variables
-
         public ParticleSystem kitchenSmoke;
         private bool isSmoking;
-
-        #endregion Variables
-
 
         // Start is called before the first frame update
         void Start()

@@ -7,11 +7,7 @@ namespace Cooking
 {
     public class FireExtinguisher : MonoBehaviour
     {
-        #region Variables
-
         public ParticleSystem foam;
-
-        #endregion Variables
 
         void Start()
         {

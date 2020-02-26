@@ -24,6 +24,7 @@ namespace LevelManagement
         private float fadeTimer;
         private bool isFading;
         private bool fadeReady;
+        private bool keyboardMode;
 
         private bool waitingToTeleport;
         private bool teleportingToPause;
@@ -103,12 +104,24 @@ namespace LevelManagement
             if (screenFade == null)
             {
                 screenFade = FindObjectOfType<OVRScreenFade>();
-                screenFade.fadeTime = fadeTime / 2;
+
+                if (screenFade == null)
+                {
+                    keyboardMode = true;
+                }
+                else
+                {
+                    screenFade.fadeTime = fadeTime / 2;
+                }
             }
 
             fadeReady = false;
             isFading = true;
-            screenFade.FadeOut();
+
+            if (!keyboardMode)
+            {
+                screenFade.FadeOut();
+            }
         }
 
         public float DeltaTime()
@@ -151,7 +164,10 @@ namespace LevelManagement
             player.transform.position = pausePoint.position;
             player.transform.rotation = pausePoint.rotation;
 
-            screenFade.UnFade();
+            if (!keyboardMode)
+            {
+                screenFade.UnFade();
+            }
         }
 
         private void TeleportBackToLevel()
@@ -161,17 +177,26 @@ namespace LevelManagement
             player.transform.position = originalPosition;
             player.transform.rotation = originalRotation;
 
-            screenFade.UnFade();
+            if (!keyboardMode)
+            {
+                screenFade.UnFade();
+            }
         }
 
         private void ColorOn()
         {
-            pauseNoir.enabled = false;
+            if (!keyboardMode)
+            {
+                pauseNoir.enabled = false;
+            }
         }
 
         private void ColorOff()
         {
-            pauseNoir.enabled = true;
+            if (!keyboardMode)
+            {
+                pauseNoir.enabled = true;
+            }
         }
     }
 }

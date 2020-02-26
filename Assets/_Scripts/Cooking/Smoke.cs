@@ -1,14 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using LevelManagement;
 
 namespace Cooking
 {
     public class Smoke : MonoBehaviour
     {
-
+        [Header("Cooktop Smoke")]
         public ParticleSystem cookingSmoke;
         public ParticleSystem burningSmoke;
+
+        [Header("Smokescreen")]
+        public SmokeScreen smokescreen;
+        public float timeToPutOutSmokescreen;
+        private float extinguisherTouchingTime;
 
         void Start()
         {
@@ -16,6 +22,18 @@ namespace Cooking
             burningSmoke.Stop();
         }
 
+        private void OnTriggerStay(Collider other)
+        {
+            if (other.CompareTag("FireExtinguisher"))
+            {
+                extinguisherTouchingTime += PauseTimer.DeltaTime();
+                if (extinguisherTouchingTime >= timeToPutOutSmokescreen)
+                {
+                    smokescreen.StopSmokeScreen();
+                    extinguisherTouchingTime = 0;
+                }
+            }
+        }
 
         public void ClearSmoke()
         {
@@ -42,6 +60,7 @@ namespace Cooking
             if (!burningSmoke.isPlaying)
             {
                 burningSmoke.Play();
+                smokescreen.StartSmokeScreen();
             }
         }
 
