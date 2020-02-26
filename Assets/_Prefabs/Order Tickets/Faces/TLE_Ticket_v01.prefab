@@ -482,7 +482,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &5231002181823032068
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1381,7 +1381,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &8363308192256044706
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1716,17 +1716,25 @@ MonoBehaviour:
   - {fileID: 1327454948919719332}
   - {fileID: 4319576741181851402}
   recipe:
-    recipeObject: {fileID: 0}
-    serveTime: 0
+    recipeObject: {fileID: 3381533428914195764, guid: c0d130e75d0876f43bd1325203fccb0c,
+      type: 3}
+    serveTime: 210
     mainIngredient:
-      gameObject: {fileID: 0}
-      steps: []
-    toppings: []
-    recipeTicket: {fileID: 0}
-    mainIngredientAmount: 0
-    maxMainIngredientAmount: 0
-    toppingAmount: 
-    maxToppingAmount: 0
+      gameObject: {fileID: 7111038727288064386, guid: 6e13628e8c807436599b71fdc110b8c2,
+        type: 3}
+      steps:
+      - cookType: 1
+        cookState: 1
+    toppings:
+    - {fileID: 4408773072892888073, guid: 81f39ee7eeef39c4d859996cae177f24, type: 3}
+    - {fileID: 2938236372182217799, guid: 354e419606b346341a28f801c007d902, type: 3}
+    - {fileID: 2941389913336298189, guid: 76c9435a0af946b40a281c45aba2242e, type: 3}
+    - {fileID: 2941389913336298189, guid: 76c9435a0af946b40a281c45aba2242e, type: 3}
+    recipeTicket: {fileID: 2992040805973970356}
+    mainIngredientAmount: 2
+    maxMainIngredientAmount: 2
+    toppingAmount: 01000000010000000000000002000000
+    maxToppingAmount: 5
 --- !u!1 &7733077077437682741
 GameObject:
   m_ObjectHideFlags: 0
@@ -1934,7 +1942,7 @@ MonoBehaviour:
     UI: {fileID: 2178335019511212522}
   - amount: 5
     UI: {fileID: 6465989947779208922}
-  amount: 1
+  amount: 2
 --- !u!1 &8127212256923451636
 GameObject:
   m_ObjectHideFlags: 0
@@ -2145,4 +2153,4 @@ MonoBehaviour:
     UI: {fileID: 2646154440986795773}
   - amount: 5
     UI: {fileID: 2376325299630258400}
-  amount: 1
+  amount: 0
