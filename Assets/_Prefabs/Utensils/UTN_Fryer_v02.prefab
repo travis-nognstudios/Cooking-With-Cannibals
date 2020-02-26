@@ -571,7 +571,6 @@ GameObject:
   - component: {fileID: 2864998311442066164}
   - component: {fileID: 3586172776712384539}
   - component: {fileID: 1501603571750881800}
-  - component: {fileID: 297994505142997963}
   - component: {fileID: 2443748950113523416}
   m_Layer: 0
   m_Name: UTN_Fryer_v02
@@ -690,20 +689,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cookType: 3
---- !u!114 &297994505142997963
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5327540651072002709}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44f694c1603bdcd47b9ad95ee7afbadf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cookingSmoke: {fileID: 6150295674347592079}
-  burningSmoke: {fileID: 3688331195809744919}
 --- !u!54 &2443748950113523416
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -824,6 +809,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FX GrillSmoke Cooked
       objectReference: {fileID: 0}
+    - target: {fileID: 1894618725047411184, guid: d2dcddb6b67c00f45a0e06a3ed40ad1a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 365959847170360468, guid: d2dcddb6b67c00f45a0e06a3ed40ad1a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -902,12 +892,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 5997640648914709794}
   m_PrefabAsset: {fileID: 0}
---- !u!198 &6150295674347592079 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 459889637047743661, guid: d2dcddb6b67c00f45a0e06a3ed40ad1a,
-    type: 3}
-  m_PrefabInstance: {fileID: 5997640648914709794}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8451620950955368530
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -919,6 +903,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: FX GrillSmoke Burnt
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047029736709442891, guid: 59f8861c0ec0f6841bff9820fabb8c8a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 382549696725434806, guid: 59f8861c0ec0f6841bff9820fabb8c8a,
         type: 3}
@@ -995,12 +984,6 @@ PrefabInstance:
 --- !u!4 &8071900332611953124 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 382549696725434806, guid: 59f8861c0ec0f6841bff9820fabb8c8a,
-    type: 3}
-  m_PrefabInstance: {fileID: 8451620950955368530}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &3688331195809744919 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 5072642901256366149, guid: 59f8861c0ec0f6841bff9820fabb8c8a,
     type: 3}
   m_PrefabInstance: {fileID: 8451620950955368530}
   m_PrefabAsset: {fileID: 0}
