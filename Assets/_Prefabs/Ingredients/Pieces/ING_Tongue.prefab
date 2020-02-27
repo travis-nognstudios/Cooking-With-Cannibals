@@ -108,6 +108,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 645475813686499669}
+  - component: {fileID: 8612983701679346781}
   - component: {fileID: 6899946429799893306}
   - component: {fileID: 3173983045708560111}
   - component: {fileID: 8563303912174399223}
@@ -141,6 +142,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &8612983701679346781
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7111038727288064386}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!33 &6899946429799893306
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -358,11 +375,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4211287001646614185}
     m_Modifications:
-    - target: {fileID: 8794757175939375550, guid: 6c0a6816936b04f42822cf1aa7ded59f,
-        type: 3}
-      propertyPath: m_Name
-      value: CookingUI
-      objectReference: {fileID: 0}
     - target: {fileID: 3410697302078619019, guid: 6c0a6816936b04f42822cf1aa7ded59f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -482,6 +494,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.15166165
+      objectReference: {fileID: 0}
+    - target: {fileID: 8794757175939375550, guid: 6c0a6816936b04f42822cf1aa7ded59f,
+        type: 3}
+      propertyPath: m_Name
+      value: CookingUI
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c0a6816936b04f42822cf1aa7ded59f, type: 3}

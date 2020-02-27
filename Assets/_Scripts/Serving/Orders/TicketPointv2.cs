@@ -44,7 +44,7 @@ namespace Serving
         {
             // Get order ticket
             currentOrderTicket = recipeVar.recipeTicket.GetComponent<OrderTicket>();
-            currentOrderTicket.SetUI();
+            //currentOrderTicket.SetUI();
             ticketObject = currentOrderTicket.gameObject;
 
             recipe = recipeVar;
@@ -57,6 +57,7 @@ namespace Serving
 
             createdTicket = Instantiate(ticketObject, position, rotation);
             createdTicket.GetComponent<SpringJoint>().connectedBody = spawnPoint.GetComponent<Rigidbody>();
+            createdTicket.GetComponent<OrderTicket>().SetUI();
 
             containsTicket = true;
 

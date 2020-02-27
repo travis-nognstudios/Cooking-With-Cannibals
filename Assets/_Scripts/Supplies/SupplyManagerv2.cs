@@ -27,8 +27,9 @@ namespace Supplies
                 foreach (GameObject spawnPoint in area.spawnPoints)
                 {
                     Vector3 position = spawnPoint.transform.position;
+                    Quaternion rotation = spawnPoint.transform.rotation;
 
-                    SupplyPoint point = new SupplyPoint(area.objectToSpawn, position);
+                    SupplyPoint point = new SupplyPoint(area.objectToSpawn, position, rotation);
                     supplyPoints.Add(point);
                 }
             }
@@ -54,7 +55,7 @@ namespace Supplies
             {
                 GameObject objectToSpawn = point.objectToSpawn;
                 Vector3 position = point.point;
-                Quaternion rotation = objectToSpawn.transform.rotation;
+                Quaternion rotation = point.rotation;
                 float radius = 0.1f;
 
                 // Get names of all objects near the point
