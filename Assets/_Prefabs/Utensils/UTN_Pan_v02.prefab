@@ -1105,7 +1105,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: e031cfe533983f24ea876858da4b1081, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.835
   m_Pitch: 0.5
   Loop: 0
   Mute: 0
@@ -1113,8 +1113,8 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 20
+  MinDistance: 0.5
+  MaxDistance: 2
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -1124,23 +1124,32 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0
+      time: 0.3
       value: 1
-      inSlope: 0
-      outSlope: 0
+      inSlope: -3.3346713
+      outSlope: -3.3346713
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.6
+      value: 0.5
+      inSlope: -0.8336678
+      outSlope: -0.8336678
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
     - serializedVersion: 3
       time: 1
       value: 0
-      inSlope: 0
-      outSlope: 0
+      inSlope: -0.30011982
+      outSlope: -0.30011982
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
@@ -1223,6 +1232,7 @@ MonoBehaviour:
   touchHighlightColor: {r: 0, g: 0, b: 0, a: 0}
   usingState: 0
   dropSpeed: 1
+  isPlayingSomething: 0
 --- !u!114 &682800901
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1239,7 +1249,7 @@ MonoBehaviour:
   dropSound: {fileID: 8300000, guid: e031cfe533983f24ea876858da4b1081, type: 3}
   interactSound: {fileID: 8300000, guid: b60ba7413e70c3e40ba663482b2479e4, type: 3}
   cookSound: {fileID: 0}
-  dropSpeed: 0
+  dropSpeed: 1.4
 --- !u!114 &2077197367
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1267,6 +1277,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cookingSmoke: {fileID: 2141820870083581780}
   burningSmoke: {fileID: 805785619628916499}
+  smokescreen: {fileID: 0}
+  timeToPutOutSmokescreen: 0
 --- !u!1 &5090101059237130363
 GameObject:
   m_ObjectHideFlags: 0
@@ -1652,6 +1664,41 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 459889637047743661, guid: d2dcddb6b67c00f45a0e06a3ed40ad1a,
+        type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 459889637047743661, guid: d2dcddb6b67c00f45a0e06a3ed40ad1a,
+        type: 3}
+      propertyPath: InitialModule.maxNumParticles
+      value: 2000
+      objectReference: {fileID: 0}
+    - target: {fileID: 459889637047743661, guid: d2dcddb6b67c00f45a0e06a3ed40ad1a,
+        type: 3}
+      propertyPath: InheritVelocityModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 459889637047743661, guid: d2dcddb6b67c00f45a0e06a3ed40ad1a,
+        type: 3}
+      propertyPath: InheritVelocityModule.m_Curve.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 459889637047743661, guid: d2dcddb6b67c00f45a0e06a3ed40ad1a,
+        type: 3}
+      propertyPath: InitialModule.gravityModifier.scalar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 459889637047743661, guid: d2dcddb6b67c00f45a0e06a3ed40ad1a,
+        type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 459889637047743661, guid: d2dcddb6b67c00f45a0e06a3ed40ad1a,
+        type: 3}
+      propertyPath: EmissionModule.rateOverDistance.scalar
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 365959847170360468, guid: d2dcddb6b67c00f45a0e06a3ed40ad1a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1721,41 +1768,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 0.08
-      objectReference: {fileID: 0}
-    - target: {fileID: 459889637047743661, guid: d2dcddb6b67c00f45a0e06a3ed40ad1a,
-        type: 3}
-      propertyPath: InitialModule.startLifetime.scalar
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 459889637047743661, guid: d2dcddb6b67c00f45a0e06a3ed40ad1a,
-        type: 3}
-      propertyPath: InitialModule.maxNumParticles
-      value: 2000
-      objectReference: {fileID: 0}
-    - target: {fileID: 459889637047743661, guid: d2dcddb6b67c00f45a0e06a3ed40ad1a,
-        type: 3}
-      propertyPath: InheritVelocityModule.enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 459889637047743661, guid: d2dcddb6b67c00f45a0e06a3ed40ad1a,
-        type: 3}
-      propertyPath: InheritVelocityModule.m_Curve.minMaxState
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 459889637047743661, guid: d2dcddb6b67c00f45a0e06a3ed40ad1a,
-        type: 3}
-      propertyPath: InitialModule.gravityModifier.scalar
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 459889637047743661, guid: d2dcddb6b67c00f45a0e06a3ed40ad1a,
-        type: 3}
-      propertyPath: EmissionModule.rateOverTime.scalar
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 459889637047743661, guid: d2dcddb6b67c00f45a0e06a3ed40ad1a,
-        type: 3}
-      propertyPath: EmissionModule.rateOverDistance.scalar
-      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2dcddb6b67c00f45a0e06a3ed40ad1a, type: 3}
