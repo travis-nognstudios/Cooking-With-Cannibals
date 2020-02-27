@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 2200768533460502750}
   - component: {fileID: 4654840153218317046}
-  - component: {fileID: 1470481874572356638}
   - component: {fileID: 5307384779241521727}
   - component: {fileID: 3911175162922010898}
   - component: {fileID: 5267143684912294680}
   - component: {fileID: 8806094605969304094}
+  - component: {fileID: 6114045730006848151}
   m_Layer: 0
   m_Name: ING_bread_v01
   m_TagString: Untagged
@@ -50,19 +50,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.5488024, y: 0.2291651, z: 1.5921661}
   m_Center: {x: -0.004269083, y: 0.000026274887, z: -0.027365826}
---- !u!65 &1470481874572356638
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2941389913336298189}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.5353742, y: 0.22682092, z: 1.5967274}
-  m_Center: {x: -0.010983096, y: -0.00017934508, z: -0.029646128}
 --- !u!114 &5307384779241521727
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -148,6 +135,22 @@ MonoBehaviour:
   objectToHighlight: {fileID: 0}
   objectHighlighter: {fileID: 0}
   objectToAffect: {fileID: 0}
+--- !u!54 &6114045730006848151
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2941389913336298189}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &6026536555350982616
 GameObject:
   m_ObjectHideFlags: 0
@@ -259,6 +262,7 @@ GameObject:
   - component: {fileID: 360063745347605873}
   - component: {fileID: 6693853856971289528}
   - component: {fileID: 8970813057561147666}
+  - component: {fileID: 6509763753897577597}
   m_Layer: 0
   m_Name: ING_Bread
   m_TagString: Untagged
@@ -352,6 +356,19 @@ MonoBehaviour:
   canvas: {fileID: 6026536555350982616}
   cookUI: {fileID: 7867510390052856801}
   cam: {fileID: 0}
+--- !u!65 &6509763753897577597
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6502349926715296323}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.010516243, y: 0.010000003, z: 0.010932418}
+  m_Center: {x: 0, y: 0.0000000011641533, z: -0.00020294148}
 --- !u!1001 &6610531374635302387
 PrefabInstance:
   m_ObjectHideFlags: 0

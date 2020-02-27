@@ -170,6 +170,7 @@ MonoBehaviour:
   allowedTouchControllers: 0
   ignoredColliders:
   - {fileID: 5773969826602415117}
+  - {fileID: 5459494658457220948}
   isGrabbable: 1
   holdButtonToGrab: 1
   stayGrabbedOnTeleport: 1
@@ -376,6 +377,7 @@ MonoBehaviour:
   touchHighlightColor: {r: 0, g: 0, b: 0, a: 0}
   usingState: 0
   dropSpeed: 1
+  isPlayingSomething: 0
 --- !u!114 &5773969827540166512
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -420,6 +422,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cookingSmoke: {fileID: 5591223664246900513}
   burningSmoke: {fileID: 6561739396783091558}
+  smokescreen: {fileID: 0}
+  timeToPutOutSmokescreen: 0
 --- !u!1 &1622115030608863246
 GameObject:
   m_ObjectHideFlags: 0
@@ -1556,7 +1560,7 @@ GameObject:
   - component: {fileID: 2255739614685600146}
   - component: {fileID: 5459494658457220948}
   m_Layer: 10
-  m_Name: PanCollider
+  m_Name: PanCollider_Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1652,41 +1656,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 5072642901256366149, guid: 59f8861c0ec0f6841bff9820fabb8c8a,
-        type: 3}
-      propertyPath: InitialModule.gravityModifier.scalar
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5072642901256366149, guid: 59f8861c0ec0f6841bff9820fabb8c8a,
-        type: 3}
-      propertyPath: SizeModule.enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5072642901256366149, guid: 59f8861c0ec0f6841bff9820fabb8c8a,
-        type: 3}
-      propertyPath: SizeModule.separateAxes
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5072642901256366149, guid: 59f8861c0ec0f6841bff9820fabb8c8a,
-        type: 3}
-      propertyPath: SizeModule.curve.minMaxState
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5072642901256366149, guid: 59f8861c0ec0f6841bff9820fabb8c8a,
-        type: 3}
-      propertyPath: SizeModule.y.minMaxState
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5072642901256366149, guid: 59f8861c0ec0f6841bff9820fabb8c8a,
-        type: 3}
-      propertyPath: SizeModule.z.minMaxState
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5072642901256366149, guid: 59f8861c0ec0f6841bff9820fabb8c8a,
-        type: 3}
-      propertyPath: SizeModule.y.minScalar
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 382549696725434806, guid: 59f8861c0ec0f6841bff9820fabb8c8a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1756,6 +1725,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 0.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 5072642901256366149, guid: 59f8861c0ec0f6841bff9820fabb8c8a,
+        type: 3}
+      propertyPath: InitialModule.gravityModifier.scalar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5072642901256366149, guid: 59f8861c0ec0f6841bff9820fabb8c8a,
+        type: 3}
+      propertyPath: SizeModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5072642901256366149, guid: 59f8861c0ec0f6841bff9820fabb8c8a,
+        type: 3}
+      propertyPath: SizeModule.separateAxes
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5072642901256366149, guid: 59f8861c0ec0f6841bff9820fabb8c8a,
+        type: 3}
+      propertyPath: SizeModule.curve.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5072642901256366149, guid: 59f8861c0ec0f6841bff9820fabb8c8a,
+        type: 3}
+      propertyPath: SizeModule.y.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5072642901256366149, guid: 59f8861c0ec0f6841bff9820fabb8c8a,
+        type: 3}
+      propertyPath: SizeModule.z.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5072642901256366149, guid: 59f8861c0ec0f6841bff9820fabb8c8a,
+        type: 3}
+      propertyPath: SizeModule.y.minScalar
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 59f8861c0ec0f6841bff9820fabb8c8a, type: 3}
