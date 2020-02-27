@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 using UnityEngine.Rendering.PostProcessing;
 
 namespace LevelManagement
@@ -31,6 +32,8 @@ namespace LevelManagement
         private bool waitingToTeleport;
         private bool teleportingToPause;
         private bool teleportingBack;
+
+        private bool waitingToSceneSwitch;
 
         private float pauseCooldownTimer;
         private bool pauseOnCooldown;
@@ -78,6 +81,11 @@ namespace LevelManagement
                     pauseOnCooldown = false;
                 }
             }
+
+            if (waitingToSceneSwitch && fadeReady)
+            {
+                SwitchScene();
+            }
         }
 
         public void SetLocationToPauseArea()
@@ -110,6 +118,12 @@ namespace LevelManagement
                 FadeOut();
                 StartTeleportBackToLevel();
             }
+        }
+
+        public void SetNextScene()
+        {
+            FadeOut();
+            StartNextScene();
         }
 
         public void FadeOut()
@@ -163,6 +177,11 @@ namespace LevelManagement
             teleportingBack = true;
         }
 
+        private void StartNextScene()
+        {
+            waitingToSceneSwitch = true;
+        }
+
         private void TeleportToPause()
         {
             if (goToPoint == pausePoint)
@@ -197,6 +216,11 @@ namespace LevelManagement
             {
                 screenFade.UnFade();
             }
+        }
+
+        private void SwitchScene()
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
 
         private void ColorOn()
