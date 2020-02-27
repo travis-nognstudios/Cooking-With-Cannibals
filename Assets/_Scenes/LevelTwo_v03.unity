@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -375,11 +375,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1776778994532524765, guid: 10cd32dc0bb2e4145872fe1ef5aab5d2,
-        type: 3}
-      propertyPath: m_Name
-      value: ING_Arm_v03 (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 3383112392982024398, guid: 10cd32dc0bb2e4145872fe1ef5aab5d2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -434,6 +429,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1776778994532524765, guid: 10cd32dc0bb2e4145872fe1ef5aab5d2,
+        type: 3}
+      propertyPath: m_Name
+      value: ING_Arm_v03 (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10cd32dc0bb2e4145872fe1ef5aab5d2, type: 3}
@@ -1359,6 +1359,8 @@ MonoBehaviour:
   failIfBelowTip: 10
   tipjar: {fileID: 0}
   cardPoint: {fileID: 0}
+  audioSource: {fileID: 0}
+  tootyHorn: {fileID: 0}
 --- !u!114 &1246617458
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15362,6 +15364,11 @@ PrefabInstance:
         type: 3}
       propertyPath: ignoredColliders.Array.data[0]
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3433290489988653570, guid: eef87eb08b5daff4ebe6dda772abbf52,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eef87eb08b5daff4ebe6dda772abbf52, type: 3}
