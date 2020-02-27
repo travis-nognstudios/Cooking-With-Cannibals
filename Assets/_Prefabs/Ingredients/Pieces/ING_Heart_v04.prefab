@@ -187,6 +187,7 @@ GameObject:
   - component: {fileID: 4646981997586650389}
   - component: {fileID: 8330919646664634410}
   - component: {fileID: 8066577046322411937}
+  - component: {fileID: 3718766306944769505}
   m_Layer: 0
   m_Name: ING_Heart_v04
   m_TagString: Untagged
@@ -236,8 +237,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.031901233, y: 0.020040488, z: 0.02960741}
-  m_Center: {x: -0.00035033823, y: 0.002030772, z: -0.000550814}
+  m_Size: {x: 0.016332867, y: 0.0060008885, z: 0.0067762956}
+  m_Center: {x: -0.0061702747, y: 0.0075881216, z: -0.011966384}
 --- !u!114 &4646981997586650389
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -303,6 +304,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18055ba762aa3994f9c10208cd088bc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!136 &3718766306944769505
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6376539153984819485}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.009949125
+  m_Height: 0.030233728
+  m_Direction: 0
+  m_Center: {x: -0.00016854407, y: 0.0022526353, z: 0.00077893515}
 --- !u!1 &9197141524557014286
 GameObject:
   m_ObjectHideFlags: 0
@@ -409,6 +424,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 630723559298278874}
     m_Modifications:
+    - target: {fileID: 8794757175939375550, guid: 6c0a6816936b04f42822cf1aa7ded59f,
+        type: 3}
+      propertyPath: m_Name
+      value: CookingUI
+      objectReference: {fileID: 0}
     - target: {fileID: 3410697302078619019, guid: 6c0a6816936b04f42822cf1aa7ded59f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -528,11 +548,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.15166165
-      objectReference: {fileID: 0}
-    - target: {fileID: 8794757175939375550, guid: 6c0a6816936b04f42822cf1aa7ded59f,
-        type: 3}
-      propertyPath: m_Name
-      value: CookingUI
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c0a6816936b04f42822cf1aa7ded59f, type: 3}

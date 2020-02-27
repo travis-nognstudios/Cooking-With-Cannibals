@@ -111,13 +111,14 @@ GameObject:
   - component: {fileID: 6899946429799893306}
   - component: {fileID: 3173983045708560111}
   - component: {fileID: 8563303912174399223}
-  - component: {fileID: 6509543139432481148}
   - component: {fileID: 543331864179819350}
   - component: {fileID: 974615808699537228}
   - component: {fileID: 922637187366440973}
   - component: {fileID: 7580150662796218974}
   - component: {fileID: 3052058029160133434}
   - component: {fileID: 2126828582576155410}
+  - component: {fileID: 2685214779769454748}
+  - component: {fileID: 6750054010832397827}
   m_Layer: 0
   m_Name: ING_Tongue
   m_TagString: Untagged
@@ -199,19 +200,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.029999997, y: 0.008444914, z: 0.021964565}
   m_Center: {x: 0, y: 0.027590325, z: 0.00023673438}
---- !u!65 &6509543139432481148
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7111038727288064386}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.029999997, y: 0.009726438, z: 0.019145744}
-  m_Center: {x: 0, y: 0.019774249, z: 0.01907306}
 --- !u!114 &543331864179819350
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -335,6 +323,34 @@ MonoBehaviour:
   objectToHighlight: {fileID: 7111038727288064386}
   objectHighlighter: {fileID: 0}
   objectToAffect: {fileID: 0}
+--- !u!136 &2685214779769454748
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7111038727288064386}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.0056921523
+  m_Height: 0.029341627
+  m_Direction: 0
+  m_Center: {x: 0.00073805265, y: 0.020656068, z: 0.022596834}
+--- !u!136 &6750054010832397827
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7111038727288064386}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.006290693
+  m_Height: 0.036727503
+  m_Direction: 0
+  m_Center: {x: -0.0031472407, y: 0.024651755, z: 0.009964872}
 --- !u!1001 &8097744751614553308
 PrefabInstance:
   m_ObjectHideFlags: 0
