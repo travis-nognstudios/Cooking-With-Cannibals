@@ -43,7 +43,7 @@ namespace Serving
                 StartSpawnerCooldown();
 
                 // Check all recipes to see if any match
-                RecipeVariation matchingRecipe = null;
+                Recipe matchingRecipe = null;
                 bool foundMatchingRecipe = false;
 
                 queuedRecipes = orderSpawner.GetQueuedRecipes();
@@ -52,7 +52,7 @@ namespace Serving
                 {
                     if (RecipeIsReadyBasedOnRater(queuedRecipe))
                     {
-                        matchingRecipe = queuedRecipe;
+                        matchingRecipe = queuedRecipe.baseRecipe;
                         foundMatchingRecipe = true;
                     }
                 }
@@ -109,15 +109,6 @@ namespace Serving
             return readyCheck.IsReady();
         }
 
-        /*
-        private bool BoxIsClosed()
-        {
-            BoxClose boxCloseScript = GetComponentInChildren<BoxClose>();
-            //return boxCloseScript.isClosed;
-            return false;
-        }
-        */
-
         private void GetInFoodAreaItems()
         {
             inFoodArea.Clear();
@@ -164,7 +155,7 @@ namespace Serving
             inFoodArea.Clear();
         }
 
-        private void SpawnMeal(RecipeVariation recipe)
+        private void SpawnMeal(Recipe recipe)
         {
             Spawn(recipe.recipeObject);
         }
@@ -176,11 +167,6 @@ namespace Serving
 
         private void Spawn(GameObject item)
         {
-            //Collider foodAreaCollider = foodArea.GetComponent<Collider>();
-
-            //box.SetActive(false);
-            //spawnedMeal = Instantiate(item, foodAreaCollider.transform.position, item.transform.rotation);
-
             spawnedMeal = Instantiate(item, spawnPoint.position, item.transform.rotation);
 
             FinishedMeal finishedMeal = spawnedMeal.GetComponent<FinishedMeal>();

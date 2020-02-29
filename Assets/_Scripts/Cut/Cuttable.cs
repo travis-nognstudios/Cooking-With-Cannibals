@@ -6,8 +6,6 @@ namespace Cut
 {
     public class Cuttable : MonoBehaviour
     {
-        #region Variables
-
         [Header("Chopping")]
         public GameObject choppedObject;
         public int numChopsNeeded;
@@ -19,8 +17,6 @@ namespace Cut
         public Slider progressSlider;
         public GameObject progressBar;
         public Camera cam;
-
-        #endregion
 
         void Start()
         {
@@ -85,8 +81,7 @@ namespace Cut
         {
             if (other.CompareTag("Knife"))
             {
-                canChop = true;
-            }
+                canChop = true;            }
         }
 
     }

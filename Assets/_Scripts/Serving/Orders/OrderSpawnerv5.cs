@@ -159,10 +159,17 @@ namespace Serving
         }
         */
 
-        public void CompleteRecipe(RecipeVariation recipeVar)
+        public void CompleteRecipe(Recipe baseRecipe)
+        {
+            ticketManager.RemoveTicket(baseRecipe);
+        }
+
+        /*
+        public void CompleteRecipe(Recipe recipeVar)
         {
             ticketManager.RemoveTicket(recipeVar);
         }
+        */
 
         public void StartSpawning()
         {

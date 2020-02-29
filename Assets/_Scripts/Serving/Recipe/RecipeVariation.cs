@@ -10,6 +10,7 @@ namespace Serving
         [Header("Recipe")]
         public GameObject recipeObject;
         public float serveTime;
+        public Recipe baseRecipe;
 
         [Header("Ingredients")]
         public CookableIngredient mainIngredient;
@@ -28,6 +29,8 @@ namespace Serving
 
         public RecipeVariation(Recipe recipe)
         {
+            baseRecipe = recipe;
+
             recipeObject = recipe.recipeObject;
             recipeTicket = recipe.recipeTicket;
             serveTime = recipe.serveTime;
@@ -108,6 +111,38 @@ namespace Serving
         }
 
         public bool EqualsBaseRecipe(RecipeVariation other)
+        {
+            if (other == null)
+            {
+                return false;
+            }
+
+            bool nameMatches = other.recipeObject.name == recipeObject.name;
+            bool mainIngredientMatches = other.mainIngredient.gameObject.name == mainIngredient.gameObject.name;
+            bool toppingNumberMatches = other.toppings.Length == toppings.Length;
+            int numToppings = toppings.Length;
+
+            bool allToppingsMatch = true;
+            if (toppingNumberMatches)
+            {
+                for (int i = 0; i < numToppings; ++i)
+                {
+                    if (other.toppings[i].gameObject.name != toppings[i].name)
+                    {
+                        allToppingsMatch = false;
+                        break;
+                    }
+                }
+            }
+
+            bool baseMatches = nameMatches &&
+                                mainIngredientMatches &&
+                                allToppingsMatch;
+
+            return baseMatches;
+        }
+
+        public bool EqualsBaseRecipe(Recipe other)
         {
             if (other == null)
             {

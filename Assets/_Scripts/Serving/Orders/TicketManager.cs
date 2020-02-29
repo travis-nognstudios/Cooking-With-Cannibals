@@ -62,9 +62,9 @@ namespace Serving
             }
         }
 
-        public void RemoveTicket(RecipeVariation recipeVar)
+        public void RemoveTicket(Recipe baseRecipe)
         {
-            int oldestMatching = IndexOfOldestMatchingRecipe(recipeVar);
+            int oldestMatching = IndexOfOldestMatchingRecipe(baseRecipe);
             RemoveTicket(oldestMatching);
         }
 
@@ -89,7 +89,7 @@ namespace Serving
             return numActiveTickets == 0;
         }
 
-        private int IndexOfOldestMatchingRecipe(RecipeVariation recipeVar)
+        private int IndexOfOldestMatchingRecipe(Recipe baseRecipe)
         {
             List<float> agesOfMatchingTickets = new List<float>();
             foreach (TicketPointv2 ticket in ticketPoints)
@@ -98,7 +98,7 @@ namespace Serving
                 {
                     float ticketAge = ticket.ticketAge;
                     RecipeVariation ticketRecipe = ticket.recipe;
-                    bool matchingRecipe = ticketRecipe.Equals(recipeVar);
+                    bool matchingRecipe = ticketRecipe.EqualsBaseRecipe(baseRecipe);
 
                     if (matchingRecipe)
                     {
