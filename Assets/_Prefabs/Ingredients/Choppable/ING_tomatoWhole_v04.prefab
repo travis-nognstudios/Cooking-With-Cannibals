@@ -115,12 +115,12 @@ GameObject:
   - component: {fileID: 8910585859136273080}
   - component: {fileID: 7518772922989534118}
   - component: {fileID: 3388409513986867653}
-  - component: {fileID: 294677267742033907}
-  - component: {fileID: 5484873113438654069}
   - component: {fileID: 7516238354780614238}
   - component: {fileID: 9014204880822580820}
   - component: {fileID: 3154368414592833120}
   - component: {fileID: 6876446096909938732}
+  - component: {fileID: 6195024384915997307}
+  - component: {fileID: 7209613172322410906}
   m_Layer: 0
   m_Name: ING_tomatoWhole_v04
   m_TagString: Untagged
@@ -274,7 +274,6 @@ MonoBehaviour:
   objectToHighlight: {fileID: 0}
   objectHighlighter: {fileID: 0}
   objectToAffect: {fileID: 0}
-  shaderProperty: Color_72E286ED
 --- !u!54 &3388409513986867653
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -291,32 +290,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!135 &294677267742033907
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4658496001639258226}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.0030474248
-  m_Center: {x: -0.0000000020954758, y: -0.0000019744036, z: 0.00042233177}
---- !u!135 &5484873113438654069
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4658496001639258226}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.0030474248
-  m_Center: {x: -0.0000000020954758, y: -0.0000019744036, z: 0.00042233177}
 --- !u!114 &7516238354780614238
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -368,6 +341,7 @@ MonoBehaviour:
   touchHighlightColor: {r: 0, g: 0, b: 0, a: 0}
   usingState: 0
   dropSpeed: 1
+  isPlayingSomething: 0
 --- !u!82 &3154368414592833120
 AudioSource:
   m_ObjectHideFlags: 0
@@ -483,6 +457,34 @@ MonoBehaviour:
   progressSlider: {fileID: 2193928173704731944}
   progressBar: {fileID: 8990396603740421482}
   cam: {fileID: 0}
+--- !u!136 &6195024384915997307
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4658496001639258226}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.002579127
+  m_Height: 0.0062090727
+  m_Direction: 0
+  m_Center: {x: -0.000016956172, y: 0.000014331849, z: 0.00010250022}
+--- !u!136 &7209613172322410906
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4658496001639258226}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.002579127
+  m_Height: 0.0062090727
+  m_Direction: 0
+  m_Center: {x: -0.000016956172, y: 0.000014331849, z: 0.00010250022}
 --- !u!1001 &1910093795586749325
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -490,16 +492,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2102866548}
     m_Modifications:
-    - target: {fileID: 7369659462576197351, guid: b06c866c78fc8634a8c035ad537b09b2,
-        type: 3}
-      propertyPath: m_Name
-      value: ProgressBar_v02
-      objectReference: {fileID: 0}
-    - target: {fileID: 7369659462576197351, guid: b06c866c78fc8634a8c035ad537b09b2,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1608874819208307037, guid: b06c866c78fc8634a8c035ad537b09b2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -605,12 +597,27 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 355892273934079502, guid: b06c866c78fc8634a8c035ad537b09b2,
+    - target: {fileID: 7369659462576197351, guid: b06c866c78fc8634a8c035ad537b09b2,
+        type: 3}
+      propertyPath: m_Name
+      value: ProgressBar_v02
+      objectReference: {fileID: 0}
+    - target: {fileID: 7369659462576197351, guid: b06c866c78fc8634a8c035ad537b09b2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 355892274220143194, guid: b06c866c78fc8634a8c035ad537b09b2,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.099998474
+      objectReference: {fileID: 0}
+    - target: {fileID: 355892273431492287, guid: b06c866c78fc8634a8c035ad537b09b2,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 355892273431492287, guid: b06c866c78fc8634a8c035ad537b09b2,
+    - target: {fileID: 355892273934079502, guid: b06c866c78fc8634a8c035ad537b09b2,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -619,11 +626,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 355892274220143194, guid: b06c866c78fc8634a8c035ad537b09b2,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -0.099998474
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b06c866c78fc8634a8c035ad537b09b2, type: 3}
