@@ -37,7 +37,7 @@ namespace Cooking
 
         [Header("UI")]
         public GameObject canvas;
-        public CookUI cookUI;
+        public CookUIv2 cookUI;
         public Camera cam;
 
         private CookTop last_touched_cookTop = null;
@@ -133,10 +133,21 @@ namespace Cooking
             return -1;
         }
 
+        void SetCookUI(CookType cookType)
+        {
+            int i = GetCookTimeIndex(cookType);
+            float cookTime = stateChangeTimes[i].timeToCook;
+            float overcookTime = stateChangeTimes[i].timeToOverCook;
+
+            cookUI.SetBackground(cookTime, overcookTime);
+        }
+
         void OnTriggerEnter(Collider other)
         {
             if (other.gameObject.CompareTag("Cooktop"))
-            { 
+            {
+                CookType cookType = other.gameObject.GetComponent<CookTop>().cookType;
+                SetCookUI(cookType);
                 canvas.SetActive(true);
             }
         }
@@ -230,7 +241,6 @@ namespace Cooking
             // Update look and UI
             rend.material = cookedMat;
             currentStateMat = cookedMat;
-            cookUI.SetCookedIcon();
         }
 
         private void MakeOvercooked(CookType cookType)
@@ -250,7 +260,6 @@ namespace Cooking
             // Update look and UI
             rend.material = burntMat;
             currentStateMat = burntMat;
-            cookUI.SetOvercookedIcon();
         }
 
         public void PlayCookingSound()
