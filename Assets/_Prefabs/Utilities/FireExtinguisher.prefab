@@ -146,9 +146,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8afa0b205791c9f4496bf2814aeac078, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  precisionGrab: 1
-  rightSnapHandle: {fileID: 0}
-  leftSnapHandle: {fileID: 0}
+  precisionGrab: 0
+  rightSnapHandle: {fileID: 156147628492106044}
+  leftSnapHandle: {fileID: 156147628492106044}
   throwVelocityWithAttachDistance: 0
   throwMultiplier: 1
   onGrabCollisionDelay: 0
@@ -551,6 +551,36 @@ MonoBehaviour:
   objectToHighlight: {fileID: 0}
   objectHighlighter: {fileID: 0}
   objectToAffect: {fileID: 0}
+--- !u!1 &6967140868052756648
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 156147628492106044}
+  m_Layer: 10
+  m_Name: Snapper
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &156147628492106044
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6967140868052756648}
+  m_LocalRotation: {x: -0.112121746, y: -0.72468495, z: -0.24697052, w: 0.6334556}
+  m_LocalPosition: {x: 0.06, y: -0.2, z: -0.025}
+  m_LocalScale: {x: 0.56799173, y: 1.779011, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4008906240421398129}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: -30, y: -95, z: -10}
 --- !u!1 &7232404140521894629
 GameObject:
   m_ObjectHideFlags: 0
@@ -582,6 +612,7 @@ Transform:
   - {fileID: 5885741556902404975}
   - {fileID: 4123925911317621116}
   - {fileID: 8651648508579364797}
+  - {fileID: 156147628492106044}
   m_Father: {fileID: 2745283592497051902}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
