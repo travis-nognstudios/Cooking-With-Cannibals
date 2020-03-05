@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 682775573265823468}
   - component: {fileID: 4300246253448716073}
   m_Layer: 10
-  m_Name: PanCollider
+  m_Name: PanCollider_backright
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31,7 +31,7 @@ Transform:
   m_LocalScale: {x: 0.10476963, y: 0.04453683, z: 0.011588024}
   m_Children: []
   m_Father: {fileID: 6797099079025966957}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: -45, z: 0}
 --- !u!33 &8662186623870859922
 MeshFilter:
@@ -171,6 +171,16 @@ MonoBehaviour:
   ignoredColliders:
   - {fileID: 5773969826602415117}
   - {fileID: 5459494658457220948}
+  - {fileID: 1207314132202475808}
+  - {fileID: 1758367005158380355}
+  - {fileID: 4630871861925708060}
+  - {fileID: 8059024570582183290}
+  - {fileID: 7364373913381772412}
+  - {fileID: 402296081985154688}
+  - {fileID: 5710568941125329947}
+  - {fileID: 4300246253448716073}
+  - {fileID: 5408834721901765760}
+  - {fileID: 2516019116715655522}
   isGrabbable: 1
   holdButtonToGrab: 1
   stayGrabbedOnTeleport: 1
@@ -437,7 +447,7 @@ GameObject:
   - component: {fileID: 6958468327611057949}
   - component: {fileID: 402296081985154688}
   m_Layer: 10
-  m_Name: PanCollider
+  m_Name: PanCollider_backleft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -529,7 +539,7 @@ GameObject:
   - component: {fileID: 364190263216218896}
   - component: {fileID: 1758367005158380355}
   m_Layer: 10
-  m_Name: PanCollider
+  m_Name: PanCollider_back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -621,7 +631,7 @@ GameObject:
   - component: {fileID: 2427942152914032984}
   - component: {fileID: 7364373913381772412}
   m_Layer: 10
-  m_Name: PanCollider
+  m_Name: PanCollider_frontright
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -713,7 +723,7 @@ GameObject:
   - component: {fileID: 6179129709545525966}
   - component: {fileID: 8059024570582183290}
   m_Layer: 10
-  m_Name: PanCollider
+  m_Name: PanCollider_left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -828,7 +838,6 @@ Transform:
   - {fileID: 1766347315761556033}
   - {fileID: 244945646116805484}
   - {fileID: 5548893974387105833}
-  - {fileID: 5377504613103010316}
   - {fileID: 4241499521348459439}
   - {fileID: 4917144464237840293}
   - {fileID: 1285341567995216916}
@@ -895,7 +904,7 @@ GameObject:
   - component: {fileID: 4183865314069621289}
   - component: {fileID: 2516019116715655522}
   m_Layer: 10
-  m_Name: PanCollider
+  m_Name: PanCollider_backfloor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -913,7 +922,7 @@ Transform:
   m_LocalScale: {x: 0.20619154, y: 0.033083398, z: 0.0325617}
   m_Children: []
   m_Father: {fileID: 6797099079025966957}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6851804668594471480
 MeshFilter:
@@ -987,7 +996,7 @@ GameObject:
   - component: {fileID: 3323508879514670543}
   - component: {fileID: 5408834721901765760}
   m_Layer: 10
-  m_Name: PanCollider
+  m_Name: PanCollider_frontfloor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1005,7 +1014,7 @@ Transform:
   m_LocalScale: {x: 0.20619154, y: 0.033083398, z: 0.0325617}
   m_Children: []
   m_Father: {fileID: 6797099079025966957}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3433971457755203588
 MeshFilter:
@@ -1079,7 +1088,7 @@ GameObject:
   - component: {fileID: 3046864121723366405}
   - component: {fileID: 4630871861925708060}
   m_Layer: 10
-  m_Name: PanCollider
+  m_Name: PanCollider_right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1158,98 +1167,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &6115818916383785269
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5377504613103010316}
-  - component: {fileID: 4093903488138961029}
-  - component: {fileID: 4383363427742493871}
-  - component: {fileID: 4320404231508109690}
-  m_Layer: 10
-  m_Name: PanCollider
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5377504613103010316
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6115818916383785269}
-  m_LocalRotation: {x: 0, y: 0.38268343, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: 0.107, y: 0, z: -0.147}
-  m_LocalScale: {x: 0.10476963, y: 0.04453683, z: 0.011588024}
-  m_Children: []
-  m_Father: {fileID: 6797099079025966957}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 45, z: 0}
---- !u!33 &4093903488138961029
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6115818916383785269}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &4383363427742493871
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6115818916383785269}
-  m_Enabled: 0
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
---- !u!65 &4320404231508109690
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6115818916383785269}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7621183627732038352
 GameObject:
   m_ObjectHideFlags: 0
@@ -1263,7 +1180,7 @@ GameObject:
   - component: {fileID: 2634672878396861918}
   - component: {fileID: 5710568941125329947}
   m_Layer: 10
-  m_Name: PanCollider
+  m_Name: PanCollider_frontleft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1355,7 +1272,7 @@ GameObject:
   - component: {fileID: 4381172017541515437}
   - component: {fileID: 1207314132202475808}
   m_Layer: 10
-  m_Name: PanCollider
+  m_Name: PanCollider_front
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1578,7 +1495,7 @@ Transform:
   m_LocalScale: {x: 0.26605362, y: 0.033083398, z: 0.21601236}
   m_Children: []
   m_Father: {fileID: 6797099079025966957}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5054523685019199985
 MeshFilter:
