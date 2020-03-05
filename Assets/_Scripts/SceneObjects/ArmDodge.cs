@@ -22,11 +22,11 @@ public class ArmDodge : MonoBehaviour
         if (other.CompareTag("Knife"))
         {
             Debug.Log(other.transform.parent.GetComponent<Rigidbody>().velocity.magnitude);
-            if (other.transform.parent.GetComponent<Rigidbody>().velocity.magnitude > 1f)
-            {
-                Debug.Log("ArmDodge.cs: dodge" + rb);
+            //if (other.transform.parent.GetComponent<Rigidbody>().velocity.magnitude > 1f)
+            //{
+               // Debug.Log("ArmDodge.cs: dodge" + rb);
                 rb.AddForce(10f, 0, 0, ForceMode.Impulse);
-            }
+           // }
             
         }
     }
