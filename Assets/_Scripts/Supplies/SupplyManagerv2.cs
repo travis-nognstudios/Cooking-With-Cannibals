@@ -74,13 +74,7 @@ namespace Supplies
                 // Set its camera on the Cutting script to the center eye camera, if cuttable
                 if (!ListContainsName(objectsAtPoint, objectToSpawn.gameObject.name))
                 {
-                    GameObject spawnedItem = Instantiate(objectToSpawn, position, rotation);
-                    Cuttable cutScript = spawnedItem.GetComponent<Cuttable>();
-
-                    if (cutScript != null)
-                    {
-                        cutScript.cam = CenterEyeCamera;
-                    }
+                    Instantiate(objectToSpawn, position, rotation);
                 }
             }
         }
