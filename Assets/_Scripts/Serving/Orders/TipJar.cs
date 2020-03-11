@@ -55,7 +55,10 @@ namespace Serving
         private void UpdateUI()
         {
             text.text = $"{amountInJar}/{capacity}";
-            fill.fillAmount = amountInJar / capacity;
+            float fillAmount = amountInJar / (float) capacity;
+
+            fill.fillAmount = fillAmount;
+            Debug.Log($"Fill Amount: {fillAmount}");
         }
 
         private void PlayFx(int amount)
