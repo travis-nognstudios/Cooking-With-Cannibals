@@ -24,7 +24,10 @@ namespace LevelManagement
 
         private bool DoorHandleTurned()
         {
-            return gameObject.transform.localEulerAngles.x < 315 && gameObject.transform.localEulerAngles.x > 270;
+            bool x_turned = gameObject.transform.localEulerAngles.x < 315 && gameObject.transform.localEulerAngles.x > 270;
+            bool y_turned = gameObject.transform.localEulerAngles.y < 315 && gameObject.transform.localEulerAngles.y > 270;
+            bool z_turned = gameObject.transform.localEulerAngles.z < 315 && gameObject.transform.localEulerAngles.z > 270;
+            return x_turned || y_turned || z_turned;
         }
     }
 }
