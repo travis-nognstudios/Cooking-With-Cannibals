@@ -11,7 +11,8 @@ namespace Serving
         public int capacity;
 
         [Header("UI")]
-        public Text ui;
+        public Text text;
+        public Image fill;
 
         [Header("FX")]
         public ParticleSystem tip1;
@@ -53,7 +54,8 @@ namespace Serving
 
         private void UpdateUI()
         {
-            ui.text = $"Tip: {amountInJar}/{capacity}";
+            text.text = $"{amountInJar}/{capacity}";
+            fill.fillAmount = amountInJar / capacity;
         }
 
         private void PlayFx(int amount)
