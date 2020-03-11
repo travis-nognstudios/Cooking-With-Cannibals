@@ -16,26 +16,21 @@ namespace Cut
         [Header("Cutting Progress UI")]
         public Slider progressSlider;
         public GameObject progressBar;
-        public Camera cam;
+        private Camera cam;
 
         void Start()
         {
-            // Find camera for cook UI
-            if (cam == null)
-            {
-                GameObject centerEyeAnchor = GameObject.FindWithTag("MainCamera");
-                if (centerEyeAnchor != null)
-                {
-                    cam = centerEyeAnchor.GetComponent<Camera>();
-                }
-            }
-
             // Set up slider
             progressSlider.maxValue = numChopsNeeded;
         }
 
         void Update()
         {
+            if (cam == null)
+            {
+                cam = Camera.main;
+            }
+
             if (cam != null)
             {
                 progressBar.transform.LookAt(transform.position + cam.transform.rotation * Vector3.forward);

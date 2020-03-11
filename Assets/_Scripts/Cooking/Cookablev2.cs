@@ -2,14 +2,12 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using SceneObjects;
 using LevelManagement;
 
 namespace Cooking
 {
     public class Cookablev2 : MonoBehaviour
     {
-
         /*
         steps = all the cook steps made on this object
         allMechanics = all possible cooking that can be done
@@ -38,7 +36,7 @@ namespace Cooking
         [Header("UI")]
         public GameObject canvas;
         public CookUIv2 cookUI;
-        public Camera cam;
+        private Camera cam;
 
         private CookTop last_touched_cookTop = null;
 
@@ -64,24 +62,17 @@ namespace Cooking
                 allMechanics.Add(mechanic);
                 cookTimes.Add(0);
             }
-
-            // Find camera for cook UI
-            if (cam == null)
-            {
-                GameObject centerEyeAnchor = GameObject.FindWithTag("MainCamera");
-                if (centerEyeAnchor != null)
-                {
-                    cam = centerEyeAnchor.GetComponent<Camera>();
-                }
-            }
         }
 
         private void Update()
         {
-            if (cam != null)
+            if (cam == null)
+            {
+                cam = Camera.main;
+            }
+            else
             {
                 cookUI.transform.LookAt(transform.position + cam.transform.rotation * Vector3.forward);
-
             }
         }
 
