@@ -138,6 +138,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cookingSmoke: {fileID: 2498373568621686341}
   burningSmoke: {fileID: 3760456685671312815}
+  smokescreen: {fileID: 0}
+  timeToPutOutSmokescreen: 0
 --- !u!114 &5235622630797606698
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -222,7 +224,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 56f293d2e90aa6e438feb34b6fcef320, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -348,7 +350,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e9f2c6b906234c045b12430bd1a2c212, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -445,76 +447,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: FX GrillSmoke Cooked
-      objectReference: {fileID: 0}
-    - target: {fileID: 365959847170360468, guid: d2dcddb6b67c00f45a0e06a3ed40ad1a,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 3.578
-      objectReference: {fileID: 0}
-    - target: {fileID: 365959847170360468, guid: d2dcddb6b67c00f45a0e06a3ed40ad1a,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.296
-      objectReference: {fileID: 0}
-    - target: {fileID: 365959847170360468, guid: d2dcddb6b67c00f45a0e06a3ed40ad1a,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -1.794
-      objectReference: {fileID: 0}
-    - target: {fileID: 365959847170360468, guid: d2dcddb6b67c00f45a0e06a3ed40ad1a,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 365959847170360468, guid: d2dcddb6b67c00f45a0e06a3ed40ad1a,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 365959847170360468, guid: d2dcddb6b67c00f45a0e06a3ed40ad1a,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 365959847170360468, guid: d2dcddb6b67c00f45a0e06a3ed40ad1a,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 365959847170360468, guid: d2dcddb6b67c00f45a0e06a3ed40ad1a,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 365959847170360468, guid: d2dcddb6b67c00f45a0e06a3ed40ad1a,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -90
-      objectReference: {fileID: 0}
-    - target: {fileID: 365959847170360468, guid: d2dcddb6b67c00f45a0e06a3ed40ad1a,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 365959847170360468, guid: d2dcddb6b67c00f45a0e06a3ed40ad1a,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 365959847170360468, guid: d2dcddb6b67c00f45a0e06a3ed40ad1a,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.08
-      objectReference: {fileID: 0}
-    - target: {fileID: 365959847170360468, guid: d2dcddb6b67c00f45a0e06a3ed40ad1a,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.08
-      objectReference: {fileID: 0}
-    - target: {fileID: 365959847170360468, guid: d2dcddb6b67c00f45a0e06a3ed40ad1a,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.08
       objectReference: {fileID: 0}
     - target: {fileID: 459889637047743661, guid: d2dcddb6b67c00f45a0e06a3ed40ad1a,
         type: 3}
@@ -731,6 +663,76 @@ PrefabInstance:
       propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].time
       value: 0.55126953
       objectReference: {fileID: 0}
+    - target: {fileID: 365959847170360468, guid: d2dcddb6b67c00f45a0e06a3ed40ad1a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.578
+      objectReference: {fileID: 0}
+    - target: {fileID: 365959847170360468, guid: d2dcddb6b67c00f45a0e06a3ed40ad1a,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.296
+      objectReference: {fileID: 0}
+    - target: {fileID: 365959847170360468, guid: d2dcddb6b67c00f45a0e06a3ed40ad1a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.794
+      objectReference: {fileID: 0}
+    - target: {fileID: 365959847170360468, guid: d2dcddb6b67c00f45a0e06a3ed40ad1a,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 365959847170360468, guid: d2dcddb6b67c00f45a0e06a3ed40ad1a,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 365959847170360468, guid: d2dcddb6b67c00f45a0e06a3ed40ad1a,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 365959847170360468, guid: d2dcddb6b67c00f45a0e06a3ed40ad1a,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 365959847170360468, guid: d2dcddb6b67c00f45a0e06a3ed40ad1a,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 365959847170360468, guid: d2dcddb6b67c00f45a0e06a3ed40ad1a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 365959847170360468, guid: d2dcddb6b67c00f45a0e06a3ed40ad1a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 365959847170360468, guid: d2dcddb6b67c00f45a0e06a3ed40ad1a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 365959847170360468, guid: d2dcddb6b67c00f45a0e06a3ed40ad1a,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 365959847170360468, guid: d2dcddb6b67c00f45a0e06a3ed40ad1a,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 365959847170360468, guid: d2dcddb6b67c00f45a0e06a3ed40ad1a,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.08
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2dcddb6b67c00f45a0e06a3ed40ad1a, type: 3}
 --- !u!4 &2439258011606441596 stripped
@@ -752,21 +754,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3640160845519302718}
     m_Modifications:
-    - target: {fileID: 2047029736709442891, guid: 59f8861c0ec0f6841bff9820fabb8c8a,
-        type: 3}
-      propertyPath: m_Name
-      value: FX GrillSmoke Burnt
-      objectReference: {fileID: 0}
-    - target: {fileID: 5072642901256366149, guid: 59f8861c0ec0f6841bff9820fabb8c8a,
-        type: 3}
-      propertyPath: SizeModule.enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5072642901256366149, guid: 59f8861c0ec0f6841bff9820fabb8c8a,
-        type: 3}
-      propertyPath: SizeModule.separateAxes
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 382549696725434806, guid: 59f8861c0ec0f6841bff9820fabb8c8a,
         type: 3}
       propertyPath: m_LocalRotation.x
@@ -836,6 +823,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 0.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047029736709442891, guid: 59f8861c0ec0f6841bff9820fabb8c8a,
+        type: 3}
+      propertyPath: m_Name
+      value: FX GrillSmoke Burnt
+      objectReference: {fileID: 0}
+    - target: {fileID: 5072642901256366149, guid: 59f8861c0ec0f6841bff9820fabb8c8a,
+        type: 3}
+      propertyPath: SizeModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5072642901256366149, guid: 59f8861c0ec0f6841bff9820fabb8c8a,
+        type: 3}
+      propertyPath: SizeModule.separateAxes
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 59f8861c0ec0f6841bff9820fabb8c8a, type: 3}
