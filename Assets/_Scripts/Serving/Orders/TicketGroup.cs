@@ -77,7 +77,8 @@ namespace Serving
             {
                 if (ticketPoint.ContainsTicket())
                 {
-                    recipeMeals.Add(ticketPoint.recipe.baseRecipe.recipeObject);
+                    GameObject recipeObject = ticketPoint.recipe.baseRecipe.recipeObject;
+                    recipeMeals.Add(recipeObject);
                 }
             }
 

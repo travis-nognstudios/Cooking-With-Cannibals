@@ -23,8 +23,12 @@ namespace Serving
 
         void Update()
         {
-            // Clean up unserved orders
-            for (int i=0; i<ticketGroups.Length; ++i)
+            // CleanupUnservedOrders();
+        }
+
+        public void CleanupUnservedOrders()
+        {
+            for (int i = 0; i < ticketGroups.Length; ++i)
             {
                 TicketGroup ticketGroup = ticketGroups[i];
 
@@ -62,9 +66,9 @@ namespace Serving
             }
         }
 
-        public void RemoveGroup(List<Recipe> baseRecipes)
+        public void RemoveGroup(RecipeGroup recipeGroup)
         {
-            int oldestMatching = IndexOfOldestMatchingGroup(baseRecipes);
+            int oldestMatching = IndexOfOldestMatchingGroup(recipeGroup);
             RemoveGroup(oldestMatching);
         }
 
@@ -89,38 +93,35 @@ namespace Serving
             return numActiveGroups == 0;
         }
 
-        private int IndexOfOldestMatchingGroup(List<Recipe> baseRecipes)
+        private int IndexOfOldestMatchingGroup(RecipeGroup recipeGroup)
         {
-            List<float> agesOfMatchingTickets = new List<float>();
-            foreach (TicketPointv2 ticket in ticketPoints)
+            List<float> agesOfMatchingGroups = new List<float>();
+            foreach (TicketGroup ticketGroup in ticketGroups)
             {
-                if (ticket.ContainsTicket())
+                if (ticketGroup.ContainsTickets())
                 {
-                    float ticketAge = ticket.ticketAge;
-                    RecipeVariation ticketRecipe = ticket.recipe;
-                    bool matchingRecipe = ticketRecipe.EqualsBaseRecipe(baseRecipe);
+                    float groupAge = ticketGroup.tableAge;
+                    bool matchingGroup = ticketGroup.GetRecipeGroup().Equals(recipeGroup);
 
-                    if (matchingRecipe)
+                    if (matchingGroup)
                     {
-                        agesOfMatchingTickets.Add(ticketAge);
+                        agesOfMatchingGroups.Add(groupAge);
                     }
                     else
                     {
-                        // For non-matching recipes, set age to 0
-                        agesOfMatchingTickets.Add(0f);
+                        agesOfMatchingGroups.Add(0f);
                     }
                 }
                 else
                 {
-                    // For empty points, set age to 0
-                    agesOfMatchingTickets.Add(0f);
+                    agesOfMatchingGroups.Add(0f);
                 }
             }
-
+            
             int oldest = 0;
-            for (int i=1; i<agesOfMatchingTickets.Count; ++i)
+            for (int i=1; i<agesOfMatchingGroups.Count; ++i)
             {
-                if (agesOfMatchingTickets[i] > agesOfMatchingTickets[oldest])
+                if (agesOfMatchingGroups[i] > agesOfMatchingGroups[oldest])
                 {
                     oldest = i;
                 }
