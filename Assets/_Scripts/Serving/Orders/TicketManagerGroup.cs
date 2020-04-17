@@ -91,6 +91,7 @@ namespace Serving
 
         private int IndexOfOldestMatchingGroup(List<Recipe> baseRecipes)
         {
+            /*
             List<float> agesOfMatchingTickets = new List<float>();
             foreach (TicketPointv2 ticket in ticketPoints)
             {
@@ -127,6 +128,8 @@ namespace Serving
             }
 
             return oldest;
+            */
+            return 0;
         }
 
         private int FindOpenLane()
