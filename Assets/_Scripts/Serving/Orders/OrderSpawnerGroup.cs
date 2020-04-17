@@ -89,5 +89,10 @@ namespace Serving
             ticketManager.AddGroup(recipes);
         }
 
+        public List<RecipeGroup> GetOrderedRecipeGroups()
+        {
+            return ticketManager.GetOrderedRecipeGroups();
+        }
+        
     }
 }

@@ -12,16 +12,21 @@ namespace Serving
         public MealReadyCheck readyCheck;
         public TipJar tipJar;
 
-        private OrderSpawnerv5 orderSpawner;
+        private OrderSpawnerGroup orderSpawner;
+        private RecipeManager recipeManager;
         private List<string> possibleMainIngredientNames = new List<string>();
         private List<string> mainIngredientsPreparedNames = new List<string>();
+
+        private List<RecipeGroup> queuedRecipeGroups = new List<RecipeGroup>();
+        private RecipeGroup matchingQueuedRecipeGroup;
 
         private List<RecipeVariation> queuedRecipes;
         private GameObject dubiousFood;
 
         void Start()
         {
-            orderSpawner = gameManager.GetComponent<OrderSpawnerv5>();
+            orderSpawner = gameManager.GetComponent<OrderSpawnerGroup>();
+            recipeManager = gameManager.GetComponent<RecipeManager>();
             dubiousFood = gameManager.GetComponent<RecipeManager>().dubiousFood;
 
             GetPossibleMainIngredientNames();
@@ -36,9 +41,12 @@ namespace Serving
                 // Get all main ingredients on all meal areas
                 GetMainIngredientsPreparedNames();
 
-                // Get queued recipes from order spawner
+                // Get queued recipe groups from order spawner
+                GetQueuedRecipeGroups();
 
-                // Check main ingredients against queued recipes to see if correct meals prepared
+                // Check main ingredients against recipes to see if correct meals prepared
+                CheckPreparedMealsAgainstQueuedRecipes();
+
                 // Spawn meals/dubios foods accordingly
                 // Set tips
                 // Cleanup orders
@@ -90,8 +98,6 @@ namespace Serving
         private void GetPossibleMainIngredientNames()
         {
             possibleMainIngredientNames.Clear();
-
-            RecipeManager recipeManager = gameManager.GetComponent<RecipeManager>();
             Recipe[] recipes = recipeManager.recipes;
 
             foreach (Recipe recipe in recipes)
@@ -122,10 +128,46 @@ namespace Serving
             {
                 List<string> allIngredientNames = mealArea.GetInFoodAreaNames();
                 string mainIngredientName = GetMainIngredientFromListOfIngredients(allIngredientNames);
+                mealArea.mainIngredientName = mainIngredientName;
 
                 if (!mainIngredientName.Equals(""))
                 {
                     mainIngredientsPreparedNames.Add(mainIngredientName);
+                }
+            }
+        }
+
+        private void GetQueuedRecipeGroups()
+        {
+            queuedRecipeGroups.Clear();
+            queuedRecipeGroups = orderSpawner.GetOrderedRecipeGroups();
+        }
+        
+        private void CheckPreparedMealsAgainstQueuedRecipes()
+        {
+            // Prepared Recipes
+            List<string> preparedRecipeNames = new List<string>();
+
+            foreach (string mainIngredientName in mainIngredientsPreparedNames)
+            {
+                string recipeName = NameOfRecipeFromMainIngredient(mainIngredientName);
+                preparedRecipeNames.Add(recipeName);
+            }
+            
+            // Queued Recipes
+            foreach (RecipeGroup recipeGroup in queuedRecipeGroups)
+            {
+                List<string> queuedRecipeNames = new List<string>();
+
+                GameObject[] recipeObjects = recipeGroup.recipes;
+                foreach (GameObject obj in recipeObjects)
+                {
+                    queuedRecipeNames.Add(obj.gameObject.name);
+                }
+                
+                if (NameListsMatch(preparedRecipeNames, queuedRecipeNames))
+                {
+                    matchingQueuedRecipeGroup = recipeGroup;
                 }
             }
         }
@@ -167,6 +209,39 @@ namespace Serving
             }
 
             return false;
+        }
+
+        private string NameOfRecipeFromMainIngredient(string mainIngredientName)
+        {
+            foreach (Recipe recipe in recipeManager.recipes)
+            {
+                string name = recipe.mainIngredient.gameObject.name;
+
+                if (name.Equals(mainIngredientName))
+                {
+                    return name;
+                }
+            }
+
+            return "";
+        }
+        
+        private bool NameListsMatch(List<string> first, List<string> second)
+        {
+            if (first.Count != second.Count)
+            {
+                return false;
+            }
+
+            foreach (string elem in first)
+            {
+                if (!second.Contains(elem))
+                {
+                    return false;
+                }
+            }
+
+            return true;
         }
     }
 }
