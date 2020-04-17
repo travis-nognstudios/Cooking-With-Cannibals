@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -11673,6 +11673,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Prop_Clock_v01
       objectReference: {fileID: 0}
+    - target: {fileID: 7619424855505087106, guid: e9ee9f72866444e5b93d41b47b988b3b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6910487005952432273, guid: e9ee9f72866444e5b93d41b47b988b3b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -14090,8 +14095,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ticketManager: {fileID: 1015787583}
   orderFrequency: 40
-  totalServiceTime: 120
-  numOrdersForLevel: 7
+  totalServiceTime: 900
+  numOrdersForLevel: 9
   sequences:
   - {fileID: 1246617460}
   - {fileID: 1246617459}
@@ -14110,7 +14115,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   seed: 0
-  numRecipes: 4
+  numRecipes: 6
 --- !u!114 &1246617460
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14225,7 +14230,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ab18edcdd7ee42948a3a2f172ea2fa9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnInterval: 90
+  spawnInterval: 75
   ingredients:
   - objectToSpawn: {fileID: 6295631587405890546, guid: c7e9bfcfda12dbf4894ade2d7462446e,
       type: 3}
@@ -15133,20 +15138,20 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7609964757059138928, guid: c9379d6de0335b54fbfd54c24c559207,
+    - target: {fileID: 7609964757803992046, guid: c9379d6de0335b54fbfd54c24c559207,
         type: 3}
-      propertyPath: m_TagString
-      value: Player
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7609964758213926432, guid: c9379d6de0335b54fbfd54c24c559207,
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7609964757803992046, guid: c9379d6de0335b54fbfd54c24c559207,
+    - target: {fileID: 7609964757059138928, guid: c9379d6de0335b54fbfd54c24c559207,
         type: 3}
-      propertyPath: m_Enabled
-      value: 1
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c9379d6de0335b54fbfd54c24c559207, type: 3}
@@ -40683,7 +40688,7 @@ Transform:
   - {fileID: 8243550449802156463}
   - {fileID: 136924994}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &8023316268712001640
 MeshRenderer:
