@@ -43,7 +43,7 @@ namespace Serving
             }
         }
 
-        private GameObject Spawn(GameObject item)
+        public GameObject Spawn(GameObject item)
         {
             GameObject spawnedItem = Instantiate(item, spawnPoint.position, item.transform.rotation);
             // FinishedMeal finishedMeal = spawnedMeal.GetComponent<FinishedMeal>();
@@ -89,6 +89,8 @@ namespace Serving
 
         public List<string> GetInFoodAreaNames()
         {
+            GetInFoodAreaItems();
+
             List<string> inFoodAreaNames = new List<string>();
             foreach (GameObject item in inFoodArea)
             {

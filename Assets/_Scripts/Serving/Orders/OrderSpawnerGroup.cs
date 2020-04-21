@@ -94,5 +94,9 @@ namespace Serving
             return ticketManager.GetOrderedRecipeGroups();
         }
         
+        public void CompleteOrder(RecipeGroup recipeGroup)
+        {
+            ticketManager.RemoveGroup(recipeGroup);
+        }
     }
 }

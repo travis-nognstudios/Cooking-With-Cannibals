@@ -37,17 +37,25 @@ namespace Serving
             // Meal spawning
             if (ReadyCheck())
             {
-                
                 // Get all main ingredients on all meal areas
                 GetMainIngredientsPreparedNames();
-
+                
                 // Get queued recipe groups from order spawner
                 GetQueuedRecipeGroups();
 
                 // Check main ingredients against recipes to see if correct meals prepared
                 CheckPreparedMealsAgainstQueuedRecipes();
 
-                // Spawn meals/dubios foods accordingly
+                // Spawn meals/dubious foods accordingly
+                if (matchingQueuedRecipeGroup != null)
+                {
+                    SpawnMeals();
+                }
+                else
+                {
+                    SpawnDubiousFoods();
+                }
+
                 // Set tips
                 // Cleanup orders
 
@@ -119,6 +127,23 @@ namespace Serving
 
             return "";
         }
+
+        private Recipe GetRecipeFromMainIngredientName(string mainIngredientName)
+        {
+            Recipe[] recipes = recipeManager.recipes;
+
+            foreach (Recipe recipe in recipes)
+            {
+                string mainName = recipe.mainIngredient.gameObject.name;
+                if (mainName.Equals(mainIngredientName))
+                {
+                    Debug.Log($"Matching recipe: from {mainIngredientName} to {recipe.recipeObject.name}");
+                    return recipe;
+                }
+            }
+
+            return null;
+        }
         
         private void GetMainIngredientsPreparedNames()
         {
@@ -137,43 +162,95 @@ namespace Serving
             }
         }
 
+        private void LogMainIngredientPreparedNames()
+        {
+            Debug.Log("Prepared main ingredients");
+            foreach (string n in mainIngredientsPreparedNames)
+            {
+                Debug.Log(n);
+            }
+        }
+
         private void GetQueuedRecipeGroups()
         {
             queuedRecipeGroups.Clear();
             queuedRecipeGroups = orderSpawner.GetOrderedRecipeGroups();
         }
         
-        private void CheckPreparedMealsAgainstQueuedRecipes()
+        private List<string> GetPreparedRecipeNames()
         {
-            // Prepared Recipes
             List<string> preparedRecipeNames = new List<string>();
 
             foreach (string mainIngredientName in mainIngredientsPreparedNames)
             {
                 string recipeName = NameOfRecipeFromMainIngredient(mainIngredientName);
                 preparedRecipeNames.Add(recipeName);
+
             }
             
-            // Queued Recipes
+            // Log Prepared Recipe Names
+            Debug.Log("Prepared Recipes");
+            foreach (string n in preparedRecipeNames)
+            {
+                Debug.Log($"Prepared recipe: {n}");
+            }
+
+            return preparedRecipeNames;
+        }
+
+        private void CheckPreparedMealsAgainstQueuedRecipes()
+        {
+            List<string> preparedRecipeNames = GetPreparedRecipeNames();
+
+            // Get Queued Recipe names and find matching name list
             foreach (RecipeGroup recipeGroup in queuedRecipeGroups)
             {
                 List<string> queuedRecipeNames = new List<string>();
-
                 GameObject[] recipeObjects = recipeGroup.recipes;
+
                 foreach (GameObject obj in recipeObjects)
                 {
                     queuedRecipeNames.Add(obj.gameObject.name);
                 }
+
+                // Log queued recipe names
+                foreach (string n in queuedRecipeNames)
+                {
+                    Debug.Log($"Queued Recipe: {n}");
+                }
                 
                 if (NameListsMatch(preparedRecipeNames, queuedRecipeNames))
                 {
+                    Debug.Log("Found matching group");
                     matchingQueuedRecipeGroup = recipeGroup;
+                }
+            }
+            
+        }
+
+        private void SpawnMeals()
+        {
+            orderSpawner.CompleteOrder(matchingQueuedRecipeGroup);
+
+            foreach (MealArea mealArea in mealAreas)
+            {
+                if (mealArea.mainIngredientName != "")
+                {
+                    Recipe recipePrepared = GetRecipeFromMainIngredientName(mealArea.mainIngredientName);
+                    mealArea.DespawnIngredients();
+                    mealArea.Spawn(recipePrepared.recipeObject);
                 }
             }
         }
 
+        private void SpawnDubiousFoods()
+        {
+            Debug.Log("No matching order found");
+        }
+
         private bool RecipeIsReadyBasedOnRater(RecipeVariation recipe)
         {
+            /*
             RecipeRating recipeRater = new RecipeRating(inFoodArea, recipe);
             bool isValidRecipe = recipeRater.GetIsValidRecipe();
 
@@ -188,6 +265,9 @@ namespace Serving
                 tipJar.AddTip(tipAmount);
                 return true;
             }
+            */
+
+            return false;
         }
 
         private bool ReadyCheck()
@@ -215,11 +295,12 @@ namespace Serving
         {
             foreach (Recipe recipe in recipeManager.recipes)
             {
-                string name = recipe.mainIngredient.gameObject.name;
+                string mainName = recipe.mainIngredient.gameObject.name;
+                string recipeName = recipe.recipeObject.name;
 
-                if (name.Equals(mainIngredientName))
+                if (mainName.Equals(mainIngredientName))
                 {
-                    return name;
+                    return recipeName;
                 }
             }
 
