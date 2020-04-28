@@ -23,6 +23,10 @@ namespace Serving
         private List<RecipeVariation> queuedRecipes;
         private GameObject dubiousFood;
 
+        private bool canDoReadyCheck;
+        private float readyCheckCooldownTimer;
+        private float readyCheckCooldownTime = 1f;
+
         void Start()
         {
             orderSpawner = gameManager.GetComponent<OrderSpawnerGroup>();
@@ -35,8 +39,11 @@ namespace Serving
         void Update()
         {
             // Meal spawning
-            if (ReadyCheck())
+            if (ReadyCheck() && canDoReadyCheck)
             {
+                // Start cooldown
+                canDoReadyCheck = false;
+
                 // Get all main ingredients on all meal areas
                 GetMainIngredientsPreparedNames();
                 
@@ -45,7 +52,7 @@ namespace Serving
 
                 // Check main ingredients against recipes to see if correct meals prepared
                 CheckPreparedMealsAgainstQueuedRecipes();
-
+                
                 // Spawn meals/dubious foods accordingly
                 if (matchingQueuedRecipeGroup != null)
                 {
@@ -55,6 +62,7 @@ namespace Serving
                 {
                     SpawnDubiousFoods();
                 }
+                
 
                 // Set tips
                 // Cleanup orders
@@ -101,6 +109,17 @@ namespace Serving
                 */
             }
             
+
+            // Ready check cooldown timer
+            if (!canDoReadyCheck)
+            {
+                readyCheckCooldownTimer += Time.deltaTime;
+                if (readyCheckCooldownTimer > readyCheckCooldownTime)
+                {
+                    readyCheckCooldownTimer = 0f;
+                    canDoReadyCheck = true;
+                }
+            }
         }
         
         private void GetPossibleMainIngredientNames()

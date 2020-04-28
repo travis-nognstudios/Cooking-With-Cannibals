@@ -99,5 +99,10 @@ namespace Serving
         {
             return ticketAge >= ticketFullTime;
         }
+
+        public float GetFullTime()
+        {
+            return ticketFullTime;
+        }
     }
 }

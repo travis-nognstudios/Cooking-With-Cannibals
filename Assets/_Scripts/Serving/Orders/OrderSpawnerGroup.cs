@@ -17,6 +17,11 @@ namespace Serving
 
         [Header("Tickets")]
         public TicketManagerGroup ticketManager;
+        public int numOrders;
+        public float orderInterval;
+
+        private float orderTimer;
+        private float ordersGenerated = 0;
 
         private List<Recipe> sequencedRecipes = new List<Recipe>();
         private List<RecipeVariation> sequencedRecipeVariations = new List<RecipeVariation>();
@@ -51,9 +56,9 @@ namespace Serving
                     sequencedRecipeVariations.Add(recipeVariation);
                 }
             }
-            
-            StartCoroutine(SetTableOnDelay(3));
-            StartCoroutine(SetTableOnDelay(6));
+           
+            //StartCoroutine(SetTableOnDelay(3));
+            //StartCoroutine(SetTableOnDelay(6));
         }
 
         IEnumerator SetTableOnDelay(float seconds)
@@ -65,7 +70,18 @@ namespace Serving
 
         void Update()
         {
-            
+            // Orders appear at intervals
+            if (ordersGenerated < numOrders)
+            {
+                orderTimer += Time.deltaTime;
+                bool roomForOrder = ticketManager.HasRoomForNewTicket();
+
+                if (orderTimer >= orderInterval && roomForOrder)
+                {
+                    orderTimer = 0f;
+                    GenerateNewOrder();
+                }
+            }
         }
 
         private RecipeVariation GetSequencedRecipeVariation()
@@ -87,6 +103,7 @@ namespace Serving
             }
 
             ticketManager.AddGroup(recipes);
+            ordersGenerated++;
         }
 
         public List<RecipeGroup> GetOrderedRecipeGroups()
