@@ -13,6 +13,9 @@ namespace Serving
         public float spawnedMealDestroyTime = 10f;
         public float spawnerCooldownTime = 1f;
 
+        [Header("Tracking")]
+        public string mainIngredientName;
+
         private List<GameObject> inFoodArea = new List<GameObject>();
 
         private float spawnerCooldown;
@@ -40,7 +43,7 @@ namespace Serving
             }
         }
 
-        private GameObject Spawn(GameObject item)
+        public GameObject Spawn(GameObject item)
         {
             GameObject spawnedItem = Instantiate(item, spawnPoint.position, item.transform.rotation);
             // FinishedMeal finishedMeal = spawnedMeal.GetComponent<FinishedMeal>();
@@ -86,6 +89,8 @@ namespace Serving
 
         public List<string> GetInFoodAreaNames()
         {
+            GetInFoodAreaItems();
+
             List<string> inFoodAreaNames = new List<string>();
             foreach (GameObject item in inFoodArea)
             {

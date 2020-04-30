@@ -14,7 +14,7 @@ namespace Serving
         [Header("Timing")]
         public float tableAge;
         public TicketClock tableClock;
-        private float tableFullTime;
+        public float tableFullTime;
 
         void Start()
         {
@@ -38,6 +38,23 @@ namespace Serving
             {
                 ticketPoints[i].SetTicket(recipes[i]);
             }
+
+            SetFullTime();
+        }
+
+        public void SetFullTime()
+        {
+            float fullTime = 0;
+
+            foreach (TicketPointv2 ticketPoint in ticketPoints)
+            {
+                if (ticketPoint.ContainsTicket())
+                {
+                    fullTime += ticketPoint.GetFullTime();
+                }
+            }
+
+            tableFullTime = fullTime;
         }
 
         public void ClearTickets()
@@ -47,6 +64,8 @@ namespace Serving
                 if (ticketPoint.ContainsTicket())
                 {
                     ticketPoint.DestroyTicket();
+                    tableAge = 0f;
+                    tableFullTime = 0f;
                 }
             }
         }
