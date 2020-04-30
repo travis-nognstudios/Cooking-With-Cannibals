@@ -52,8 +52,10 @@ namespace Serving
 
                 // Check main ingredients against recipes to see if correct meals prepared
                 CheckPreparedMealsAgainstQueuedRecipes();
-                
+
                 // Spawn meals/dubious foods accordingly
+                // TODO
+                // Pass through rater to check for quality
                 if (matchingQueuedRecipeGroup != null)
                 {
                     SpawnMeals();
@@ -63,53 +65,8 @@ namespace Serving
                     SpawnDubiousFoods();
                 }
                 
-
-                // Set tips
-                // Cleanup orders
-
-
-
-
-
-                /*
-                GetInFoodAreaItems();
-                StartSpawnerCooldown();
-
-                // Check all recipes to see if any match
-                Recipe matchingRecipe = null;
-                bool foundMatchingRecipe = false;
-
-                queuedRecipes = orderSpawner.GetQueuedRecipes();
-
-                foreach (RecipeVariation queuedRecipe in queuedRecipes)
-                {
-                    if (RecipeIsReadyBasedOnRater(queuedRecipe))
-                    {
-                        matchingRecipe = queuedRecipe.baseRecipe;
-                        foundMatchingRecipe = true;
-                    }
-                }
-
-                if (foundMatchingRecipe)
-                {
-                    DespawnIngredients();
-                    SpawnMeal(matchingRecipe);
-                    orderSpawner.CompleteRecipe(matchingRecipe);
-                }
-                else if (GetInFoodAreaNames().Count > 0)
-                {
-                    DespawnIngredients();
-                    SpawnDubiousFood();
-                }
-                else
-                {
-                    // Debug.Log("Empty Box and no recipes matched");
-                    // DO NOTHING
-                }
-                */
             }
             
-
             // Ready check cooldown timer
             if (!canDoReadyCheck)
             {
@@ -249,6 +206,8 @@ namespace Serving
 
         private void SpawnMeals()
         {
+            int tipForOrder = 0;
+
             orderSpawner.CompleteOrder(matchingQueuedRecipeGroup);
 
             foreach (MealArea mealArea in mealAreas)
@@ -258,8 +217,13 @@ namespace Serving
                     Recipe recipePrepared = GetRecipeFromMainIngredientName(mealArea.mainIngredientName);
                     mealArea.DespawnIngredients();
                     mealArea.Spawn(recipePrepared.recipeObject);
+                    
+                    int tipForMeal = RateQualityOfPreparedRecipe(mealArea.GetInFoodAreaNames(), recipePrepared);
+                    tipForOrder += tipForMeal;
                 }
             }
+
+            tipJar.AddTip(tipForOrder);
         }
 
         private void SpawnDubiousFoods()
@@ -287,6 +251,11 @@ namespace Serving
             */
 
             return false;
+        }
+
+        private int RateQualityOfPreparedRecipe(List<string> ingredientNames, Recipe recipePrepared)
+        {
+            return 1;
         }
 
         private bool ReadyCheck()

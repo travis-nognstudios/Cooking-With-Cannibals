@@ -64,10 +64,10 @@ namespace Serving
                 if (ticketPoint.ContainsTicket())
                 {
                     ticketPoint.DestroyTicket();
+                    tableAge = 0f;
+                    tableFullTime = 0f;
                 }
             }
-
-            tableFullTime = 0;
         }
 
         public bool ContainsTickets()

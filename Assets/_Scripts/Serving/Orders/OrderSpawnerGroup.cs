@@ -23,6 +23,10 @@ namespace Serving
         private float orderTimer;
         private float ordersGenerated = 0;
 
+        private bool spawnAllowed;
+        private bool serviceOver;
+        private bool firstSpawnDone;
+
         private List<Recipe> sequencedRecipes = new List<Recipe>();
         private List<RecipeVariation> sequencedRecipeVariations = new List<RecipeVariation>();
         private int sequenceIndex;
@@ -58,28 +62,34 @@ namespace Serving
             }
            
             //StartCoroutine(SetTableOnDelay(3));
-            //StartCoroutine(SetTableOnDelay(6));
-        }
-
-        IEnumerator SetTableOnDelay(float seconds)
-        {
-            Debug.Log("Setting table");
-            yield return new WaitForSeconds(seconds);
-            GenerateNewOrder();
         }
 
         void Update()
         {
-            // Orders appear at intervals
-            if (ordersGenerated < numOrders)
+            if (spawnAllowed)
             {
-                orderTimer += Time.deltaTime;
-                bool roomForOrder = ticketManager.HasRoomForNewTicket();
-
-                if (orderTimer >= orderInterval && roomForOrder)
+                // First order spawn independent of timer
+                if (!firstSpawnDone)
                 {
-                    orderTimer = 0f;
                     GenerateNewOrder();
+                    firstSpawnDone = true;
+                }
+
+                // Timed order spawns
+                else if (ordersGenerated < numOrders)
+                {
+                    orderTimer += Time.deltaTime;
+                    bool roomForOrder = ticketManager.HasRoomForNewTicket();
+
+                    if (orderTimer >= orderInterval)
+                    {
+                        orderTimer = 0f;
+
+                        if (roomForOrder)
+                        {
+                            GenerateNewOrder();
+                        }
+                    }
                 }
             }
         }
@@ -91,6 +101,13 @@ namespace Serving
             return r;
         }
 
+        private Recipe GetSequencedRecipe()
+        {
+            Recipe r = sequencedRecipes[sequenceIndex];
+            sequenceIndex++;
+            return r;
+        }
+
         void GenerateNewOrder()
         {
             int numOrdersForTable = Random.Range(minOrdersPerTable, maxOrdersPerTable + 1);
@@ -98,7 +115,8 @@ namespace Serving
 
             for (int i = 0; i < numOrdersForTable; ++i)
             {
-                RecipeVariation recipeVar = GetSequencedRecipeVariation();
+                Recipe r = GetSequencedRecipe();
+                RecipeVariation recipeVar = r.CreateVariation();
                 recipes.Add(recipeVar);
             }
 
@@ -114,6 +132,16 @@ namespace Serving
         public void CompleteOrder(RecipeGroup recipeGroup)
         {
             ticketManager.RemoveGroup(recipeGroup);
+        }
+
+        public bool IsServiceOver()
+        {
+            return serviceOver;
+        }
+
+        public void StartSpawning()
+        {
+            spawnAllowed = true;
         }
     }
 }
