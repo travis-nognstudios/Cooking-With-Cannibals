@@ -14,8 +14,6 @@ GameObject:
   - component: {fileID: 4330690870478332176}
   - component: {fileID: 1394136209236727633}
   - component: {fileID: 4476802989359948244}
-  - component: {fileID: -3069971327655001663}
-  - component: {fileID: 7780148808430285289}
   m_Layer: 0
   m_Name: ING_Ear_v02
   m_TagString: Untagged
@@ -132,53 +130,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18055ba762aa3994f9c10208cd088bc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!95 &-3069971327655001663
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2938236372182217799}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 20345765b52671a4f9a5d3020466c032, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &7780148808430285289
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2938236372182217799}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66bfbf35e69bd034aa898a2fab40bff0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sounds:
-  - {fileID: 6883730003704387567, guid: d972e47dacc22c841b02fbf912aba9d0, type: 3}
-  - {fileID: -7307605668367963806, guid: 8ff381d7adb72ee4eb5e29037ec3cc83, type: 3}
-  - {fileID: -1245398284996716652, guid: 529c58aee2cbea94785f5adc9cbd5a8b, type: 3}
-  - {fileID: 1528660366338067753, guid: 1c7a985f6308655409f5ad5db5cfc1e9, type: 3}
-  - {fileID: -2982050073197135364, guid: 81f39ee7eeef39c4d859996cae177f24, type: 3}
-  - {fileID: -3255112752008540578, guid: b2d1f618671fac04d8b82ea63b473e0f, type: 3}
-  - {fileID: 7718767930734458907, guid: 66a0a90c134bb5a4e80636e13f698594, type: 3}
-  - {fileID: 7226168654493813887, guid: d5fd951864b23c84bbf59394777dcdfc, type: 3}
-  - {fileID: 546498717357320025, guid: 985da931209ea964ebe9bedea154ad19, type: 3}
-  - {fileID: 1333069963860890909, guid: 796a02e18f0eac143a5cbd1663bc8966, type: 3}
-  - {fileID: 3154368414592833120, guid: dc370a4bcc8abde45a7d2977759e1d5b, type: 3}
-  - {fileID: 2783193593117606133, guid: e68c80e359e65b14f967c8bf6f4d19a0, type: 3}
-  - {fileID: 417451222055216264, guid: 10cd32dc0bb2e4145872fe1ef5aab5d2, type: 3}
-  - {fileID: 5773969827540166515, guid: 785c5864582b6c34985429662229b434, type: 3}
-  - {fileID: 682800902, guid: 5e66dbd97a8187b47bdf338af66d3848, type: 3}
 --- !u!1 &3879963249927552913
 GameObject:
   m_ObjectHideFlags: 0
@@ -193,7 +144,7 @@ GameObject:
   - component: {fileID: 4015360385411264499}
   - component: {fileID: 1543106431772867500}
   - component: {fileID: 2668113642738396722}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ING_Ear
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -333,7 +284,7 @@ GameObject:
   - component: {fileID: 3059759062606312301}
   - component: {fileID: 69599547716682691}
   - component: {fileID: 7481857682411521895}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -427,6 +378,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 157443271636226070}
     m_Modifications:
+    - target: {fileID: 8794757175939375550, guid: 3ca85c875145eaf46a1420c273027bc5,
+        type: 3}
+      propertyPath: m_Name
+      value: CookingUI_v02
+      objectReference: {fileID: 0}
+    - target: {fileID: 8794757175939375550, guid: 3ca85c875145eaf46a1420c273027bc5,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 3410697302078619019, guid: 3ca85c875145eaf46a1420c273027bc5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -547,10 +508,30 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.15186833
       objectReference: {fileID: 0}
-    - target: {fileID: 8794757175939375550, guid: 3ca85c875145eaf46a1420c273027bc5,
+    - target: {fileID: 4218719506788217390, guid: 3ca85c875145eaf46a1420c273027bc5,
         type: 3}
-      propertyPath: m_Name
-      value: CookingUI_v02
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3782412668261534145, guid: 3ca85c875145eaf46a1420c273027bc5,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8800565856619987080, guid: 3ca85c875145eaf46a1420c273027bc5,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8762988899112064167, guid: 3ca85c875145eaf46a1420c273027bc5,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 322073398146861863, guid: 3ca85c875145eaf46a1420c273027bc5,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ca85c875145eaf46a1420c273027bc5, type: 3}
