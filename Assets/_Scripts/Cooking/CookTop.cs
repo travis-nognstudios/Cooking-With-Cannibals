@@ -19,7 +19,7 @@ namespace Cooking
 
         private void Update()
         {
-            Debug.Log($"{gameObject.name} is hot:{hot}");
+
         }
 
         void OnTriggerEnter(Collider other)

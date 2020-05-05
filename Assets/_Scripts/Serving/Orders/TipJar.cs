@@ -58,7 +58,7 @@ namespace Serving
             float fillAmount = amountInJar / (float) capacity;
 
             fill.fillAmount = fillAmount;
-            Debug.Log($"Fill Amount: {fillAmount}");
+            // Debug.Log($"Fill Amount: {fillAmount}");
         }
 
         private void PlayFx(int amount)
