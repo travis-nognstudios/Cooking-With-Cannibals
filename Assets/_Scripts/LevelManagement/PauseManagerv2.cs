@@ -34,6 +34,7 @@ namespace LevelManagement
         private bool teleportingBack;
 
         private bool waitingToSceneSwitch;
+        private int nextSceneIndex;
 
         private float pauseCooldownTimer;
         private bool pauseOnCooldown;
@@ -220,7 +221,20 @@ namespace LevelManagement
 
         private void SwitchScene()
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            int sceneIndex = nextSceneIndex;
+            if (sceneIndex == 0)
+            {
+                sceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
+            }
+
+            SceneManager.LoadScene(sceneIndex);
+        }
+        
+        public void JumpToScene(int n)
+        {
+            nextSceneIndex = n;
+            FadeOut();
+            StartNextScene();
         }
 
         private void ColorOn()

@@ -255,7 +255,7 @@ namespace Serving
 
         private int RateQualityOfPreparedRecipe(List<string> ingredientNames, Recipe recipePrepared)
         {
-            return 1;
+            return 3;
         }
 
         private bool ReadyCheck()
