@@ -20,8 +20,13 @@ namespace Serving
         public int numOrders;
         public float orderInterval;
 
+        [Header("Tips")]
+        public TipJar tipJar;
+
         private float orderTimer;
         private float ordersGenerated = 0;
+        private Stack<int> orderSizes = new Stack<int>();
+        private int numTotalMeals;
 
         private bool spawnAllowed;
         private bool serviceOver;
@@ -31,10 +36,15 @@ namespace Serving
         private List<RecipeVariation> sequencedRecipeVariations = new List<RecipeVariation>();
         private int sequenceIndex;
 
+        private void Awake()
+        {
+            CreateOrderSizes();
+            SetTipJarCapacity();
+        }
+
         void Start()
         {
-            Debug.Log("Group order starting");
-
+            
             // Get sequenced recipes
             foreach (MonoBehaviour sequenceScript in sequences)
             {
@@ -60,8 +70,6 @@ namespace Serving
                     sequencedRecipeVariations.Add(recipeVariation);
                 }
             }
-           
-            //StartCoroutine(SetTableOnDelay(3));
         }
 
         void Update()
@@ -94,6 +102,36 @@ namespace Serving
             }
         }
 
+        private void CreateOrderSizes()
+        {
+            for (int i=0; i<numOrders; ++i)
+            {
+                int numMeals = Random.Range(minOrdersPerTable, maxOrdersPerTable + 1);
+                
+                orderSizes.Push(numMeals);
+                numTotalMeals += numMeals;
+            }
+
+            Debug.Log($"Total meals: {numTotalMeals}");
+            // Debug.Log($"Order size sequence: {orderSizes.ToArray().ToString()}");
+        }
+
+        private void SetTipJarCapacity()
+        {
+            int fullTip = 3;
+            tipJar.capacity = numTotalMeals * fullTip;
+
+            Debug.Log($"Original tipjar cap: {tipJar.capacity}");
+            
+            // Round down to the nearest 5
+            while (tipJar.capacity % 5 != 0)
+            {
+                tipJar.capacity -= 1;
+            }
+
+            Debug.Log($"New tipjar cap: {tipJar.capacity}");
+        }
+
         private RecipeVariation GetSequencedRecipeVariation()
         {
             RecipeVariation r = sequencedRecipeVariations[sequenceIndex];
@@ -110,7 +148,9 @@ namespace Serving
 
         void GenerateNewOrder()
         {
-            int numOrdersForTable = Random.Range(minOrdersPerTable, maxOrdersPerTable + 1);
+            //int numOrdersForTable = Random.Range(minOrdersPerTable, maxOrdersPerTable + 1);
+            int numOrdersForTable = orderSizes.Pop();
+
             List<RecipeVariation> recipes = new List<RecipeVariation>();
 
             for (int i = 0; i < numOrdersForTable; ++i)
