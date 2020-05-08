@@ -11,7 +11,7 @@ public class BasketballTrigger : MonoBehaviour
     {
         if (interactableObject.IsTouched())
         {
-            SceneManager.LoadScene("MinigameOne", LoadSceneMode.Additive);
+            SceneManager.LoadScene("MinigameTwo", LoadSceneMode.Additive);
         }
     }
 }

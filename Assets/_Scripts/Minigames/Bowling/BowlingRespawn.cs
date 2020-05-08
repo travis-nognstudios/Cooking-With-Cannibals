@@ -21,7 +21,7 @@ public class BowlingRespawn : MonoBehaviour
 
     private IEnumerator SpawnBall()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(5);
         Instantiate(spawnObject, originalPos.transform.position, Quaternion.identity);
         ballsSpawned++;
     }
