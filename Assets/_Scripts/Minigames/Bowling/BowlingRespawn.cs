@@ -2,23 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BasketballRespawn : MonoBehaviour
+public class BowlingRespawn : MonoBehaviour
 {
 
     public GameObject originalPos;
     public GameObject spawnObject;
+    [HideInInspector]
+    public int ballsSpawned = 0;
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Respawn"))
         {
             other.tag = "Untagged";
-            
+            if(ballsSpawned < 2)
+                StartCoroutine("SpawnBall");
         }
     }
 
-    private IEnumerator spawnBall()
+    private IEnumerator SpawnBall()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(5);
         Instantiate(spawnObject, originalPos.transform.position, Quaternion.identity);
+        ballsSpawned++;
     }
 }
