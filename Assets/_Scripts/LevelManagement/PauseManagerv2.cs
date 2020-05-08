@@ -18,6 +18,7 @@ namespace LevelManagement
         public GameObject player;
         public Transform pausePoint;
         public Transform easterEggPoint;
+        public Transform bowlingPoint;
         private Transform goToPoint;
 
         private Vector3 originalPosition;
@@ -97,6 +98,11 @@ namespace LevelManagement
         public void SetLocationToEasterEgg()
         {
             goToPoint = easterEggPoint;
+        }
+
+        public void SetLocationToBowling()
+        {
+            goToPoint = bowlingPoint;
         }
 
         public void SetPause()
