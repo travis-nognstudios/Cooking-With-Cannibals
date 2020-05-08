@@ -5,21 +5,14 @@ using TMPro;
 
 public class BowlingScore : MonoBehaviour
 {
-    //public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI strikeText;
+    public TextMeshProUGUI spareText;
+    public TextMeshProUGUI loseText;
     private int temp = 0;
-    private int score = 0;
-    //public BottleSpawner spawner;
-    // Start is called before the first frame update
-    void Start()
-    {
 
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        //scoreText.text = "Score: " + score.ToString();
-    }
+    public BowlingRespawn bowlingRespawn;
+
 
     private void OnTriggerEnter(Collider other)
     {
@@ -30,10 +23,25 @@ public class BowlingScore : MonoBehaviour
             Debug.Log(temp);
             if (temp >= 6)
             {
-                temp = 0;
-                score++;
-                //spawner.Spawn();
+                CheckWin();
             }
+        }
+    }
+
+    private void CheckWin()
+    {
+        if (bowlingRespawn.ballsSpawned == 1)
+        {
+            strikeText.enabled = true;
+        }
+
+        else if (bowlingRespawn.ballsSpawned == 2)
+        {
+            spareText.enabled = true;
+        }
+        else
+        {
+            loseText.enabled = true;
         }
     }
 }
