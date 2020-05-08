@@ -15911,6 +15911,7 @@ GameObject:
   - component: {fileID: 815580829739022002}
   - component: {fileID: 815580829739022001}
   - component: {fileID: 815580829739022000}
+  - component: {fileID: 815580829739022004}
   m_Layer: 10
   m_Name: rest_set02_curved_door
   m_TagString: Untagged
@@ -16131,6 +16132,41 @@ MonoBehaviour:
   objectHighlighter: {fileID: 0}
   touchHighlightColor: {r: 0, g: 0, b: 0, a: 0}
   usingState: 0
+--- !u!59 &815580829739022004
+HingeJoint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 815580829739021989}
+  m_ConnectedBody: {fileID: 0}
+  m_Anchor: {x: 0, y: 0.33283344, z: 0}
+  m_Axis: {x: 0, y: 1, z: 0}
+  m_AutoConfigureConnectedAnchor: 1
+  m_ConnectedAnchor: {x: 2.0650353, y: 0.4012437, z: -0.7889613}
+  m_UseSpring: 0
+  m_Spring:
+    spring: 0
+    damper: 0
+    targetPosition: 0
+  m_UseMotor: 0
+  m_Motor:
+    targetVelocity: 0
+    force: 0
+    freeSpin: 0
+  m_UseLimits: 1
+  m_Limits:
+    min: 0
+    max: 90
+    bounciness: 0
+    bounceMinVelocity: 0
+    contactDistance: 0
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_EnableCollision: 0
+  m_EnablePreprocessing: 1
+  m_MassScale: 1
+  m_ConnectedMassScale: 1
 --- !u!1 &829854516222981329
 GameObject:
   m_ObjectHideFlags: 0
