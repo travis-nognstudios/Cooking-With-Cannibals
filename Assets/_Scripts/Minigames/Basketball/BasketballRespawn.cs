@@ -12,7 +12,13 @@ public class BasketballRespawn : MonoBehaviour
         if (other.CompareTag("Respawn"))
         {
             other.tag = "Untagged";
-            Instantiate(spawnObject, originalPos.transform.position, Quaternion.identity);
+            
         }
+    }
+
+    private IEnumerator spawnBall()
+    {
+        yield return new WaitForSeconds(3);
+        Instantiate(spawnObject, originalPos.transform.position, Quaternion.identity);
     }
 }
