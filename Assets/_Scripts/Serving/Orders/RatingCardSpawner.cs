@@ -18,6 +18,7 @@ namespace Serving
 
         [Header("Scene Objects")]
         public TipJar tipjar;
+        public GradePoster gradePoster;
         public RatingCardPoint cardPoint;
 
         [Header("Audio")]
@@ -27,6 +28,7 @@ namespace Serving
         // Use this for initialization
         void Start()
         {
+            SyncGradePoster();
         }
 
         // Update is called once per frame
@@ -35,6 +37,12 @@ namespace Serving
 
         }
         
+        void SyncGradePoster()
+        {
+            gradePoster.SetScores(tipsForA, tipsForB, tipsForC);
+            gradePoster.SetPosterText();
+        }
+
         public void SpawnCard()
         {
             audioSource.clip = tootyHorn;
