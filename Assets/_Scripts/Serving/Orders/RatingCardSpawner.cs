@@ -6,13 +6,15 @@ namespace Serving
     public class RatingCardSpawner : MonoBehaviour
     {
         [Header("Rating Cards")]
-        public GameObject bestRatingCard;
-        public GameObject goodRatingCard;
-        public GameObject failRatingCard;
+        public GameObject cardGradeA;
+        public GameObject cardGradeB;
+        public GameObject cardGradeC;
+        public GameObject cardGradeF;
 
         [Header("Ratings By Tip")]
-        public int perfectIfAboveTip;
-        public int failIfBelowTip;
+        public int tipsForA;
+        public int tipsForB;
+        public int tipsForC;
 
         [Header("Scene Objects")]
         public TipJar tipjar;
@@ -41,17 +43,21 @@ namespace Serving
             GameObject selectedCard;
             int tip = tipjar.GetAmountInJar();
 
-            if (tip >= perfectIfAboveTip)
+            if (tip >= tipsForA)
             {
-                selectedCard = bestRatingCard;
+                selectedCard = cardGradeA;
             }
-            else if (tip < failIfBelowTip)
+            else if (tip >= tipsForB)
             {
-                selectedCard = failRatingCard;
+                selectedCard = cardGradeB;
+            }
+            else if (tip >= tipsForC)
+            {
+                selectedCard = cardGradeC;
             }
             else
             {
-                selectedCard = goodRatingCard;
+                selectedCard = cardGradeF;
             }
 
             cardPoint.SetCard(selectedCard);
