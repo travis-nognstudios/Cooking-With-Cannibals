@@ -10,7 +10,7 @@ SpringJoint:
   m_ConnectedBody: {fileID: 8914251944328919550}
   m_Anchor: {x: 0, y: 0.031812783, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0.73192775, z: 2.2933633}
+  m_ConnectedAnchor: {x: 0, y: 0.7319277, z: 2.2933633}
   serializedVersion: 2
   m_Spring: 1000
   m_Damper: 0.2
@@ -403,6 +403,7 @@ GameObject:
   - component: {fileID: 8010604267923279481}
   - component: {fileID: 1415914986381614543}
   - component: {fileID: 8064313071983287321}
+  - component: {fileID: 3257571732638144021}
   m_Layer: 0
   m_Name: ING_TeethandTongue
   m_TagString: Untagged
@@ -522,6 +523,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18055ba762aa3994f9c10208cd088bc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3257571732638144021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9086946153099834558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6a08144e37d22d4e8f8f51d2c5d4a4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nearTouchHighlight: {r: 0, g: 0, b: 0, a: 0}
+  touchHighlight: {r: 0, g: 1, b: 1, a: 0}
+  grabHighlight: {r: 0, g: 0, b: 0, a: 0}
+  useHighlight: {r: 0, g: 0, b: 0, a: 0}
+  objectToMonitor: {fileID: 0}
+  objectToHighlight: {fileID: 0}
+  objectHighlighter: {fileID: 0}
+  objectToAffect: {fileID: 0}
 --- !u!1001 &8619016553454274021
 PrefabInstance:
   m_ObjectHideFlags: 0

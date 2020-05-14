@@ -288,6 +288,7 @@ GameObject:
   - component: {fileID: 2753279869664020007}
   - component: {fileID: 3367995513230748766}
   - component: {fileID: 7576921887371341491}
+  - component: {fileID: 2195479065474833217}
   m_Layer: 0
   m_Name: Fryer-Handle
   m_TagString: Untagged
@@ -368,6 +369,26 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.040915094, y: 0.028193235, z: 0.13750328}
   m_Center: {x: 9.313226e-10, y: 0, z: 0.000000007450581}
+--- !u!114 &2195479065474833217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3635728827675464312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6a08144e37d22d4e8f8f51d2c5d4a4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nearTouchHighlight: {r: 0, g: 0, b: 0, a: 0}
+  touchHighlight: {r: 0, g: 1, b: 1, a: 0}
+  grabHighlight: {r: 0, g: 0, b: 0, a: 0}
+  useHighlight: {r: 0, g: 0, b: 0, a: 0}
+  objectToMonitor: {fileID: 2709033288835447119}
+  objectToHighlight: {fileID: 0}
+  objectHighlighter: {fileID: 0}
+  objectToAffect: {fileID: 0}
 --- !u!1 &4351110670521691985
 GameObject:
   m_ObjectHideFlags: 0
@@ -379,7 +400,6 @@ GameObject:
   - component: {fileID: 5201255601849626832}
   - component: {fileID: 5334187808925584139}
   - component: {fileID: 8618482305220433406}
-  - component: {fileID: 6371979216957140000}
   m_Layer: 0
   m_Name: Fryer
   m_TagString: Untagged
@@ -452,19 +472,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &6371979216957140000
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4351110670521691985}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.012199789, y: 0.1104576, z: 0.38167852}
-  m_Center: {x: 0.092787415, y: -0.04328744, z: -0.2595909}
 --- !u!1 &5244926911027980143
 GameObject:
   m_ObjectHideFlags: 0
@@ -566,7 +573,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5715337350217358413}
-  - component: {fileID: 5216847501875373486}
   - component: {fileID: 2709033288835447119}
   - component: {fileID: 2864998311442066164}
   - component: {fileID: 3586172776712384539}
@@ -598,19 +604,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &5216847501875373486
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5327540651072002709}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.18952912, y: 0.102914155, z: 0.37822652}
-  m_Center: {x: 0.000000029802322, y: -0.04021409, z: -0.26139235}
 --- !u!114 &2709033288835447119
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -627,7 +620,11 @@ MonoBehaviour:
   allowedNearTouchControllers: 0
   allowedTouchControllers: 0
   ignoredColliders:
-  - {fileID: 5216847501875373486}
+  - {fileID: 2782377078158034919}
+  - {fileID: 965219609412866669}
+  - {fileID: 8878875922763383419}
+  - {fileID: 1351021497600874415}
+  - {fileID: 6895764938569190216}
   isGrabbable: 1
   holdButtonToGrab: 1
   stayGrabbedOnTeleport: 1
