@@ -16,6 +16,8 @@ GameObject:
   - component: {fileID: 7067598018459573625}
   - component: {fileID: 7067598018459573624}
   - component: {fileID: 7067598018459573623}
+  - component: {fileID: 620777570382406395}
+  - component: {fileID: 7281255194395356833}
   m_Layer: 0
   m_Name: Defibrillator
   m_TagString: Untagged
@@ -32,7 +34,7 @@ Transform:
   m_GameObject: {fileID: 7163919719804673020}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.57600886, y: 1.0513259, z: -0.5933178}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5903647, y: 0.59036404, z: 0.5903647}
   m_Children:
   - {fileID: 9125857639399174885}
   - {fileID: 9130652011223423397}
@@ -179,6 +181,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18055ba762aa3994f9c10208cd088bc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &620777570382406395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7163919719804673020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66344e5da397b4d23bb9ac5dcb4e551d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  connected: {fileID: 0}
+--- !u!114 &7281255194395356833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7163919719804673020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6a08144e37d22d4e8f8f51d2c5d4a4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nearTouchHighlight: {r: 0, g: 0, b: 0, a: 0}
+  touchHighlight: {r: 0, g: 1, b: 1, a: 0}
+  grabHighlight: {r: 0, g: 0, b: 0, a: 0}
+  useHighlight: {r: 0, g: 0, b: 0, a: 0}
+  objectToMonitor: {fileID: 0}
+  objectToHighlight: {fileID: 0}
+  objectHighlighter: {fileID: 0}
+  objectToAffect: {fileID: 0}
 --- !u!1 &7320801375691240676
 GameObject:
   m_ObjectHideFlags: 0
@@ -202,13 +237,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7320801375691240676}
-  m_LocalRotation: {x: 0.5213339, y: 0.5213339, z: -0.4777144, w: 0.4777144}
-  m_LocalPosition: {x: -0.048, y: 0.05, z: -0.001}
+  m_LocalRotation: {x: 0.41268772, y: 0.5433628, z: -0.42697164, w: 0.59341466}
+  m_LocalPosition: {x: 0.005, y: 0.032, z: 0.029}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4659941375407083362}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 95, y: 0, z: -90}
+  m_LocalEulerAnglesHint: {x: 107.48599, y: -103.255005, z: -191.181}
 --- !u!1 &7852037068445614911
 GameObject:
   m_ObjectHideFlags: 0
@@ -232,10 +267,10 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7852037068445614911}
-  m_LocalRotation: {x: 0.5213339, y: 0.5213339, z: -0.4777144, w: 0.4777144}
-  m_LocalPosition: {x: -0.048, y: 0.05, z: -0.001}
+  m_LocalRotation: {x: 0.46920225, y: 0.590702, z: -0.39710468, w: 0.5227125}
+  m_LocalPosition: {x: 0.011, y: 0.033, z: -0.03}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4659941375407083362}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 95, y: 0, z: -90}
+  m_LocalEulerAnglesHint: {x: 106.32999, y: -60.570007, z: -150.332}
