@@ -6,7 +6,7 @@ using TMPro;
 
 public class BasketballScore : MonoBehaviour
 {
-    public TMP_Text text;
+    public TextMeshProUGUI scoreText;
     private float score;
     private AudioSource scoreSound;
     public ParticleSystem scoreParticle;
@@ -20,11 +20,12 @@ public class BasketballScore : MonoBehaviour
     {
         if (other.CompareTag("Respawn"))
         {
-            score++;
-            text.text = score.ToString();
-            scoreSound.Play();
-            scoreParticle.Play();
             other.tag = "Untagged";
+            score++;
+            scoreText.text = score.ToString();
+            //scoreSound.Play();
+            scoreParticle.Play();
+            
         }
     }
 }

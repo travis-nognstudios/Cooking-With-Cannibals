@@ -6,9 +6,16 @@ using TMPro;
 public class ScoreDetector : MonoBehaviour
 {
     public TextMeshProUGUI scoreText;
-    private int temp = 0;
-    private int score = 0;
+
+    [HideInInspector]
+    public int temp = 0;
+
+    [HideInInspector]
+    public int score = 0;
     public BottleSpawner spawner;
+
+    public float despawnTime;
+    public float respawnTime;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,15 +32,33 @@ public class ScoreDetector : MonoBehaviour
     {
         if (other.CompareTag("Bottle"))
         {
+            other.tag = "Untagged";
             temp++;
-            Destroy(other);
-            Debug.Log(temp);
+
+            StartCoroutine(DestroyAfter(other, despawnTime));
+
             if (temp >= 6)
             {
                 temp = 0;
                 score++;
-                spawner.Spawn();
+                StartCoroutine(RespawnBottles(respawnTime));
             }
         }
+    }
+
+    public IEnumerator DestroyAfter(Collider other, float despawnTime)
+    {
+        yield return new WaitForSeconds(despawnTime);
+        Destroy(other.gameObject.transform.parent.gameObject);
+
+    }
+
+    public IEnumerator RespawnBottles(float respawnTime)
+    {
+        //pauseManager.SetUnpause();
+        yield return new WaitForSeconds(respawnTime);
+        //score = 0;
+        spawner.Spawn();
+
     }
 }

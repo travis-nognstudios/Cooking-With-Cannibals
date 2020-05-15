@@ -14,14 +14,14 @@ public class BowlingRespawn : MonoBehaviour
         if (other.CompareTag("Respawn"))
         {
             other.tag = "Untagged";
-            if(ballsSpawned < 2)
-                StartCoroutine("SpawnBall");
+            
+            StartCoroutine("SpawnBall");
         }
     }
 
     private IEnumerator SpawnBall()
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(3f);
         Instantiate(spawnObject, originalPos.transform.position, Quaternion.identity);
         ballsSpawned++;
     }
