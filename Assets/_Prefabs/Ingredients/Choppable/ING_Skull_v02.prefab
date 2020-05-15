@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2585624498284565001}
   - component: {fileID: 6826046873716107327}
   - component: {fileID: 974594034939483334}
+  - component: {fileID: 6693164589722363056}
   m_Layer: 0
   m_Name: Skull
   m_TagString: Untagged
@@ -78,6 +79,26 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &6693164589722363056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1565742013311770650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6a08144e37d22d4e8f8f51d2c5d4a4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nearTouchHighlight: {r: 0, g: 0, b: 0, a: 0}
+  touchHighlight: {r: 0, g: 1, b: 1, a: 0}
+  grabHighlight: {r: 0, g: 0, b: 0, a: 0}
+  useHighlight: {r: 0, g: 0, b: 0, a: 0}
+  objectToMonitor: {fileID: 0}
+  objectToHighlight: {fileID: 0}
+  objectHighlighter: {fileID: 0}
+  objectToAffect: {fileID: 0}
 --- !u!1 &3132275533291941880
 GameObject:
   m_ObjectHideFlags: 0
@@ -493,12 +514,12 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.84172
       objectReference: {fileID: 0}
-    - target: {fileID: 3142651222112671313, guid: f1f1c9363b77d7e4d8fb1c82b32caf39,
+    - target: {fileID: 3142651222816470752, guid: f1f1c9363b77d7e4d8fb1c82b32caf39,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3142651222816470752, guid: f1f1c9363b77d7e4d8fb1c82b32caf39,
+    - target: {fileID: 3142651222112671313, guid: f1f1c9363b77d7e4d8fb1c82b32caf39,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
