@@ -18,14 +18,14 @@ public class BowlingRespawn : MonoBehaviour
         {
             other.tag = "Untagged";
             
-            StartCoroutine("SpawnBall");
+            StartCoroutine(SpawnBall(respawnDelay));
             StartCoroutine(DestroyAfter(other, despawnDelay));
         }
     }
 
-    private IEnumerator SpawnBall()
+    private IEnumerator SpawnBall(float respawnDelay)
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(respawnDelay);
         Instantiate(spawnObject, originalPos.transform.position, Quaternion.identity);
         ballsSpawned++;
     }

@@ -30,6 +30,7 @@ public class MinigameManager : MonoBehaviour
         playing = false;
         minigame.SetActive(false);
         loadingBar.SetActive(false);
+        loadingSlider.maxValue = minigameTimer;
     }
     private void Update()
     {
