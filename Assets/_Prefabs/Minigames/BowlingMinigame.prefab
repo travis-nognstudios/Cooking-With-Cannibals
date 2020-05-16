@@ -908,7 +908,7 @@ GameObject:
   - component: {fileID: 4046740481787403004}
   - component: {fileID: 4046740481787403005}
   - component: {fileID: 4046740481787403006}
-  - component: {fileID: 4046740481787402994}
+  - component: {fileID: 276943805}
   m_Layer: 0
   m_Name: BowlingManager
   m_TagString: Untagged
@@ -925,7 +925,7 @@ Transform:
   m_GameObject: {fileID: 4046740481787403007}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 8.026645, y: 2.0298996, z: 9.718801}
+  m_LocalScale: {x: 15.319995, y: 2.0298996, z: 16.243406}
   m_Children: []
   m_Father: {fileID: 5593844200143367417}
   m_RootOrder: 6
@@ -989,7 +989,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4046740481787402994
+--- !u!114 &276943805
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -998,12 +998,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 4046740481787403007}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c90077e9ceb4f0f46920bd7b36559d02, type: 3}
+  m_Script: {fileID: 11500000, guid: 4455946d0061b1446b517b15d2196463, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  strikeText: {fileID: 4046740481592330924}
-  spareText: {fileID: 4046740483415495421}
-  loseText: {fileID: 4046740482244571170}
+  pinSpawn: {fileID: 2082858237}
+  pins: {fileID: 4514698951614966290, guid: c166ea9d464d756409c914d061b5f6b8, type: 3}
+  despawnTime: 3
   bowlingRespawn: {fileID: 4046740481870236731}
 --- !u!1 &4046740481870236741
 GameObject:
@@ -1114,6 +1114,8 @@ MonoBehaviour:
   spawnObject: {fileID: 220340083743545587, guid: eb98e30f7661207428e0e793625c765f,
     type: 3}
   ballsSpawned: 0
+  respawnDelay: 2
+  despawnDelay: 3
 --- !u!1 &4046740482244571170
 GameObject:
   m_ObjectHideFlags: 0

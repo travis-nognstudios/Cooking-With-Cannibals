@@ -9,6 +9,9 @@ public class BowlingRespawn : MonoBehaviour
     public GameObject spawnObject;
     [HideInInspector]
     public int ballsSpawned = 0;
+
+    public float respawnDelay;
+    public float despawnDelay;
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Respawn"))
@@ -16,6 +19,7 @@ public class BowlingRespawn : MonoBehaviour
             other.tag = "Untagged";
             
             StartCoroutine("SpawnBall");
+            StartCoroutine(DestroyAfter(other, despawnDelay));
         }
     }
 
@@ -24,5 +28,11 @@ public class BowlingRespawn : MonoBehaviour
         yield return new WaitForSeconds(3f);
         Instantiate(spawnObject, originalPos.transform.position, Quaternion.identity);
         ballsSpawned++;
+    }
+
+    private IEnumerator DestroyAfter(Collider other, float despawnDelay)
+    {
+        yield return new WaitForSeconds(despawnDelay);
+        Destroy(other.gameObject);
     }
 }

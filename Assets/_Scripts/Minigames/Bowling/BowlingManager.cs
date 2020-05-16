@@ -6,11 +6,6 @@ using LevelManagement;
 
 public class BowlingManager : MonoBehaviour
 {
-    public GameObject strikeText;
-    public GameObject spareText;
-    public GameObject loseText;
-    public PauseManagerv2 pauseManager;
-
     public GameObject pinSpawn;
     public GameObject pins;
     private int score = 0;
@@ -76,9 +71,7 @@ public class BowlingManager : MonoBehaviour
         score = 0;
         Instantiate(pins, pinSpawn.transform);
         
-        strikeText.SetActive(false);
-        spareText.SetActive(false);
-        loseText.SetActive(false);
+
 
     }
 }

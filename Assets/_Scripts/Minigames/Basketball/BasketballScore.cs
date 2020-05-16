@@ -6,7 +6,7 @@ using TMPro;
 
 public class BasketballScore : MonoBehaviour
 {
-    public TextMeshProUGUI scoreText;
+    //public TextMeshProUGUI scoreText;
     private float score;
     private AudioSource scoreSound;
     public ParticleSystem scoreParticle;
@@ -22,7 +22,7 @@ public class BasketballScore : MonoBehaviour
         {
             other.tag = "Untagged";
             score++;
-            scoreText.text = score.ToString();
+            //scoreText.text = score.ToString();
             //scoreSound.Play();
             scoreParticle.Play();
             
