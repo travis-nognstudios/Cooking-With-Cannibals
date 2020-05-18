@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 2375463061178588655}
   - component: {fileID: 6998882047209871836}
   - component: {fileID: 7827840259656315823}
+  - component: {fileID: 2006932380111203488}
+  - component: {fileID: 797854307464682870}
   m_Layer: 0
   m_Name: diner_set07_MedCabinet_Handle
   m_TagString: Untagged
@@ -25,12 +27,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3231587742023783101}
-  m_LocalRotation: {x: 1, y: -0, z: -0, w: -0.00000019470718}
-  m_LocalPosition: {x: 0.1914711, y: 1.4064159, z: -0.15408087}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.026203156, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 3734585999511611058}
-  m_RootOrder: 4
+  m_Father: {fileID: 2146827116947365310}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6998882047209871836
 MeshFilter:
@@ -78,6 +80,39 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &2006932380111203488
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3231587742023783101}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.011601254, y: 0.08630097, z: 0.02324905}
+  m_Center: {x: 0.24462739, y: 0.00000014342368, z: 0.016481988}
+--- !u!114 &797854307464682870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3231587742023783101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6a08144e37d22d4e8f8f51d2c5d4a4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nearTouchHighlight: {r: 0, g: 0, b: 0, a: 0}
+  touchHighlight: {r: 0, g: 1, b: 1, a: 0}
+  grabHighlight: {r: 0, g: 0, b: 0, a: 0}
+  useHighlight: {r: 0, g: 0, b: 0, a: 0}
+  objectToMonitor: {fileID: 0}
+  objectToHighlight: {fileID: 0}
+  objectHighlighter: {fileID: 0}
+  objectToAffect: {fileID: 0}
 --- !u!1 &4766818968133158843
 GameObject:
   m_ObjectHideFlags: 0
@@ -91,6 +126,9 @@ GameObject:
   - component: {fileID: 1281618572334992528}
   - component: {fileID: 7030858672842682867}
   - component: {fileID: 2092126256767873907}
+  - component: {fileID: 5276637199915624580}
+  - component: {fileID: 9216063922366644131}
+  - component: {fileID: 2806956904813733505}
   m_Layer: 0
   m_Name: diner_set07_MedCabinet
   m_TagString: Untagged
@@ -169,8 +207,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.30429104, y: 0.0108548105, z: 0.15408105}
-  m_Center: {x: -0.000000044703484, y: 0.1816953, z: 0.07704052}
+  m_Size: {x: 0.27578443, y: 0.0108548105, z: 0.15425366}
+  m_Center: {x: -0.00047465414, y: 0.1816953, z: 0.07712683}
 --- !u!65 &2092126256767873907
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -182,8 +220,47 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.30429104, y: 0.009963512, z: 0.15408105}
-  m_Center: {x: -0.000000044703484, y: 0.00075116754, z: 0.07704052}
+  m_Size: {x: 0.27510756, y: 0.009963512, z: 0.14759752}
+  m_Center: {x: 0.00004544854, y: 0.00075116754, z: 0.07379876}
+--- !u!65 &5276637199915624580
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4766818968133158843}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.014517695, y: 0.3742454, z: 0.15236789}
+  m_Center: {x: 0.14488663, y: 6.3420745e-16, z: 0.076183945}
+--- !u!65 &9216063922366644131
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4766818968133158843}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.013204038, y: 0.3742454, z: 0.1533255}
+  m_Center: {x: -0.14554355, y: -1.4612504e-15, z: 0.07666275}
+--- !u!65 &2806956904813733505
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4766818968133158843}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.27578443, y: 0.010861278, z: 0.15425366}
+  m_Center: {x: -0.0004746616, y: -0.18215385, z: 0.07712683}
 --- !u!1 &6200300117310544852
 GameObject:
   m_ObjectHideFlags: 0
@@ -209,12 +286,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6200300117310544852}
-  m_LocalRotation: {x: 1, y: -0, z: -0, w: -0.00000019470718}
-  m_LocalPosition: {x: 0.16526794, y: 1.4064, z: -0.1536}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.00001597386, z: -0.00048086047}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 3734585999511611058}
-  m_RootOrder: 5
+  m_Father: {fileID: 2146827116947365310}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &4404599146480766357
 MeshFilter:
@@ -293,8 +370,6 @@ Transform:
   - {fileID: 5665792663334510057}
   - {fileID: 1314144750430279777}
   - {fileID: 2146827116947365310}
-  - {fileID: 2375463061178588655}
-  - {fileID: 3178871134957418763}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -309,6 +384,13 @@ GameObject:
   - component: {fileID: 2146827116947365310}
   - component: {fileID: 8220721710759481901}
   - component: {fileID: 8574671931208451711}
+  - component: {fileID: 5480003468843915521}
+  - component: {fileID: 6512385464135658075}
+  - component: {fileID: 3959032155295578512}
+  - component: {fileID: 4196035173279725431}
+  - component: {fileID: 7352141556750467525}
+  - component: {fileID: 349811648300536436}
+  - component: {fileID: 4500406745525880522}
   m_Layer: 0
   m_Name: diner_set07_MedCabinet_Door
   m_TagString: Untagged
@@ -326,7 +408,9 @@ Transform:
   m_LocalRotation: {x: 1, y: -0, z: -0, w: -0.00000019470718}
   m_LocalPosition: {x: 0.16526794, y: 1.4064159, z: -0.15408087}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 2375463061178588655}
+  - {fileID: 3178871134957418763}
   m_Father: {fileID: 3734585999511611058}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -376,6 +460,155 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &5480003468843915521
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7078037445130470789}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.2764399, y: 0.35350585, z: 0.004857492}
+  m_Center: {x: 0.15276432, y: 0.00000014901161, z: 0.0024287368}
+--- !u!54 &6512385464135658075
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7078037445130470789}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 3
+  m_AngularDrag: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!59 &3959032155295578512
+HingeJoint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7078037445130470789}
+  m_ConnectedBody: {fileID: 0}
+  m_Anchor: {x: 0, y: 0.0024287319, z: 0}
+  m_Axis: {x: 0, y: -1, z: 0}
+  m_AutoConfigureConnectedAnchor: 1
+  m_ConnectedAnchor: {x: 0.16526794, y: 1.4039872, z: -0.15408087}
+  m_UseSpring: 0
+  m_Spring:
+    spring: 0
+    damper: 0
+    targetPosition: 0
+  m_UseMotor: 0
+  m_Motor:
+    targetVelocity: 0
+    force: 0
+    freeSpin: 0
+  m_UseLimits: 1
+  m_Limits:
+    min: 0
+    max: 140
+    bounciness: 0
+    bounceMinVelocity: 0
+    contactDistance: 0
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_EnableCollision: 0
+  m_EnablePreprocessing: 1
+  m_MassScale: 1
+  m_ConnectedMassScale: 1
+--- !u!114 &4196035173279725431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7078037445130470789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3abaf4521bf2344ea21ed3020b98eb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  disableWhenIdle: 1
+  allowedNearTouchControllers: 0
+  allowedTouchControllers: 0
+  ignoredColliders: []
+  isGrabbable: 1
+  holdButtonToGrab: 1
+  stayGrabbedOnTeleport: 1
+  validDrop: 1
+  grabOverrideButton: 0
+  allowedGrabControllers: 0
+  grabAttachMechanicScript: {fileID: 7352141556750467525}
+  secondaryGrabActionScript: {fileID: 349811648300536436}
+  isUsable: 0
+  holdButtonToUse: 1
+  useOnlyIfGrabbed: 0
+  pointerActivatesUseAction: 0
+  useOverrideButton: 0
+  allowedUseControllers: 0
+  objectHighlighter: {fileID: 0}
+  touchHighlightColor: {r: 0, g: 0, b: 0, a: 0}
+  usingState: 0
+--- !u!114 &7352141556750467525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7078037445130470789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8afa0b205791c9f4496bf2814aeac078, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  precisionGrab: 1
+  rightSnapHandle: {fileID: 0}
+  leftSnapHandle: {fileID: 0}
+  throwVelocityWithAttachDistance: 0
+  throwMultiplier: 1
+  onGrabCollisionDelay: 0
+  destroyImmediatelyOnThrow: 1
+  breakForce: 1500
+--- !u!114 &349811648300536436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7078037445130470789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18055ba762aa3994f9c10208cd088bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4500406745525880522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7078037445130470789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6a08144e37d22d4e8f8f51d2c5d4a4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nearTouchHighlight: {r: 0, g: 0, b: 0, a: 0}
+  touchHighlight: {r: 0.014017418, g: 0.960332, b: 0.990566, a: 0}
+  grabHighlight: {r: 0, g: 0, b: 0, a: 0}
+  useHighlight: {r: 0, g: 0, b: 0, a: 0}
+  objectToMonitor: {fileID: 0}
+  objectToHighlight: {fileID: 0}
+  objectHighlighter: {fileID: 0}
+  objectToAffect: {fileID: 0}
 --- !u!1001 &468814007461627724
 PrefabInstance:
   m_ObjectHideFlags: 0
