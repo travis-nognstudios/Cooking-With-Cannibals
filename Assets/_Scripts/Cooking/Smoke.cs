@@ -10,6 +10,7 @@ namespace Cooking
         [Header("Cooktop Smoke")]
         public ParticleSystem cookingSmoke;
         public ParticleSystem burningSmoke;
+        public ParticleSystem burningFire;
 
         [Header("Smokescreen")]
         public SmokeScreen smokescreen;
@@ -39,6 +40,7 @@ namespace Cooking
         {
             cookingSmoke.Stop();
             burningSmoke.Stop();
+            burningFire.Play();
         }
 
         public void CookSmoke()
@@ -60,6 +62,7 @@ namespace Cooking
             if (!burningSmoke.isPlaying)
             {
                 burningSmoke.Play();
+                burningFire.Play();
                 smokescreen.StartSmokeScreen();
             }
         }
