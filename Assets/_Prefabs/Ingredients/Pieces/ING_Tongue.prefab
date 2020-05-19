@@ -120,6 +120,7 @@ GameObject:
   - component: {fileID: 2126828582576155410}
   - component: {fileID: 2685214779769454748}
   - component: {fileID: 6750054010832397827}
+  - component: {fileID: 3929440113734785706}
   m_Layer: 0
   m_Name: ING_Tongue
   m_TagString: Untagged
@@ -136,7 +137,7 @@ Transform:
   m_GameObject: {fileID: 7111038727288064386}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 4}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 4211287001646614185}
   - {fileID: 3695640716722215815}
@@ -371,6 +372,29 @@ CapsuleCollider:
   m_Height: 0.036727503
   m_Direction: 0
   m_Center: {x: -0.0031472407, y: 0.024651755, z: 0.009964872}
+--- !u!145 &3929440113734785706
+SpringJoint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7111038727288064386}
+  m_ConnectedBody: {fileID: 0}
+  m_Anchor: {x: 0, y: 0.031812783, z: 0}
+  m_AutoConfigureConnectedAnchor: 1
+  m_ConnectedAnchor: {x: 0, y: 0.022438347, z: 0}
+  serializedVersion: 2
+  m_Spring: 1000
+  m_Damper: 0.2
+  m_MinDistance: 0
+  m_MaxDistance: 0
+  m_Tolerance: 0.025
+  m_BreakForce: 100
+  m_BreakTorque: Infinity
+  m_EnableCollision: 0
+  m_EnablePreprocessing: 1
+  m_MassScale: 1
+  m_ConnectedMassScale: 1
 --- !u!1001 &2456265664668208740
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -683,15 +707,15 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.17757177
       objectReference: {fileID: 0}
-    - target: {fileID: 2412601138849914430, guid: a2aac2dea07255242a80245b4e814cf9,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0.525
-      objectReference: {fileID: 0}
     - target: {fileID: 1344238910460877455, guid: a2aac2dea07255242a80245b4e814cf9,
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0.92701006
+      objectReference: {fileID: 0}
+    - target: {fileID: 2412601138849914430, guid: a2aac2dea07255242a80245b4e814cf9,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.525
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2aac2dea07255242a80245b4e814cf9, type: 3}
