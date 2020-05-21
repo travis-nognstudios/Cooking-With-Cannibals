@@ -9,16 +9,12 @@ public class BowlingScore : MonoBehaviour
     public GameObject strikeText;
     public GameObject spareText;
     public GameObject loseText;
-    public PauseManagerv2 pauseManager;
+    //public PauseManagerv2 pauseManager;
     private int score = 0;
 
 
     public BowlingRespawn bowlingRespawn;
 
-    private void Start()
-    {
-        pauseManager = GameObject.Find("PauseManagerv2").GetComponent<PauseManagerv2>();
-    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Pin"))
@@ -39,20 +35,19 @@ public class BowlingScore : MonoBehaviour
         if (bowlingRespawn.ballsSpawned == 0)
         {
             strikeText.SetActive(true);
-            pauseManager.SetUnpause();
+
         }
 
         else if (bowlingRespawn.ballsSpawned == 1)
         {
             spareText.SetActive(true);
             Debug.Log("Spare");
-            pauseManager.SetUnpause();
+
         }
         else
         {
             loseText.SetActive(true);
             Debug.Log("Lose");
-            pauseManager.SetUnpause();
         }
     }
 }

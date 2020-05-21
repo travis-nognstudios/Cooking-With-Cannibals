@@ -18,7 +18,7 @@ namespace LevelManagement
         public GameObject player;
         public Transform pausePoint;
         public Transform easterEggPoint;
-        public Transform bowlingPoint;
+        public Transform minigamePoint;
         private Transform goToPoint;
 
         private Vector3 originalPosition;
@@ -100,9 +100,9 @@ namespace LevelManagement
             goToPoint = easterEggPoint;
         }
 
-        public void SetLocationToBowling()
+        public void SetLocationToMinigame()
         {
-            goToPoint = bowlingPoint;
+            goToPoint = minigamePoint;
         }
 
         public void SetPause()
