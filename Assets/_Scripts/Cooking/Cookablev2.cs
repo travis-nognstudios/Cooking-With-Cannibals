@@ -219,7 +219,7 @@ namespace Cooking
             }
         }
 
-        private void MakeCooked(CookType cookType)
+        public void MakeCooked(CookType cookType)
         {
             // Get current state in allMechanics
             int typeIndex = GetCookTypeIndex(cookType);
