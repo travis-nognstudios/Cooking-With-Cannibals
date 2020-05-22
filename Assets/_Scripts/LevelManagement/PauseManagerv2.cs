@@ -129,6 +129,7 @@ namespace LevelManagement
 
         public void SetNextScene()
         {
+            nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
             FadeOut();
             StartNextScene();
         }
@@ -227,13 +228,7 @@ namespace LevelManagement
 
         private void SwitchScene()
         {
-            int sceneIndex = nextSceneIndex;
-            if (sceneIndex == 0)
-            {
-                sceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
-            }
-
-            SceneManager.LoadScene(sceneIndex);
+            SceneManager.LoadScene(nextSceneIndex);
         }
         
         public void JumpToScene(int n)

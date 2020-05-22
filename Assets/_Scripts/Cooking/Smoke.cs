@@ -40,7 +40,7 @@ namespace Cooking
         {
             cookingSmoke.Stop();
             burningSmoke.Stop();
-            burningFire.Play();
+            burningFire.Stop();
         }
 
         public void CookSmoke()

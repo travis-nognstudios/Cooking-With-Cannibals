@@ -30,12 +30,6 @@ namespace Serving
         {
             SyncGradePoster();
         }
-
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
         
         void SyncGradePoster()
         {
@@ -49,17 +43,16 @@ namespace Serving
             audioSource.Play();
 
             GameObject selectedCard;
-            int tip = tipjar.GetAmountInJar();
 
-            if (tip >= tipsForA)
+            if (RatedA())
             {
                 selectedCard = cardGradeA;
             }
-            else if (tip >= tipsForB)
+            else if (RatedB())
             {
                 selectedCard = cardGradeB;
             }
-            else if (tip >= tipsForC)
+            else if (RatedC())
             {
                 selectedCard = cardGradeC;
             }
@@ -69,6 +62,26 @@ namespace Serving
             }
 
             cardPoint.SetCard(selectedCard);
+        }
+
+        public bool RatedA()
+        {
+            return tipjar.GetAmountInJar() >= tipsForA;
+        }
+
+        public bool RatedB()
+        {
+            return tipjar.GetAmountInJar() >= tipsForB;
+        }
+
+        public bool RatedC()
+        {
+            return tipjar.GetAmountInJar() >= tipsForC;
+        }
+
+        public bool RatedF()
+        {
+            return tipjar.GetAmountInJar() < tipsForC;
         }
     }
 }

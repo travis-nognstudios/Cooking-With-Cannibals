@@ -27,6 +27,10 @@ namespace Serving
         private int amountInJar = 0;
         private AudioSource soundSource;
 
+        public int numCashTips;
+        public int numGoldTips;
+        public int numSilverTips;
+
         // Start is called before the first frame update
         void Start()
         {
@@ -67,18 +71,24 @@ namespace Serving
                 tip3.Play();
                 soundSource.clip = sfxCash;
                 soundSource.Play();
+
+                numCashTips++;
             }
             else if (amount == 2)
             {
                 tip2.Play();
                 soundSource.clip = sfxGold;
                 soundSource.Play();
+
+                numGoldTips++;
             }
             else if (amount == 1)
             {
                 tip1.Play();
                 soundSource.clip = sfxSilver;
                 soundSource.Play();
+
+                numSilverTips++;
             }
         }
     }
