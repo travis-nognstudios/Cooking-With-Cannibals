@@ -34,9 +34,11 @@ namespace AI
         [HideInInspector]
         public bool isPlayingOutro;
 
+        private AudioSource audioSource;
+
         void Start()
         {
-
+            audioSource = GetComponent<AudioSource>();
         }
 
         void Update()
@@ -71,7 +73,8 @@ namespace AI
 
         public void PlayIntro()
         {
-            //Debug.Log("Playing Hero Intro");
+            audioSource.clip = introClip;
+            audioSource.Play();
 
             isPlayingIntro = true;
             timeTracker = 0f;
