@@ -99,7 +99,14 @@ namespace Serving
                         }
                     }
                 }
+
+                if (ordersGenerated >= numOrders)
+                {
+                    serviceOver = true;
+                }
             }
+
+            
         }
 
         private void CreateOrderSizes()
