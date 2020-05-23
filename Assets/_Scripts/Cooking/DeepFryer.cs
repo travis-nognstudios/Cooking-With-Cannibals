@@ -7,12 +7,6 @@ namespace Cooking
 
     public class DeepFryer : HeatSource
     {
-        [Header("Refill Mechanic")]
-        public float maxFillAmount;
-        public float currentFillAmount;
-        public GameObject refillItem;
-        public int refillItemFillValue;
-
         // Start is called before the first frame update
         void Start()
         {
