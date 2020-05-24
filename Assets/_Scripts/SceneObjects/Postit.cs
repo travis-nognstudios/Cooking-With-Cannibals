@@ -7,8 +7,7 @@ public class Postit : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //this.GetComponent<Rigidbody>().useGravity = true;
-        //this.GetComponent<Rigidbody>().isKinematic = false;
+
     }
 
     // Update is called once per frame
@@ -19,11 +18,7 @@ public class Postit : MonoBehaviour
   
     void OnCollisionEnter(Collision c)
     {
-        //var joint = gameObject.AddComponent<FixedJoint>();
-        //joint.connectedBody = c.rigidbody;
-        Debug.Log(c.gameObject.name);
         this.GetComponent<Rigidbody>().useGravity = false;
-        //this.GetComponent<Rigidbody>().isKinematic = true;
         this.GetComponent<Rigidbody>().velocity = Vector3.zero;
         this.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
     }
@@ -31,8 +26,6 @@ public class Postit : MonoBehaviour
     private void OnCollisionExit(Collision collision)
     {
         this.GetComponent<Rigidbody>().useGravity = true;
-        //this.GetComponent<Rigidbody>().isKinematic = false;
-        Debug.Log("gravity on");
     }
 
 }

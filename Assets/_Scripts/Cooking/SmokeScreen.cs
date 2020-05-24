@@ -10,6 +10,9 @@ namespace Cooking
         public ParticleSystem kitchenSmoke;
         private bool isSmoking;
 
+        public int numSmokeScreensStarted;
+        public int numSmokeScreensStopped;
+
         // Start is called before the first frame update
         void Start()
         {
@@ -28,6 +31,9 @@ namespace Cooking
             {
                 isSmoking = true;
                 kitchenSmoke.Play();
+
+                numSmokeScreensStarted++;
+                Debug.Log($"Smokescreens: {numSmokeScreensStarted}");
             }
         }
 
@@ -37,6 +43,8 @@ namespace Cooking
             {
                 isSmoking = false;
                 kitchenSmoke.Stop();
+
+                numSmokeScreensStopped++;
             }
         }
     }

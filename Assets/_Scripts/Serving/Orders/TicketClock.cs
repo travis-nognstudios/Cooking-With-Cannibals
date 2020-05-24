@@ -10,6 +10,7 @@ namespace Serving
         public Image timerImage;
         public Text timerText;
         public Color lowTimeColor;
+        public Color highTimeColor;
 
         // Start is called before the first frame update
         void Start()
@@ -75,7 +76,7 @@ namespace Serving
             }
             else
             {
-                timerText.color = Color.black;
+                timerText.color = highTimeColor;
             }
         }
         
