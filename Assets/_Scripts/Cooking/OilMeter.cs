@@ -19,7 +19,7 @@ namespace Cooking
         public Image oilLevel4;
 
         [Header("Oil")]
-        public GameObject oil;
+        public DeepFryer fryerOil;
 
         public PauseManagerv2 pauseManager;
 
@@ -30,7 +30,7 @@ namespace Cooking
             oilLevel = maxOilLevel;
         }
 
-        void Update()
+        public void UseOil()
         {
             float timeElapsed = pauseManager.DeltaTime();
             float depletion = depletionPerSecond * timeElapsed;
@@ -88,11 +88,11 @@ namespace Cooking
         {
             if (oilLevel <= 0)
             {
-                oil.SetActive(false);
+                fryerOil.TurnOff();
             }
             else
             {
-                oil.SetActive(true);
+                fryerOil.TurnOn();
             }
         }
 

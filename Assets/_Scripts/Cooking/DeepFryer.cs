@@ -7,6 +7,9 @@ namespace Cooking
 
     public class DeepFryer : HeatSource
     {
+        public GameObject oilArea;
+        public OilMeter oilMeter;
+
         // Start is called before the first frame update
         void Start()
         {
@@ -16,21 +19,25 @@ namespace Cooking
         // Update is called once per frame
         void Update()
         {
-            if (!isOn)
-            {
-                TurnOn();
-            }
+            oilMeter.UseOil();
         }
 
         public override void TurnOn()
         {
-            isOn = true;
+            if (!isOn)
+            {
+                isOn = true;
+                oilArea.SetActive(true);
+            }
         }
 
         public override void TurnOff()
         {
-            isOn = false;
+            if (isOn)
+            {
+                isOn = false;
+                oilArea.SetActive(false);
+            }
         }
-        
     }
 }
