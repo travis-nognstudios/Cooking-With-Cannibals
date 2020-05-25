@@ -11,6 +11,9 @@ GameObject:
   - component: {fileID: 5681304568660980448}
   - component: {fileID: 3711822443214031062}
   - component: {fileID: 6971435556669731887}
+  - component: {fileID: 3716684175458046567}
+  - component: {fileID: 8989848951827300864}
+  - component: {fileID: 9071351072140290509}
   m_Layer: 0
   m_Name: Uten_Knife_v01
   m_TagString: Untagged
@@ -78,3 +81,49 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &3716684175458046567
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8683878787143794931}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.061092585, y: 0.013468751, z: 0.28228936}
+  m_Center: {x: -0.011154563, y: 0.0067343754, z: 0.15709332}
+--- !u!65 &8989848951827300864
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8683878787143794931}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.042845473, y: 0.013468751, z: 0.3022944}
+  m_Center: {x: -0.0020310078, y: 0.0067343754, z: -0.14777926}
+--- !u!114 &9071351072140290509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8683878787143794931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6a08144e37d22d4e8f8f51d2c5d4a4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nearTouchHighlight: {r: 0, g: 0, b: 0, a: 0}
+  touchHighlight: {r: 0.03208439, g: 0.9311717, b: 0.9716981, a: 0}
+  grabHighlight: {r: 0, g: 0, b: 0, a: 0}
+  useHighlight: {r: 0, g: 0, b: 0, a: 0}
+  objectToMonitor: {fileID: 0}
+  objectToHighlight: {fileID: 0}
+  objectHighlighter: {fileID: 0}
+  objectToAffect: {fileID: 0}
