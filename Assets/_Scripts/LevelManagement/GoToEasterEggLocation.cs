@@ -1,13 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
 using VRTK;
+using LemonAidRush;
 
 namespace LevelManagement
 {
     public class GoToEasterEggLocation : MonoBehaviour
     {
-        [Header("Pause Management")]
+        [Header("Managers")]
         public PauseManagerv2 pauseManager;
+        public RushOrderSpawner rushSpawner;
 
         [Header("Me")]
         public VRTK_InteractableObject interactable;
@@ -23,6 +25,8 @@ namespace LevelManagement
             {
                 pauseManager.SetLocationToEasterEgg();
                 pauseManager.SetPause();
+
+                rushSpawner.StartRushMode();
             }
         }
 
