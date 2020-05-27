@@ -20,14 +20,14 @@ public class Flip : MonoBehaviour
 	private void OnTriggerEnter(Collider col)
 	{
 		if (this.gameObject.name.Contains("_on")){
-			AffectedObj.GetComponent(Spin).setActive(false);//enabled = false; //
+			//AffectedObj.GetComponent(Spin).setActive(false);//enabled = false; //
 			//GameObject.Find(AffectedObj.GameObject.name).GetComponent<script.gameObject.name>().setActive(false);
 			//GameObject.Find(ObjName).GetComponent(script).setActive(false);
 			Debug.Log("name contains _on");
         }
 		else if (this.gameObject.name.Contains("_off")){
 			Debug.Log("name contains _off");
-			AffectedObj.GetComponent(Spin).setActive(true);//enabled = true; //
+			//AffectedObj.GetComponent(Spin).setActive(true);//enabled = true; //
 			//GameObject.Find(AffectedObj.GameObject.name).GetComponent<script.gameObject.name>().setActive(true);
 			//GameObject.Find(ObjName).GetComponent(script).setActive(true);
         }
