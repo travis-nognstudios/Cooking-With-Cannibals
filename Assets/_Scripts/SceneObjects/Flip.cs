@@ -6,15 +6,15 @@ public class Flip : MonoBehaviour
 {
     public GameObject switchObj;
 	public GameObject AffectedObj;
-	public Spin script;
+	//public Spin script;
 	//private string objName;
-	private string scriptName;
+	//private string scriptName;
     private bool isTriggered = false;
 	
 	void Start()
 	{
 		//objName = AffectedObj.gameObject.name;
-		scriptName = script.gameObject.name;
+		//scriptName = script.gameObject.name;
 	}
 	
 	private void OnTriggerEnter(Collider col)
