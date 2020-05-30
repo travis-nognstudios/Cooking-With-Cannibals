@@ -188,17 +188,20 @@ namespace Cooking
 
                     // Smoke effect
                     last_touched_cookTop = cookTop;
+                    Smoke smoke = cookTop.GetComponent<Smoke>();
 
-                    if (isOvercooked)
+                    if (smoke != null)
                     {
-                        //cookTop.smoke.burnSmoke();
-                        cookTop.GetComponent<Smoke>().BurnSmoke();
+                        if (isOvercooked)
+                        {
+                            smoke.BurnSmoke();
+                        }
+                        else
+                        {
+                            smoke.CookSmoke();
+                        }
                     }
-                    else
-                    {
-                        //cookTop.smoke.cookSmoke();
-                        cookTop.GetComponent<Smoke>().CookSmoke();
-                    }
+                    
                 }
             }
         }

@@ -149,6 +149,7 @@ GameObject:
   - component: {fileID: 1883311924260456564}
   - component: {fileID: 4934876700128589897}
   - component: {fileID: 2261659196788446607}
+  - component: {fileID: 948419088378040348}
   m_Layer: 0
   m_Name: Lung2
   m_TagString: Untagged
@@ -216,6 +217,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &948419088378040348
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1724581599826878688}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.041227985, y: 0.078685135, z: 0.016833281}
+  m_Center: {x: -0.028106924, y: -0.0035316895, z: -0.00008109727}
 --- !u!1 &4454397039110894898
 GameObject:
   m_ObjectHideFlags: 0
@@ -225,7 +239,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5779746151822173591}
-  - component: {fileID: 7035186900120676264}
+  - component: {fileID: 6219334308383854008}
+  - component: {fileID: 3552932724997849816}
+  - component: {fileID: 4056638608093642008}
   m_Layer: 0
   m_Name: Parts
   m_TagString: Untagged
@@ -252,25 +268,71 @@ Transform:
   m_Father: {fileID: 3697835285333830007}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &7035186900120676264
-Animator:
-  serializedVersion: 3
+--- !u!114 &6219334308383854008
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4454397039110894898}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 185789e0320b99545be4f2aaeec5dfb0, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3abaf4521bf2344ea21ed3020b98eb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  disableWhenIdle: 1
+  allowedNearTouchControllers: 0
+  allowedTouchControllers: 0
+  ignoredColliders: []
+  isGrabbable: 1
+  holdButtonToGrab: 1
+  stayGrabbedOnTeleport: 1
+  validDrop: 1
+  grabOverrideButton: 0
+  allowedGrabControllers: 0
+  grabAttachMechanicScript: {fileID: 0}
+  secondaryGrabActionScript: {fileID: 0}
+  isUsable: 0
+  holdButtonToUse: 1
+  useOnlyIfGrabbed: 0
+  pointerActivatesUseAction: 0
+  useOverrideButton: 0
+  allowedUseControllers: 0
+  objectHighlighter: {fileID: 0}
+  touchHighlightColor: {r: 0, g: 0, b: 0, a: 0}
+  usingState: 0
+--- !u!114 &3552932724997849816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4454397039110894898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8afa0b205791c9f4496bf2814aeac078, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  precisionGrab: 1
+  rightSnapHandle: {fileID: 0}
+  leftSnapHandle: {fileID: 0}
+  throwVelocityWithAttachDistance: 0
+  throwMultiplier: 1
+  onGrabCollisionDelay: 0
+  destroyImmediatelyOnThrow: 1
+  breakForce: 1500
+--- !u!114 &4056638608093642008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4454397039110894898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18055ba762aa3994f9c10208cd088bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4823267928484177512
 GameObject:
   m_ObjectHideFlags: 0
@@ -512,6 +574,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3697835285333830007}
     m_Modifications:
+    - target: {fileID: 4381136433355687898, guid: 6a91f094f5f887046a72ddb88517d968,
+        type: 3}
+      propertyPath: m_Name
+      value: FX_MealComplete
+      objectReference: {fileID: 0}
     - target: {fileID: 4381136433355687897, guid: 6a91f094f5f887046a72ddb88517d968,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -581,11 +648,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.2209642
-      objectReference: {fileID: 0}
-    - target: {fileID: 4381136433355687898, guid: 6a91f094f5f887046a72ddb88517d968,
-        type: 3}
-      propertyPath: m_Name
-      value: FX_MealComplete
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6a91f094f5f887046a72ddb88517d968, type: 3}

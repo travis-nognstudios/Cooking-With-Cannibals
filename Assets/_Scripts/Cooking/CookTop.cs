@@ -8,18 +8,29 @@ namespace Cooking
     public class CookTop : MonoBehaviour
     {
         private bool hot;
-
+        
         [Header("Cooktop Settings")]
         public CookType cookType;
+
+        [Header("Food Interactions")]
+        public bool hasFood;
 
         void Start()
         {
             MakeCold();
         }
 
-        private void Update()
+        void Update()
         {
+            //CheckHasFood();
+        }
 
+        void CheckHasFood()
+        {
+            if (hasFood)
+            {
+                hasFood = false;
+            }
         }
 
         void OnTriggerEnter(Collider other)
@@ -34,13 +45,17 @@ namespace Cooking
                 }
             }
         }
-
         
         void OnTriggerExit(Collider other)
         {
             if (other.CompareTag("Heatsource"))
             {
                 MakeCold();
+            }
+
+            if (other.gameObject.layer == 0)
+            {
+                hasFood = false;
             }
         }
 
@@ -50,6 +65,11 @@ namespace Cooking
             {
                 HeatSource heatSource = other.gameObject.GetComponent<HeatSource>();
                 SyncHeat(heatSource);
+            }
+
+            if (other.gameObject.layer == 0)
+            {
+                hasFood = true;
             }
         }
 
@@ -74,8 +94,7 @@ namespace Cooking
         {
             hot = false;
         }
-
-
+        
         public bool IsHot()
         {
             return hot;

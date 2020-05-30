@@ -7,8 +7,12 @@ namespace Cooking
 
     public class DeepFryer : HeatSource
     {
+        [Header("Oil")]
         public GameObject oilArea;
         public OilMeter oilMeter;
+
+        [Header("Food Interactions")]
+        public CookTop fryingBasket;
 
         // Start is called before the first frame update
         void Start()
@@ -19,9 +23,9 @@ namespace Cooking
         // Update is called once per frame
         void Update()
         {
-            oilMeter.UseOil();
+            UseOil();
         }
-
+        
         public override void TurnOn()
         {
             if (!isOn)
@@ -37,6 +41,14 @@ namespace Cooking
             {
                 isOn = false;
                 oilArea.SetActive(false);
+            }
+        }
+        
+        private void UseOil()
+        {
+            if (fryingBasket.hasFood)
+            {
+                oilMeter.UseOil();
             }
         }
     }
