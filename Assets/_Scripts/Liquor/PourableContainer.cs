@@ -7,6 +7,7 @@ namespace Liquor
     {
         public GameObject liquidFill;
         public string filledBy;
+        public bool singleUse;
 
         void Start()
         {
@@ -27,6 +28,11 @@ namespace Liquor
                 if (name.Equals(filledBy))
                 {
                     FillCup();
+                }
+
+                if (singleUse)
+                {
+                    Destroy(other);
                 }
             }
         }
