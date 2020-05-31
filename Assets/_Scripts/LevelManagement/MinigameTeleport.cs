@@ -9,7 +9,7 @@ public class MinigameTeleport : MonoBehaviour
     public void Teleport()
     {
         pauseManager.SetLocationToMinigame();
-        pauseManager.SetPause();
+        pauseManager.StartTeleportToPause();
         StartCoroutine(PlayMini());
     }
 

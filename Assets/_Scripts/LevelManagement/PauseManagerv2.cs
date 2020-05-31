@@ -171,7 +171,7 @@ namespace LevelManagement
             }
         }
 
-        private void StartTeleportToPause()
+        public void StartTeleportToPause()
         {
             waitingToTeleport = true;
             teleportingToPause = true;
