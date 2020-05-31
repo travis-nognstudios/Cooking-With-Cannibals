@@ -30,10 +30,12 @@ namespace Liquor
                     FillCup();
                 }
 
+                /*
                 if (singleUse)
                 {
                     Destroy(other);
                 }
+                */
             }
         }
 
