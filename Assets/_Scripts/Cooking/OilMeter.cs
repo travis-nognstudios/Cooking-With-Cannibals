@@ -102,8 +102,12 @@ namespace Cooking
             {
                 int amount = other.GetComponent<OilRefill>().refillAmount;
                 Destroy(other);
-                
-                oilLevel += amount;
+
+                // Weird issue where this triggerenter happens twice
+                // So halve amount to balance out the problem
+                // TODO: Investigate why this is happening
+                oilLevel += amount/2;
+
                 if (oilLevel > maxOilLevel)
                 {
                     oilLevel = maxOilLevel;

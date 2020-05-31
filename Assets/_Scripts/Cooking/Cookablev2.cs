@@ -139,7 +139,6 @@ namespace Cooking
             {
                 CookType cookType = other.gameObject.GetComponent<CookTop>().cookType;
                 SetCookUI(cookType);
-                canvas.SetActive(true);
             }
         }
 
@@ -164,6 +163,8 @@ namespace Cooking
                 bool isCooked = currentState.Equals(CookState.Cooked);
                 bool isOvercooked = currentState.Equals(CookState.Burnt);
 
+                // UI
+                ManageCookUIVisibility();
 
                 if (cookTop.IsHot())
                 {
@@ -294,5 +295,13 @@ namespace Cooking
             return currentStateMat;
         }
 
+        private void ManageCookUIVisibility()
+        {
+            // On by default, only turns off when exiting
+            if (!canvas.activeSelf)
+            {
+                canvas.SetActive(true);
+            }
+        }
     }
 }

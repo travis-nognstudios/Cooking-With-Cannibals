@@ -1554,6 +1554,7 @@ MonoBehaviour:
   - {fileID: 5151746243728470730}
   - {fileID: 414699718152396348}
   - {fileID: 1019363228283733195}
+  - {fileID: 4359079044795628776}
   isGrabbable: 1
   holdButtonToGrab: 1
   stayGrabbedOnTeleport: 1
@@ -1616,6 +1617,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cookType: 1
+  hasFood: 0
 --- !u!82 &1192274458031827338
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2617,6 +2619,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6708992770351270767}
     m_Modifications:
+    - target: {fileID: 2582747982744769376, guid: 6d43cb48ab61c9141ac1835be9a13f2c,
+        type: 3}
+      propertyPath: m_Name
+      value: FX Food Fire
+      objectReference: {fileID: 0}
+    - target: {fileID: 2582747982744769376, guid: 6d43cb48ab61c9141ac1835be9a13f2c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2582747982744769381, guid: 6d43cb48ab61c9141ac1835be9a13f2c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2687,16 +2699,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.040299848
       objectReference: {fileID: 0}
-    - target: {fileID: 2582747982744769376, guid: 6d43cb48ab61c9141ac1835be9a13f2c,
-        type: 3}
-      propertyPath: m_Name
-      value: FX Food Fire
-      objectReference: {fileID: 0}
-    - target: {fileID: 2582747982744769376, guid: 6d43cb48ab61c9141ac1835be9a13f2c,
-        type: 3}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d43cb48ab61c9141ac1835be9a13f2c, type: 3}
 --- !u!4 &628744806524375358 stripped
@@ -2718,10 +2720,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6708992770351270767}
     m_Modifications:
-    - target: {fileID: 5072642901256366149, guid: 59f8861c0ec0f6841bff9820fabb8c8a,
+    - target: {fileID: 2047029736709442891, guid: 59f8861c0ec0f6841bff9820fabb8c8a,
         type: 3}
-      propertyPath: playOnAwake
-      value: 0
+      propertyPath: m_Name
+      value: FX GrillSmoke Burnt
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047029736709442891, guid: 59f8861c0ec0f6841bff9820fabb8c8a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 382549696725434806, guid: 59f8861c0ec0f6841bff9820fabb8c8a,
         type: 3}
@@ -2793,15 +2800,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.09552812
       objectReference: {fileID: 0}
-    - target: {fileID: 2047029736709442891, guid: 59f8861c0ec0f6841bff9820fabb8c8a,
+    - target: {fileID: 5072642901256366149, guid: 59f8861c0ec0f6841bff9820fabb8c8a,
         type: 3}
-      propertyPath: m_Name
-      value: FX GrillSmoke Burnt
-      objectReference: {fileID: 0}
-    - target: {fileID: 2047029736709442891, guid: 59f8861c0ec0f6841bff9820fabb8c8a,
-        type: 3}
-      propertyPath: m_Layer
-      value: 10
+      propertyPath: playOnAwake
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4922278154088371624, guid: 59f8861c0ec0f6841bff9820fabb8c8a,
         type: 3}
@@ -2914,11 +2916,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.08
       objectReference: {fileID: 0}
-    - target: {fileID: 1160069236399670177, guid: d2dcddb6b67c00f45a0e06a3ed40ad1a,
-        type: 3}
-      propertyPath: m_RenderAlignment
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 459889637047743661, guid: d2dcddb6b67c00f45a0e06a3ed40ad1a,
         type: 3}
       propertyPath: playOnAwake
@@ -2953,6 +2950,11 @@ PrefabInstance:
         type: 3}
       propertyPath: InheritVelocityModule.m_Curve.minMaxState
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1160069236399670177, guid: d2dcddb6b67c00f45a0e06a3ed40ad1a,
+        type: 3}
+      propertyPath: m_RenderAlignment
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2dcddb6b67c00f45a0e06a3ed40ad1a, type: 3}
