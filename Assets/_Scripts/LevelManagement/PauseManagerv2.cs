@@ -109,8 +109,11 @@ namespace LevelManagement
         {
             if (pausable && !isPaused && !pauseOnCooldown)
             {
-                isPaused = true;
-                pauseOnCooldown = true;
+                if (goToPoint != minigamePoint)
+                {
+                    isPaused = true;
+                    pauseOnCooldown = true;
+                }
                 FadeOut();
                 StartTeleportToPause();
             }

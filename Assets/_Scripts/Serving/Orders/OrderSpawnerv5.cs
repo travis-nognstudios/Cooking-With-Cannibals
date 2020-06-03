@@ -28,6 +28,7 @@ namespace Serving
         [Header("Recipes")]
         public RecipeManager recipeManager;
 
+        public SaveState saveState;
         // Logic to start spawning
         private bool spawnAllowed;
         private bool firstSpawnDone;
@@ -186,6 +187,7 @@ namespace Serving
             serviceOver = true;
             StopSpawning();
             ticketManager.RemoveAllTickets();
+            saveState.Save();
         }
 
         public void RemoveAllTickets()
