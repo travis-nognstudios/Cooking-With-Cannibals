@@ -7,13 +7,21 @@ public class SaveState : MonoBehaviour
 {
     public OrderSpawnerv5 orderSpawner;
     public TipJar tipJar;
+
+    //public TipJar easterEggTips;
+
+    //Level Progress
     public static bool tutorialCompleted = false;
     public static bool levelOneCompleted = false;
     public static bool levelTwoCompleted = false;
     public static bool levelThreeCompleted = false;
+
+    //High Scores
     public static int levelOneHS;
     public static int levelTwoHS;
     public static int levelThreeHS;
+
+    //EasterEgg High Scores
     public static int levelOneEHS;
     public static int levelTwoEHS;
     public static int levelThreeEHS;
@@ -107,4 +115,25 @@ public class SaveState : MonoBehaviour
             }
         }
     }
+
+    /*
+    public void SaveMinigame()
+    {
+        if (SceneManager.GetActiveScene().buildIndex == 1)
+        {
+            if (SaveLoad.SaveExists("LevelOneEHS"))
+            {
+                if (easterEggTips.GetAmountInJar() > SaveLoad.Load<int>("LevelOneEHS"))
+                {
+                    SaveLoad.Save(easterEggTips.GetAmountInJar(), "LevelOneEHS");
+                }
+
+            }
+            else
+            {
+                SaveLoad.Save(easterEggTips.GetAmountInJar(), "LevelOneEHS");
+            }
+        }
+    }
+    */
 }
