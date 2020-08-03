@@ -7,40 +7,30 @@ namespace Sequence
     public class PlayGameLoop : MonoBehaviour, SequenceNode
     {
         public OrderSpawnerv5 orderSpawner;
-        private bool allOrdersCompleted;
-
+        private bool serviceOver;
+     
         void Start()
         {
-
+ 
         }
 
         void Update()
         {
-            if (!allOrdersCompleted)
+            if (!serviceOver)
             {
-                allOrdersCompleted = CheckAllComplete();
+                serviceOver = orderSpawner.IsServiceOver();
             }
         }
 
         public bool IsComplete()
         {
-            if (allOrdersCompleted)
-            {
-                Debug.Log("End of Game loop");
-            }
-
-            return allOrdersCompleted;
+            return serviceOver;
         }
 
         public void Play()
         {
             orderSpawner.StartSpawning();
             Debug.Log("Start of Game Loop");
-        }
-
-        private bool CheckAllComplete()
-        {
-            return orderSpawner.numberOfTickets == orderSpawner.GetNumTicketsCompleted();
         }
     }
 }

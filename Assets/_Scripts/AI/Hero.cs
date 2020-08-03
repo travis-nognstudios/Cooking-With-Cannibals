@@ -13,6 +13,10 @@ namespace AI
         private Collision objectStuckOnHero;
         private bool isPointing;
 
+        public AudioSource myAudioSource;
+        public AudioClip jokeClip;
+        private bool toldJoke;
+
         void Start()
         {
             //animator = GetComponent<Animator>();
@@ -35,6 +39,12 @@ namespace AI
             isPointing = false;
         }
 
+        public void TellAJoke()
+        {
+            myAudioSource.clip = jokeClip;
+            myAudioSource.Play();
+        }
+
         public void ReactToThrownItem()
         {
             //animator.SetTrigger("reactToThrownItem");
@@ -43,7 +53,7 @@ namespace AI
 
         public void ReactToThrownKnife()
         {
-            //animator.setTrigger("reactToThrownKnife");
+            animator.SetTrigger("OnKnifeHit");
             Debug.Log("Bruce: You threw a knife at me!");
 
         }
@@ -67,8 +77,9 @@ namespace AI
 
             if (objectName.Contains("Knife") || objectName.Contains("knife"))
             {
-                FreezeObjectOnHero(collision);
                 ReactToThrownKnife();
+                ObjectRespawn respawner = thrownObject.GetComponent<ObjectRespawn>();
+                respawner.Respawn();
             }
             else if (objectSpeed > fastThrowSpeed)
             {

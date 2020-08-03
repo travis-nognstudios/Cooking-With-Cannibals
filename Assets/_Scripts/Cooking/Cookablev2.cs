@@ -2,14 +2,12 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using LevelManagement;
 
 namespace Cooking
 {
     public class Cookablev2 : MonoBehaviour
     {
-
-        #region Variables
-
         /*
         steps = all the cook steps made on this object
         allMechanics = all possible cooking that can be done
@@ -31,16 +29,26 @@ namespace Cooking
         public Material uncookedMat;
         public Material cookedMat;
         public Material burntMat;
-        Renderer rend;
+        
+        private Renderer rend;
+        private Material currentStateMat;
 
-        #endregion Variables
+        [Header("UI")]
+        public GameObject canvas;
+        public CookUIv2 cookUI;
+        private Camera cam;
+
+        private CookTop last_touched_cookTop = null;
+
 
         void Start()
         {
             // Initialize with uncooked material
             rend = GetComponent<Renderer>();
             rend.enabled = true;
-            rend.sharedMaterial = uncookedMat;
+            
+            rend.material = uncookedMat;
+            currentStateMat = uncookedMat;
 
             // Populate cookmechanics and their respective cooktimes
             foreach(CookType cooktype in Enum.GetValues(typeof(CookType)))
@@ -54,10 +62,19 @@ namespace Cooking
                 allMechanics.Add(mechanic);
                 cookTimes.Add(0);
             }
-
         }
 
-        void Update() {}
+        private void Update()
+        {
+            if (cam == null)
+            {
+                cam = Camera.main;
+            }
+            else
+            {
+                cookUI.transform.LookAt(transform.position + cam.transform.rotation * Vector3.forward);
+            }
+        }
 
         // Get the index on allMechanics given the cookType
         private int GetCookTypeIndex(CookType lookingFor)
@@ -107,6 +124,24 @@ namespace Cooking
             return -1;
         }
 
+        void SetCookUI(CookType cookType)
+        {
+            int i = GetCookTimeIndex(cookType);
+            float cookTime = stateChangeTimes[i].timeToCook;
+            float overcookTime = stateChangeTimes[i].timeToOverCook;
+
+            cookUI.SetBackground(cookTime, overcookTime);
+        }
+
+        void OnTriggerEnter(Collider other)
+        {
+            if (other.gameObject.CompareTag("Cooktop"))
+            {
+                CookType cookType = other.gameObject.GetComponent<CookTop>().cookType;
+                SetCookUI(cookType);
+            }
+        }
+
         // Cook
         void OnTriggerStay(Collider other)
         {
@@ -116,6 +151,7 @@ namespace Cooking
                 CookTop cookTop = other.gameObject.GetComponent<CookTop>();
                 CookType cookTopType = cookTop.cookType;
                 int typeIndex = GetCookTypeIndex(cookTopType);
+
 
                 // State change properties
                 int timeIndex = GetCookTimeIndex(cookTopType);
@@ -127,13 +163,18 @@ namespace Cooking
                 bool isCooked = currentState.Equals(CookState.Cooked);
                 bool isOvercooked = currentState.Equals(CookState.Burnt);
 
+                // UI
+                ManageCookUIVisibility();
 
                 if (cookTop.IsHot())
                 {
-                    cookTimes[typeIndex] += Time.deltaTime;
+                    cookTimes[typeIndex] += PauseTimer.DeltaTime();
                     float timeCooked = cookTimes[typeIndex];
+
+                    // Side effects
+                    cookUI.UpdateFill(timeToOvercook, timeCooked);
                     PlayCookingSound();
-  
+        
                     // If cook state reached, update allMechanics and add to steps
                     if (!isCooked && timeCooked >= timeToCook && timeCooked < timeToOvercook)
                     {
@@ -142,18 +183,47 @@ namespace Cooking
                     }
                     else if (!isOvercooked && timeCooked >= timeToOvercook)
                     {
+                        
                         MakeOvercooked(cookTopType);
                     }
+
+                    // Smoke effect
+                    last_touched_cookTop = cookTop;
+                    Smoke smoke = cookTop.GetComponent<Smoke>();
+
+                    if (smoke != null)
+                    {
+                        if (isOvercooked)
+                        {
+                            smoke.BurnSmoke();
+                        }
+                        else
+                        {
+                            smoke.CookSmoke();
+                        }
+                    }
+                    
                 }
             }
         }
 
-        public void OnTriggerExit()
+        public void OnTriggerExit(Collider other)
         {
-            StopCookingSound();
+            if (other.gameObject.CompareTag("Cooktop"))
+            {
+                canvas.SetActive(false);
+                StopCookingSound();
+
+                // Stop smoke
+                if (last_touched_cookTop != null)
+                {
+                    last_touched_cookTop.GetComponent<Smoke>().ClearSmoke();
+                    last_touched_cookTop = null;
+                }
+            }
         }
 
-        private void MakeCooked(CookType cookType)
+        public void MakeCooked(CookType cookType)
         {
             // Get current state in allMechanics
             int typeIndex = GetCookTypeIndex(cookType);
@@ -163,8 +233,9 @@ namespace Cooking
             currentState.cookState = CookState.Cooked;
             allMechanics[typeIndex] = currentState;
 
-            //ToDo Change later
-            rend.sharedMaterial = cookedMat;
+            // Update look and UI
+            rend.material = cookedMat;
+            currentStateMat = cookedMat;
         }
 
         private void MakeOvercooked(CookType cookType)
@@ -181,33 +252,56 @@ namespace Cooking
             int typeIndexSteps = GetStepIndex(cookType);
             steps[typeIndexSteps] = currentState;
 
-            //ToDo Change later
-            rend.sharedMaterial = burntMat;
+            // Update look and UI
+            rend.material = burntMat;
+            currentStateMat = burntMat;
         }
 
         public void PlayCookingSound()
         {
             AudioSource audioSource = GetComponent<AudioSource>();
-            GetComponent<GrabBasedAudio>().SetCookSound();
-            if (!audioSource.isPlaying)
+
+            if (audioSource != null)
             {
-                audioSource.Play();
+                GetComponent<GrabBasedAudio>().SetCookSound();
+                if (!audioSource.isPlaying)
+                {
+                    audioSource.Play();
+                }
             }
         }
 
         public void StopCookingSound()
         {
             AudioSource audioSource = GetComponent<AudioSource>();
-            GetComponent<GrabBasedAudio>().SetDropSound();
-            if (audioSource.isPlaying)
+
+            if (audioSource != null)
             {
-                audioSource.Stop();
+                GetComponent<GrabBasedAudio>().SetDropSound();
+                if (audioSource.isPlaying)
+                {
+                    audioSource.Stop();
+                }
             }
         }
 
         public List<CookMechanic> GetSteps()
         {
             return this.steps;
+        }
+
+        public Material GetCurrentStateMat()
+        {
+            return currentStateMat;
+        }
+
+        private void ManageCookUIVisibility()
+        {
+            // On by default, only turns off when exiting
+            if (!canvas.activeSelf)
+            {
+                canvas.SetActive(true);
+            }
         }
     }
 }

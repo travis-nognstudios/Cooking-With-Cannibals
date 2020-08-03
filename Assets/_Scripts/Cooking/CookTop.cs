@@ -1,71 +1,103 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using SceneObjects;
 
 namespace Cooking
 {
     public class CookTop : MonoBehaviour
     {
-        #region Variables
-
         private bool hot;
-
+        
         [Header("Cooktop Settings")]
         public CookType cookType;
 
-        #endregion Variables
+        [Header("Food Interactions")]
+        public bool hasFood;
 
-        #region MonoBehavior
-        // Start is called before the first frame update
         void Start()
         {
             MakeCold();
         }
 
-        // Update is called once per frame
         void Update()
         {
+            //CheckHasFood();
+        }
 
+        void CheckHasFood()
+        {
+            if (hasFood)
+            {
+                hasFood = false;
+            }
         }
 
         void OnTriggerEnter(Collider other)
         {
-            if (other.gameObject.CompareTag("Heatsource"))
+            // Hand interactions
+            if (other.CompareTag("Hand"))
             {
-                MakeHot();
+                HandAnimations anim = other.gameObject.GetComponent<HandAnimations>();
+                if (anim != null)
+                {
+                    anim.PlaySOS();
+                }
+            }
+        }
+        
+        void OnTriggerExit(Collider other)
+        {
+            if (other.CompareTag("Heatsource"))
+            {
+                MakeCold();
+            }
+
+            if (other.gameObject.layer == 0)
+            {
+                hasFood = false;
             }
         }
 
-        void OnTriggerExit(Collider other)
+        private void OnTriggerStay(Collider other)
         {
-            if (other.gameObject.CompareTag("Heatsource"))
+            if (other.CompareTag("Heatsource"))
+            {
+                HeatSource heatSource = other.gameObject.GetComponent<HeatSource>();
+                SyncHeat(heatSource);
+            }
+
+            if (other.gameObject.layer == 0)
+            {
+                hasFood = true;
+            }
+        }
+
+        private void SyncHeat(HeatSource heatSource)
+        {
+            if (heatSource.IsOn() && !IsHot())
+            {
+                MakeHot();
+            }
+            else if (!heatSource.IsOn() && IsHot())
             {
                 MakeCold();
             }
         }
 
-        #endregion MonoBehavior
-
-        #region Private Methods
         private void MakeHot()
         {
             hot = true;
-            //Debug.Log("Now hot");
         }
 
         private void MakeCold()
         {
             hot = false;
-            //Debug.Log("Now cold");
         }
-
-        #endregion Private Methods
-
-        #region Properties
+        
         public bool IsHot()
         {
             return hot;
         }
-        #endregion Properties
     }
 }

@@ -27,7 +27,7 @@ namespace AI
             Vector3 target = orderingPoint.transform.position;
 
             Vector3 newPos = new Vector3(target.x, current.y, target.z);
-            transform.position = newPos;
+            GoTo(newPos);
 
         }
 
@@ -37,7 +37,14 @@ namespace AI
             Vector3 target = endPosition;
 
             Vector3 newPos = new Vector3(target.x, current.y, target.z);
+            GoTo(newPos);
+        }
+
+        public void GoTo(Vector3 newPos)
+        {
             transform.position = newPos;
+            //Walk walk = GetComponent<Walk>();
+            //walk.To(newPos);
         }
     }
 }

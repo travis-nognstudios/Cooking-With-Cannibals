@@ -1,0 +1,87 @@
+﻿using UnityEngine;
+using System.Collections;
+
+namespace Serving
+{
+    public class RatingCardSpawner : MonoBehaviour
+    {
+        [Header("Rating Cards")]
+        public GameObject cardGradeA;
+        public GameObject cardGradeB;
+        public GameObject cardGradeC;
+        public GameObject cardGradeF;
+
+        [Header("Ratings By Tip")]
+        public int tipsForA;
+        public int tipsForB;
+        public int tipsForC;
+
+        [Header("Scene Objects")]
+        public TipJar tipjar;
+        public GradePoster gradePoster;
+        public RatingCardPoint cardPoint;
+
+        [Header("Audio")]
+        public AudioSource audioSource;
+        public AudioClip tootyHorn;
+
+        // Use this for initialization
+        void Start()
+        {
+            SyncGradePoster();
+        }
+        
+        void SyncGradePoster()
+        {
+            gradePoster.SetScores(tipsForA, tipsForB, tipsForC);
+            gradePoster.SetPosterText();
+        }
+
+        public void SpawnCard()
+        {
+            audioSource.clip = tootyHorn;
+            audioSource.Play();
+
+            GameObject selectedCard;
+
+            if (RatedA())
+            {
+                selectedCard = cardGradeA;
+            }
+            else if (RatedB())
+            {
+                selectedCard = cardGradeB;
+            }
+            else if (RatedC())
+            {
+                selectedCard = cardGradeC;
+            }
+            else
+            {
+                selectedCard = cardGradeF;
+            }
+
+            cardPoint.SetCard(selectedCard);
+        }
+
+        public bool RatedA()
+        {
+            return tipjar.GetAmountInJar() >= tipsForA;
+        }
+
+        public bool RatedB()
+        {
+            return tipjar.GetAmountInJar() >= tipsForB;
+        }
+
+        public bool RatedC()
+        {
+            return tipjar.GetAmountInJar() >= tipsForC;
+        }
+
+        public bool RatedF()
+        {
+            return tipjar.GetAmountInJar() < tipsForC;
+        }
+    }
+}

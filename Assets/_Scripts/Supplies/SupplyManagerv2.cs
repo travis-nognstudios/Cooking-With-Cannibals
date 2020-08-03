@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Cut;
+using LevelManagement;
 
 namespace Supplies
 {
@@ -24,8 +27,9 @@ namespace Supplies
                 foreach (GameObject spawnPoint in area.spawnPoints)
                 {
                     Vector3 position = spawnPoint.transform.position;
+                    Quaternion rotation = spawnPoint.transform.rotation;
 
-                    SupplyPoint point = new SupplyPoint(area.objectToSpawn, position);
+                    SupplyPoint point = new SupplyPoint(area.objectToSpawn, position, rotation);
                     supplyPoints.Add(point);
                 }
             }
@@ -34,7 +38,7 @@ namespace Supplies
         // Update is called once per frame
         void Update()
         {
-            timeSinceLastSpawn += Time.deltaTime;
+            timeSinceLastSpawn += PauseTimer.DeltaTime();
 
             // At every interval, check spawn points
             if (timeSinceLastSpawn >= spawnInterval)
@@ -51,7 +55,7 @@ namespace Supplies
             {
                 GameObject objectToSpawn = point.objectToSpawn;
                 Vector3 position = point.point;
-                Quaternion rotation = objectToSpawn.transform.rotation;
+                Quaternion rotation = point.rotation;
                 float radius = 0.1f;
 
                 // Get names of all objects near the point
@@ -67,28 +71,17 @@ namespace Supplies
                 }
 
                 // If desired object doesn't exist near point, spawn new one
-                // Set its camera on the Cutting script to the center eye camera
+                // Set its camera on the Cutting script to the center eye camera, if cuttable
                 if (!ListContainsName(objectsAtPoint, objectToSpawn.gameObject.name))
                 {
-                    GameObject spawnedItem = Instantiate(objectToSpawn, position, rotation);
-                    spawnedItem.GetComponent<Cutting>().cam = CenterEyeCamera;
+                    Instantiate(objectToSpawn, position, rotation);
                 }
             }
         }
 
-        bool ListContainsName(List<string> list, string name)
+        bool ListContainsName(List<String> list, string name)
         {
-            foreach (string listitem in list)
-            {
-                // Check if one string is a substring of another
-                // Allows them to have numbers at the end and still match
-                if (listitem.Contains(name) || name.Contains(listitem))
-                {
-                    return true;
-                }
-            }
-
-            return false;
+            return list.Contains(name) || list.Contains(name + "(Clone)");
         }
     }
 }

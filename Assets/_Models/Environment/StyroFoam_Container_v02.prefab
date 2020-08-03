@@ -321,6 +321,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66344e5da397b4d23bb9ac5dcb4e551d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  connected: {fileID: 0}
 --- !u!1 &4345045699291244002
 GameObject:
   m_ObjectHideFlags: 0
@@ -737,7 +738,7 @@ GameObject:
   - component: {fileID: 2267427030794472382}
   - component: {fileID: 658769510}
   - component: {fileID: 658769511}
-  - component: {fileID: 658769512}
+  - component: {fileID: 7567542349916722778}
   - component: {fileID: 1377602066}
   - component: {fileID: 1377602064}
   - component: {fileID: 1377602065}
@@ -889,7 +890,7 @@ MonoBehaviour:
   objectHighlighter: {fileID: 0}
   touchHighlightColor: {r: 0, g: 0, b: 0, a: 0}
   usingState: 0
---- !u!114 &658769512
+--- !u!114 &7567542349916722778
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -898,19 +899,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 6305245613539072668}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a1ebaa51525b734287157cb3f53f958, type: 3}
+  m_Script: {fileID: 11500000, guid: 8afa0b205791c9f4496bf2814aeac078, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  precisionGrab: 1
+  precisionGrab: 0
   rightSnapHandle: {fileID: 0}
   leftSnapHandle: {fileID: 0}
   throwVelocityWithAttachDistance: 0
   throwMultiplier: 1
   onGrabCollisionDelay: 0
-  detachDistance: 1
-  velocityLimit: Infinity
-  angularVelocityLimit: Infinity
-  maxDistanceDelta: 10
+  destroyImmediatelyOnThrow: 1
+  breakForce: 1500
 --- !u!82 &1377602066
 AudioSource:
   m_ObjectHideFlags: 0
