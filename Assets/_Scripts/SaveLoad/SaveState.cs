@@ -21,10 +21,18 @@ public class SaveState : MonoBehaviour
     public static int levelTwoHS;
     public static int levelThreeHS;
 
+    //Best Times
+    public static float levelOneTime;
+    public static float levelTwoTime;
+    public static float levelThreeTime;
+
     //EasterEgg High Scores
     public static int levelOneEHS;
     public static int levelTwoEHS;
     public static int levelThreeEHS;
+
+
+    public static bool goldKnifeUnlocked;
 
 
     private void Start()
@@ -37,11 +45,14 @@ public class SaveState : MonoBehaviour
         if (SaveLoad.SaveExists("LevelTwoProgress"))
         {
             levelTwoCompleted = SaveLoad.Load<bool>("LevelTwoProgress");
-
         }
         if (SaveLoad.SaveExists("LevelThreeProgress"))
         {
             levelThreeCompleted = SaveLoad.Load<bool>("LevelThreeProgress");
+        }
+        if (SaveLoad.SaveExists("GoldKnifeUnlocked"))
+        {
+            goldKnifeUnlocked = SaveLoad.Load<bool>("GoldKnifeUnlocked");
         }
         if (SaveLoad.SaveExists("LevelOneHS"))
         {
@@ -51,12 +62,35 @@ public class SaveState : MonoBehaviour
         {
             levelTwoHS = SaveLoad.Load<int>("LevelTwoHS");
         }
-        if (SaveLoad.SaveExists("LevelTwoHS"))
+        if (SaveLoad.SaveExists("LevelThreeHS"))
         {
-            levelTwoHS = SaveLoad.Load<int>("LevelTwoHS");
+            levelThreeHS = SaveLoad.Load<int>("LevelThreeHS");
+        }if (SaveLoad.SaveExists("LevelOneEHS"))
+        {
+            levelOneEHS = SaveLoad.Load<int>("LevelOneEHS");
+        }
+        if (SaveLoad.SaveExists("LevelTwoEHS"))
+        {
+            levelTwoEHS = SaveLoad.Load<int>("LevelTwoEHS");
+        }
+        if (SaveLoad.SaveExists("LevelThreeEHS"))
+        {
+            levelThreeEHS = SaveLoad.Load<int>("LevelThreeEHS");
+        }
+        if (SaveLoad.SaveExists("LevelOneTime"))
+        {
+            levelOneTime = SaveLoad.Load<float>("LevelOneTime");
+        }
+        if (SaveLoad.SaveExists("LevelTwoTime"))
+        {
+            levelTwoTime = SaveLoad.Load<float>("LevelTwoTime");
+        }
+        if (SaveLoad.SaveExists("LevelThreeTime"))
+        {
+            levelThreeTime = SaveLoad.Load<float>("LevelThreeTime");
         }
 
-}
+    }
 
     public void Save()
     {
@@ -77,6 +111,18 @@ public class SaveState : MonoBehaviour
             {
                 SaveLoad.Save(tipJar.GetAmountInJar(), "LevelOneHS");
             }
+
+            if (SaveLoad.SaveExists("LevelOneTime"))
+            {
+                if (orderSpawner.timeSinceServiceStarted < SaveLoad.Load<float>("LevelOneTime"))
+                {
+                    SaveLoad.Save(orderSpawner.timeSinceServiceStarted, "LevelOneTime");
+                }
+            }
+            else
+            {
+                SaveLoad.Save(orderSpawner.timeSinceServiceStarted, "LevelOneTime");
+            }
         }
         else if (SceneManager.GetActiveScene().buildIndex == 2)
         {
@@ -95,23 +141,47 @@ public class SaveState : MonoBehaviour
             {
                 SaveLoad.Save(tipJar.GetAmountInJar(), "LevelTwoHS");
             }
+
+            if (SaveLoad.SaveExists("LevelTwoTime"))
+            {
+                if (orderSpawner.timeSinceServiceStarted < SaveLoad.Load<float>("LevelTwoTime"))
+                {
+                    SaveLoad.Save(orderSpawner.timeSinceServiceStarted, "LevelTwoTime");
+                }
+            }
+            else
+            {
+                SaveLoad.Save(orderSpawner.timeSinceServiceStarted, "LevelTwoTime");
+            }
         }
         else if (SceneManager.GetActiveScene().buildIndex == 3)
         {
             levelThreeCompleted = true;
             SaveLoad.Save(levelThreeCompleted, "LevelThreeProgress");
 
-            if (SaveLoad.SaveExists("LevelTwoHS"))
+            if (SaveLoad.SaveExists("LevelThreeHS"))
             {
-                if (tipJar.GetAmountInJar() > SaveLoad.Load<int>("LevelTwoHS"))
+                if (tipJar.GetAmountInJar() > SaveLoad.Load<int>("LevelThreeHS"))
                 {
-                    SaveLoad.Save(tipJar.GetAmountInJar(), "LevelTwoHS");
+                    SaveLoad.Save(tipJar.GetAmountInJar(), "LevelThreeHS");
                 }
 
             }
             else
             {
-                SaveLoad.Save(tipJar.GetAmountInJar(), "LevelTwoHS");
+                SaveLoad.Save(tipJar.GetAmountInJar(), "LevelThreeHS");
+            }
+
+            if (SaveLoad.SaveExists("LevelThreeTime"))
+            {
+                if (orderSpawner.timeSinceServiceStarted < SaveLoad.Load<float>("LevelThreeTime"))
+                {
+                    SaveLoad.Save(orderSpawner.timeSinceServiceStarted, "LevelThreeTime");
+                }
+            }
+            else
+            {
+                SaveLoad.Save(orderSpawner.timeSinceServiceStarted, "LevelThreeTime");
             }
         }
     }
