@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using LevelManagement;
 
 public class MainMenuLock : MonoBehaviour
 {
@@ -13,20 +14,20 @@ public class MainMenuLock : MonoBehaviour
  
         if (SaveState.levelOneCompleted == false)
         {
-            LevelTwoLogo.GetComponent<SpriteRenderer>().enabled = false;
+            LevelTwoLogo.SetActive(false);
         }
         else
         {
-            LevelTwoLogo.GetComponent<SpriteRenderer>().enabled = true;
+            LevelTwoLogo.SetActive(true);
         }
 
         if (SaveState.levelTwoCompleted == false)
         {
-            LevelThreeLogo.GetComponent<SpriteRenderer>().enabled = false;
+            LevelThreeLogo.SetActive(false);
         }
         else
         {
-            LevelThreeLogo.GetComponent<SpriteRenderer>().enabled = true;
+            LevelThreeLogo.SetActive(true);
         }
     }
 
