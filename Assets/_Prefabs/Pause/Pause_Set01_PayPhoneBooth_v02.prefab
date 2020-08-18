@@ -472,8 +472,10 @@ GameObject:
   - component: {fileID: 864415652536638795}
   - component: {fileID: 8921119447533364527}
   - component: {fileID: 1117784328732939228}
+  - component: {fileID: 4630175861912980193}
+  - component: {fileID: 3031965266752647848}
   m_Layer: 0
-  m_Name: Pause_PayPhone_button_01
+  m_Name: Pause_PayPhone_button_Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -552,6 +554,54 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.08816438, y: 0.24506448, z: 0.2450637}
   m_Center: {x: -0.0000015180557, y: 0.00000001490116, z: 0.00000015646218}
+--- !u!65 &4630175861912980193
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3463113185750631073}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.08816438, y: 0.24506448, z: 0.2450637}
+  m_Center: {x: -0.0000015180557, y: 0.00000001490116, z: 0.00000015646218}
+--- !u!114 &3031965266752647848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3463113185750631073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7b9d8b0e1a0e47be926a5f12044dd4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  disableWhenIdle: 1
+  allowedNearTouchControllers: 0
+  allowedTouchControllers: 0
+  ignoredColliders: []
+  isGrabbable: 0
+  holdButtonToGrab: 1
+  stayGrabbedOnTeleport: 1
+  validDrop: 1
+  grabOverrideButton: 0
+  allowedGrabControllers: 0
+  grabAttachMechanicScript: {fileID: 0}
+  secondaryGrabActionScript: {fileID: 0}
+  isUsable: 0
+  holdButtonToUse: 1
+  useOnlyIfGrabbed: 0
+  pointerActivatesUseAction: 0
+  useOverrideButton: 0
+  allowedUseControllers: 0
+  objectHighlighter: {fileID: 0}
+  touchHighlightColor: {r: 0, g: 0, b: 0, a: 0}
+  usingState: 0
+  pauseManager: {fileID: 0}
+  interactable: {fileID: 0}
 --- !u!1 &4506282712959018798
 GameObject:
   m_ObjectHideFlags: 0
@@ -794,8 +844,10 @@ GameObject:
   - component: {fileID: 5497103687843794364}
   - component: {fileID: 4818619697165566609}
   - component: {fileID: 4307951933021069543}
+  - component: {fileID: 4215651887645226143}
+  - component: {fileID: 1840673339423807055}
   m_Layer: 0
-  m_Name: Pause_PayPhone_button_02
+  m_Name: Pause_PayPhone_button_Bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -874,6 +926,54 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.08816438, y: 0.2450641, z: 0.2450637}
   m_Center: {x: -0.0000015180557, y: -0.00000023841858, z: 0.00000015646218}
+--- !u!65 &4215651887645226143
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6979200626647233602}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.08816438, y: 0.2450641, z: 0.2450637}
+  m_Center: {x: -0.0000015180557, y: -0.00000023841858, z: 0.00000015646218}
+--- !u!114 &1840673339423807055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6979200626647233602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7b9d8b0e1a0e47be926a5f12044dd4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  disableWhenIdle: 1
+  allowedNearTouchControllers: 0
+  allowedTouchControllers: 0
+  ignoredColliders: []
+  isGrabbable: 0
+  holdButtonToGrab: 1
+  stayGrabbedOnTeleport: 1
+  validDrop: 1
+  grabOverrideButton: 0
+  allowedGrabControllers: 0
+  grabAttachMechanicScript: {fileID: 0}
+  secondaryGrabActionScript: {fileID: 0}
+  isUsable: 0
+  holdButtonToUse: 1
+  useOnlyIfGrabbed: 0
+  pointerActivatesUseAction: 0
+  useOverrideButton: 0
+  allowedUseControllers: 0
+  objectHighlighter: {fileID: 0}
+  touchHighlightColor: {r: 0, g: 0, b: 0, a: 0}
+  usingState: 0
+  pauseManager: {fileID: 0}
+  interactable: {fileID: 0}
 --- !u!1 &7026852957691605293
 GameObject:
   m_ObjectHideFlags: 0
