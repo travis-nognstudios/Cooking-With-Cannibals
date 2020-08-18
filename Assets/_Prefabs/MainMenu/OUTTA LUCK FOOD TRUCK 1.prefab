@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5773864491270937888}
   - component: {fileID: 1073594466005677943}
   - component: {fileID: 7378707655765973443}
+  - component: {fileID: 5679062683750594637}
   m_Layer: 0
   m_Name: OUTTA LUCK FOOD TRUCK 1
   m_TagString: Untagged
@@ -111,6 +112,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 1
   pauseManager: {fileID: 0}
+  posterDissolve: {fileID: 5679062683750594637}
 --- !u!54 &7378707655765973443
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -127,6 +129,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &5679062683750594637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2262310550184015907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79316f5709d128b4782c47fa9ff179c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  faces:
+  - {fileID: 2262310550184015907}
+  dissolveRate: 0.01
+  isDissolving: 0
 --- !u!1 &2605287036772169434
 GameObject:
   m_ObjectHideFlags: 0

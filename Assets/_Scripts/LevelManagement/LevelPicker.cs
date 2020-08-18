@@ -10,6 +10,7 @@ namespace LevelManagement
     {
         public int level;
         public PauseManagerv2 pauseManager;
+        public PosterDissolve posterDissolve;
 
         private bool hot;
         private bool triggered;
@@ -60,6 +61,7 @@ namespace LevelManagement
                 hot = true;
                 triggered = true;
 
+                PlayDissolveEffect();
                 GoToScene();
             }
         }
@@ -77,6 +79,11 @@ namespace LevelManagement
         private void GoToScene()
         {
             pauseManager.JumpToScene(level);
+        }
+
+        private void PlayDissolveEffect()
+        {
+            posterDissolve.isDissolving = true;
         }
     }
 }
