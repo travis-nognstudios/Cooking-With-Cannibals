@@ -187,6 +187,12 @@ namespace Cooking
                         MakeOvercooked(cookTopType);
                     }
 
+                    /* Red 08/21/2020
+                     * Disabling smoke effect here
+                     * Should be controlled by the cooktop
+                     * Not the food!!
+                     
+                     
                     // Smoke effect
                     last_touched_cookTop = cookTop;
                     Smoke smoke = cookTop.GetComponent<Smoke>();
@@ -202,7 +208,7 @@ namespace Cooking
                             smoke.CookSmoke();
                         }
                     }
-                    
+                    */
                 }
             }
         }

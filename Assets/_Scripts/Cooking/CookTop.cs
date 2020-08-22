@@ -73,24 +73,24 @@ namespace Cooking
             }
         }
 
-        private void SyncHeat(HeatSource heatSource)
+        virtual protected void SyncHeat(HeatSource heatSource)
         {
             if (heatSource.IsOn() && !IsHot())
             {
                 MakeHot();
             }
-            else if (!heatSource.IsOn() && IsHot())
+            else
             {
                 MakeCold();
             }
         }
 
-        private void MakeHot()
+        public void MakeHot()
         {
             hot = true;
         }
 
-        private void MakeCold()
+        public void MakeCold()
         {
             hot = false;
         }
