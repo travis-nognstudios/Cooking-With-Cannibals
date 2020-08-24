@@ -106,6 +106,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shock: {fileID: 0}
+  shock1: {fileID: 0}
+  shock2: {fileID: 0}
 --- !u!1 &4093391139700413104
 GameObject:
   m_ObjectHideFlags: 0
@@ -400,6 +402,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shock: {fileID: 0}
+  shock1: {fileID: 0}
+  shock2: {fileID: 0}
 --- !u!1 &8124194915944859044
 GameObject:
   m_ObjectHideFlags: 0
@@ -412,6 +416,7 @@ GameObject:
   - component: {fileID: 1211422684917211697}
   - component: {fileID: 2941920228456949689}
   - component: {fileID: 6553093196213690728}
+  - component: {fileID: 1430988532}
   m_Layer: 10
   m_Name: light_LightSwitch_Switch
   m_TagString: Untagged
@@ -492,3 +497,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.01752019, y: 0.033445477, z: 0.018908858}
   m_Center: {x: -0.5670699, y: 1.222908, z: 0.3853771}
+--- !u!114 &1430988532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8124194915944859044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a9521be05514f34d82871b33f168d83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sky: {fileID: 0}
+  isOn: 0
