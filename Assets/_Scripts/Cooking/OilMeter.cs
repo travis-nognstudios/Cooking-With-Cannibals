@@ -22,6 +22,7 @@ namespace Cooking
         public DeepFryer fryerOil;
 
         public PauseManagerv2 pauseManager;
+        public AudioSource deepFryerAudio;
 
         private float oilLevel;
 
@@ -49,6 +50,7 @@ namespace Cooking
         {
             if (oilLevel <= 0)
             {
+                deepFryerAudio.mute = true;
                 oilLevel1.enabled = false;
                 oilLevel2.enabled = false;
                 oilLevel3.enabled = false;
@@ -56,6 +58,7 @@ namespace Cooking
             }
             else if (oilLevel < 1)
             {
+                deepFryerAudio.mute = false;
                 oilLevel1.enabled = false;
                 oilLevel2.enabled = false;
                 oilLevel3.enabled = false;
@@ -63,6 +66,7 @@ namespace Cooking
             }
             else if (oilLevel < 2)
             {
+                deepFryerAudio.mute = false;
                 oilLevel1.enabled = false;
                 oilLevel2.enabled = false;
                 oilLevel3.enabled = true;
@@ -70,6 +74,7 @@ namespace Cooking
             }
             else if (oilLevel < 3)
             {
+                deepFryerAudio.mute = false;
                 oilLevel1.enabled = false;
                 oilLevel2.enabled = true;
                 oilLevel3.enabled = true;
@@ -77,6 +82,7 @@ namespace Cooking
             }
             else
             {
+                deepFryerAudio.mute = false;
                 oilLevel1.enabled = true;
                 oilLevel2.enabled = true;
                 oilLevel3.enabled = true;
