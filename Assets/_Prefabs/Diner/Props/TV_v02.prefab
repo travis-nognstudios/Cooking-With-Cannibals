@@ -36,89 +36,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 135.173, z: 0}
---- !u!1 &3614413406542050100
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1302543763692064903}
-  - component: {fileID: 8507221232779414302}
-  - component: {fileID: 6271074323876183381}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1302543763692064903
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3614413406542050100}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1026524597038431952}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &8507221232779414302
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3614413406542050100}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!59 &6271074323876183381
-HingeJoint:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3614413406542050100}
-  m_ConnectedBody: {fileID: 0}
-  m_Anchor: {x: 0, y: 0, z: 0}
-  m_Axis: {x: 0, y: 1, z: 0}
-  m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 2.2714458, y: 1.207088, z: -2.537037}
-  m_UseSpring: 0
-  m_Spring:
-    spring: 0
-    damper: 0
-    targetPosition: 0
-  m_UseMotor: 0
-  m_Motor:
-    targetVelocity: 0
-    force: 0
-    freeSpin: 0
-  m_UseLimits: 0
-  m_Limits:
-    min: 0
-    max: 0
-    bounciness: 0
-    bounceMinVelocity: 0.2
-    contactDistance: 0
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_EnableCollision: 0
-  m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
 --- !u!1 &4286923591675286132
 GameObject:
   m_ObjectHideFlags: 0
@@ -209,8 +126,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.37331808, y: 0.18587139, z: 0.23067665}
-  m_Center: {x: 0.000000014901161, y: 0.000000037252907, z: -0.11533801}
+  m_Size: {x: 0.37331808, y: 0.18427594, z: 0.23067665}
+  m_Center: {x: 0.000000010052809, y: 0.0007977653, z: -0.115338}
 --- !u!1 &4451327050933235791
 GameObject:
   m_ObjectHideFlags: 0
@@ -228,7 +145,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6209522579321001209
 Transform:
   m_ObjectHideFlags: 0
@@ -303,8 +220,10 @@ GameObject:
   - component: {fileID: 3677346431768281532}
   - component: {fileID: 8397734001789634220}
   - component: {fileID: 985885605290023451}
-  - component: {fileID: 3447418305776263282}
-  - component: {fileID: 6130699157230047693}
+  - component: {fileID: 6486547551015210541}
+  - component: {fileID: 719409283103687599}
+  - component: {fileID: 6132135730797911069}
+  - component: {fileID: 4235211538098210815}
   m_Layer: 0
   m_Name: diner_set07_TV_Knob
   m_TagString: Untagged
@@ -322,8 +241,7 @@ Transform:
   m_LocalRotation: {x: 0.7071069, y: -0, z: -0, w: 0.7071067}
   m_LocalPosition: {x: -2.5837746, y: 4.5840883, z: -5.952134}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1302543763692064903}
+  m_Children: []
   m_Father: {fileID: 7139336700394765397}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -384,8 +302,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.036545854, y: 0.014311606, z: 0.011048911}
-  m_Center: {x: -0.0004918191, y: -0.008334744, z: -0.0016549246}
+  m_Size: {x: 0.036545854, y: 0.011353343, z: 0.011048911}
+  m_Center: {x: -0.00049182656, y: -0.009813875, z: -0.001654921}
 --- !u!54 &8397734001789634220
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -422,47 +340,42 @@ MonoBehaviour:
   objectToHighlight: {fileID: 0}
   objectHighlighter: {fileID: 0}
   objectToAffect: {fileID: 0}
---- !u!114 &3447418305776263282
-MonoBehaviour:
+--- !u!59 &6486547551015210541
+HingeJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5789243382012251944}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afbb29cbe7e86b842b09702b4ae1b57b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  operateAxis: 1
-  ignoreCollisionsWith: []
-  excludeColliderCheckOn: []
-  equalityFidelity: 0.001
-  connectedTo: {fileID: 0}
-  hingePoint: {fileID: 0}
-  angleLimits:
-    minimum: 0
-    maximum: 90
-  minMaxThresholdAngle: 10
-  restingAngle: 0
-  forceRestingAngleThreshold: 1
-  angleTarget: 90
-  isLocked: 0
-  stepValueRange:
-    minimum: 0
-    maximum: 1
-  stepSize: 0.1
-  useStepAsValue: 1
-  snapToStep: 0
-  snapForce: 10
-  grabMechanic: 1
-  precisionGrab: 0
-  detachDistance: 1
-  useFrictionOverrides: 0
-  grabbedFriction: 0
-  releasedFriction: 0
-  onlyInteractWith: []
---- !u!114 &6130699157230047693
+  m_ConnectedBody: {fileID: 0}
+  m_Anchor: {x: 0, y: 0.007020003, z: 0}
+  m_Axis: {x: 0, y: 1, z: 0}
+  m_AutoConfigureConnectedAnchor: 1
+  m_ConnectedAnchor: {x: 0.14348364, y: -0.05963619, z: -0.19001958}
+  m_UseSpring: 0
+  m_Spring:
+    spring: 0
+    damper: 0
+    targetPosition: 0
+  m_UseMotor: 1
+  m_Motor:
+    targetVelocity: 0
+    force: 0
+    freeSpin: 1
+  m_UseLimits: 1
+  m_Limits:
+    min: 0
+    max: 180
+    bounciness: 0
+    bounceMinVelocity: 0.2
+    contactDistance: 0
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_EnableCollision: 0
+  m_EnablePreprocessing: 1
+  m_MassScale: 1
+  m_ConnectedMassScale: 1
+--- !u!114 &719409283103687599
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -471,37 +384,87 @@ MonoBehaviour:
   m_GameObject: {fileID: 5789243382012251944}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afbb29cbe7e86b842b09702b4ae1b57b, type: 3}
+  m_Script: {fileID: 11500000, guid: 8afa0b205791c9f4496bf2814aeac078, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  operateAxis: 1
-  ignoreCollisionsWith: []
-  excludeColliderCheckOn: []
-  equalityFidelity: 0.001
-  connectedTo: {fileID: 0}
-  hingePoint: {fileID: 0}
-  angleLimits:
-    minimum: -180
-    maximum: 180
-  minMaxThresholdAngle: 1
-  restingAngle: 0
-  forceRestingAngleThreshold: 1
-  angleTarget: 0
-  isLocked: 0
-  stepValueRange:
-    minimum: 0
-    maximum: 1
-  stepSize: 0.1
-  useStepAsValue: 1
-  snapToStep: 0
-  snapForce: 10
-  grabMechanic: 1
   precisionGrab: 1
-  detachDistance: 1
-  useFrictionOverrides: 0
-  grabbedFriction: 0
-  releasedFriction: 0
-  onlyInteractWith: []
+  rightSnapHandle: {fileID: 0}
+  leftSnapHandle: {fileID: 0}
+  throwVelocityWithAttachDistance: 0
+  throwMultiplier: 1
+  onGrabCollisionDelay: 0
+  destroyImmediatelyOnThrow: 1
+  breakForce: 1500
+--- !u!114 &6132135730797911069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5789243382012251944}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bf44f440d5021b459ad161c7208c238, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  disableWhenIdle: 1
+  allowedNearTouchControllers: 0
+  allowedTouchControllers: 0
+  ignoredColliders: []
+  isGrabbable: 1
+  holdButtonToGrab: 1
+  stayGrabbedOnTeleport: 1
+  validDrop: 1
+  grabOverrideButton: 0
+  allowedGrabControllers: 0
+  grabAttachMechanicScript: {fileID: 0}
+  secondaryGrabActionScript: {fileID: 0}
+  isUsable: 0
+  holdButtonToUse: 1
+  useOnlyIfGrabbed: 0
+  pointerActivatesUseAction: 0
+  useOverrideButton: 0
+  allowedUseControllers: 0
+  objectHighlighter: {fileID: 0}
+  touchHighlightColor: {r: 0, g: 0, b: 0, a: 0}
+  usingState: 0
+  connectedBurner: {fileID: 0}
+  isOn: 0
+  snapThreshold: 0.1
+  audioSource: {fileID: 0}
+--- !u!114 &4235211538098210815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5789243382012251944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3abaf4521bf2344ea21ed3020b98eb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  disableWhenIdle: 1
+  allowedNearTouchControllers: 0
+  allowedTouchControllers: 0
+  ignoredColliders: []
+  isGrabbable: 0
+  holdButtonToGrab: 1
+  stayGrabbedOnTeleport: 1
+  validDrop: 1
+  grabOverrideButton: 0
+  allowedGrabControllers: 0
+  grabAttachMechanicScript: {fileID: 0}
+  secondaryGrabActionScript: {fileID: 0}
+  isUsable: 0
+  holdButtonToUse: 1
+  useOnlyIfGrabbed: 0
+  pointerActivatesUseAction: 0
+  useOverrideButton: 0
+  allowedUseControllers: 0
+  objectHighlighter: {fileID: 0}
+  touchHighlightColor: {r: 0, g: 0, b: 0, a: 0}
+  usingState: 0
 --- !u!1 &7730240790123367563
 GameObject:
   m_ObjectHideFlags: 0
@@ -519,7 +482,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8548497821684118049
 Transform:
   m_ObjectHideFlags: 0
@@ -594,7 +557,8 @@ GameObject:
   - component: {fileID: 2324932588631262742}
   - component: {fileID: 3230568745871688338}
   - component: {fileID: 7679383816249515715}
-  - component: {fileID: 8960887889303564552}
+  - component: {fileID: 3161542156695540318}
+  - component: {fileID: 2858289001563219042}
   m_Layer: 0
   m_Name: diner_set07_TV_Antenna
   m_TagString: Untagged
@@ -724,7 +688,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!144 &8960887889303564552
+--- !u!114 &3161542156695540318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8344390842158258108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6a08144e37d22d4e8f8f51d2c5d4a4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nearTouchHighlight: {r: 0, g: 0, b: 0, a: 0}
+  touchHighlight: {r: 0.04583481, g: 0.9716981, b: 0.9165115, a: 0}
+  grabHighlight: {r: 0, g: 0, b: 0, a: 0}
+  useHighlight: {r: 0, g: 0, b: 0, a: 0}
+  objectToMonitor: {fileID: 0}
+  objectToHighlight: {fileID: 0}
+  objectHighlighter: {fileID: 0}
+  objectToAffect: {fileID: 0}
+--- !u!144 &2858289001563219042
 CharacterJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -833,17 +817,17 @@ PrefabInstance:
     - target: {fileID: 7567690378294400310, guid: aa23b905e8d7942b1aacfdda5265210a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.809132
+      value: -1.623
       objectReference: {fileID: 0}
     - target: {fileID: 7567690378294400310, guid: aa23b905e8d7942b1aacfdda5265210a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.8318537
+      value: 3.96
       objectReference: {fileID: 0}
     - target: {fileID: 7567690378294400310, guid: aa23b905e8d7942b1aacfdda5265210a,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.0877466
+      value: -6.051
       objectReference: {fileID: 0}
     - target: {fileID: 7567690378294400310, guid: aa23b905e8d7942b1aacfdda5265210a,
         type: 3}
@@ -888,12 +872,17 @@ PrefabInstance:
     - target: {fileID: 3249731631412897833, guid: aa23b905e8d7942b1aacfdda5265210a,
         type: 3}
       propertyPath: m_ConnectedAnchor.z
-      value: 0.62941515
+      value: 0.6294149
       objectReference: {fileID: 0}
     - target: {fileID: 3249731631412897833, guid: aa23b905e8d7942b1aacfdda5265210a,
         type: 3}
       propertyPath: m_ConnectedAnchor.x
-      value: -0.2548486
+      value: -0.2548495
+      objectReference: {fileID: 0}
+    - target: {fileID: 3249731631412897833, guid: aa23b905e8d7942b1aacfdda5265210a,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: 0.80722857
       objectReference: {fileID: 0}
     - target: {fileID: 4275988760485737860, guid: aa23b905e8d7942b1aacfdda5265210a,
         type: 3}
