@@ -12,6 +12,7 @@ namespace SceneObjects
         public float resetSpeed = 0.1f;
 
         private VRTK_InteractableObject interactable;
+        private Rigidbody rb;
         private AudioSource audioSource;
 
         private bool playedSoundThisSwoosh; // Only play sound once per swoosh
@@ -19,6 +20,7 @@ namespace SceneObjects
         void Start()
         {
             interactable = GetComponent<VRTK_InteractableObject>();
+            rb = GetComponent<Rigidbody>();
             audioSource = GetComponent<AudioSource>();
         }
 
@@ -33,11 +35,6 @@ namespace SceneObjects
 
             if (isGrabbed)
             {
-                // Child-of-controller grab means my speed is hidden by grabber speed
-                // So get the grabbing hand's speed instead
-                GameObject grabbingHand = interactable.GetGrabbingObject();
-                Rigidbody rb = grabbingHand.GetComponent<Rigidbody>();
-
                 float speed = rb.velocity.magnitude;
 
                 if (speed > thresholdSpeed && !playedSoundThisSwoosh)
