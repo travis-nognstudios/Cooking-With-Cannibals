@@ -473,7 +473,8 @@ GameObject:
   - component: {fileID: 8921119447533364527}
   - component: {fileID: 1117784328732939228}
   - component: {fileID: 4630175861912980193}
-  - component: {fileID: 3031965266752647848}
+  - component: {fileID: 1223409067067614270}
+  - component: {fileID: 14523147584074466}
   m_Layer: 0
   m_Name: Pause_PayPhone_button_Top
   m_TagString: Untagged
@@ -567,7 +568,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.08816438, y: 0.24506448, z: 0.2450637}
   m_Center: {x: -0.0000015180557, y: 0.00000001490116, z: 0.00000015646218}
---- !u!114 &3031965266752647848
+--- !u!114 &1223409067067614270
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -576,7 +577,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3463113185750631073}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7b9d8b0e1a0e47be926a5f12044dd4e, type: 3}
+  m_Script: {fileID: 11500000, guid: 11f7968cbaf524fb9876ed2afe4c70ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   disableWhenIdle: 1
@@ -600,8 +601,21 @@ MonoBehaviour:
   objectHighlighter: {fileID: 0}
   touchHighlightColor: {r: 0, g: 0, b: 0, a: 0}
   usingState: 0
+  secondsTouchedToActivate: 2
+  buttonAction: {fileID: 14523147584074466}
+--- !u!114 &14523147584074466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3463113185750631073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93d1dad4df48b4d9294b0a0ba35df1c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   pauseManager: {fileID: 0}
-  interactable: {fileID: 0}
 --- !u!1 &4506282712959018798
 GameObject:
   m_ObjectHideFlags: 0
@@ -845,7 +859,8 @@ GameObject:
   - component: {fileID: 4818619697165566609}
   - component: {fileID: 4307951933021069543}
   - component: {fileID: 4215651887645226143}
-  - component: {fileID: 1840673339423807055}
+  - component: {fileID: 1125228684854060831}
+  - component: {fileID: 8044800641880318843}
   m_Layer: 0
   m_Name: Pause_PayPhone_button_Bottom
   m_TagString: Untagged
@@ -939,7 +954,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.08816438, y: 0.2450641, z: 0.2450637}
   m_Center: {x: -0.0000015180557, y: -0.00000023841858, z: 0.00000015646218}
---- !u!114 &1840673339423807055
+--- !u!114 &1125228684854060831
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -948,7 +963,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6979200626647233602}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7b9d8b0e1a0e47be926a5f12044dd4e, type: 3}
+  m_Script: {fileID: 11500000, guid: 11f7968cbaf524fb9876ed2afe4c70ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   disableWhenIdle: 1
@@ -972,8 +987,20 @@ MonoBehaviour:
   objectHighlighter: {fileID: 0}
   touchHighlightColor: {r: 0, g: 0, b: 0, a: 0}
   usingState: 0
-  pauseManager: {fileID: 0}
-  interactable: {fileID: 0}
+  secondsTouchedToActivate: 2
+  buttonAction: {fileID: 8044800641880318843}
+--- !u!114 &8044800641880318843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6979200626647233602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 212c88342b1994522bfab85e097f0954, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7026852957691605293
 GameObject:
   m_ObjectHideFlags: 0

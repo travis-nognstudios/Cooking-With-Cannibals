@@ -6,9 +6,11 @@ public class PosterDissolve : MonoBehaviour
 {
     public GameObject[] faces;
 
-    public float ratePerSecond;
+    public float dissolveRate = 0.01f;
+    public bool isDissolving;
 
-    private string shaderProperty = "Dissolve";
+    private string shaderProperty = "Vector1_FC4AF8F5";
+    private float fullDissolveValue = 1.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -19,28 +21,32 @@ public class PosterDissolve : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (isDissolving)
+        {
+            MakeDissolve();
+        }
     }
 
     void MakeDissolve()
     {
         foreach (GameObject face in faces)
         {
-            Renderer rend = null;
-            MaterialPropertyBlock propBlock = null;
+            Renderer rend = GetComponent<Renderer>();
+            MaterialPropertyBlock propBlock = new MaterialPropertyBlock();
+            rend.GetPropertyBlock(propBlock);
 
-            // Get renderer first time
-            if (rend == null)
+            float currentValue = propBlock.GetFloat(shaderProperty);
+
+            if (currentValue < fullDissolveValue)
             {
-                rend = GetComponent<Renderer>();
-                propBlock = new MaterialPropertyBlock();
-                rend.GetPropertyBlock(propBlock);
+                float newValue = currentValue += dissolveRate;
+                propBlock.SetFloat(shaderProperty, newValue);
+                rend.SetPropertyBlock(propBlock);
             }
-
-            float prevValue = propBlock.GetFloat(shaderProperty);
-            float newValue = prevValue += ratePerSecond;
-            propBlock.SetFloat(shaderProperty, newValue);
-            rend.SetPropertyBlock(propBlock);
+            else
+            {
+                isDissolving = false;
+            }
         }
     }
   
