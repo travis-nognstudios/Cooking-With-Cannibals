@@ -5,39 +5,64 @@ namespace SceneObjects
     public class SodaBottlePour : MonoBehaviour
     {
         public ParticleSystem pourEffect;
-        private Rigidbody rb;
+        public Renderer liquidRenderer;
+
+        [Range(0f,1f)]
+        public float startingFillAmount;
+        [Range(0.1f, 0.9f)]
+        public float pourRate; // per second
+        
+
+        private float currentFillAmount;
+        private float pourAmountPerFrame;
 
         private float pourMinAngle = 90f;
         private float pourMaxAngle = 270f;
 
+        private string liquidShaderFillProperty = "Vector1_86B367DE";
+
         // Use this for initialization
         void Start()
         {
-            rb = GetComponent<Rigidbody>();
 
-            float fullAt0 = CalculateShaderFillAmount(1f, 0f);
-            float halfAt0 = CalculateShaderFillAmount(0.5f, 0f);
-            float emptyAt0 = CalculateShaderFillAmount(0f, 0f);
+            currentFillAmount = startingFillAmount;
+            
 
-            Debug.Log($"90: {fullAt0} {halfAt0} {emptyAt0}");
+            //float fullAt0 = CalculateShaderFillAmount(1f, 0f);
+            //float halfAt0 = CalculateShaderFillAmount(0.5f, 0f);
+            //float emptyAt0 = CalculateShaderFillAmount(0f, 0f);
 
-            float fullAt90 = CalculateShaderFillAmount(1f, 90f);
-            float halfAt90 = CalculateShaderFillAmount(0.5f, 90f);
-            float emptyAt90 = CalculateShaderFillAmount(0f, 90f);
+            //Debug.Log($"90: {fullAt0} {halfAt0} {emptyAt0}");
 
-            Debug.Log($"90: {fullAt90} {halfAt90} {emptyAt90}");
+            //float fullAt90 = CalculateShaderFillAmount(1f, 90f);
+            //float halfAt90 = CalculateShaderFillAmount(0.5f, 90f);
+            //float emptyAt90 = CalculateShaderFillAmount(0f, 90f);
 
-            float fullAt180 = CalculateShaderFillAmount(1f, 180f);
-            float halfAt180 = CalculateShaderFillAmount(0.5f, 180f);
-            float emptyAt180 = CalculateShaderFillAmount(0f, 180f);
+            //Debug.Log($"90: {fullAt90} {halfAt90} {emptyAt90}");
 
-            Debug.Log($"`80: {fullAt180} {halfAt180} {emptyAt180}");
+            //float fullAt180 = CalculateShaderFillAmount(1f, 180f);
+            //float halfAt180 = CalculateShaderFillAmount(0.5f, 180f);
+            //float emptyAt180 = CalculateShaderFillAmount(0f, 180f);
+
+            //Debug.Log($"`80: {fullAt180} {halfAt180} {emptyAt180}");
+
         }
 
         // Update is called once per frame
         void Update()
         {
+            pourAmountPerFrame = pourRate * Time.deltaTime;
+
+            DepleteLiquidAmount();
             ControlPour();
+
+            float rotation = GetRotationAmount();
+
+            // Placeholder until i figure out some bugs
+            if (rotation < 90) rotation = 0f;
+
+            float shaderFill = CalculateShaderFillAmount(currentFillAmount, rotation);
+            ControlLiquidLevel(shaderFill);
         }
 
         bool IsPouring()
@@ -60,16 +85,60 @@ namespace SceneObjects
             }
         }
 
+        bool HasLiquid()
+        {
+            return currentFillAmount > 0;
+        }
+
         void ControlPour()
         {
-            if (IsPouring() && !pourEffect.isPlaying)
+            if (IsPouring() && HasLiquid() && !pourEffect.isPlaying)
             {
                 pourEffect.Play();
             }
-            else if (!IsPouring() && pourEffect.isPlaying)
-            {
+            else if ((!IsPouring() && pourEffect.isPlaying) || !HasLiquid() )
+            { 
                 pourEffect.Stop();
             }
+        }
+
+        // Map 0->360 to 0->180
+        private float NormalizeRotation(float rotation)
+        {
+            if (rotation >=0 && rotation <=180)
+            {
+                return rotation;
+            }
+            else
+            {
+                return 360 - rotation;
+            }
+        }
+
+        private float GetRotationAmount()
+        {
+            float x = transform.rotation.eulerAngles.x;
+            float normX = NormalizeRotation(x);
+
+            float z = transform.rotation.eulerAngles.z;
+            float normZ = NormalizeRotation(z);
+
+            float normalizedRotation = Mathf.Max(normX, normZ);
+            return normalizedRotation;
+        }
+
+        private void DepleteLiquidAmount()
+        {
+            if (IsPouring() && currentFillAmount > 0)
+            {
+                currentFillAmount -= pourAmountPerFrame;
+                if (currentFillAmount < 0) currentFillAmount = 0;
+            }
+        }
+
+        void ControlLiquidLevel(float shaderFill)
+        {
+            liquidRenderer.material.SetFloat(liquidShaderFillProperty, shaderFill);
         }
 
         /* 
@@ -125,7 +194,14 @@ namespace SceneObjects
         // Calculates the "RANGE" value shown in the table above, given the ANGLE
         private float EmptyRangeAtAngle(float angle)
         {
-            return 0.14f * -Mathf.Sin(ToRadian(angle)) + 0.22f;
+            // Values from experiement, shown above
+            // Use offset to reduce range, to compensate for calculation inaccuracy, if needed
+            float offset = 0f;
+            float maxRange = 0.22f - offset;
+            float minRange = 0.08f - offset;
+            float rangeSpread = maxRange - minRange;
+
+            return rangeSpread * -Mathf.Sin(ToRadian(angle)) + maxRange;
         }
 
         // Calculates the "FULL" value shown in the table above, given the ANGLE
@@ -145,7 +221,8 @@ namespace SceneObjects
         // given the actual fill amount [0,1] and the rotation angle
         private float CalculateShaderFillAmount(float fill, float rotation)
         {
-            if (fill < 0 || fill > 1) throw new System.Exception("Fill amount must be in range [0,1]");
+            float shaderValueForEmpty = 1f;
+            if (fill == 0) return shaderValueForEmpty;
 
             float empty = FillInvert(fill);
             float min = MinEmptyAtAngle(rotation);
