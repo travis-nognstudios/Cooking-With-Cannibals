@@ -58,9 +58,6 @@ namespace SceneObjects
 
             float rotation = GetRotationAmount();
 
-            // Placeholder until i figure out some bugs
-            if (rotation < 90) rotation = 0f;
-
             float shaderFill = CalculateShaderFillAmount(currentFillAmount, rotation);
             ControlLiquidLevel(shaderFill);
         }
@@ -172,7 +169,11 @@ namespace SceneObjects
 
         Derived formulas:
             Range = 0.14 * -sin(x) + 0.22
-            Min(full value) based on angle: log10(angle) / 10.2512 + 0.37
+            >> OLD >> Min(full value) based on angle: log10(angle) / 10.2512 + 0.37
+
+            >> NEW >> Min(full value):
+                if 0<=angle<=90:  0.056*-log(-x+91)+0.48
+                if 90<angle<=180: 0.056* log( x-89)+0.48
 
         Note that since the shader works with the emptiness and not the fullness,
         this relationship needs to be followed to convert between fullness to emptiness
@@ -207,13 +208,23 @@ namespace SceneObjects
         // Calculates the "FULL" value shown in the table above, given the ANGLE
         private float MinEmptyAtAngle(float angle)
         {
-            if (angle == 0)
+            if (angle <= 0 || angle > 180)
             {
                 return 0.37f;
             }
             else
             {
-                return Mathf.Log10(angle) / 10.2512f + 0.37f;
+                if (angle > 0 && angle <= 90)
+                {
+                    return 0.056f * -Mathf.Log10(-angle + 91f) + 0.48f;
+                }
+                else
+                {
+                    return 0.056f * Mathf.Log10(angle - 89f) + 0.48f;
+                }
+
+                // OLD
+                // return Mathf.Log10(angle) / 10.2512f + 0.37f;
             }
         }
 
