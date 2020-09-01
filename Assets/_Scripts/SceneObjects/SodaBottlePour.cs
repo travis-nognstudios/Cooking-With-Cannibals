@@ -9,42 +9,22 @@ namespace SceneObjects
 
         [Range(0f,1f)]
         public float startingFillAmount;
-        [Range(0.1f, 0.9f)]
+        [Range(0.01f, 0.8f)]
         public float pourRate; // per second
         
 
         private float currentFillAmount;
         private float pourAmountPerFrame;
 
-        private float pourMinAngle = 90f;
-        private float pourMaxAngle = 270f;
+        private readonly float pourMinAngle = 90f;
+        private readonly float pourMaxAngle = 270f;
 
-        private string liquidShaderFillProperty = "Vector1_86B367DE";
+        private readonly string liquidShaderFillProperty = "Vector1_86B367DE";
 
-        // Use this for initialization
         void Start()
         {
 
             currentFillAmount = startingFillAmount;
-            
-
-            //float fullAt0 = CalculateShaderFillAmount(1f, 0f);
-            //float halfAt0 = CalculateShaderFillAmount(0.5f, 0f);
-            //float emptyAt0 = CalculateShaderFillAmount(0f, 0f);
-
-            //Debug.Log($"90: {fullAt0} {halfAt0} {emptyAt0}");
-
-            //float fullAt90 = CalculateShaderFillAmount(1f, 90f);
-            //float halfAt90 = CalculateShaderFillAmount(0.5f, 90f);
-            //float emptyAt90 = CalculateShaderFillAmount(0f, 90f);
-
-            //Debug.Log($"90: {fullAt90} {halfAt90} {emptyAt90}");
-
-            //float fullAt180 = CalculateShaderFillAmount(1f, 180f);
-            //float halfAt180 = CalculateShaderFillAmount(0.5f, 180f);
-            //float emptyAt180 = CalculateShaderFillAmount(0f, 180f);
-
-            //Debug.Log($"`80: {fullAt180} {halfAt180} {emptyAt180}");
 
         }
 
@@ -175,6 +155,17 @@ namespace SceneObjects
                 if 0<=angle<=90:  0.056*-log(-x+91)+0.48
                 if 90<angle<=180: 0.056* log( x-89)+0.48
 
+            >> NEW V2: Quadratic formulas for gradient control
+                if 0<=angle<=90:  ((-x+90)^0.25)/-28 + 0.48
+                if 90<angle<=180: (( x-90)^0.25)/ 28 + 0.48
+
+            >> V3: STRAIGHT LINES GIVE THE BEST RESULTS FML
+                if 0<=angle<=90: (0.18/90) *  angle     + 0.37  -> y=mx+c
+                if 90<angle<=180:(0.04/90) * (angle-90) + 0.55  -> y=mx+c
+
+            ^^ ToDo: Try to find an arc that's described by the 3 points (x=0,90,180)
+                     It might be more accurate that the lines
+
         Note that since the shader works with the emptiness and not the fullness,
         this relationship needs to be followed to convert between fullness to emptiness
             EMPTY = Inverse of FILL
@@ -214,17 +205,14 @@ namespace SceneObjects
             }
             else
             {
-                if (angle > 0 && angle <= 90)
+                if (angle > 0 && angle < 90)
                 {
-                    return 0.056f * -Mathf.Log10(-angle + 91f) + 0.48f;
+                    return (0.18f/90) * angle + 0.37f;
                 }
                 else
                 {
-                    return 0.056f * Mathf.Log10(angle - 89f) + 0.48f;
+                    return (0.04f / 90) * (angle - 90) + 0.55f;
                 }
-
-                // OLD
-                // return Mathf.Log10(angle) / 10.2512f + 0.37f;
             }
         }
 
