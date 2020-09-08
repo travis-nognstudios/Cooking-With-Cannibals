@@ -13,17 +13,6 @@ namespace SceneObjects
 
         private float baseForce = -500; // Opposite direction to knife
 
-        void Start()
-        {
-
-        }
-
-
-        void Update()
-        {
-
-        }
-
         void OnTriggerEnter(Collider other)
         {
             if (other.CompareTag("Knife"))
