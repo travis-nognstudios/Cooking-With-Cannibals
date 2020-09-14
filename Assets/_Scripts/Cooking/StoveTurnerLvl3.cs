@@ -29,8 +29,6 @@ namespace Cooking
         {
             rotationOnGrab = transform.localEulerAngles.z;
 
-            Debug.Log($"Grab rotation: {rotationOnGrab}");
-
             //audioSource.Play();
             base.Grabbed(currentGrabbingObject);
         }
@@ -38,8 +36,6 @@ namespace Cooking
         public override void Ungrabbed(VRTK_InteractGrab previousGrabbingObject = null)
         {
             rotationOnUngrab = transform.localEulerAngles.z;
-
-            Debug.Log($"Ungrab rotation: {rotationOnUngrab}");
 
             TriggerSnap();
             //audioSource.Stop();
