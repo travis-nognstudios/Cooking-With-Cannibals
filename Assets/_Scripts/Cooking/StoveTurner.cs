@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using VRTK;
+using SceneObjects;
 
 namespace Cooking
 {
@@ -12,10 +13,11 @@ namespace Cooking
         public bool isOn;
         [Range(0.05f, 0.3f)]
         public float snapThreshold = 0.1f;
+        public StoveIndicatorLight indicatorLight;
 
         private float rotationOnGrab;
         private float rotationOnUngrab;
-        public AudioSource audioSource;
+        private AudioSource audioSource;
 
         public void Start()
         {
@@ -71,6 +73,7 @@ namespace Cooking
             isOn = false;
 
             connectedBurner.UpdateStove(isOn);
+            indicatorLight.TurnOff();
         }
 
         private void SnapToOn()
@@ -79,6 +82,7 @@ namespace Cooking
             isOn = true;
 
             connectedBurner.UpdateStove(isOn);
+            indicatorLight.TurnOn();
         }
     }
 }

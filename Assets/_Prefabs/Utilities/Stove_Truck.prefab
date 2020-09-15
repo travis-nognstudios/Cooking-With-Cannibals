@@ -89,6 +89,7 @@ GameObject:
   - component: {fileID: 2493799998508922589}
   - component: {fileID: 6899733835088481515}
   - component: {fileID: 935708818870546450}
+  - component: {fileID: 8591636484154761725}
   m_Layer: 0
   m_Name: stoveIndicator_left
   m_TagString: Untagged
@@ -156,6 +157,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &8591636484154761725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1495362451773359310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e0462d6d20146ed94ea48cf1d2f759, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onColor: {r: 0, g: 1, b: 0, a: 1}
+  offColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &1701793912875809047
 GameObject:
   m_ObjectHideFlags: 0
@@ -796,7 +811,7 @@ MonoBehaviour:
   connectedBurner: {fileID: 7083379470017180022}
   isOn: 0
   snapThreshold: 0.1
-  audioSource: {fileID: 0}
+  indicatorLight: {fileID: 8591636484154761725}
 --- !u!114 &8170703568570489580
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1163,7 +1178,7 @@ MonoBehaviour:
   connectedBurner: {fileID: 2005678842384507865}
   isOn: 0
   snapThreshold: 0.1
-  audioSource: {fileID: 0}
+  indicatorLight: {fileID: 2480366556637303018}
 --- !u!59 &4275988760485737860
 HingeJoint:
   m_ObjectHideFlags: 0
@@ -1568,6 +1583,7 @@ GameObject:
   - component: {fileID: 664926745341959683}
   - component: {fileID: 4768694624440403592}
   - component: {fileID: 1706341763428946875}
+  - component: {fileID: 2480366556637303018}
   m_Layer: 0
   m_Name: stoveIndicator_right
   m_TagString: Untagged
@@ -1635,6 +1651,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &2480366556637303018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6647593029157166597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e0462d6d20146ed94ea48cf1d2f759, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onColor: {r: 0, g: 1, b: 0, a: 1}
+  offColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &7083379470017180016
 GameObject:
   m_ObjectHideFlags: 0
@@ -1900,16 +1930,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8956073453006431654}
     m_Modifications:
-    - target: {fileID: 2582747982744769376, guid: 6d43cb48ab61c9141ac1835be9a13f2c,
-        type: 3}
-      propertyPath: m_Name
-      value: stove_fire
-      objectReference: {fileID: 0}
-    - target: {fileID: 2582747982744769376, guid: 6d43cb48ab61c9141ac1835be9a13f2c,
-        type: 3}
-      propertyPath: m_TagString
-      value: Heatsource
-      objectReference: {fileID: 0}
     - target: {fileID: 2582747982744769381, guid: 6d43cb48ab61c9141ac1835be9a13f2c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1965,32 +1985,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2582747982744769378, guid: 6d43cb48ab61c9141ac1835be9a13f2c,
-        type: 3}
-      propertyPath: ColorModule.gradient.maxGradient.ctime1
-      value: 34502
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 6d43cb48ab61c9141ac1835be9a13f2c, type: 3}
---- !u!4 &3767893407235123497 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2582747982744769381, guid: 6d43cb48ab61c9141ac1835be9a13f2c,
-    type: 3}
-  m_PrefabInstance: {fileID: 1701793912677661260}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &3767893407235123502 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 2582747982744769378, guid: 6d43cb48ab61c9141ac1835be9a13f2c,
-    type: 3}
-  m_PrefabInstance: {fileID: 1701793912677661260}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &1701793914279488288
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 5680416744311572582}
-    m_Modifications:
     - target: {fileID: 2582747982744769376, guid: 6d43cb48ab61c9141ac1835be9a13f2c,
         type: 3}
       propertyPath: m_Name
@@ -2001,6 +1995,32 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Heatsource
       objectReference: {fileID: 0}
+    - target: {fileID: 2582747982744769378, guid: 6d43cb48ab61c9141ac1835be9a13f2c,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.ctime1
+      value: 34502
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6d43cb48ab61c9141ac1835be9a13f2c, type: 3}
+--- !u!198 &3767893407235123502 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 2582747982744769378, guid: 6d43cb48ab61c9141ac1835be9a13f2c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1701793912677661260}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &3767893407235123497 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2582747982744769381, guid: 6d43cb48ab61c9141ac1835be9a13f2c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1701793912677661260}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1701793914279488288
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 5680416744311572582}
+    m_Modifications:
     - target: {fileID: 2582747982744769381, guid: 6d43cb48ab61c9141ac1835be9a13f2c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2071,6 +2091,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.021369044
       objectReference: {fileID: 0}
+    - target: {fileID: 2582747982744769376, guid: 6d43cb48ab61c9141ac1835be9a13f2c,
+        type: 3}
+      propertyPath: m_Name
+      value: stove_fire
+      objectReference: {fileID: 0}
+    - target: {fileID: 2582747982744769376, guid: 6d43cb48ab61c9141ac1835be9a13f2c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Heatsource
+      objectReference: {fileID: 0}
     - target: {fileID: 2582747982744769378, guid: 6d43cb48ab61c9141ac1835be9a13f2c,
         type: 3}
       propertyPath: ColorModule.gradient.maxGradient.ctime1
@@ -2078,15 +2108,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d43cb48ab61c9141ac1835be9a13f2c, type: 3}
---- !u!4 &3767893407781304389 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2582747982744769381, guid: 6d43cb48ab61c9141ac1835be9a13f2c,
-    type: 3}
-  m_PrefabInstance: {fileID: 1701793914279488288}
-  m_PrefabAsset: {fileID: 0}
 --- !u!198 &3767893407781304386 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 2582747982744769378, guid: 6d43cb48ab61c9141ac1835be9a13f2c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1701793914279488288}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &3767893407781304389 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2582747982744769381, guid: 6d43cb48ab61c9141ac1835be9a13f2c,
     type: 3}
   m_PrefabInstance: {fileID: 1701793914279488288}
   m_PrefabAsset: {fileID: 0}
