@@ -5,6 +5,9 @@ namespace Serving
 {
     public class RatingCardSpawner : MonoBehaviour
     {
+
+        public enum Rating { A, B, C, F}
+
         [Header("Rating Cards")]
         public GameObject cardGradeA;
         public GameObject cardGradeB;
@@ -82,6 +85,18 @@ namespace Serving
         public bool RatedF()
         {
             return tipjar.GetAmountInJar() < tipsForC;
+        }
+
+        public Rating GetRating()
+        {
+            if (RatedA())
+                return Rating.A;
+            else if (RatedB())
+                return Rating.B;
+            else if (RatedC())
+                return Rating.C;
+            else
+                return Rating.F;
         }
     }
 }
