@@ -22,7 +22,6 @@ public class MainMenuSave : MonoBehaviour
         levelTwoSave.Load();
         levelThreeSave.Load();
 
-        Debug.Log(LevelOneSaveData.levelOneCompleted + " " + LevelOneSaveData.levelOneHG);
         if (LevelOneSaveData.levelOneCompleted == false && LevelOneSaveData.levelOneHG == Serving.RatingCardSpawner.Rating.F)
         {
             LevelThreeLogo.SetActive(false);
