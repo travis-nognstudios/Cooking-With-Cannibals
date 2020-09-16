@@ -8,6 +8,7 @@ public class LevelOneSaveData : MonoBehaviour
     private TipJar tipJar;
     private RatingCardSpawner ratingCardSpawner;
 
+
     public static bool levelOneCompleted = false;
     public static float levelOneTime; //Best time
     public static RatingCardSpawner.Rating levelOneHG = RatingCardSpawner.Rating.F; //Highest letter grade

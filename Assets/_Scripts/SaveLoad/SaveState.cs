@@ -13,6 +13,39 @@ public class SaveState : MonoBehaviour
 
     public static bool goldKnifeUnlocked;
 
+    [HideInInspector]
+    public bool debug;
+
+    //Debug Variables
+    [HideInInspector]
+    public bool setLevelOneCompleted;
+    [HideInInspector]
+    public float setLevelOneTime;
+    [HideInInspector]
+    public RatingCardSpawner.Rating setLevelOneHG;
+    [HideInInspector]
+    public int setLevelOneHS;
+
+    [HideInInspector]
+    public bool setLevelTwoCompleted;
+    [HideInInspector]
+    public float setLevelTwoTime;
+    [HideInInspector]
+    public RatingCardSpawner.Rating setLevelTwoHG;
+    [HideInInspector]
+    public int setLevelTwoHS;
+
+    [HideInInspector]
+    public bool setLevelThreeCompleted;
+    [HideInInspector]
+    public float setLevelThreeTime;
+    [HideInInspector]
+    public RatingCardSpawner.Rating setLevelThreeHG;
+    [HideInInspector]
+    public int setLevelThreeHS;
+
+
+
 
     private void Start()
     {
@@ -20,11 +53,35 @@ public class SaveState : MonoBehaviour
         levelTwoSave = GetComponent<LevelTwoSaveData>();
         levelThreeSave = GetComponent<LevelThreeSaveData>();
 
-        levelOneSave.Load();
-        levelTwoSave.Load();
-        levelThreeSave.Load();
+        if (!debug)
+        {
+            levelOneSave.Load();
+            levelTwoSave.Load();
+            levelThreeSave.Load();
+        }
+        else
+        {
+            SetDebug();
+        }
 
         ApplyGoldenKnifeUnlockRule();
+        
+    }
+
+    public void SetDebug()
+    {
+        LevelOneSaveData.levelOneCompleted = setLevelOneCompleted;
+        LevelOneSaveData.levelOneHG = setLevelOneHG;
+        LevelOneSaveData.levelOneHS = setLevelOneHS;
+        LevelOneSaveData.levelOneTime = setLevelOneTime;
+        LevelTwoSaveData.levelTwoCompleted = setLevelTwoCompleted;
+        LevelTwoSaveData.levelTwoHG = setLevelTwoHG;
+        LevelTwoSaveData.levelTwoHS = setLevelTwoHS;
+        LevelTwoSaveData.levelTwoTime = setLevelTwoTime;
+        LevelThreeSaveData.levelThreeCompleted = setLevelThreeCompleted;
+        LevelThreeSaveData.levelThreeHG = setLevelThreeHG;
+        LevelThreeSaveData.levelThreeHS = setLevelThreeHS;
+        LevelThreeSaveData.levelThreeTime = setLevelThreeTime;
 
     }
 

@@ -11,6 +11,7 @@ public class MainMenuSave : MonoBehaviour
     private LevelOneSaveData levelOneSave;
     private LevelTwoSaveData levelTwoSave;
     private LevelThreeSaveData levelThreeSave;
+    public SaveState saveState;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,22 +19,24 @@ public class MainMenuSave : MonoBehaviour
         levelTwoSave = FindObjectOfType<LevelTwoSaveData>();
         levelThreeSave = FindObjectOfType<LevelThreeSaveData>();
 
-        levelOneSave.Load();
-        levelTwoSave.Load();
-        levelThreeSave.Load();
-
-        if (LevelOneSaveData.levelOneCompleted == false && LevelOneSaveData.levelOneHG == Serving.RatingCardSpawner.Rating.F)
+        if (!saveState.debug)
         {
-            LevelThreeLogo.SetActive(false);
-        }
-
-        if (LevelTwoSaveData.levelTwoCompleted == false && LevelTwoSaveData.levelTwoHG == Serving.RatingCardSpawner.Rating.F)
-        {
-            LevelThreeLogo.SetActive(false);
+            levelOneSave.Load();
+            levelTwoSave.Load();
+            levelThreeSave.Load();
         }
         else
         {
-            LevelThreeLogo.SetActive(true);
+            saveState.SetDebug();
+        }
+        if (LevelOneSaveData.levelOneCompleted == false || LevelOneSaveData.levelOneHG == Serving.RatingCardSpawner.Rating.F)
+        {
+            LevelTwoLogo.SetActive(false);
+        }
+
+        if (LevelTwoSaveData.levelTwoCompleted == false || LevelTwoSaveData.levelTwoHG == Serving.RatingCardSpawner.Rating.F)
+        {
+            LevelThreeLogo.SetActive(false);
         }
     }
 
