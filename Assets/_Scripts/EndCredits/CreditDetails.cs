@@ -8,6 +8,7 @@ namespace EndCredits
         public Texture profilePicture;
         public string personName;
         public CreditRole[] roles;
+        public string quote;
 
         void Start()
         {

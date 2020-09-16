@@ -7,6 +7,7 @@ namespace EndCredits
     {
         public RawImage profilePicture;
         public Text personName;
+        public Text quote;
 
         public CreditRoleBuilder role1;
         public CreditRoleBuilder role2;
@@ -24,6 +25,7 @@ namespace EndCredits
         {
             SetProfilePicture(details.profilePicture);
             SetName(details.personName);
+            SetQuote(details.quote);
 
             int numRoles = details.roles.Length;
             for (int i=0; i<numRoles; ++i)
@@ -57,6 +59,18 @@ namespace EndCredits
 
             selectedLine.amount.text = amount;
             selectedLine.role.text = role;
+        }
+
+        void SetQuote(string text)
+        {
+            if (text.Length == 0)
+            {
+                quote.text = "";
+            }
+            else
+            {
+                quote.text = $"\"{text}\"";
+            }
         }
     }
 }
