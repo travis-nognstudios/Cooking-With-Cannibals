@@ -17,18 +17,6 @@ namespace Serving
         public Text B_text;
         public Text C_text;
         
-
-        // Start is called before the first frame update
-        void Start()
-        {
-
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-            
-        }
         
         public void SetScores(int A, int B, int C)
         {
@@ -39,9 +27,9 @@ namespace Serving
 
         public void SetPosterText()
         {
-            A_text.text = A_score.ToString();
-            B_text.text = B_score.ToString();
-            C_text.text = C_score.ToString();
+            A_text.text = $"{A_score}";
+            B_text.text = $"{B_score}";
+            C_text.text = $"{C_score}";
         }
     }
 }

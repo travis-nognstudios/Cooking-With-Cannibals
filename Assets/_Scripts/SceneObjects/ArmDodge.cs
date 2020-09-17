@@ -11,7 +11,7 @@ namespace SceneObjects
         [Range(0f, 5f)]
         public float forceMultiplier = 0.75f;
 
-        private float baseForce = -500; // Opposite direction to knife
+        private readonly float baseForce = -500; // Opposite direction to knife
 
         void OnTriggerEnter(Collider other)
         {
@@ -23,7 +23,7 @@ namespace SceneObjects
 
                 Vector3 dodgeForce = knifeDirection * baseForce * forceMultiplier;
 
-                Debug.Log($"Knife coming from: {knifeDirection}");
+                //Debug.Log($"Knife coming from: {knifeDirection}");
                 //arm.AddForce(dodgeForce);
                 arm.AddForceAtPosition(dodgeForce, myPosition);
             }

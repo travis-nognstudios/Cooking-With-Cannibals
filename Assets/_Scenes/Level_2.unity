@@ -673,6 +673,7 @@ MonoBehaviour:
     maxMainIngredientAmount: 0
     toppingAmount: 
     maxToppingAmount: 0
+  recipeTipAmount: 0
 --- !u!4 &51502101
 Transform:
   m_ObjectHideFlags: 0
@@ -2468,6 +2469,7 @@ MonoBehaviour:
     maxMainIngredientAmount: 0
     toppingAmount: 
     maxToppingAmount: 0
+  recipeTipAmount: 0
 --- !u!4 &405562476
 Transform:
   m_ObjectHideFlags: 0
@@ -4824,6 +4826,7 @@ MonoBehaviour:
   numTicketsSpawned: 0
   numTicketsCompleted: 0
   numTicketsMissed: 0
+  tipJar: {fileID: 1218428926}
 --- !u!4 &1015787584
 Transform:
   m_ObjectHideFlags: 0
@@ -6032,9 +6035,9 @@ MonoBehaviour:
     type: 3}
   cardGradeF: {fileID: 6573578136055320122, guid: 6cfa6501fc55f46f7a4daf55b997af38,
     type: 3}
-  tipsForA: 22
-  tipsForB: 18
-  tipsForC: 14
+  tipsForA: 25
+  tipsForB: 20
+  tipsForC: 15
   tipjar: {fileID: 1218428926}
   gradePoster: {fileID: 1921385224}
   cardPoint: {fileID: 777312157}
@@ -6053,9 +6056,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ticketManager: {fileID: 1015787583}
-  orderFrequency: 35
+  orderFrequency: 30
   totalServiceTime: 900
-  numOrdersForLevel: 9
+  numOrdersForLevel: 10
+  chanceOfVIP: 25
   sequences:
   - {fileID: 1246617460}
   - {fileID: 1246617459}
@@ -6075,7 +6079,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   seed: 0
-  numRecipes: 6
+  numRecipes: 7
 --- !u!114 &1246617460
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6107,7 +6111,7 @@ MonoBehaviour:
   recipes:
   - recipeObject: {fileID: 363103001070312292, guid: 10f820cf16ee4144193dfbcb96582d08,
       type: 3}
-    recipeTicket: {fileID: 8566703130124376734, guid: 3d970aae1a75f4305a956aabf1b80740,
+    recipeTicket: {fileID: 2812916043102531354, guid: 4f08aec989d5143f1bdfe83160d9e04f,
       type: 3}
     serveTime: 90
     mainIngredient:
@@ -6119,7 +6123,7 @@ MonoBehaviour:
     toppings: []
   - recipeObject: {fileID: 1707776663027355733, guid: 0d69c946d66fece42b5790d71e6d0292,
       type: 3}
-    recipeTicket: {fileID: 6853768433330776217, guid: 32b0f38023d5e4e4490cda71b1d1bc20,
+    recipeTicket: {fileID: 4931502604877035624, guid: 15c5dc5e9124f41b0857d5bbc1fa6145,
       type: 3}
     serveTime: 180
     mainIngredient:
@@ -6134,7 +6138,7 @@ MonoBehaviour:
     - {fileID: 5189456436152974811, guid: 8ff381d7adb72ee4eb5e29037ec3cc83, type: 3}
   - recipeObject: {fileID: 1803888217750964520, guid: 80e58f458145a4c21ac2359e9d8eb711,
       type: 3}
-    recipeTicket: {fileID: 7161142095295676504, guid: 103964510d4f7480fb134433ddc52d78,
+    recipeTicket: {fileID: 6848397328299295972, guid: 0ba5b2fa9a9604d93a0f7998fa9d3846,
       type: 3}
     serveTime: 180
     mainIngredient:
@@ -6148,7 +6152,7 @@ MonoBehaviour:
     - {fileID: 4408773072892888073, guid: 81f39ee7eeef39c4d859996cae177f24, type: 3}
   - recipeObject: {fileID: 3381533428914195764, guid: c0d130e75d0876f43bd1325203fccb0c,
       type: 3}
-    recipeTicket: {fileID: 2992040805973970356, guid: 5618c5d5463d5488c9d8a1be615b595a,
+    recipeTicket: {fileID: 3699532184566003359, guid: 248ef0e452d2b403694f2f15e98d0bf2,
       type: 3}
     serveTime: 240
     mainIngredient:
@@ -6230,7 +6234,6 @@ MonoBehaviour:
     - {fileID: 656459367}
     - {fileID: 1125917620}
     - {fileID: 589719609}
-  CenterEyeCamera: {fileID: 1279443081}
 --- !u!4 &1257279681 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8717196874858858569, guid: 234ff95efd3c0c34fb184c8eadb6df70,
@@ -7251,6 +7254,7 @@ MonoBehaviour:
     maxMainIngredientAmount: 0
     toppingAmount: 
     maxToppingAmount: 0
+  recipeTipAmount: 0
 --- !u!4 &1374089185
 Transform:
   m_ObjectHideFlags: 0

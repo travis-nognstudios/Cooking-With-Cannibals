@@ -14,17 +14,19 @@ namespace Serving
         public int numTicketsCompleted; // missed OR served
         public int numTicketsMissed;
 
+        [Header("Tip At Completion")]
+        public TipJar tipJar;
+
         private int numActiveTickets;
-
-        void Start()
-        {
-
-        }
 
         void Update()
         {
-            // Clean up unserved orders
-            for (int i=0; i<ticketPoints.Length; ++i)
+            CleanUpUnservedOrders();
+        }
+
+        private void CleanUpUnservedOrders()
+        {
+            for (int i = 0; i < ticketPoints.Length; ++i)
             {
                 TicketPointv2 ticketPoint = ticketPoints[i];
 
@@ -36,20 +38,35 @@ namespace Serving
             }
         }
 
-        public void AddTicket(RecipeVariation recipeVar, int lane)
+        public void AddTicket(RecipeVariation recipeVar, bool isVIP, int lane)
         {
             if (ticketPoints[lane].ContainsTicket() == false)
             {
-                ticketPoints[lane].SetTicket(recipeVar);
+                ticketPoints[lane].SetTicket(recipeVar, isVIP);
                 numActiveTickets++;
                 numTicketsSpawned++;
             }
         }
 
-        public void AddTicket(RecipeVariation recipeVar)
+        public void AddTicket(RecipeVariation recipeVar, bool isVIP)
         {
             int lane = FindOpenLane();
-            AddTicket(recipeVar, lane);
+            AddTicket(recipeVar, isVIP, lane);
+        }
+
+        public void CompleteTicket(int lane)
+        {
+            if (ticketPoints[lane].ContainsTicket())
+            {
+                TicketPointv2 ticketPoint = ticketPoints[lane];
+                OrderTicket ticket = ticketPoint.currentOrderTicket;
+
+                int tipAmount = ticketPoint.recipeTipAmount;
+                if (ticket.isVIP) tipAmount *= OrderTicket.VIPTipBonus;
+                
+                tipJar.AddTip(tipAmount);
+                RemoveTicket(lane);
+            }
         }
 
         public void RemoveTicket(int lane)
@@ -62,10 +79,10 @@ namespace Serving
             }
         }
 
-        public void RemoveTicket(Recipe baseRecipe)
+        public void CompleteTicket(Recipe baseRecipe)
         {
-            int oldestMatching = IndexOfOldestMatchingRecipe(baseRecipe);
-            RemoveTicket(oldestMatching);
+            int oldestMatchingTicketLane = IndexOfOldestMatchingRecipe(baseRecipe);
+            CompleteTicket(oldestMatchingTicketLane);
         }
 
         public void RemoveAllTickets()
@@ -81,7 +98,7 @@ namespace Serving
 
         public bool HasRoomForNewTicket()
         {
-            return numActiveTickets < 3;
+            return numActiveTickets < ticketPoints.Length;
         }
 
         public bool HasNoTickets()
@@ -158,6 +175,20 @@ namespace Serving
             }
 
             return recipes;
+        }
+
+        public List<TicketPointv2> GetActiveTickets()
+        {
+            List<TicketPointv2> tickets = new List<TicketPointv2>();
+            foreach (TicketPointv2 ticketPoint in ticketPoints)
+            {
+                if (ticketPoint.ContainsTicket())
+                {
+                    tickets.Add(ticketPoint);
+                }
+            }
+
+            return tickets;
         }
     }
 }
