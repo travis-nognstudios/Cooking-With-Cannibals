@@ -8,29 +8,26 @@ namespace Cooking
     public class CookTop : MonoBehaviour
     {
         private bool hot;
+        protected Smoke smoke;
         
         [Header("Cooktop Settings")]
         public CookType cookType;
 
-        [Header("Food Interactions")]
         public bool hasFood;
+        protected bool hasUncookedFood;
+        protected bool hasCookingFood;
+        protected bool hasBurningFood;
 
         void Start()
         {
             MakeCold();
+            smoke = GetComponent<Smoke>();
         }
 
         void Update()
         {
-            //CheckHasFood();
-        }
-
-        void CheckHasFood()
-        {
-            if (hasFood)
-            {
-                hasFood = false;
-            }
+            hasFood = hasUncookedFood || hasCookingFood || hasBurningFood;
+            ManageSmoke();
         }
 
         void OnTriggerEnter(Collider other)
@@ -52,11 +49,6 @@ namespace Cooking
             {
                 MakeCold();
             }
-
-            if (other.gameObject.layer == 0)
-            {
-                hasFood = false;
-            }
         }
 
         private void OnTriggerStay(Collider other)
@@ -66,11 +58,6 @@ namespace Cooking
                 HeatSource heatSource = other.gameObject.GetComponent<HeatSource>();
                 SyncHeat(heatSource);
             }
-
-            if (other.gameObject.layer == 0)
-            {
-                hasFood = true;
-            }
         }
 
         virtual protected void SyncHeat(HeatSource heatSource)
@@ -78,8 +65,8 @@ namespace Cooking
             if (heatSource.IsOn() && !IsHot())
             {
                 MakeHot();
-            }
-            else
+            } 
+            else if (!heatSource.IsOn() && IsHot())
             {
                 MakeCold();
             }
@@ -98,6 +85,52 @@ namespace Cooking
         public bool IsHot()
         {
             return hot;
+        }
+
+        public void FoodIsUncooked()
+        {
+            hasUncookedFood = true;
+        }
+
+        public void FoodIsCooking()
+        {
+            hasCookingFood = true;
+        }
+
+        public void FoodIsBurning()
+        {
+            hasBurningFood = true;
+        }
+
+        public void FoodIsLeaving()
+        {
+            ResetFoodMemory();
+        }
+
+        private void ResetFoodMemory()
+        {
+            hasUncookedFood = false;
+            hasCookingFood = false;
+            hasBurningFood = false;
+        }
+
+        virtual protected void ManageSmoke()
+        {
+            if (smoke != null)
+            {
+                if (hasBurningFood)
+                {
+                    smoke.BurnSmoke();
+                }
+                else if (hasCookingFood)
+                {
+                    smoke.CookSmoke();
+                }
+                else
+                {
+                    smoke.ClearSmoke();
+                }
+            }
         }
     }
 }

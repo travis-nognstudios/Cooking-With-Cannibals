@@ -90,6 +90,8 @@ public class SaveState : MonoBehaviour
             levelThreeTime = SaveLoad.Load<float>("LevelThreeTime");
         }
 
+        ApplyGoldenKnifeUnlockRule();
+
     }
 
     public void Save()
@@ -185,6 +187,14 @@ public class SaveState : MonoBehaviour
             }
         }
     }
+
+    public void ApplyGoldenKnifeUnlockRule()
+    {
+        // Implementation:
+        // Check if all 3 levels have highest grade achieved = A
+        // if yes, then set the knife unlocked state to true
+    }
+
 
     /*
     public void SaveMinigame()

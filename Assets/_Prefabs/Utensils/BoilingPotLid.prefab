@@ -345,7 +345,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2589445985666082720}
-  m_LocalRotation: {x: -0, y: 0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.174, y: -0.436, z: 4.302}
   m_LocalScale: {x: 2.54, y: 2.54, z: 2.54}
   m_Children:
@@ -494,7 +494,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 670224309865224971, guid: 3a82a9aa548ad404db4c165a1f06f2eb, type: 3}
+  - {fileID: 2100000, guid: 41883db7b15671042ab9db15053ddb3d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -563,6 +563,7 @@ GameObject:
   - component: {fileID: 9057487819647524743}
   - component: {fileID: 4677741982296897817}
   - component: {fileID: 7198513112062876100}
+  - component: {fileID: 1870606346023701256}
   m_Layer: 10
   m_Name: pot_cover_handle
   m_TagString: Untagged
@@ -609,7 +610,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 670224309865224971, guid: 3a82a9aa548ad404db4c165a1f06f2eb, type: 3}
+  - {fileID: 2100000, guid: 41883db7b15671042ab9db15053ddb3d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -643,6 +644,26 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.06501651, y: 0.064354815, z: 0.034863587}
   m_Center: {x: -0.000000085594365, y: 0.00000008381903, z: -0.013334895}
+--- !u!114 &1870606346023701256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4365070615179675057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6a08144e37d22d4e8f8f51d2c5d4a4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nearTouchHighlight: {r: 0, g: 0, b: 0, a: 0}
+  touchHighlight: {r: 0, g: 1, b: 1, a: 0}
+  grabHighlight: {r: 0, g: 0, b: 0, a: 0}
+  useHighlight: {r: 0, g: 0, b: 0, a: 0}
+  objectToMonitor: {fileID: 5834198963125268859}
+  objectToHighlight: {fileID: 2589445985666082720}
+  objectHighlighter: {fileID: 0}
+  objectToAffect: {fileID: 0}
 --- !u!1 &4408053504418647349
 GameObject:
   m_ObjectHideFlags: 0
@@ -1019,7 +1040,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 670224309865224971, guid: 3a82a9aa548ad404db4c165a1f06f2eb, type: 3}
+  - {fileID: 2100000, guid: 80c5ca0b40d042c41bfecd1dc9eb07c5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using SceneObjects;
+﻿using UnityEngine;
 
 namespace Cooking
 {
@@ -16,7 +13,7 @@ namespace Cooking
             {
                 MakeHot();
             }
-            else
+            else if (!heatSource.IsOn() || !LidIsOn())
             {
                 MakeCold();
             }
@@ -31,6 +28,21 @@ namespace Cooking
             }
 
             return allDetectorsHaveLid;
+        }
+
+        override protected void ManageSmoke()
+        {
+            if (smoke != null)
+            {
+                if (hasFood && LidIsOn())
+                {
+                    smoke.CookSmoke();
+                }
+                else
+                {
+                    smoke.ClearSmoke();
+                }
+            }
         }
 
     }
