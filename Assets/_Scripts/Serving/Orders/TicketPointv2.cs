@@ -11,7 +11,6 @@ namespace Serving
         public Transform spawnPoint;
         public OrderTicket currentOrderTicket;
 
-        private GameObject ticketObject;
         private GameObject createdTicket;
         private bool containsTicket;
 
@@ -37,11 +36,11 @@ namespace Serving
 
         public void SetTicket(RecipeVariation recipeVar, bool isVIP)
         {
-            // Get order ticket
-            currentOrderTicket = recipeVar.recipeTicket.GetComponent<OrderTicket>();
-            ticketObject = currentOrderTicket.gameObject;
+            // Get ticket object associated with recipe
+            OrderTicket orderTicket = recipeVar.recipeTicket.GetComponent<OrderTicket>();
+            GameObject ticketObject = orderTicket.gameObject;
 
-            // Instantiate
+            // Instantiate and attach to window
             Vector3 spawnOffset = new Vector3(0, -0.1f, 0);
             Vector3 position = spawnPoint.position + spawnOffset;
             Quaternion rotation = ticketObject.transform.rotation;
@@ -49,15 +48,18 @@ namespace Serving
             createdTicket = Instantiate(ticketObject, position, rotation);
             createdTicket.GetComponent<SpringJoint>().connectedBody = spawnPoint.GetComponent<Rigidbody>();
 
-            OrderTicket ticketSettings = createdTicket.GetComponent<OrderTicket>();
-            if (isVIP) ticketSettings.SetAsVIP();
-            ticketSettings.Initialize();
+            // Get ticket, set default recipe then configure
+            currentOrderTicket = createdTicket.GetComponent<OrderTicket>();
+            currentOrderTicket.recipe = recipeVar;
+
+            if (isVIP) currentOrderTicket.SetAsVIP();
+            currentOrderTicket.Initialize();
 
             containsTicket = true;
-            recipe = ticketSettings.recipe;
+            recipe = currentOrderTicket.recipe;
 
             // Set timer
-            ticketFullTime = ticketSettings.GetRecipeTime();
+            ticketFullTime = currentOrderTicket.GetRecipeTime();
             ticketClock.StartTimer();
         }
 

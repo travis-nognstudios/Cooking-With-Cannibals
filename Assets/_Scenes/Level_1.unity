@@ -2852,7 +2852,7 @@ MonoBehaviour:
   orderFrequency: 30
   totalServiceTime: 900
   numOrdersForLevel: 7
-  chanceOfVIP: 10
+  chanceOfVIP: 30
   sequences:
   - {fileID: 287736184}
   - {fileID: 287736183}
@@ -2922,7 +2922,6 @@ MonoBehaviour:
     - {fileID: 1052271780}
     - {fileID: 1126310097}
     - {fileID: 214580474}
-  CenterEyeCamera: {fileID: 2096657115}
 --- !u!114 &287736182
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2938,7 +2937,7 @@ MonoBehaviour:
   recipes:
   - recipeObject: {fileID: 2273475477494426701, guid: d17bbaca35493d74fb9cdf3ed8ec17f3,
       type: 3}
-    recipeTicket: {fileID: 1069434668478867141, guid: f82b0b6c5ef01434791f2d16dbe1f9d8,
+    recipeTicket: {fileID: 383623087817045195, guid: 7d18eb46c4ed14ffaaeae74931787c45,
       type: 3}
     serveTime: 90
     mainIngredient:
@@ -2948,7 +2947,7 @@ MonoBehaviour:
     toppings: []
   - recipeObject: {fileID: 2334161078186203893, guid: dc851b58c602c094daf26814d4bba78d,
       type: 3}
-    recipeTicket: {fileID: 476716843242511381, guid: 3d23613e9fbbef042b35a75b4dfb95c6,
+    recipeTicket: {fileID: 2326502122022408092, guid: 5f1fc91c6f8e54401a19a24b7dc35758,
       type: 3}
     serveTime: 150
     mainIngredient:
@@ -2962,7 +2961,7 @@ MonoBehaviour:
     - {fileID: 517484113511211222, guid: a3c60102bc20a664282b9c4bbaf768dd, type: 3}
   - recipeObject: {fileID: 3450052075905035848, guid: cb185d1dafd2eda47a94f11d433edf8b,
       type: 3}
-    recipeTicket: {fileID: 3375091425268823413, guid: 6ae2384edf68b5f4388e5afa7588c7fb,
+    recipeTicket: {fileID: 7225027189555916510, guid: 55b1434559e3e426fbb23d285576e432,
       type: 3}
     serveTime: 210
     mainIngredient:
@@ -11490,11 +11489,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7175888454427221680, guid: d5fd951864b23c84bbf59394777dcdfc,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 4a3fb9f199f4e12458b4562e343870cb, type: 2}
     - target: {fileID: 8620351761023743560, guid: d5fd951864b23c84bbf59394777dcdfc,
         type: 3}
       propertyPath: cam
@@ -11530,6 +11524,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0.0000011622906
       objectReference: {fileID: 0}
+    - target: {fileID: 7175888454427221680, guid: d5fd951864b23c84bbf59394777dcdfc,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4a3fb9f199f4e12458b4562e343870cb, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5fd951864b23c84bbf59394777dcdfc, type: 3}
 --- !u!4 &1028512417 stripped
@@ -21278,7 +21277,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 6.4936e-41, y: 1.02e-43, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 0, y: 1.7e-44, z: 1.7865e-41, w: 7.4655245e+17}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0

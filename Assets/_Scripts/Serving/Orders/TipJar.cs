@@ -31,17 +31,10 @@ namespace Serving
         public int numGoldTips;
         public int numSilverTips;
 
-        // Start is called before the first frame update
         void Start()
         {
             UpdateUI();
-            soundSource = this.GetComponent<AudioSource>();
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-            
+            soundSource = GetComponent<AudioSource>();
         }
 
         public void AddTip(int amount)
@@ -66,7 +59,7 @@ namespace Serving
 
         private void PlayFx(int amount)
         {
-            if (amount == 3)
+            if (amount >= 3)
             {
                 tip3.Play();
                 soundSource.clip = sfxCash;

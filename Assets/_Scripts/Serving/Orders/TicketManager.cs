@@ -58,7 +58,12 @@ namespace Serving
         {
             if (ticketPoints[lane].ContainsTicket())
             {
-                int tipAmount = ticketPoints[lane].recipeTipAmount;
+                TicketPointv2 ticketPoint = ticketPoints[lane];
+                OrderTicket ticket = ticketPoint.currentOrderTicket;
+
+                int tipAmount = ticketPoint.recipeTipAmount;
+                if (ticket.isVIP) tipAmount *= OrderTicket.VIPTipBonus;
+                
                 tipJar.AddTip(tipAmount);
                 RemoveTicket(lane);
             }

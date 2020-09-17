@@ -42,7 +42,7 @@ namespace Serving
 
             // Set variation UI
             OrderTicket orderTicket = createdTicket.GetComponent<OrderTicket>();
-            orderTicket.SetUI();
+            //orderTicket.SetUI();
 
             // Set values
             this.ticketReference = createdTicket;

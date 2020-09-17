@@ -3,31 +3,20 @@ using System.Collections;
 
 namespace Serving
 { 
-    public abstract class OrderTicket : MonoBehaviour
+    public class OrderTicket : MonoBehaviour
     {
-        public TicketUILine[] UILines;
-
+        [Header("VIP")]
         public bool isVIP;
         public ParticleSystem vipFX;
+        public static int VIPTipBonus = 2;
+        public static float VIPTimeMultiplier = 0.5f;
 
+        [Header("Recipe")]
         public RecipeVariation recipe;
-
-        protected abstract void SetAmounts();
 
         public void Initialize()
         {
             if (isVIP) ConfigureVIP();
-            //SetUI();
-        }
-
-        public void SetUI()
-        {
-            SetAmounts();
-
-            foreach (TicketUILine ui in UILines)
-            {
-                ui.SetUI();
-            }
         }
 
         public void SetAsVIP()
@@ -37,7 +26,7 @@ namespace Serving
 
         public void ConfigureVIP()
         {
-            recipe.serveTime *= 0.5f;
+            recipe.serveTime *= OrderTicket.VIPTimeMultiplier;
             vipFX.Play();
         }
 
