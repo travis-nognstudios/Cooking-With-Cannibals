@@ -51,7 +51,7 @@ namespace Serving
 
         private void UpdateUI()
         {
-            text.text = $"{amountInJar}/{capacity}";
+            text.text = $"${amountInJar}";
             float fillAmount = amountInJar / (float) capacity;
 
             fill.fillAmount = fillAmount;

@@ -98,7 +98,7 @@ namespace Serving
 
         public bool HasRoomForNewTicket()
         {
-            return numActiveTickets < 3;
+            return numActiveTickets < ticketPoints.Length;
         }
 
         public bool HasNoTickets()

@@ -60,7 +60,7 @@ namespace Serving
 
             // Set timer
             ticketFullTime = currentOrderTicket.GetRecipeTime();
-            ticketClock.StartTimer();
+            ticketClock.StartTimer(isVIP);
         }
 
         public void DestroyTicket()

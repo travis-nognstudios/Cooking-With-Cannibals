@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 namespace Serving
@@ -8,6 +9,7 @@ namespace Serving
         [Header("VIP")]
         public bool isVIP;
         public ParticleSystem vipFX;
+        public Text vipText;
         public static int VIPTipBonus = 2;
         public static float VIPTimeMultiplier = 0.5f;
 
@@ -27,6 +29,7 @@ namespace Serving
         public void ConfigureVIP()
         {
             recipe.serveTime *= OrderTicket.VIPTimeMultiplier;
+            vipText.enabled = true;
             vipFX.Play();
         }
 

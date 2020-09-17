@@ -51,7 +51,7 @@ namespace Serving
             this.timeUntilExpire = recipe.serveTime;
             this.ticketTiming = spawnPoint.GetComponent<TicketClock>();
 
-            ticketTiming.StartTimer();
+            ticketTiming.StartTimer(false);
         }
 
         public void SetCustomer(Customer customer)
