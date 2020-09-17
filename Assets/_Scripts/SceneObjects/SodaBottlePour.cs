@@ -10,7 +10,7 @@ namespace SceneObjects
         [Range(0f,1f)]
         public float startingFillAmount;
         [Range(0.01f, 0.8f)]
-        public float pourRate; // per second
+        public float pourRate = 0.2f;
         
 
         private float currentFillAmount;
