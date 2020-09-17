@@ -54,6 +54,7 @@ namespace Serving
             ticketSettings.Initialize();
 
             containsTicket = true;
+            recipe = ticketSettings.recipe;
 
             // Set timer
             ticketFullTime = ticketSettings.GetRecipeTime();
