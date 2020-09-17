@@ -7,9 +7,18 @@ namespace Serving
     {
         public TicketUILine[] UILines;
 
+        public bool isVIP;
+        public ParticleSystem vipFX;
+
         public RecipeVariation recipe;
 
         protected abstract void SetAmounts();
+
+        public void Initialize()
+        {
+            if (isVIP) ConfigureVIP();
+            //SetUI();
+        }
 
         public void SetUI()
         {
@@ -21,5 +30,20 @@ namespace Serving
             }
         }
 
+        public void SetAsVIP()
+        {
+            isVIP = true;
+        }
+
+        public void ConfigureVIP()
+        {
+            recipe.serveTime *= 0.5f;
+            vipFX.Play();
+        }
+
+        public float GetRecipeTime()
+        {
+            return recipe.serveTime;
+        }
     }
 }

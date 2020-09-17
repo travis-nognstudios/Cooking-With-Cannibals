@@ -22,14 +22,9 @@ namespace Serving
 
         [Header("Recipe")]
         public RecipeVariation recipe;
+        public int recipeTipAmount;
 
         private Customer customer;
-
-
-        void Start()
-        {
-            
-        }
 
         void Update()
         {
@@ -40,29 +35,28 @@ namespace Serving
             }
         }
 
-        public void SetTicket(RecipeVariation recipeVar)
+        public void SetTicket(RecipeVariation recipeVar, bool isVIP)
         {
             // Get order ticket
             currentOrderTicket = recipeVar.recipeTicket.GetComponent<OrderTicket>();
-            //currentOrderTicket.SetUI();
             ticketObject = currentOrderTicket.gameObject;
 
-            recipe = recipeVar;
-
-            // Instantiate ticket object
-            // Attach to spawn point with spring joint
+            // Instantiate
             Vector3 spawnOffset = new Vector3(0, -0.1f, 0);
             Vector3 position = spawnPoint.position + spawnOffset;
             Quaternion rotation = ticketObject.transform.rotation;
 
             createdTicket = Instantiate(ticketObject, position, rotation);
             createdTicket.GetComponent<SpringJoint>().connectedBody = spawnPoint.GetComponent<Rigidbody>();
-            createdTicket.GetComponent<OrderTicket>().SetUI();
+
+            OrderTicket ticketSettings = createdTicket.GetComponent<OrderTicket>();
+            if (isVIP) ticketSettings.SetAsVIP();
+            ticketSettings.Initialize();
 
             containsTicket = true;
 
             // Set timer
-            ticketFullTime = recipeVar.serveTime;
+            ticketFullTime = ticketSettings.GetRecipeTime();
             ticketClock.StartTimer();
         }
 
@@ -75,6 +69,7 @@ namespace Serving
 
                 currentOrderTicket = null;
                 recipe = null;
+                recipeTipAmount = 0;
                 ticketAge = 0;
                 ticketClock.EndTimer();
             }

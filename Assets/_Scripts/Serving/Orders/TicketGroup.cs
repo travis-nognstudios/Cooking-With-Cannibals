@@ -36,7 +36,7 @@ namespace Serving
 
             for (int i=0; i<numRecipes; ++i)
             {
-                ticketPoints[i].SetTicket(recipes[i]);
+                ticketPoints[i].SetTicket(recipes[i], false);
             }
 
             SetFullTime();

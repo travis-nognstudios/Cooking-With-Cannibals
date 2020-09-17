@@ -16,9 +16,9 @@ namespace Serving
         [Header("Orders")]
         public float totalServiceTime;
         public int numOrdersForLevel;
+        [Range(0, 100)]
+        public int chanceOfVIP = 10;
         public MonoBehaviour[] sequences;
-
-        private int ordersCompleted;
 
         private float timeSinceLastOrder;
         [HideInInspector]
@@ -28,64 +28,19 @@ namespace Serving
         [Header("Recipes")]
         public RecipeManager recipeManager;
 
+        [Header("Savestate")]
         public SaveState saveState;
+
         // Logic to start spawning
         private bool spawnAllowed;
         private bool firstSpawnDone;
 
         private List<Recipe> sequencedRecipes = new List<Recipe>();
-        private List<RecipeVariation> sequencedRecipeVariations = new List<RecipeVariation>();
         private int sequenceIndex;
         
         void Start()
         {
-            // Get sequenced recipes
-            foreach (MonoBehaviour sequenceScript in sequences)
-            {
-                RecipeSequence seq = sequenceScript as RecipeSequence;
-                seq.LoadRecipes();
-                Recipe[] seqRecipes = seq.GetRecipes();
-
-                foreach (Recipe recipe in seqRecipes)
-                {
-                    sequencedRecipes.Add(recipe);
-                }
-            }
-
-            // Get sequenced recipes - Variations
-            foreach (MonoBehaviour sequenceScript in sequences)
-            {
-                RecipeSequence seq = sequenceScript as RecipeSequence;
-                seq.LoadRecipes();
-                RecipeVariation[] seqRecipeVariations = seq.GetRecipeVariations();
-
-                foreach (RecipeVariation recipeVariation in seqRecipeVariations)
-                {
-                    sequencedRecipeVariations.Add(recipeVariation);
-                }
-            }
-
-            /*
-            // DEBUG-START
-            Debug.Log($"Total recipes: {sequencedRecipeVariations.Count}");
-
-            foreach (RecipeVariation r in sequencedRecipeVariations)
-            {
-                int time = System.DateTime.Now.Millisecond;
-
-                Debug.Log($"{time} - Recipe: {r.recipeObject.name}");
-
-                Debug.Log($"{time} - Main: {r.mainIngredient.gameObject} x{r.mainIngredientAmount}");
-
-                for (int i = 0; i < r.toppings.Length; ++i)
-                {
-                    Debug.Log($"{time} - Topping: {r.toppings[i].name} x{r.toppingAmount[i]}");
-                }
-
-                Debug.Log($"{time} - END");
-            }
-            // DEBUG-END
-            */
+            GetSequencedRecipes();
         }
 
         void Update()
@@ -130,12 +85,31 @@ namespace Serving
             }
         }
 
+        private void GetSequencedRecipes()
+        {
+            foreach (MonoBehaviour sequenceScript in sequences)
+            {
+                RecipeSequence seq = sequenceScript as RecipeSequence;
+                seq.LoadRecipes();
+                Recipe[] seqRecipes = seq.GetRecipes();
+
+                foreach (Recipe recipe in seqRecipes)
+                {
+                    sequencedRecipes.Add(recipe);
+                }
+            }
+        }
+
         private void GenerateNewOrder()
         {
             Recipe recipe = GetSequencedRecipe();
             RecipeVariation recipeVar = recipe.CreateVariation();
 
-            ticketManager.AddTicket(recipeVar);
+            bool isVIP = false;
+            int VIPDiceRoll = Random.Range(0, 100);
+            if (VIPDiceRoll <= chanceOfVIP) isVIP = true;
+
+            ticketManager.AddTicket(recipeVar, isVIP);
             timeSinceLastOrder = 0;
         }
 
@@ -146,31 +120,15 @@ namespace Serving
             return r;
         }
 
-        public List<RecipeVariation> GetQueuedRecipes()
+        public List<TicketPointv2> GetQueuedTickets()
         {
-            return ticketManager.GetActiveTicketRecipes();
+            return ticketManager.GetActiveTickets();
         }
-
-        /*
-        private RecipeVariation GetSequencedRecipeVariation()
-        {
-            RecipeVariation r = sequencedRecipeVariations[sequenceIndex];
-            sequenceIndex++;
-            return r;
-        }
-        */
 
         public void CompleteRecipe(Recipe baseRecipe)
         {
-            ticketManager.RemoveTicket(baseRecipe);
+            ticketManager.CompleteTicket(baseRecipe);
         }
-
-        /*
-        public void CompleteRecipe(Recipe recipeVar)
-        {
-            ticketManager.RemoveTicket(recipeVar);
-        }
-        */
 
         public void StartSpawning()
         {
