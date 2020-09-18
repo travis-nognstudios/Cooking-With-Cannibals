@@ -38,7 +38,6 @@ namespace Serving
         void SyncGradePoster()
         {
             gradePoster.SetScores(tipsForA, tipsForB, tipsForC);
-            gradePoster.SetPosterText();
         }
 
         void SyncTipJarCapacity()
