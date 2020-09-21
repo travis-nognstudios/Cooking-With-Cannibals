@@ -1,209 +1,109 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Serving;
 using UnityEngine.SceneManagement;
+using Serving;
 public class SaveState : MonoBehaviour
 {
-    public OrderSpawnerv5 orderSpawner;
-    public TipJar tipJar;
+    private LevelOneSaveData levelOneSave;
 
-    //public TipJar easterEggTips;
-
-    //Level Progress
-    public static bool tutorialCompleted = false;
-    public static bool levelOneCompleted = false;
-    public static bool levelTwoCompleted = false;
-    public static bool levelThreeCompleted = false;
-
-    //High Scores
-    public static int levelOneHS;
-    public static int levelTwoHS;
-    public static int levelThreeHS;
-
-    //Best Times
-    public static float levelOneTime;
-    public static float levelTwoTime;
-    public static float levelThreeTime;
-
-    //EasterEgg High Scores
-    public static int levelOneEHS;
-    public static int levelTwoEHS;
-    public static int levelThreeEHS;
-
+    private LevelTwoSaveData levelTwoSave;
+    
+    private LevelThreeSaveData levelThreeSave;
 
     public static bool goldKnifeUnlocked;
+
+    [HideInInspector]
+    public bool debug;
+
+    //Debug Variables
+    [HideInInspector]
+    public bool setLevelOneCompleted;
+    [HideInInspector]
+    public float setLevelOneTime;
+    [HideInInspector]
+    public RatingCardSpawner.Rating setLevelOneHG;
+    [HideInInspector]
+    public int setLevelOneHS;
+
+    [HideInInspector]
+    public bool setLevelTwoCompleted;
+    [HideInInspector]
+    public float setLevelTwoTime;
+    [HideInInspector]
+    public RatingCardSpawner.Rating setLevelTwoHG;
+    [HideInInspector]
+    public int setLevelTwoHS;
+
+    [HideInInspector]
+    public bool setLevelThreeCompleted;
+    [HideInInspector]
+    public float setLevelThreeTime;
+    [HideInInspector]
+    public RatingCardSpawner.Rating setLevelThreeHG;
+    [HideInInspector]
+    public int setLevelThreeHS;
+
+
 
 
     private void Start()
     {
+        levelOneSave = GetComponent<LevelOneSaveData>();
+        levelTwoSave = GetComponent<LevelTwoSaveData>();
+        levelThreeSave = GetComponent<LevelThreeSaveData>();
+
+        if (!debug)
+        {
+            levelOneSave.Load();
+            levelTwoSave.Load();
+            levelThreeSave.Load();
+        }
+        else
+        {
+            SetDebug();
+        }
+
+        ApplyGoldenKnifeUnlockRule();
         
-        if (SaveLoad.SaveExists("LevelOneProgress"))
-        {
-            levelOneCompleted = SaveLoad.Load<bool>("LevelOneProgress");
-        }
-        if (SaveLoad.SaveExists("LevelTwoProgress"))
-        {
-            levelTwoCompleted = SaveLoad.Load<bool>("LevelTwoProgress");
-        }
-        if (SaveLoad.SaveExists("LevelThreeProgress"))
-        {
-            levelThreeCompleted = SaveLoad.Load<bool>("LevelThreeProgress");
-        }
-        if (SaveLoad.SaveExists("GoldKnifeUnlocked"))
-        {
-            goldKnifeUnlocked = SaveLoad.Load<bool>("GoldKnifeUnlocked");
-        }
-        if (SaveLoad.SaveExists("LevelOneHS"))
-        {
-            levelOneHS = SaveLoad.Load<int>("LevelOneHS");
-        }
-        if (SaveLoad.SaveExists("LevelTwoHS"))
-        {
-            levelTwoHS = SaveLoad.Load<int>("LevelTwoHS");
-        }
-        if (SaveLoad.SaveExists("LevelThreeHS"))
-        {
-            levelThreeHS = SaveLoad.Load<int>("LevelThreeHS");
-        }if (SaveLoad.SaveExists("LevelOneEHS"))
-        {
-            levelOneEHS = SaveLoad.Load<int>("LevelOneEHS");
-        }
-        if (SaveLoad.SaveExists("LevelTwoEHS"))
-        {
-            levelTwoEHS = SaveLoad.Load<int>("LevelTwoEHS");
-        }
-        if (SaveLoad.SaveExists("LevelThreeEHS"))
-        {
-            levelThreeEHS = SaveLoad.Load<int>("LevelThreeEHS");
-        }
-        if (SaveLoad.SaveExists("LevelOneTime"))
-        {
-            levelOneTime = SaveLoad.Load<float>("LevelOneTime");
-        }
-        if (SaveLoad.SaveExists("LevelTwoTime"))
-        {
-            levelTwoTime = SaveLoad.Load<float>("LevelTwoTime");
-        }
-        if (SaveLoad.SaveExists("LevelThreeTime"))
-        {
-            levelThreeTime = SaveLoad.Load<float>("LevelThreeTime");
-        }
+    }
+
+    public void SetDebug()
+    {
+        LevelOneSaveData.levelOneCompleted = setLevelOneCompleted;
+        LevelOneSaveData.levelOneHG = setLevelOneHG;
+        LevelOneSaveData.levelOneHS = setLevelOneHS;
+        LevelOneSaveData.levelOneTime = setLevelOneTime;
+        LevelTwoSaveData.levelTwoCompleted = setLevelTwoCompleted;
+        LevelTwoSaveData.levelTwoHG = setLevelTwoHG;
+        LevelTwoSaveData.levelTwoHS = setLevelTwoHS;
+        LevelTwoSaveData.levelTwoTime = setLevelTwoTime;
+        LevelThreeSaveData.levelThreeCompleted = setLevelThreeCompleted;
+        LevelThreeSaveData.levelThreeHG = setLevelThreeHG;
+        LevelThreeSaveData.levelThreeHS = setLevelThreeHS;
+        LevelThreeSaveData.levelThreeTime = setLevelThreeTime;
 
     }
 
+    //Called at end of service
     public void Save()
     {
         if (SceneManager.GetActiveScene().buildIndex == 1)
-        {
-            levelOneCompleted = true;
-            SaveLoad.Save(levelOneCompleted, "LevelOneProgress");
-
-            if (SaveLoad.SaveExists("LevelOneHS"))
-            {
-                if (tipJar.GetAmountInJar() > SaveLoad.Load<int>("LevelOneHS"))
-                {
-                    SaveLoad.Save(tipJar.GetAmountInJar(), "LevelOneHS");
-                }
-
-            }
-            else
-            {
-                SaveLoad.Save(tipJar.GetAmountInJar(), "LevelOneHS");
-            }
-
-            if (SaveLoad.SaveExists("LevelOneTime"))
-            {
-                if (orderSpawner.timeSinceServiceStarted < SaveLoad.Load<float>("LevelOneTime"))
-                {
-                    SaveLoad.Save(orderSpawner.timeSinceServiceStarted, "LevelOneTime");
-                }
-            }
-            else
-            {
-                SaveLoad.Save(orderSpawner.timeSinceServiceStarted, "LevelOneTime");
-            }
-        }
+            levelOneSave.Save();
         else if (SceneManager.GetActiveScene().buildIndex == 2)
-        {
-            levelTwoCompleted = true;
-            SaveLoad.Save(levelTwoCompleted, "LevelTwoProgress");
-
-            if (SaveLoad.SaveExists("LevelTwoHS"))
-            {
-                if (tipJar.GetAmountInJar() > SaveLoad.Load<int>("LevelTwoHS"))
-                {
-                    SaveLoad.Save(tipJar.GetAmountInJar(), "LevelTwoHS");
-                }
-
-            }
-            else
-            {
-                SaveLoad.Save(tipJar.GetAmountInJar(), "LevelTwoHS");
-            }
-
-            if (SaveLoad.SaveExists("LevelTwoTime"))
-            {
-                if (orderSpawner.timeSinceServiceStarted < SaveLoad.Load<float>("LevelTwoTime"))
-                {
-                    SaveLoad.Save(orderSpawner.timeSinceServiceStarted, "LevelTwoTime");
-                }
-            }
-            else
-            {
-                SaveLoad.Save(orderSpawner.timeSinceServiceStarted, "LevelTwoTime");
-            }
-        }
+            levelTwoSave.Save();
         else if (SceneManager.GetActiveScene().buildIndex == 3)
-        {
-            levelThreeCompleted = true;
-            SaveLoad.Save(levelThreeCompleted, "LevelThreeProgress");
-
-            if (SaveLoad.SaveExists("LevelThreeHS"))
-            {
-                if (tipJar.GetAmountInJar() > SaveLoad.Load<int>("LevelThreeHS"))
-                {
-                    SaveLoad.Save(tipJar.GetAmountInJar(), "LevelThreeHS");
-                }
-
-            }
-            else
-            {
-                SaveLoad.Save(tipJar.GetAmountInJar(), "LevelThreeHS");
-            }
-
-            if (SaveLoad.SaveExists("LevelThreeTime"))
-            {
-                if (orderSpawner.timeSinceServiceStarted < SaveLoad.Load<float>("LevelThreeTime"))
-                {
-                    SaveLoad.Save(orderSpawner.timeSinceServiceStarted, "LevelThreeTime");
-                }
-            }
-            else
-            {
-                SaveLoad.Save(orderSpawner.timeSinceServiceStarted, "LevelThreeTime");
-            }
-        }
+            levelThreeSave.Save();
     }
-
-    /*
-    public void SaveMinigame()
+    public void ApplyGoldenKnifeUnlockRule()
     {
-        if (SceneManager.GetActiveScene().buildIndex == 1)
+        if (LevelOneSaveData.levelOneHG == RatingCardSpawner.Rating.A &&
+            LevelTwoSaveData.levelTwoHG == RatingCardSpawner.Rating.A &&
+            LevelThreeSaveData.levelThreeHG == RatingCardSpawner.Rating.A)
         {
-            if (SaveLoad.SaveExists("LevelOneEHS"))
-            {
-                if (easterEggTips.GetAmountInJar() > SaveLoad.Load<int>("LevelOneEHS"))
-                {
-                    SaveLoad.Save(easterEggTips.GetAmountInJar(), "LevelOneEHS");
-                }
-
-            }
-            else
-            {
-                SaveLoad.Save(easterEggTips.GetAmountInJar(), "LevelOneEHS");
-            }
+            goldKnifeUnlocked = true;
         }
+        else
+            goldKnifeUnlocked = false;
     }
-    */
 }

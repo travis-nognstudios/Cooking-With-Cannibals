@@ -1,8 +1,6 @@
 ﻿using UnityEngine;
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using Cut;
 using LevelManagement;
 
 namespace Supplies
@@ -12,30 +10,14 @@ namespace Supplies
         public float spawnInterval = 10f;
         public SupplyArea[] ingredients;
 
-        // Camera is used by the chopping UI
-        public Camera CenterEyeCamera;
-
         private List<SupplyPoint> supplyPoints = new List<SupplyPoint>();
         private float timeSinceLastSpawn = 0f;
 
-        // Use this for initialization
         void Start()
         {
-            // Get starting positions for all ingredients
-            foreach (SupplyArea area in ingredients)
-            {
-                foreach (GameObject spawnPoint in area.spawnPoints)
-                {
-                    Vector3 position = spawnPoint.transform.position;
-                    Quaternion rotation = spawnPoint.transform.rotation;
-
-                    SupplyPoint point = new SupplyPoint(area.objectToSpawn, position, rotation);
-                    supplyPoints.Add(point);
-                }
-            }
+            GetStartingPositionForAllIngredients();
         }
 
-        // Update is called once per frame
         void Update()
         {
             timeSinceLastSpawn += PauseTimer.DeltaTime();
@@ -48,6 +30,20 @@ namespace Supplies
             }
         }
 
+        void GetStartingPositionForAllIngredients()
+        {
+            foreach (SupplyArea area in ingredients)
+            {
+                foreach (GameObject spawnPoint in area.spawnPoints)
+                {
+                    Vector3 position = spawnPoint.transform.position;
+                    Quaternion rotation = spawnPoint.transform.rotation;
+
+                    SupplyPoint point = new SupplyPoint(area.objectToSpawn, position, rotation);
+                    supplyPoints.Add(point);
+                }
+            }
+        }
 
         void CheckSpawnPoints()
         {
@@ -70,8 +66,6 @@ namespace Supplies
                     }
                 }
 
-                // If desired object doesn't exist near point, spawn new one
-                // Set its camera on the Cutting script to the center eye camera, if cuttable
                 if (!ListContainsName(objectsAtPoint, objectToSpawn.gameObject.name))
                 {
                     Instantiate(objectToSpawn, position, rotation);

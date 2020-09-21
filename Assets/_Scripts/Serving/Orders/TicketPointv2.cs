@@ -11,7 +11,6 @@ namespace Serving
         public Transform spawnPoint;
         public OrderTicket currentOrderTicket;
 
-        private GameObject ticketObject;
         private GameObject createdTicket;
         private bool containsTicket;
 
@@ -22,14 +21,9 @@ namespace Serving
 
         [Header("Recipe")]
         public RecipeVariation recipe;
+        public int recipeTipAmount;
 
         private Customer customer;
-
-
-        void Start()
-        {
-            
-        }
 
         void Update()
         {
@@ -40,30 +34,33 @@ namespace Serving
             }
         }
 
-        public void SetTicket(RecipeVariation recipeVar)
+        public void SetTicket(RecipeVariation recipeVar, bool isVIP)
         {
-            // Get order ticket
-            currentOrderTicket = recipeVar.recipeTicket.GetComponent<OrderTicket>();
-            //currentOrderTicket.SetUI();
-            ticketObject = currentOrderTicket.gameObject;
+            // Get ticket object associated with recipe
+            OrderTicket orderTicket = recipeVar.recipeTicket.GetComponent<OrderTicket>();
+            GameObject ticketObject = orderTicket.gameObject;
 
-            recipe = recipeVar;
-
-            // Instantiate ticket object
-            // Attach to spawn point with spring joint
+            // Instantiate and attach to window
             Vector3 spawnOffset = new Vector3(0, -0.1f, 0);
             Vector3 position = spawnPoint.position + spawnOffset;
             Quaternion rotation = ticketObject.transform.rotation;
 
             createdTicket = Instantiate(ticketObject, position, rotation);
             createdTicket.GetComponent<SpringJoint>().connectedBody = spawnPoint.GetComponent<Rigidbody>();
-            createdTicket.GetComponent<OrderTicket>().SetUI();
+
+            // Get ticket, set default recipe then configure
+            currentOrderTicket = createdTicket.GetComponent<OrderTicket>();
+            currentOrderTicket.recipe = recipeVar;
+
+            if (isVIP) currentOrderTicket.SetAsVIP();
+            currentOrderTicket.Initialize();
 
             containsTicket = true;
+            recipe = currentOrderTicket.recipe;
 
             // Set timer
-            ticketFullTime = recipeVar.serveTime;
-            ticketClock.StartTimer();
+            ticketFullTime = currentOrderTicket.GetRecipeTime();
+            ticketClock.StartTimer(isVIP);
         }
 
         public void DestroyTicket()
@@ -75,6 +72,7 @@ namespace Serving
 
                 currentOrderTicket = null;
                 recipe = null;
+                recipeTipAmount = 0;
                 ticketAge = 0;
                 ticketClock.EndTimer();
             }

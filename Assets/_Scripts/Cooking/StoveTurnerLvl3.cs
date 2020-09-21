@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using VRTK;
+using SceneObjects;
 
 namespace Cooking
 {
@@ -10,40 +11,48 @@ namespace Cooking
         [Header("Turner Settings")]
         public StoveBurner connectedBurner;
         public bool isOn;
-        [Range(0.05f, 0.3f)]
-        public float snapThreshold = 0.1f;
+        [Range(5f, 45f)]
+        public float snapThreshold = 10f;
+        public StoveIndicatorLight indicatorLight;
 
         private float rotationOnGrab;
         private float rotationOnUngrab;
-        public AudioSource audioSource;
+        //public AudioSource audioSource;
+
+        private float offRotation = 0;
+        private float onRotation = 270;
 
         public void Start()
         {
-            audioSource = this.GetComponent<AudioSource>();
+            //audioSource = this.GetComponent<AudioSource>();
         }
         
         public override void Grabbed(VRTK_InteractGrab currentGrabbingObject = null)
         {
-            rotationOnGrab = transform.rotation.x;
-            audioSource.Play();
+            rotationOnGrab = transform.localEulerAngles.z;
+
+            //audioSource.Play();
             base.Grabbed(currentGrabbingObject);
         }
+
         public override void Ungrabbed(VRTK_InteractGrab previousGrabbingObject = null)
         {
-            Debug.Log(transform.rotation);
-            rotationOnUngrab = transform.rotation.x;
+            rotationOnUngrab = transform.localEulerAngles.z;
+
             TriggerSnap();
-            audioSource.Stop();
+            //audioSource.Stop();
             base.Ungrabbed(previousGrabbingObject);
         }
 
         private void TriggerSnap()
         {
-            float rotationDifference = rotationOnUngrab - rotationOnGrab;
+            float rotationDifference = normalizedRotationAngle(rotationOnUngrab) - normalizedRotationAngle(rotationOnGrab);
+            bool rotationTowardsOn = rotationDifference < 0;
 
+            // Snap to new position
             if (Mathf.Abs(rotationDifference) > snapThreshold)
             {
-                if (rotationDifference > 0)
+                if (rotationTowardsOn)
                 {
                     SnapToOn();
                 }
@@ -52,7 +61,7 @@ namespace Cooking
                     SnapToOff();
                 }
             }
-            else
+            else // Snap back to current position
             {
                 if (isOn)
                 {
@@ -63,22 +72,44 @@ namespace Cooking
                     SnapToOff();
                 }
             }
+
         }
 
         private void SnapToOff()
         {
-            transform.rotation = new Quaternion(0, 1.0f, 0, 0);
+            float x = transform.localEulerAngles.x;
+            float y = transform.localEulerAngles.y;
+            float z = offRotation;
+
+            transform.localEulerAngles = new Vector3(x,y,z);
             isOn = false;
 
             connectedBurner.UpdateStove(isOn);
+            indicatorLight.TurnOff();
         }
 
         private void SnapToOn()
         {
-            transform.rotation = new Quaternion(0.7f, 0.7f, 0, 0);
+            float x = transform.localEulerAngles.x;
+            float y = transform.localEulerAngles.y;
+            float z = onRotation;
+
+            transform.localEulerAngles = new Vector3(x, y, z);
             isOn = true;
 
             connectedBurner.UpdateStove(isOn);
+            indicatorLight.TurnOn();
+        }
+
+        // Normalize 0 degrees to 360 degrees so angle differences are consistent
+        private float normalizedRotationAngle(float angle)
+        {
+            if (angle == 0)
+            {
+                return 360;
+            }
+
+            return angle;
         }
     }
 }

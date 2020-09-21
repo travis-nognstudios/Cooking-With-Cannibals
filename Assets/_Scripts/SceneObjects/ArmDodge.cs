@@ -2,32 +2,31 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ArmDodge : MonoBehaviour
+namespace SceneObjects
 {
-    public Rigidbody rb;
-    // Start is called before the first frame update
-    void Start()
+    public class ArmDodge : MonoBehaviour
     {
-        //rb = gameObject.GetComponentInParent<Rigidbody>();
-    }
+        public Rigidbody arm;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+        [Range(0f, 5f)]
+        public float forceMultiplier = 0.75f;
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Knife"))
+        private readonly float baseForce = -500; // Opposite direction to knife
+
+        void OnTriggerEnter(Collider other)
         {
-            Debug.Log(other.transform.parent.GetComponent<Rigidbody>().velocity.magnitude);
-            //if (other.transform.parent.GetComponent<Rigidbody>().velocity.magnitude > 1f)
-            //{
-               // Debug.Log("ArmDodge.cs: dodge" + rb);
-                rb.AddForce(10f, 0, 0, ForceMode.Impulse);
-           // }
-            
+            if (other.CompareTag("Knife"))
+            {
+                Vector3 myPosition = transform.position;
+                Vector3 knifePosition = other.transform.position;
+                Vector3 knifeDirection = knifePosition - myPosition;
+
+                Vector3 dodgeForce = knifeDirection * baseForce * forceMultiplier;
+
+                //Debug.Log($"Knife coming from: {knifeDirection}");
+                //arm.AddForce(dodgeForce);
+                arm.AddForceAtPosition(dodgeForce, myPosition);
+            }
         }
     }
 }

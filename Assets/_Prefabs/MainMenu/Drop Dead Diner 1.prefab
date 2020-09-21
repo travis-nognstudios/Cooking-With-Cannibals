@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4434083289020719154}
   - component: {fileID: 5166058586901556918}
   - component: {fileID: 7722399303530175138}
+  - component: {fileID: 4086588104417068869}
   m_Layer: 0
   m_Name: Drop Dead Diner 1
   m_TagString: Untagged
@@ -111,6 +112,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 2
   pauseManager: {fileID: 0}
+  posterDissolve: {fileID: 4086588104417068869}
 --- !u!54 &7722399303530175138
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -127,6 +129,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &4086588104417068869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4365114591296981995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79316f5709d128b4782c47fa9ff179c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  faces:
+  - {fileID: 4365114591296981995}
+  dissolveRate: 0.01
+  isDissolving: 0
 --- !u!1 &7182405344861521338
 GameObject:
   m_ObjectHideFlags: 0
