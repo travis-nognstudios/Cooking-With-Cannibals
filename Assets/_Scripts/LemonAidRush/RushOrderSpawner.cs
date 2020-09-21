@@ -52,7 +52,7 @@ namespace LemonAidRush
         public void StartRushMode()
         {
             started = true;
-            ticketClock.StartTimer();
+            ticketClock.StartTimer(false);
         }
 
         public void EndRushMode()

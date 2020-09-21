@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using VRTK;
+using SceneObjects;
 
 namespace Cooking
 {
@@ -12,6 +13,7 @@ namespace Cooking
         public bool isOn;
         [Range(5f, 45f)]
         public float snapThreshold = 10f;
+        public StoveIndicatorLight indicatorLight;
 
         private float rotationOnGrab;
         private float rotationOnUngrab;
@@ -29,8 +31,6 @@ namespace Cooking
         {
             rotationOnGrab = transform.localEulerAngles.z;
 
-            Debug.Log($"Grab rotation: {rotationOnGrab}");
-
             //audioSource.Play();
             base.Grabbed(currentGrabbingObject);
         }
@@ -38,8 +38,6 @@ namespace Cooking
         public override void Ungrabbed(VRTK_InteractGrab previousGrabbingObject = null)
         {
             rotationOnUngrab = transform.localEulerAngles.z;
-
-            Debug.Log($"Ungrab rotation: {rotationOnUngrab}");
 
             TriggerSnap();
             //audioSource.Stop();
@@ -87,6 +85,7 @@ namespace Cooking
             isOn = false;
 
             connectedBurner.UpdateStove(isOn);
+            indicatorLight.TurnOff();
         }
 
         private void SnapToOn()
@@ -99,6 +98,7 @@ namespace Cooking
             isOn = true;
 
             connectedBurner.UpdateStove(isOn);
+            indicatorLight.TurnOn();
         }
 
         // Normalize 0 degrees to 360 degrees so angle differences are consistent
