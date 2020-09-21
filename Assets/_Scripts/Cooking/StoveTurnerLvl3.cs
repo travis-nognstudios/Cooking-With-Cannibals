@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using VRTK;
+using SceneObjects;
 
 namespace Cooking
 {
@@ -12,6 +13,7 @@ namespace Cooking
         public bool isOn;
         [Range(5f, 45f)]
         public float snapThreshold = 10f;
+        public StoveIndicatorLight indicatorLight;
 
         private float rotationOnGrab;
         private float rotationOnUngrab;
@@ -83,6 +85,7 @@ namespace Cooking
             isOn = false;
 
             connectedBurner.UpdateStove(isOn);
+            indicatorLight.TurnOff();
         }
 
         private void SnapToOn()
@@ -95,6 +98,7 @@ namespace Cooking
             isOn = true;
 
             connectedBurner.UpdateStove(isOn);
+            indicatorLight.TurnOn();
         }
 
         // Normalize 0 degrees to 360 degrees so angle differences are consistent

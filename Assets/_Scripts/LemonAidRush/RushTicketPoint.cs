@@ -44,7 +44,7 @@ namespace LemonAidRush
 
             createdTicket = Instantiate(ticketObject, position, rotation);
             createdTicket.GetComponent<SpringJoint>().connectedBody = spawnPoint.GetComponent<Rigidbody>();
-            createdTicket.GetComponent<OrderTicket>().SetUI();
+            //createdTicket.GetComponent<OrderTicket>().SetUI();
 
             containsTicket = true;
         }
