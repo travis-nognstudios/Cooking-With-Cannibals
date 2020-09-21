@@ -6,60 +6,41 @@ public class Flip : MonoBehaviour
 {
     public GameObject switchObj;
 	public GameObject AffectedObj;
-    //public Spin script;
-    //private string objName;
-    //private string scriptName;
+	public GameObject AffectedObj1;
+
     private Animator anim;
+    private Animator anim1;
     private bool isTriggered = false;
+    public bool multipleObj = false;
+    public bool forSky = false;
+    public bool mainmenu = false;
+
 
     void Start()
     {
-        //objName = AffectedObj.gameObject.name;
-        //scriptName = script.gameObject.name;
 
-        anim = AffectedObj.GetComponent<Animator>();
-        AnimateOn(this.gameObject);
-        
+        if (forSky == false)
+        {
+            anim = AffectedObj.GetComponent<Animator>();
+            if (multipleObj == true)
+            {
+                anim1 = AffectedObj1.GetComponent<Animator>();
+            }
+        }
+            
+
+            AnimateOn(this.gameObject);
 
     }
   
 	
 	private void OnTriggerEnter(Collider col)
 	{
-        /*
-		if (this.gameObject.name.Contains("_on")){
-            //AffectedObj.GetComponent(Spin).setActive(false);//enabled = false; //
-            //GameObject.Find(AffectedObj.GameObject.name).GetComponent<script.gameObject.name>().setActive(false);
-            //GameObject.Find(ObjName).GetComponent(script).setActive(false);
-
-            anim.enabled = false;
-			Debug.Log("name contains _on");
-        }
-        /*
-		else if (this.gameObject.name.Contains("_off")){
-			Debug.Log("name contains _off");
-            //AffectedObj.GetComponent(Spin).setActive(true);//enabled = true; //
-            //GameObject.Find(AffectedObj.GameObject.name).GetComponent<script.gameObject.name>().setActive(true);
-            //GameObject.Find(ObjName).GetComponent(script).setActive(true);
-
-            anim.enabled = true;
-        }
-        //;
-		else
-		{
-            anim.enabled = true;
-			Debug.Log("name contains _off");
-		}
-        */
-
-
-
-
-
+      
         if (!isTriggered){
             AnimateOn(switchObj);
-			switchObj.gameObject.SetActive(true); //gameObject.enable();//
-			this.gameObject.SetActive(false); //gameObject.disable();//
+			switchObj.gameObject.SetActive(true); 
+			this.gameObject.SetActive(false); 
 			isTriggered = true;
 
         }
@@ -75,15 +56,48 @@ public class Flip : MonoBehaviour
     
     public void AnimateOn(GameObject obj)
     {
+
         if (obj.name.Contains("_on"))
         {
-            anim.enabled = true;
-            Debug.Log("name contains _on");
+            if (forSky == true)
+            {
+                AffectedObj.gameObject.SetActive(false);
+                AffectedObj1.gameObject.SetActive(true);
+
+            }
+            else if (mainmenu == true)
+            {
+                AffectedObj.gameObject.SetActive(true);
+            }
+            else
+            {
+                anim.enabled = true;
+                if (multipleObj == true)
+                {
+                    anim1.enabled = true;
+                }
+            }
         }
         if (obj.name.Contains("_off"))
         {
-            anim.enabled = false;
-            Debug.Log("name contains _off");
+            if (forSky == true)
+            {
+                AffectedObj.gameObject.SetActive(true);
+                AffectedObj1.gameObject.SetActive(false);
+
+            }
+            else if (mainmenu == true)
+            {
+                AffectedObj.gameObject.SetActive(false);
+            }
+            else
+            {
+                anim.enabled = false;
+                if (multipleObj == true)
+                {
+                    anim1.enabled = false;
+                }
+            }
         }
     }
 }
