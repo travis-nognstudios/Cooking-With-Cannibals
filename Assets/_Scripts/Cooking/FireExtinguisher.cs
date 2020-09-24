@@ -9,16 +9,6 @@ namespace Cooking
     {
         public ParticleSystem foam;
 
-        void Start()
-        {
-            
-        }
-
-        void Update()
-        {
-
-        }
-
         private void OnTriggerStay(Collider other)
         {
             if (other.CompareTag("Cooktop"))

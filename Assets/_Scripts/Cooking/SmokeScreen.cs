@@ -13,18 +13,6 @@ namespace Cooking
         public int numSmokeScreensStarted;
         public int numSmokeScreensStopped;
 
-        // Start is called before the first frame update
-        void Start()
-        {
-            
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
-
         public void StartSmokeScreen()
         {
             if (!isSmoking)
