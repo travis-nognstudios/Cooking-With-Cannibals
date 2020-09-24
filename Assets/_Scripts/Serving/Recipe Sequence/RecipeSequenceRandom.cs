@@ -14,11 +14,6 @@ namespace Serving
 
         private RecipeManager recipeManager;
 
-        void Start()
-        {
-            
-        }
-
         public void LoadRecipes()
         {
             // Set seed

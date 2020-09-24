@@ -119,8 +119,6 @@ namespace Serving
                 numTotalMeals += numMeals;
             }
 
-            Debug.Log($"Total meals: {numTotalMeals}");
-            // Debug.Log($"Order size sequence: {orderSizes.ToArray().ToString()}");
         }
 
         private void SetTipJarCapacity()
@@ -128,15 +126,12 @@ namespace Serving
             int fullTip = 3;
             tipJar.capacity = numTotalMeals * fullTip;
 
-            Debug.Log($"Original tipjar cap: {tipJar.capacity}");
             
             // Round down to the nearest 5
             while (tipJar.capacity % 5 != 0)
             {
                 tipJar.capacity -= 1;
             }
-
-            Debug.Log($"New tipjar cap: {tipJar.capacity}");
         }
 
         private RecipeVariation GetSequencedRecipeVariation()

@@ -8,16 +8,6 @@ namespace LemonAidRush
     {
         public Recipe[] recipes;
 
-        void Start()
-        {
-            
-        }
-
-        void Update()
-        {
-
-        }
-
         public Recipe GetRandomRecipe()
         {
             int randomIndex = UnityEngine.Random.Range(0, recipes.Length);

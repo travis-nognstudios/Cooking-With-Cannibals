@@ -8,16 +8,6 @@ namespace Liquor
         public GameObject beerArea;
         public ParticleSystem beerFX;
 
-        void Start()
-        {
-            
-        }
-
-        void Update()
-        {
-            
-        }
-
         void OnTriggerEnter(Collider other)
         {
             if (other.CompareTag("BeerTapHandle"))

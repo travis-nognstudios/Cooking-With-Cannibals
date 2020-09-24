@@ -8,16 +8,6 @@ namespace Serving
         public TicketAmountUI[] AmountUI;
         public int amount;
 
-        private void Start()
-        {
-            
-        }
-
-        private void Update()
-        {
-            
-        }
-
         public void SetUI()
         {
             for (int i=0; i< AmountUI.Length; ++i)

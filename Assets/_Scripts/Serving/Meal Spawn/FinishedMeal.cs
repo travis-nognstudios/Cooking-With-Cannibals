@@ -8,18 +8,6 @@ namespace Serving
         [Header("Particles")]
         public ParticleSystem finishFX;
 
-        // Use this for initialization
-        void Start()
-        {
-
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
-
         public void PlayFinishFX()
         {
             finishFX.Play();

@@ -18,10 +18,6 @@ namespace Supplies
         private float randomDelay = 0.5f;
         private float timer;
 
-        private void Start()
-        {
-            
-        }
 
         private void Update()
         {

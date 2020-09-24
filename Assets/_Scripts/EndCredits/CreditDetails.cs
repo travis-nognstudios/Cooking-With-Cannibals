@@ -9,15 +9,5 @@ namespace EndCredits
         public string personName;
         public CreditRole[] roles;
         public string quote;
-
-        void Start()
-        {
-
-        }
-
-        void Update()
-        {
-
-        }
     }
 }

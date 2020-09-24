@@ -23,12 +23,9 @@ namespace SceneObjects
 
         void Start()
         {
-
             currentFillAmount = startingFillAmount;
-
         }
 
-        // Update is called once per frame
         void Update()
         {
             pourAmountPerFrame = pourRate * Time.deltaTime;

@@ -12,13 +12,6 @@ public class PosterDissolve : MonoBehaviour
     private string shaderProperty = "Vector1_FC4AF8F5";
     private float fullDissolveValue = 1.0f;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
     void Update()
     {
         if (isDissolving)

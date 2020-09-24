@@ -28,10 +28,6 @@ namespace LemonAidRush
         private float spawnerCooldown;
         private bool spawnerOnCooldown;
 
-        void Start()
-        {
-
-        }
 
         void Update()
         {

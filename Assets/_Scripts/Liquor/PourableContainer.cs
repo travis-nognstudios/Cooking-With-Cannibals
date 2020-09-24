@@ -8,17 +8,6 @@ namespace Liquor
         public GameObject liquidFill;
         public string filledBy;
         public bool singleUse;
-
-        void Start()
-        {
-            
-        }
-
-        void Update()
-        {
-            
-        }
-
         void OnTriggerEnter(Collider other)
         {
             if (IsEmpty() && other.CompareTag("Liquor"))
@@ -30,12 +19,6 @@ namespace Liquor
                     FillCup();
                 }
 
-                /*
-                if (singleUse)
-                {
-                    Destroy(other);
-                }
-                */
             }
         }
 

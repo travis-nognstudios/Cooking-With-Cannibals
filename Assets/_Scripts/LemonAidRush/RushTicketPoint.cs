@@ -16,22 +16,11 @@ namespace LemonAidRush
         
         [Header("Recipe")]
         public RecipeVariation recipe;
-        
-        void Start()
-        {
-            
-        }
-
-        void Update()
-        {
-
-        }
-
+       
         public void SetTicket(RecipeVariation recipeVar)
         {
             // Get order ticket
             currentOrderTicket = recipeVar.recipeTicket.GetComponent<OrderTicket>();
-            //currentOrderTicket.SetUI();
             ticketObject = currentOrderTicket.gameObject;
 
             recipe = recipeVar;

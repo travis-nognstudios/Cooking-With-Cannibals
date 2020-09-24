@@ -9,13 +9,6 @@ namespace LevelManagement
         public static bool isPaused;
         public PauseManagerv2 pauseManager;
 
-        // Use this for initialization
-        void Start()
-        {
-
-        }
-
-        // Update is called once per frame
         void Update()
         {
             isPaused = pauseManager.isPaused;

@@ -11,9 +11,4 @@ public class KillYourself : MonoBehaviour
         Destroy(gameObject, time);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

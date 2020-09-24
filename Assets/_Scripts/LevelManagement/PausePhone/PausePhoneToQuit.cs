@@ -8,7 +8,6 @@ namespace LevelManagement
     {
         override public void DoButtonAction()
         {
-            Debug.Log("Quitting Game");
 
             #if UNITY_EDITOR
                 UnityEditor.EditorApplication.isPlaying = false;

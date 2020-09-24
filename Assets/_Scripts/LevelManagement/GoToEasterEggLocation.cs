@@ -14,11 +14,6 @@ namespace LevelManagement
         [Header("Me")]
         public VRTK_InteractableObject interactable;
 
-        void Start()
-        {
-
-        }
-
         void Update()
         {
             if (interactable.IsTouched())

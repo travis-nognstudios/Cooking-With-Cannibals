@@ -7,7 +7,7 @@ public class FlipSwitch : MonoBehaviour
 	public GameObject switchOn;
 	public GameObject switchOff;
 	private bool isOn = false;
-	//bool triggered = false
+
     
 	void Start () {
 		switchOff.SetActive(true); 
@@ -15,28 +15,20 @@ public class FlipSwitch : MonoBehaviour
     }
 	private void OnTriggerEnter(Collider other)
 	{
-		// if (!isTriggered)
-        //{
-        //    isTriggered = true;
+		
 			if (!isOn)
 			{
-				switchOff.SetActive(false); //gameObject.disable();
-				switchOn.SetActive(true); //gameObject.enable();
+				switchOff.SetActive(false); 
+				switchOn.SetActive(true); 
 				isOn = true;
 			}
 			else
 			{
-				switchOn.gameObject.SetActive(false); //disable();
-				switchOff.gameObject.SetActive(true); //enable();
+				switchOn.gameObject.SetActive(false); 
+				switchOff.gameObject.SetActive(true); 
 				isOn = false;
 			}
-		//}
+	
 	}
-	/*
-	private void OnTriggerExit(Collider other)
-    {
-        if (isTriggered)
-            isTriggered = false;
-    }
-	*/
+
 }

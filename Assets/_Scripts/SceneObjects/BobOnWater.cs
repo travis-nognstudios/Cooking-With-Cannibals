@@ -10,11 +10,5 @@ namespace SceneObjects
         {
             GetComponent<Rigidbody>().sleepThreshold = 0f;
         }
-
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
     }
 }

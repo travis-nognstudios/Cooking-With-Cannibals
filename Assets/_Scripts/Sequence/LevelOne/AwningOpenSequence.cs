@@ -7,16 +7,6 @@ namespace Sequence
     {
         public Awning awning;
 
-        void Start()
-        {
-
-        }
-
-        void Update()
-        {
-
-        }
-
         public bool IsComplete()
         {
             return awning.isOpen;

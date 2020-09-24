@@ -24,11 +24,6 @@ namespace LemonAidRush
         private bool started;
         private bool ended;
 
-        void Start()
-        {
-            
-        }
-
         void Update()
         {
             UpdateTimer();

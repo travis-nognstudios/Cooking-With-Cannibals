@@ -8,17 +8,6 @@ namespace Serving
         public Recipe[] recipes;
         public GameObject dubiousFood;
 
-        // Use this for initialization
-        void Start()
-        {
-
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
 
         public Recipe GetFullRecipe(GameObject finishedMeal)
         {

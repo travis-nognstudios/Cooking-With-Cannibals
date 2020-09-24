@@ -8,7 +8,6 @@ namespace SceneObjects
         public float DripTriggerAngle = 30f;
         public bool isOn = false;
 
-
         void Update()
         {
             ManageDripTrigger();

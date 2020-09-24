@@ -20,11 +20,6 @@ namespace LevelManagement
             MakeCold();
         }
 
-        private void Update()
-        {
-
-        }
-     
         void OnTriggerExit(Collider other)
         {
             if (other.CompareTag("Heatsource"))

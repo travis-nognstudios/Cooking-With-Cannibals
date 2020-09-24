@@ -23,18 +23,9 @@ namespace LevelManagement
             }
         }
 
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
-
         bool GoldenKnifeUnlocked()
         {
             return SaveState.goldKnifeUnlocked;
-
-            /* For Testing */
-            //return true;
         }
     }
 }

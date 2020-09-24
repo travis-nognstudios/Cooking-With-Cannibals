@@ -9,16 +9,6 @@ namespace Serving
     {
         private GameObject cardReference;
 
-        void Start()
-        {
-            
-        }
-
-        void Update()
-        {
-            
-        }
-
         public void SetCard(GameObject card)
         {
             // Instantiate card object

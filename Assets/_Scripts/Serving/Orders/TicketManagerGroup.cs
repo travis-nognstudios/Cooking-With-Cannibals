@@ -16,16 +16,6 @@ namespace Serving
 
         private int numActiveGroups;
 
-        void Start()
-        {
-
-        }
-
-        void Update()
-        {
-            // CleanupUnservedOrders();
-        }
-
         public void CleanupUnservedOrders()
         {
             for (int i = 0; i < ticketGroups.Length; ++i)

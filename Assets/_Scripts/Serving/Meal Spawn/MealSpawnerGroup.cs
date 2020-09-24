@@ -20,9 +20,6 @@ namespace Serving
         private List<RecipeGroup> queuedRecipeGroups = new List<RecipeGroup>();
         private RecipeGroup matchingQueuedRecipeGroup;
 
-        private List<RecipeVariation> queuedRecipes;
-        private GameObject dubiousFood;
-
         private bool canDoReadyCheck;
         private float readyCheckCooldownTimer;
         private float readyCheckCooldownTime = 1f;
@@ -31,7 +28,6 @@ namespace Serving
         {
             orderSpawner = gameManager.GetComponent<OrderSpawnerGroup>();
             recipeManager = gameManager.GetComponent<RecipeManager>();
-            dubiousFood = gameManager.GetComponent<RecipeManager>().dubiousFood;
 
             GetPossibleMainIngredientNames();
         }
@@ -113,7 +109,6 @@ namespace Serving
                 string mainName = recipe.mainIngredient.gameObject.name;
                 if (mainName.Equals(mainIngredientName))
                 {
-                    Debug.Log($"Matching recipe: from {mainIngredientName} to {recipe.recipeObject.name}");
                     return recipe;
                 }
             }
@@ -138,15 +133,6 @@ namespace Serving
             }
         }
 
-        private void LogMainIngredientPreparedNames()
-        {
-            Debug.Log("Prepared main ingredients");
-            foreach (string n in mainIngredientsPreparedNames)
-            {
-                Debug.Log(n);
-            }
-        }
-
         private void GetQueuedRecipeGroups()
         {
             queuedRecipeGroups.Clear();
@@ -164,12 +150,6 @@ namespace Serving
 
             }
             
-            // Log Prepared Recipe Names
-            Debug.Log("Prepared Recipes");
-            foreach (string n in preparedRecipeNames)
-            {
-                Debug.Log($"Prepared recipe: {n}");
-            }
 
             return preparedRecipeNames;
         }
@@ -188,16 +168,10 @@ namespace Serving
                 {
                     queuedRecipeNames.Add(obj.gameObject.name);
                 }
-
-                // Log queued recipe names
-                foreach (string n in queuedRecipeNames)
-                {
-                    Debug.Log($"Queued Recipe: {n}");
-                }
                 
                 if (NameListsMatch(preparedRecipeNames, queuedRecipeNames))
                 {
-                    Debug.Log("Found matching group");
+
                     matchingQueuedRecipeGroup = recipeGroup;
                 }
             }
@@ -228,7 +202,7 @@ namespace Serving
 
         private void SpawnDubiousFoods()
         {
-            Debug.Log("No matching order found");
+
         }
 
         private bool RecipeIsReadyBasedOnRater(RecipeVariation recipe)
