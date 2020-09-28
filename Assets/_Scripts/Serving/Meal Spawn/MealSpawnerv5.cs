@@ -175,10 +175,6 @@ namespace Serving
         private void Spawn(GameObject item)
         {
             spawnedMeal = Instantiate(item, spawnPoint.position, item.transform.rotation);
-
-            // FinishedMeal finishedMeal = spawnedMeal.GetComponent<FinishedMeal>();
-            // finishedMeal.PlayFinishFX();
-
             Destroy(spawnedMeal, spawnedMealDestroyTime);
         }
 
