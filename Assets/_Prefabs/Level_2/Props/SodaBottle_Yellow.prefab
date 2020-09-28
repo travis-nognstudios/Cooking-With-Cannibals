@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 306046793295233616}
   - component: {fileID: 4504103571803215170}
   - component: {fileID: 6947553660898980372}
+  - component: {fileID: 5911186196852895523}
   m_Layer: 0
   m_Name: SodaBottle_Yellow
   m_TagString: Untagged
@@ -36,6 +37,7 @@ Transform:
   m_LocalScale: {x: 0.70618105, y: 0.70618105, z: 0.70618105}
   m_Children:
   - {fileID: 6209531315238492916}
+  - {fileID: 9014114615029735314}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -199,6 +201,22 @@ MonoBehaviour:
   objectToHighlight: {fileID: 0}
   objectHighlighter: {fileID: 0}
   objectToAffect: {fileID: 0}
+--- !u!114 &5911186196852895523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7902782249727188217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6403a58e08c784d63b7f5c564805543a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pourEffect: {fileID: 5713098902851651422}
+  liquidRenderer: {fileID: 8668057095136910395}
+  startingFillAmount: 0.75
+  pourRate: 0.2
 --- !u!1001 &1393330935011602926
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -293,4 +311,111 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: d716bdfc878f39d4ca0e99f9f1a63ac2,
     type: 3}
   m_PrefabInstance: {fileID: 1393330935011602926}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &8668057095136910395 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -1504981713932161579, guid: d716bdfc878f39d4ca0e99f9f1a63ac2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1393330935011602926}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8256239899787381743
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 6626777802909069034}
+    m_Modifications:
+    - target: {fileID: 4734774256902345632, guid: e12c2d33675254656893026359d54495,
+        type: 3}
+      propertyPath: m_Name
+      value: SodaBottlePour
+      objectReference: {fileID: 0}
+    - target: {fileID: 1120445271780283517, guid: e12c2d33675254656893026359d54495,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.0046000285
+      objectReference: {fileID: 0}
+    - target: {fileID: 1120445271780283517, guid: e12c2d33675254656893026359d54495,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.383
+      objectReference: {fileID: 0}
+    - target: {fileID: 1120445271780283517, guid: e12c2d33675254656893026359d54495,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.00019986913
+      objectReference: {fileID: 0}
+    - target: {fileID: 1120445271780283517, guid: e12c2d33675254656893026359d54495,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1120445271780283517, guid: e12c2d33675254656893026359d54495,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1120445271780283517, guid: e12c2d33675254656893026359d54495,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1120445271780283517, guid: e12c2d33675254656893026359d54495,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1120445271780283517, guid: e12c2d33675254656893026359d54495,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1120445271780283517, guid: e12c2d33675254656893026359d54495,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1120445271780283517, guid: e12c2d33675254656893026359d54495,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1120445271780283517, guid: e12c2d33675254656893026359d54495,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4457736097335495857, guid: e12c2d33675254656893026359d54495,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0.7825312
+      objectReference: {fileID: 0}
+    - target: {fileID: 4457736097335495857, guid: e12c2d33675254656893026359d54495,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.9245283
+      objectReference: {fileID: 0}
+    - target: {fileID: 4457736097335495857, guid: e12c2d33675254656893026359d54495,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0.30962977
+      objectReference: {fileID: 0}
+    - target: {fileID: 4457736097335495857, guid: e12c2d33675254656893026359d54495,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e12c2d33675254656893026359d54495, type: 3}
+--- !u!4 &9014114615029735314 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1120445271780283517, guid: e12c2d33675254656893026359d54495,
+    type: 3}
+  m_PrefabInstance: {fileID: 8256239899787381743}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &5713098902851651422 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 4457736097335495857, guid: e12c2d33675254656893026359d54495,
+    type: 3}
+  m_PrefabInstance: {fileID: 8256239899787381743}
   m_PrefabAsset: {fileID: 0}

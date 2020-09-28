@@ -11,7 +11,6 @@ namespace Serving
         public Collider foodArea;
         public Transform spawnPoint;
         public MealReadyCheck readyCheck;
-        public TipJar tipJar;
 
         [Header("Timers")]
         public float spawnedMealDestroyTime = 10f;
@@ -19,7 +18,7 @@ namespace Serving
 
         private OrderSpawnerv5 orderSpawner;
 
-        private List<RecipeVariation> queuedRecipes;
+        private List<TicketPointv2> queuedTickets;
         private GameObject dubiousFood;
         private List<GameObject> inFoodArea = new List<GameObject>();
 
@@ -36,7 +35,12 @@ namespace Serving
 
         void Update()
         {
-            // Meal spawning
+            CheckForSpawnedMeals();
+            ManageSpawnerCooldown();
+        }
+
+        private void CheckForSpawnedMeals()
+        {
             if (MealIsReady() && !spawnerOnCooldown)
             {
                 GetInFoodAreaItems();
@@ -46,13 +50,20 @@ namespace Serving
                 Recipe matchingRecipe = null;
                 bool foundMatchingRecipe = false;
 
-                queuedRecipes = orderSpawner.GetQueuedRecipes();
+                queuedTickets = orderSpawner.GetQueuedTickets();
 
-                foreach (RecipeVariation queuedRecipe in queuedRecipes)
+                foreach (TicketPointv2 ticket in queuedTickets)
                 {
-                    if (RecipeIsReadyBasedOnRater(queuedRecipe))
+                    RecipeVariation recipe = ticket.recipe;
+                    if (RecipeIsReadyBasedOnRater(recipe))
                     {
-                        matchingRecipe = queuedRecipe.baseRecipe;
+                        // Each matching ticket gets a tip amount evaluation.
+                        // So, the ticket that is ultimately matched against
+                        // the order will know the correct tip evaluation
+                        // for that order
+                        ticket.recipeTipAmount = GetTipAmountBasedOnRater(recipe);
+
+                        matchingRecipe = recipe.baseRecipe;
                         foundMatchingRecipe = true;
                     }
                 }
@@ -70,12 +81,13 @@ namespace Serving
                 }
                 else
                 {
-                    // Debug.Log("Empty Box and no recipes matched");
-                    // DO NOTHING
+                    // Empty Box -> DO NOTHING
                 }
             }
+        }
 
-            // Spawner cooldown timer
+        private void ManageSpawnerCooldown()
+        {
             if (spawnerOnCooldown)
             {
                 spawnerCooldown += Time.deltaTime;
@@ -89,19 +101,14 @@ namespace Serving
         private bool RecipeIsReadyBasedOnRater(RecipeVariation recipe)
         {
             RecipeRating recipeRater = new RecipeRating(inFoodArea, recipe);
-            bool isValidRecipe = recipeRater.GetIsValidRecipe();
+            return recipeRater.GetIsValidRecipe();
+        }
 
-            if (!isValidRecipe)
-            {
-                return false;
-            }
-            else
-            {
-                recipeRater.FindMistakes();
-                int tipAmount = recipeRater.GetTipAmount();
-                tipJar.AddTip(tipAmount);
-                return true;
-            }
+        private int GetTipAmountBasedOnRater(RecipeVariation recipe)
+        {
+            RecipeRating recipeRater = new RecipeRating(inFoodArea, recipe);
+            recipeRater.FindMistakes();
+            return recipeRater.GetTipAmount();
         }
 
         private bool MealIsReady()
@@ -186,20 +193,5 @@ namespace Serving
             spawnerCooldown = 0f;
         }
 
-        bool ListContainsName(List<string> list, string name)
-        {
-            foreach (string listItemName in list)
-            {
-                // Check if one string is a substring of the other
-                // This allows for copies of objects to have the number
-                // at the end and still be recognized
-                if (name.Contains(listItemName) || listItemName.Contains(name))
-                {
-                    return true;
-                }
-            }
-
-            return false;
-        }
     }
 }

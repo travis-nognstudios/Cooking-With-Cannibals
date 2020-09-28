@@ -7,26 +7,22 @@ namespace Serving
 {
     public class TicketClock : MonoBehaviour
     {
+        [Header("Elements")]
         public Image timerImage;
         public Text timerText;
+
+        [Header("Colors")]
         public Color lowTimeColor;
         public Color highTimeColor;
 
-        // Start is called before the first frame update
-        void Start()
-        {
+        [Header("VIP")]
+        public bool isVIP;
+        public Color vipColor;
 
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
-
-        public void StartTimer()
+        public void StartTimer(bool isVIP)
         {
             timerImage.fillAmount = 1;
+            this.isVIP = isVIP;
         }
 
         public void EndTimer()
@@ -42,7 +38,7 @@ namespace Serving
 
             // Time formatted
             string formattedTime;
-            string separator = ":";
+            string separator;
 
             int minutes = (int) timeLeft / 60;
             int seconds = (int) timeLeft % 60;
@@ -68,15 +64,23 @@ namespace Serving
             }
 
             timerText.text = formattedTime;
-            
-            // Low time color
-            if (timeLeft <= 30)
+
+            // Low time / high time colors
+            if (!isVIP)
             {
-                timerText.color = lowTimeColor;
+                if (timeLeft <= 30)
+                {
+                    timerText.color = lowTimeColor;
+                }
+                else
+                {
+                    timerText.color = highTimeColor;
+                }
             }
+            // VIP has one color -> High Priority
             else
             {
-                timerText.color = highTimeColor;
+                timerText.color = vipColor;
             }
         }
         

@@ -42,7 +42,7 @@ namespace Serving
 
             // Set variation UI
             OrderTicket orderTicket = createdTicket.GetComponent<OrderTicket>();
-            orderTicket.SetUI();
+            //orderTicket.SetUI();
 
             // Set values
             this.ticketReference = createdTicket;
@@ -51,7 +51,7 @@ namespace Serving
             this.timeUntilExpire = recipe.serveTime;
             this.ticketTiming = spawnPoint.GetComponent<TicketClock>();
 
-            ticketTiming.StartTimer();
+            ticketTiming.StartTimer(false);
         }
 
         public void SetCustomer(Customer customer)

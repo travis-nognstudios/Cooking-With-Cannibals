@@ -1,25 +1,41 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 namespace Serving
 { 
-    public abstract class OrderTicket : MonoBehaviour
+    public class OrderTicket : MonoBehaviour
     {
-        public TicketUILine[] UILines;
+        [Header("VIP")]
+        public bool isVIP;
+        public ParticleSystem vipFX;
+        public Text vipText;
+        public static int VIPTipBonus = 2;
+        public static float VIPTimeMultiplier = 0.5f;
 
+        [Header("Recipe")]
         public RecipeVariation recipe;
 
-        protected abstract void SetAmounts();
-
-        public void SetUI()
+        public void Initialize()
         {
-            SetAmounts();
-
-            foreach (TicketUILine ui in UILines)
-            {
-                ui.SetUI();
-            }
+            if (isVIP) ConfigureVIP();
         }
 
+        public void SetAsVIP()
+        {
+            isVIP = true;
+        }
+
+        public void ConfigureVIP()
+        {
+            recipe.serveTime *= OrderTicket.VIPTimeMultiplier;
+            vipText.enabled = true;
+            vipFX.Play();
+        }
+
+        public float GetRecipeTime()
+        {
+            return recipe.serveTime;
+        }
     }
 }
