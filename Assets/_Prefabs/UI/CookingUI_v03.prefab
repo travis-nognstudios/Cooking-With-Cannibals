@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 904380806217457544}
   - component: {fileID: 9026266936840548687}
   m_Layer: 5
-  m_Name: Overcooked_Area
+  m_Name: Padding_Area_BG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -68,7 +68,7 @@ MonoBehaviour:
   m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 0.054
+  m_FillAmount: 0.068
   m_FillClockwise: 1
   m_FillOrigin: 1
   m_UseSpriteMesh: 0
@@ -138,14 +138,14 @@ RectTransform:
   m_GameObject: {fileID: 4218719506788217390}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.9133777, y: 0.9133777, z: 0.9133777}
+  m_LocalScale: {x: 1.0151443, y: 1.0151443, z: 1.0151443}
   m_Children: []
   m_Father: {fileID: 3410697302078619019}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.013, y: 0.60001}
+  m_AnchoredPosition: {x: 0.001, y: 0.6}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6526078535835967140
@@ -174,12 +174,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 23b43c3dd69fe754c975e3ff0348ffb0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a191076537aaa4c88a6b3c97ae317a55, type: 3}
   m_Type: 3
   m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 0.32
+  m_FillAmount: 0.3
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -196,7 +196,7 @@ GameObject:
   - component: {fileID: 2061899486290679984}
   - component: {fileID: 8345386618114310407}
   m_Layer: 5
-  m_Name: Uncooked_Area
+  m_Name: Uncooked_Area_BG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -370,14 +370,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acbfc53619091c840aa606a977a2b2b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cookArea: {fileID: 1353871416758834822}
-  overcookArea: {fileID: 9026266936840548687}
+  cookAreaBg: {fileID: 1353871416758834822}
+  paddingAreaBg: {fileID: 9026266936840548687}
+  maxForBg: 0.65
   cookTime: 7
   overcookTime: 9
   paddingTime: 3
-  currentStateIndicator: {fileID: 2833902663236759090}
-  minimumFillCurrentState: 0.282
-  maximumFillCurrentState: 0.15
+  fillIndicator: {fileID: 2833902663236759090}
+  minFill: 0.3
 --- !u!1 &8800565856619987080
 GameObject:
   m_ObjectHideFlags: 0
@@ -390,7 +390,7 @@ GameObject:
   - component: {fileID: 2231394180666331705}
   - component: {fileID: 1353871416758834822}
   m_Layer: 5
-  m_Name: Cooked_Area
+  m_Name: Cooked_Area_BG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -446,7 +446,7 @@ MonoBehaviour:
   m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 0.124
+  m_FillAmount: 0.508
   m_FillClockwise: 1
   m_FillOrigin: 1
   m_UseSpriteMesh: 0

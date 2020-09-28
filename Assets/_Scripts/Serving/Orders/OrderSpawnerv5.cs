@@ -20,6 +20,9 @@ namespace Serving
         public int chanceOfVIP = 10;
         public MonoBehaviour[] sequences;
 
+        [Header("GradePoster")]
+        public GradePoster gradePoster;
+
         private float timeSinceLastOrder;
         [HideInInspector]
         public float timeSinceServiceStarted;
@@ -41,6 +44,7 @@ namespace Serving
         void Start()
         {
             GetSequencedRecipes();
+            gradePoster.SetNumCustomers(numOrdersForLevel);
         }
 
         void Update()
@@ -108,6 +112,8 @@ namespace Serving
             bool isVIP = false;
             int VIPDiceRoll = Random.Range(0, 100);
             if (VIPDiceRoll <= chanceOfVIP) isVIP = true;
+
+            if (!firstSpawnDone) isVIP = false;
 
             ticketManager.AddTicket(recipeVar, isVIP);
             timeSinceLastOrder = 0;
