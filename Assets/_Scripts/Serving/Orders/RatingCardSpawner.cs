@@ -31,13 +31,18 @@ namespace Serving
         // Use this for initialization
         void Start()
         {
+            SyncTipJarCapacity();
             SyncGradePoster();
         }
         
         void SyncGradePoster()
         {
             gradePoster.SetScores(tipsForA, tipsForB, tipsForC);
-            gradePoster.SetPosterText();
+        }
+
+        void SyncTipJarCapacity()
+        {
+            tipjar.capacity = tipsForA;
         }
 
         public void SpawnCard()

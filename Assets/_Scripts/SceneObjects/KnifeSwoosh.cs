@@ -6,13 +6,18 @@ namespace SceneObjects
 {
     public class KnifeSwoosh : MonoBehaviour
     {
-
         public AudioClip swooshSound;
         public float thresholdSpeed = 0.2f;
         public float resetSpeed = 0.1f;
 
-        private VRTK_InteractableObject interactable;
+
         private Rigidbody rb;
+        private Vector3 position;
+        private Vector3 positionLastFrame;
+        private Vector3 velocity;
+        private float speed;
+
+        private VRTK_InteractableObject interactable;
         private AudioSource audioSource;
 
         private bool playedSoundThisSwoosh; // Only play sound once per swoosh
@@ -22,11 +27,17 @@ namespace SceneObjects
             interactable = GetComponent<VRTK_InteractableObject>();
             rb = GetComponent<Rigidbody>();
             audioSource = GetComponent<AudioSource>();
+            positionLastFrame = rb.position;
         }
 
         void Update()
         {
             PlayAudioBasedOnVelocity();
+        }
+
+        void FixedUpdate()
+        {
+            CalculateCustomVelocityBecauseVRTKisWeirdAboutIt();
         }
 
         void PlayAudioBasedOnVelocity()
@@ -35,8 +46,6 @@ namespace SceneObjects
 
             if (isGrabbed)
             {
-                float speed = rb.velocity.magnitude;
-
                 if (speed > thresholdSpeed && !playedSoundThisSwoosh)
                 {
                     PlayClip();
@@ -53,6 +62,14 @@ namespace SceneObjects
         {
             audioSource.clip = swooshSound;
             audioSource.Play();
+        }
+
+        void CalculateCustomVelocityBecauseVRTKisWeirdAboutIt()
+        {
+            position = rb.position;
+            velocity = position - positionLastFrame;
+            speed = velocity.magnitude;
+            positionLastFrame = position;
         }
     }
 }

@@ -187,28 +187,20 @@ namespace Cooking
                         MakeOvercooked(cookTopType);
                     }
 
-                    /* Red 08/21/2020
-                     * Disabling smoke effect here
-                     * Should be controlled by the cooktop
-                     * Not the food!!
-                     
-                     
-                    // Smoke effect
-                    last_touched_cookTop = cookTop;
-                    Smoke smoke = cookTop.GetComponent<Smoke>();
-
-                    if (smoke != null)
+                    // Keep cooktop updated with cook status
+                    // so it can do things like setting off the right smoke
+                    if (isCooked)
                     {
-                        if (isOvercooked)
-                        {
-                            smoke.BurnSmoke();
-                        }
-                        else
-                        {
-                            smoke.CookSmoke();
-                        }
+                        cookTop.FoodIsCooking();
                     }
-                    */
+                    else if (isOvercooked)
+                    {
+                        cookTop.FoodIsBurning();
+                    }
+                    else
+                    {
+                        cookTop.FoodIsUncooked();
+                    }
                 }
             }
         }
@@ -219,13 +211,7 @@ namespace Cooking
             {
                 canvas.SetActive(false);
                 StopCookingSound();
-
-                // Stop smoke
-                if (last_touched_cookTop != null)
-                {
-                    last_touched_cookTop.GetComponent<Smoke>().ClearSmoke();
-                    last_touched_cookTop = null;
-                }
+                other.GetComponent<CookTop>().FoodIsLeaving();
             }
         }
 
