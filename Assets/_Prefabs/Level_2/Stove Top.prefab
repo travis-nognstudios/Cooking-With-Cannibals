@@ -577,7 +577,7 @@ Transform:
   m_LocalPosition: {x: 0.20109451, y: -0.005121231, z: 0.2507882}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 2262008753528673217}
+  - {fileID: 2276859031293645851}
   m_Father: {fileID: 7132325369588530571}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -665,7 +665,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e61b7bc10e2aa054c9747fb8d0a596c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flame: {fileID: 0}
+  flame: {fileID: 2276859031293645852}
   audioSource: {fileID: 0}
 --- !u!82 &3016438175779240079
 AudioSource:
@@ -920,7 +920,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!1001 &4373988514849439908
+--- !u!1001 &4345626894620559230
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -1000,13 +1000,24 @@ PrefabInstance:
     - target: {fileID: 2582747982744769376, guid: 6d43cb48ab61c9141ac1835be9a13f2c,
         type: 3}
       propertyPath: m_Name
-      value: FX Stove Fire
+      value: stove_fire
+      objectReference: {fileID: 0}
+    - target: {fileID: 2582747982744769378, guid: 6d43cb48ab61c9141ac1835be9a13f2c,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.ctime1
+      value: 34502
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d43cb48ab61c9141ac1835be9a13f2c, type: 3}
---- !u!4 &2262008753528673217 stripped
+--- !u!4 &2276859031293645851 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2582747982744769381, guid: 6d43cb48ab61c9141ac1835be9a13f2c,
     type: 3}
-  m_PrefabInstance: {fileID: 4373988514849439908}
+  m_PrefabInstance: {fileID: 4345626894620559230}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &2276859031293645852 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 2582747982744769378, guid: 6d43cb48ab61c9141ac1835be9a13f2c,
+    type: 3}
+  m_PrefabInstance: {fileID: 4345626894620559230}
   m_PrefabAsset: {fileID: 0}

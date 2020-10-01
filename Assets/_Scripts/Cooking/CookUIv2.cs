@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace Cooking
@@ -6,66 +8,58 @@ namespace Cooking
     public class CookUIv2 : MonoBehaviour
     {
         [Header("Background")]
-        public Image cookAreaBg;
-        public Image paddingAreaBg;
-        public float maxForBg = 0.65f;
+        public Image cookArea;
+        public Image overcookArea;
 
         [Header("Times")]
         public float cookTime;
         public float overcookTime;
+        public float paddingTime = 3f;
         private float totalTime;
 
         [Header("Indicator")]
-        public Image fillIndicator;
-        public float minFill = 0.32f;
+        public Image currentStateIndicator;
+        public float minimumFillCurrentState = 0.15f;
+        public float maximumFillCurrentState = 0.15f;
+
+        private float maximumFill = 0.78f;
+
 
         public void SetBackground(float cookTime, float overcookTime)
         {
             this.cookTime = cookTime;
             this.overcookTime = overcookTime;
-            this.totalTime = overcookTime;
+            totalTime = overcookTime + paddingTime;
 
-            SetCookBg();
+            SetCookFill();
+            SetOvercookFill();
         }
 
-        /* Bg area filling algorithm
-         * Only the "bar" portion of the thermometer counts for 0-100%
-         * But the image also includes the "bulb"
-         * CookBg and PaddingBg are laid on top, filled right-to-left
-         * Right-to-left means imagefill has to be calculated "backwards"
-         * 
-         * maxForBg:
-         *      the imagefill amount at which the Bg fills the "bar"
-         *      portion of the thermometer completely. For calculation
-         *      purposes, this is as far as the imagefill can go
-         */
-        void SetBg(Image bg, float time)
+        void SetCookFill()
         {
-            float percentage = time / totalTime;
-            float rightToLeftPercentage = 1 - percentage;
-            float scaledPercentage = rightToLeftPercentage * maxForBg;
-            bg.fillAmount = scaledPercentage;
+            float fillPercentage = cookTime / totalTime;
+            float fillArea = maximumFill - (maximumFill * fillPercentage);
+            cookArea.fillAmount = fillArea;
         }
 
-        void SetCookBg()
+        void SetOvercookFill()
         {
-            SetBg(cookAreaBg, cookTime);
+            float fillPercentage = overcookTime / totalTime;
+            float fillArea = maximumFill - (maximumFill * fillPercentage);
+            overcookArea.fillAmount = fillArea;
         }
 
-        /* Fill Indicator filling algorithm
-         *      - Get the cook percentage
-         *      - Find the indicator's fill "scale"
-         *        (time 0 is > 0 imagefill because of the "bulb" part of the image)
-         *      - Scale the cook percentage by the fill scale
-         *      - Add the minFill for the bulb
-         */
         public void UpdateFill(float totalTime, float currentTime)
         {
-            float cookPercentage = currentTime / totalTime;
-            float fillScale = 1 - minFill;
-            float actualFill = cookPercentage * fillScale + minFill;
+            // Find the percentage amount to fill considering minimum fill
+            // Example: if minimum fill is 0.2, then only 80% is left
+            // Scale value to 80% (multiply by 1 - 0.2 = 0.8)
+            // Then add minimum fill
+            float percentage = currentTime / (totalTime + paddingTime);
+            float offset = 1 - minimumFillCurrentState;
+            float offsetFill = (percentage * offset) + minimumFillCurrentState;
 
-            fillIndicator.fillAmount = actualFill;
+            currentStateIndicator.fillAmount = offsetFill;
         }
     }
 }
