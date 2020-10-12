@@ -610,7 +610,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ebb85f1309ee01438fe8e27f6dc7a54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orderSpawner: {fileID: 1659847844}
+  orderSpawner: {fileID: 0}
 --- !u!114 &139465619
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -958,12 +958,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1298287721157053152, guid: e7daa7caec949404d8efea6af0e44e89,
     type: 3}
   m_PrefabInstance: {fileID: 125554873}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &643504853 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8086835151439628557, guid: 458a14a88f16c4775ad71d9c00c51856,
-    type: 3}
-  m_PrefabInstance: {fileID: 6081299497083451476}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &723568847 stripped
 Transform:
@@ -1711,12 +1705,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1877473872}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1272318311 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8086835150926666173, guid: 458a14a88f16c4775ad71d9c00c51856,
-    type: 3}
-  m_PrefabInstance: {fileID: 6081299497083451476}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1295006143
 GameObject:
   m_ObjectHideFlags: 0
@@ -1776,7 +1764,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12490fa61874f1e4db5da785cba1ff8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orderSpawner: {fileID: 1659847844}
+  orderSpawner: {fileID: 0}
 --- !u!114 &1295006149
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2167,11 +2155,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1659847847}
-  - component: {fileID: 1659847846}
-  - component: {fileID: 1659847845}
-  - component: {fileID: 1659847844}
-  - component: {fileID: 1659847842}
-  - component: {fileID: 1659847843}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -2179,118 +2162,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1659847842
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1659847841}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce9c35621c4064cacaeb8e87b3d25ff0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cardGradeA: {fileID: 2082713486396598823, guid: 4f8281891b1164ce0b0cad1fc5a3f2a3,
-    type: 3}
-  cardGradeB: {fileID: 2082713486396598823, guid: d8e8119d7cfce7f4fb15ed4c2336931a,
-    type: 3}
-  cardGradeC: {fileID: 2082713486396598823, guid: 0145d5d7477e7364483998f189377b2d,
-    type: 3}
-  cardGradeF: {fileID: 6573578136055320122, guid: 6cfa6501fc55f46f7a4daf55b997af38,
-    type: 3}
-  tipsForA: 22
-  tipsForB: 18
-  tipsForC: 14
-  tipjar: {fileID: 0}
-  gradePoster: {fileID: 0}
-  cardPoint: {fileID: 0}
-  audioSource: {fileID: 0}
-  tootyHorn: {fileID: 8300000, guid: 1b42171d6eb42ed42bee1ea7bf307939, type: 3}
---- !u!114 &1659847843
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1659847841}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ab18edcdd7ee42948a3a2f172ea2fa9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnInterval: 20
-  ingredients:
-  - objectToSpawn: {fileID: 2620857579555240179, guid: e7daa7caec949404d8efea6af0e44e89,
-      type: 3}
-    spawnPoints:
-    - {fileID: 643504853}
-    - {fileID: 1272318311}
---- !u!114 &1659847844
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1659847841}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d023caebd596445b80b0267e93e6859, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ticketManager: {fileID: 0}
-  orderFrequency: 300
-  totalServiceTime: 300
-  numOrdersForLevel: 10
-  chanceOfVIP: 10
-  sequences:
-  - {fileID: 0}
-  - {fileID: 1659847845}
-  gradePoster: {fileID: 0}
-  timeSinceServiceStarted: 0
-  recipeManager: {fileID: 1659847846}
-  saveState: {fileID: 0}
---- !u!114 &1659847845
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1659847841}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74bb08b94d2714598820418afc5e9194, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  seed: 0
-  numRecipes: 5
---- !u!114 &1659847846
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1659847841}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c87512051deb4c3cbce8d6e9e18ce76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  recipes:
-  - recipeObject: {fileID: 363103001070312292, guid: 10f820cf16ee4144193dfbcb96582d08,
-      type: 3}
-    recipeTicket: {fileID: 8566703130124376734, guid: 3d970aae1a75f4305a956aabf1b80740,
-      type: 3}
-    serveTime: 90
-    mainIngredient:
-      gameObject: {fileID: 1211200108709907030, guid: 78d976739add04119a419505221c1257,
-        type: 3}
-      steps:
-      - cookType: 1
-        cookState: 1
-    toppings: []
-  dubiousFood: {fileID: 3075341390100982235, guid: 6693d3a6ea43cb140b67591963e13958,
-    type: 3}
 --- !u!4 &1659847847
 Transform:
   m_ObjectHideFlags: 0
@@ -2575,8 +2446,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1937851446}
+  - component: {fileID: 1937851447}
   m_Layer: 0
-  m_Name: Managers (1)
+  m_Name: Managers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2599,6 +2471,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1937851447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1937851445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 133a78392316f42b6abdd61080886ce0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  recipes:
+  - {fileID: 4469265444518961219, guid: b3d0f3d2fe5e7421cb6f250042729f7c, type: 3}
+  - {fileID: 6642547338380035670, guid: 61adee479873e48b1b3aa5d539bf9848, type: 3}
+  - {fileID: 7395242600691804350, guid: 29d55a31cff204f3ca2ad7fb05a6176c, type: 3}
+  - {fileID: 6360828626962000743, guid: 5c5fb30094c8444b5aa3d85e0dd98672, type: 3}
+  - {fileID: 8496563756532558855, guid: e3d2d0194a15747b3aa7e8245b71a24d, type: 3}
+  - {fileID: 6042161697251879835, guid: 0804022836d36456fa129020aaa98523, type: 3}
 --- !u!4 &1972351037 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2075300007417663359, guid: 568c6e8715a1d384482b944cc3ab89d8,
