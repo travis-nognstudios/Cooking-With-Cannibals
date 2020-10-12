@@ -7,46 +7,27 @@ namespace Liquor
     {
         public GameObject liquidFill;
         public string filledBy;
-        public bool singleUse;
-
-        void Start()
-        {
-            
-        }
-
-        void Update()
-        {
-            
-        }
+        public Glass glass;
 
         void OnTriggerEnter(Collider other)
         {
-            if (IsEmpty() && other.CompareTag("Liquor"))
+            if (!glass.hasLiquid && other.CompareTag("Liquor"))
             {
-                string name = other.gameObject.name;
+                string liquorName = other.gameObject.name;
+                bool isCorrectLiquor = liquorName.Equals(filledBy);
 
-                if (name.Equals(filledBy))
+                if (isCorrectLiquor)
                 {
                     FillCup();
                 }
-
-                /*
-                if (singleUse)
-                {
-                    Destroy(other);
-                }
-                */
             }
         }
 
         private void FillCup()
         {
             liquidFill.SetActive(true);
-        }
-
-        private bool IsEmpty()
-        {
-            return liquidFill.activeSelf == false;
+            glass.hasLiquid = true;
+            glass.AddToGlass(filledBy);
         }
     }
 }
