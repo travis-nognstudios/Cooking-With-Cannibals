@@ -13,9 +13,13 @@ namespace Serving
 
         [Header("Order")]
         public bool isWaitingForFood;
-        public float recipeTotalTime;
+        public RecipeCocktail recipe;
         public float timeLeft;
         public UnityEvent orderMissed = new UnityEvent();
+        public UnityEvent orderCompleted = new UnityEvent();
+
+        [Header("Drink Check")]
+        public Coaster coaster;
 
         void Update()
         {
@@ -34,19 +38,35 @@ namespace Serving
 
         public void MakeOrder(RecipeCocktail recipe)
         {
-            recipeTotalTime = recipe.serveTime;
-            timeLeft = recipeTotalTime;
+            this.recipe = recipe;
+            timeLeft = recipe.serveTime;
 
+            SetCoaster();
             SetTicket(recipe.orderTicket);
+
             isWaitingForFood = true;
         }
 
         public void CancelOrder()
         {
+            ClearCoaster();
             RemoveTicket();
-            recipeTotalTime = 0;
+
+            recipe = null;
             timeLeft = 0;
             orderMissed.Invoke();
+
+            isWaitingForFood = false;
+        }
+
+        public void CompleteOrder(int qualityPoints)
+        {
+            ClearCoaster();
+            RemoveTicket();
+
+            recipe = null;
+            timeLeft = 0;
+            orderCompleted.Invoke();
 
             isWaitingForFood = false;
         }
@@ -70,9 +90,21 @@ namespace Serving
             orderTicket = null;
         }
 
+        void SetCoaster()
+        {
+            coaster.customerIsWaiting = true;
+            coaster.recipe = recipe;
+        }
+
+        void ClearCoaster()
+        {
+            coaster.customerIsWaiting = false;
+            coaster.recipe = null;
+        }
+
         void UpdateTicketTimer()
         {
-            orderTicket.ticketClock.UpdateTimer(recipeTotalTime, timeLeft);
+            orderTicket.ticketClock.UpdateTimer(recipe.serveTime, timeLeft);
         }
     }
 }

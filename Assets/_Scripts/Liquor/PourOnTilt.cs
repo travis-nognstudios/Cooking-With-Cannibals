@@ -28,7 +28,7 @@ namespace Liquor
         private bool IsTilted()
         {
             float z = transform.localEulerAngles.z;
-            Debug.Log($"z: {z}");
+            //Debug.Log($"z: {z}");
 
             // INVESTIGATE
             if (!(z > 90 && z < 270))
@@ -41,14 +41,14 @@ namespace Liquor
 
         void StartPour()
         {
-            Debug.Log("Pouring");
+            //Debug.Log("Pouring");
             pourArea.SetActive(true);
             pourFX.Play();
         }
 
         void StopPour()
         {
-            Debug.Log("Stopped Pouring");
+            //Debug.Log("Stopped Pouring");
             pourArea.SetActive(false);
             pourFX.Stop();
         }

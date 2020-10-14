@@ -45,8 +45,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69bf3c0ab26204e88bea79c11e86aa68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orderticket: {fileID: 0}
+  orderTicket: {fileID: 0}
   orderPoint: {fileID: 4746436266142315876}
+  isWaitingForFood: 0
+  recipe: {fileID: 0}
+  timeLeft: 0
+  orderMissed:
+    m_PersistentCalls:
+      m_Calls: []
+  orderCompleted:
+    m_PersistentCalls:
+      m_Calls: []
+  coaster: {fileID: 6480453495472246065}
 --- !u!1 &3746104808646972102
 GameObject:
   m_ObjectHideFlags: 0
@@ -144,6 +154,36 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coaster
       objectReference: {fileID: 0}
+    - target: {fileID: 866246438954779135, guid: b28677777bec8ad4ba421711cdb41d58,
+        type: 3}
+      propertyPath: orderCompleted.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 866246438954779135, guid: b28677777bec8ad4ba421711cdb41d58,
+        type: 3}
+      propertyPath: orderCompleted.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 866246438954779135, guid: b28677777bec8ad4ba421711cdb41d58,
+        type: 3}
+      propertyPath: orderCompleted.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 866246438954779135, guid: b28677777bec8ad4ba421711cdb41d58,
+        type: 3}
+      propertyPath: orderCompleted.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7993397750137017658}
+    - target: {fileID: 866246438954779135, guid: b28677777bec8ad4ba421711cdb41d58,
+        type: 3}
+      propertyPath: orderCompleted.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CompleteOrder
+      objectReference: {fileID: 0}
+    - target: {fileID: 866246438954779135, guid: b28677777bec8ad4ba421711cdb41d58,
+        type: 3}
+      propertyPath: orderCompleted.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b28677777bec8ad4ba421711cdb41d58, type: 3}
 --- !u!4 &4289914474555352395 stripped
@@ -152,3 +192,15 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 6190959191777545422}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6480453495472246065 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 866246438954779135, guid: b28677777bec8ad4ba421711cdb41d58,
+    type: 3}
+  m_PrefabInstance: {fileID: 6190959191777545422}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13573b2b02b51472d9ef4984a4671d03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
