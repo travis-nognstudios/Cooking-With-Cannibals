@@ -55,9 +55,12 @@ public class SaveState : MonoBehaviour
 
         if (!debug)
         {
-            levelOneSave.Load();
-            levelTwoSave.Load();
-            levelThreeSave.Load();
+            if(levelOneSave != null)
+                levelOneSave.Load();
+            if(levelTwoSave != null)
+                levelTwoSave.Load();
+            if(levelThreeSave != null)
+                levelThreeSave.Load();
         }
         else
         {

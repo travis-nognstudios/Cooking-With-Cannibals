@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3697835285333830007}
-  - component: {fileID: 5945900426548970191}
   - component: {fileID: 3191379513047848130}
   m_Layer: 0
   m_Name: Recipe_LastBreath
@@ -34,19 +33,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5945900426548970191
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 363103001070312292}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c16fab8acfec5411fa08966507e7bb78, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  finishFX: {fileID: 4476439200183980393}
 --- !u!65 &3191379513047848130
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -574,11 +560,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3697835285333830007}
     m_Modifications:
-    - target: {fileID: 4381136433355687898, guid: 6a91f094f5f887046a72ddb88517d968,
-        type: 3}
-      propertyPath: m_Name
-      value: FX_MealComplete
-      objectReference: {fileID: 0}
     - target: {fileID: 4381136433355687897, guid: 6a91f094f5f887046a72ddb88517d968,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -649,17 +630,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.2209642
       objectReference: {fileID: 0}
+    - target: {fileID: 4381136433355687898, guid: 6a91f094f5f887046a72ddb88517d968,
+        type: 3}
+      propertyPath: m_Name
+      value: FX_MealComplete
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6a91f094f5f887046a72ddb88517d968, type: 3}
 --- !u!4 &4476439200183980392 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4381136433355687897, guid: 6a91f094f5f887046a72ddb88517d968,
-    type: 3}
-  m_PrefabInstance: {fileID: 203627234033505969}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &4476439200183980393 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 4381136433355687896, guid: 6a91f094f5f887046a72ddb88517d968,
     type: 3}
   m_PrefabInstance: {fileID: 203627234033505969}
   m_PrefabAsset: {fileID: 0}
