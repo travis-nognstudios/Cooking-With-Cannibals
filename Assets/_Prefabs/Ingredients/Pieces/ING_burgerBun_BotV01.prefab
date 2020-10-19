@@ -113,7 +113,6 @@ GameObject:
   - component: {fileID: 6428258563232430654}
   - component: {fileID: 7341279973939958804}
   - component: {fileID: 8407863216890555053}
-  - component: {fileID: 4451481557094736135}
   - component: {fileID: 3490166847625958650}
   - component: {fileID: 546498717357320025}
   - component: {fileID: 6901277372735250714}
@@ -121,6 +120,7 @@ GameObject:
   - component: {fileID: 6661908590545108442}
   - component: {fileID: 6930369357417568224}
   - component: {fileID: 6898481425717470579}
+  - component: {fileID: 1714784228662308046}
   m_Layer: 0
   m_Name: ING_burgerBun_BotV01
   m_TagString: Untagged
@@ -205,7 +205,7 @@ MonoBehaviour:
   allowedNearTouchControllers: 0
   allowedTouchControllers: 0
   ignoredColliders:
-  - {fileID: 0}
+  - {fileID: 6898481425717470579}
   isGrabbable: 1
   holdButtonToGrab: 1
   stayGrabbedOnTeleport: 1
@@ -255,26 +255,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18055ba762aa3994f9c10208cd088bc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4451481557094736135
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6347608639245709512}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b6a08144e37d22d4e8f8f51d2c5d4a4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nearTouchHighlight: {r: 0, g: 0, b: 0, a: 0}
-  touchHighlight: {r: 0, g: 1, b: 1, a: 0}
-  grabHighlight: {r: 0, g: 0, b: 0, a: 0}
-  useHighlight: {r: 0, g: 0, b: 0, a: 0}
-  objectToMonitor: {fileID: 6428258563232430654}
-  objectToHighlight: {fileID: 0}
-  objectHighlighter: {fileID: 0}
-  objectToAffect: {fileID: 0}
 --- !u!54 &3490166847625958650
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -478,8 +458,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 27.220669, y: 4.36, z: 27.220673}
-  m_Center: {x: 0.5819187, y: -8.29, z: -0.00000047683716}
+  m_Size: {x: 27.220665, y: 5.4590573, z: 27.22067}
+  m_Center: {x: 0.5819192, y: -7.7404675, z: 0}
 --- !u!65 &6898481425717470579
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -488,11 +468,31 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6347608639245709512}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 27.220669, y: 6.0720716, z: 27.220673}
   m_Center: {x: 0.5819187, y: -7.611004, z: -0.00000047683716}
+--- !u!114 &1714784228662308046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6347608639245709512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6a08144e37d22d4e8f8f51d2c5d4a4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nearTouchHighlight: {r: 0, g: 0, b: 0, a: 0}
+  touchHighlight: {r: 0, g: 1, b: 1, a: 0}
+  grabHighlight: {r: 0, g: 0, b: 0, a: 0}
+  useHighlight: {r: 0, g: 0, b: 0, a: 0}
+  objectToMonitor: {fileID: 6428258563232430654}
+  objectToHighlight: {fileID: 0}
+  objectHighlighter: {fileID: 0}
+  objectToAffect: {fileID: 0}
 --- !u!1001 &671540090320256788
 PrefabInstance:
   m_ObjectHideFlags: 0
