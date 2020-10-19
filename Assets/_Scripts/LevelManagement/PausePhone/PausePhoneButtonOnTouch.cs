@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 using VRTK;
 
 namespace LevelManagement
@@ -9,6 +10,9 @@ namespace LevelManagement
         [Header("Pause Button Actions")]
         public float secondsTouchedToActivate = 2.0f;
         public PausePhoneButtonAction buttonAction;
+
+        [Header("UI")]
+        public Image pressUI;
 
         private float activationTimer = 0f;
         private bool activated = false;
@@ -31,17 +35,17 @@ namespace LevelManagement
 
         public override void StartTouching(VRTK_InteractTouch currentTouchingObject)
         {
-            Debug.Log($"Start touching button: {gameObject.name}");
             touching = true;
+            ShowUI();
 
             base.StartTouching(currentTouchingObject);
         }
 
         public override void StopTouching(VRTK_InteractTouch previousTouchingObject = null)
         {
-            Debug.Log($"Stop touching button: {gameObject.name}");
             touching = false;
             activationTimer = 0f;
+            HideUI();
 
             base.StopTouching(previousTouchingObject);
         }
@@ -49,6 +53,16 @@ namespace LevelManagement
         private void DoButtonAction()
         {
             buttonAction.DoButtonAction();
+        }
+
+        private void ShowUI()
+        {
+            pressUI.enabled = true;
+        }
+
+        private void HideUI()
+        {
+            pressUI.enabled = false;
         }
     }
 }
