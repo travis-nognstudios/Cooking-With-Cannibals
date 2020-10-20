@@ -1,5 +1,104 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &665418805125053484
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1696595422597094542}
+  - component: {fileID: 3095790482480777956}
+  - component: {fileID: 7793784156082332674}
+  - component: {fileID: 5941419688213271766}
+  m_Layer: 0
+  m_Name: stove_turner_arrow.001
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1696595422597094542
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 665418805125053484}
+  m_LocalRotation: {x: -0.00000013767877, y: 0.7071068, z: 0.70710677, w: 0.00000013767878}
+  m_LocalPosition: {x: 0, y: 0, z: 0.002601087}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1755708320639743633}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &3095790482480777956
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 665418805125053484}
+  m_Mesh: {fileID: -6006247251364881781, guid: 46320c6d512c5b749878768fe9124926, type: 3}
+--- !u!23 &7793784156082332674
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 665418805125053484}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: b54e3835192117f448e88c651a7ce85e, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!114 &5941419688213271766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 665418805125053484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6a08144e37d22d4e8f8f51d2c5d4a4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nearTouchHighlight: {r: 0, g: 0, b: 0, a: 0}
+  touchHighlight: {r: 0.023584902, g: 1, b: 0.9894693, a: 0}
+  grabHighlight: {r: 0, g: 0, b: 0, a: 0}
+  useHighlight: {r: 0, g: 0, b: 0, a: 0}
+  objectToMonitor: {fileID: 4366464251472341741}
+  objectToHighlight: {fileID: 0}
+  objectHighlighter: {fileID: 0}
+  objectToAffect: {fileID: 0}
 --- !u!1 &2381031531635258655
 GameObject:
   m_ObjectHideFlags: 0
@@ -290,7 +389,8 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.21737939, y: 0.7878858, z: 0.2493959}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1696595422597094542}
   m_Father: {fileID: 7876627728895081563}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -460,6 +560,7 @@ MonoBehaviour:
   connectedBurner: {fileID: 485554580638517866}
   isOn: 0
   snapThreshold: 0.1
+  indicatorLight: {fileID: 0}
   audioSource: {fileID: 410878352813233314}
 --- !u!82 &410878352813233314
 AudioSource:
@@ -715,11 +816,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1292346037471194826}
     m_Modifications:
-    - target: {fileID: 2582747982744769376, guid: 6d43cb48ab61c9141ac1835be9a13f2c,
-        type: 3}
-      propertyPath: m_Name
-      value: FX Stove Fire
-      objectReference: {fileID: 0}
     - target: {fileID: 2582747982744769381, guid: 6d43cb48ab61c9141ac1835be9a13f2c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -790,17 +886,22 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.020048834
       objectReference: {fileID: 0}
+    - target: {fileID: 2582747982744769376, guid: 6d43cb48ab61c9141ac1835be9a13f2c,
+        type: 3}
+      propertyPath: m_Name
+      value: FX Stove Fire
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d43cb48ab61c9141ac1835be9a13f2c, type: 3}
---- !u!4 &1196351672370613784 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2582747982744769381, guid: 6d43cb48ab61c9141ac1835be9a13f2c,
-    type: 3}
-  m_PrefabInstance: {fileID: 3696760518112157053}
-  m_PrefabAsset: {fileID: 0}
 --- !u!198 &1196351672370613791 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 2582747982744769378, guid: 6d43cb48ab61c9141ac1835be9a13f2c,
+    type: 3}
+  m_PrefabInstance: {fileID: 3696760518112157053}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1196351672370613784 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2582747982744769381, guid: 6d43cb48ab61c9141ac1835be9a13f2c,
     type: 3}
   m_PrefabInstance: {fileID: 3696760518112157053}
   m_PrefabAsset: {fileID: 0}
