@@ -5,6 +5,8 @@ using UnityEngine.Rendering.PostProcessing;
 
 namespace LevelManagement
 {
+    // TODO: Refactor!
+
     public class PauseManagerv2 : MonoBehaviour
     {
         [Header("Pause Configuration")]
@@ -43,7 +45,7 @@ namespace LevelManagement
         // Use this for initialization
         void Start()
         {
-            ColorOn();
+            //ColorOn();
             SetLocationToPauseArea();
         }
 
@@ -197,7 +199,7 @@ namespace LevelManagement
         {
             if (goToPoint == pausePoint)
             {
-                ColorOff();
+                //ColorOff();
             }
 
             float x = player.transform.position.x;
@@ -218,7 +220,7 @@ namespace LevelManagement
 
         private void TeleportBackToLevel()
         {
-            ColorOn();
+            //ColorOn();
 
             player.transform.position = originalPosition;
             player.transform.rotation = originalRotation;
