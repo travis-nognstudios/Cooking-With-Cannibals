@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
 using System.Collections;
+using Utility;
 
 namespace Serving
 {
@@ -16,7 +17,7 @@ namespace Serving
         public RecipeCocktail recipe;
         public float timeLeft;
         public UnityEvent orderMissed = new UnityEvent();
-        public UnityEvent orderCompleted = new UnityEvent();
+        public UnityEventInt orderCompleted = new UnityEventInt();
 
         [Header("Drink Check")]
         public Coaster coaster;
@@ -66,7 +67,7 @@ namespace Serving
 
             recipe = null;
             timeLeft = 0;
-            orderCompleted.Invoke();
+            orderCompleted.Invoke(qualityPoints);
 
             isWaitingForFood = false;
         }

@@ -7,6 +7,8 @@ namespace Serving
     {
         [Header("Service")]
         public bool isServiceActive;
+        public float totalServiceTime = 0f;
+        public bool isServiceOver;
 
         [Header("Orders")]
         public int numOrdersTotal;
@@ -21,15 +23,19 @@ namespace Serving
         [Header("Customers")]
         public BarCustomer[] customers;
 
+        [Header("Tips")]
+        public TipPosterBar tipPoster;
+
         void Update()
         {
             if (numOrdersCompletedOrMissed >= numOrdersTotal)
             {
-                isServiceActive = false;
+                isServiceOver = true;
             }
 
-            if (isServiceActive)
+            if (isServiceActive && !isServiceOver)
             {
+                totalServiceTime += Time.deltaTime;
                 timeUntilNextOrder -= Time.deltaTime;
 
                 if (timeUntilNextOrder <= 0 && numOrdersMade < numOrdersTotal)
@@ -90,9 +96,10 @@ namespace Serving
             return numCustomersTotal == numCustomersWaiting;
         }
 
-        public void OnCompletedOrder()
+        public void OnCompletedOrder(int qualityPoints)
         {
             numOrdersCompletedOrMissed++;
+            tipPoster.AddTip(qualityPoints);
         }
 
         public void OnMissedOrder()

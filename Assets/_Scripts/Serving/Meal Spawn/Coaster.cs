@@ -3,12 +3,10 @@ using UnityEngine.Events;
 using System.Collections;
 using System.Collections.Generic;
 using Liquor;
+using Utility;
 
 namespace Serving
 {
-    [System.Serializable]
-    public class UnityEventInt : UnityEvent<int> {}
-
     public class Coaster : MonoBehaviour
     {
         [Header("Recipe")]
@@ -56,7 +54,7 @@ namespace Serving
                     numMatching++;
             }
 
-            return true;
+            return numMatching == shouldHave.Length;
         }
     }
 }

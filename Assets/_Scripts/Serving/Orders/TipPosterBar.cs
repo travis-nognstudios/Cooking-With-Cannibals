@@ -34,6 +34,12 @@ namespace Serving
             SetBeerFill();
         }
 
+        public void AddTip(int tipAmount)
+        {
+            currentTips += tipAmount;
+            UpdateUIOnTip();
+        }
+
         public void UpdateUIOnTip()
         {
             score_Current.text = currentTips.ToString();
