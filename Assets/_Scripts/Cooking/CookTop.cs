@@ -17,6 +17,7 @@ namespace Cooking
         protected bool hasUncookedFood;
         protected bool hasCookingFood;
         protected bool hasBurningFood;
+        public bool firstTimeAddingFood;
 
         void Start()
         {
@@ -27,6 +28,9 @@ namespace Cooking
         void Update()
         {
             hasFood = hasUncookedFood || hasCookingFood || hasBurningFood;
+            if (!firstTimeAddingFood && hasFood)
+                firstTimeAddingFood = true;
+
             ManageSmoke();
         }
 
@@ -131,6 +135,11 @@ namespace Cooking
                     smoke.ClearSmoke();
                 }
             }
+        }
+
+        protected virtual void UpdateInSubClass()
+        {
+            // Use in subclasses to extend Update() behavior
         }
     }
 }
