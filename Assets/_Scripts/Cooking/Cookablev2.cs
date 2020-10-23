@@ -163,9 +163,25 @@ namespace Cooking
                 bool isCooked = currentState.Equals(CookState.Cooked);
                 bool isOvercooked = currentState.Equals(CookState.Burnt);
 
+                // Keep cooktop updated with cook state
+                // so it can do things like setting off the right smoke
+                if (isCooked)
+                {
+                    cookTop.FoodIsCooking();
+                }
+                else if (isOvercooked)
+                {
+                    cookTop.FoodIsBurning();
+                }
+                else
+                {
+                    cookTop.FoodIsUncooked();
+                }
+
                 // UI
                 ManageCookUIVisibility();
 
+                // Cook
                 if (cookTop.IsHot())
                 {
                     cookTimes[typeIndex] += PauseTimer.DeltaTime();
@@ -185,21 +201,6 @@ namespace Cooking
                     {
                         
                         MakeOvercooked(cookTopType);
-                    }
-
-                    // Keep cooktop updated with cook status
-                    // so it can do things like setting off the right smoke
-                    if (isCooked)
-                    {
-                        cookTop.FoodIsCooking();
-                    }
-                    else if (isOvercooked)
-                    {
-                        cookTop.FoodIsBurning();
-                    }
-                    else
-                    {
-                        cookTop.FoodIsUncooked();
                     }
                 }
             }
