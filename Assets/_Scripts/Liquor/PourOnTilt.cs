@@ -8,49 +8,46 @@ namespace Liquor
         public ParticleSystem pourFX;
         public GameObject pourArea;
 
-        void Start()
-        {
-            
-        }
+        private readonly float pourMinAngle = 90f;
+        private readonly float pourMaxAngle = 270f;
 
         void Update()
         {
-            if (IsTilted())
+            ControlPour();
+        }
+
+        void ControlPour()
+        {
+            if (IsPouring() && !pourFX.isPlaying)
             {
-                StartPour();
+                pourFX.Play();
+                pourArea.SetActive(true);
             }
-            else
+            else if ((!IsPouring() && pourFX.isPlaying))
             {
-                //StopPour();
+                pourFX.Stop();
+                pourArea.SetActive(false);
             }
         }
 
-        private bool IsTilted()
+        bool IsPouring()
         {
-            float z = transform.localEulerAngles.z;
-            //Debug.Log($"z: {z}");
+            float x = transform.rotation.eulerAngles.x;
+            float z = transform.rotation.eulerAngles.z;
 
-            // INVESTIGATE
-            if (!(z > 90 && z < 270))
+            return IsInPourRange(x) || IsInPourRange(z);
+        }
+
+        bool IsInPourRange(float rotation)
+        {
+            if (rotation > pourMinAngle && rotation < pourMaxAngle)
             {
                 return true;
             }
-
-            return false;
-        }
-
-        void StartPour()
-        {
-            //Debug.Log("Pouring");
-            pourArea.SetActive(true);
-            pourFX.Play();
-        }
-
-        void StopPour()
-        {
-            //Debug.Log("Stopped Pouring");
-            pourArea.SetActive(false);
-            pourFX.Stop();
+            else
+            {
+                return false;
+            }
         }
     }
 }

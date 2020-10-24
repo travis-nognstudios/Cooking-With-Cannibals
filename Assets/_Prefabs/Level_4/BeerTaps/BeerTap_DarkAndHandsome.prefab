@@ -352,6 +352,7 @@ GameObject:
   - component: {fileID: 3564966201239568947}
   - component: {fileID: 1697519772900809199}
   - component: {fileID: 1019578068662747291}
+  - component: {fileID: 8703365945480133301}
   m_Layer: 0
   m_Name: Handle
   m_TagString: BeerTapHandle
@@ -550,6 +551,26 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.3198808, y: 0.16240019, z: 0.05016748}
   m_Center: {x: -0.14124425, y: 0.21035692, z: -0.00000022351742}
+--- !u!114 &8703365945480133301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8215612576085463267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6a08144e37d22d4e8f8f51d2c5d4a4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nearTouchHighlight: {r: 0, g: 0, b: 0, a: 0}
+  touchHighlight: {r: 0, g: 1, b: 1, a: 0}
+  grabHighlight: {r: 0, g: 0, b: 0, a: 0}
+  useHighlight: {r: 0, g: 0, b: 0, a: 0}
+  objectToMonitor: {fileID: 0}
+  objectToHighlight: {fileID: 0}
+  objectHighlighter: {fileID: 0}
+  objectToAffect: {fileID: 0}
 --- !u!1 &9057603084395055398
 GameObject:
   m_ObjectHideFlags: 0

@@ -143,6 +143,7 @@ GameObject:
   - component: {fileID: 6247448402797727494}
   - component: {fileID: 3923974148382248735}
   - component: {fileID: 7903886146258391615}
+  - component: {fileID: 1210396774246957836}
   m_Layer: 0
   m_Name: Rest_Bar_Set03_BeerTapHandle
   m_TagString: BeerTapHandle
@@ -340,6 +341,26 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.34734085, y: 0.15848273, z: 0.05016748}
   m_Center: {x: -0.15497427, y: 0.21231565, z: 0.000000024214387}
+--- !u!114 &1210396774246957836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2740231151445483197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6a08144e37d22d4e8f8f51d2c5d4a4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nearTouchHighlight: {r: 0, g: 0, b: 0, a: 0}
+  touchHighlight: {r: 0, g: 1, b: 1, a: 0}
+  grabHighlight: {r: 0, g: 0, b: 0, a: 0}
+  useHighlight: {r: 0, g: 0, b: 0, a: 0}
+  objectToMonitor: {fileID: 0}
+  objectToHighlight: {fileID: 0}
+  objectHighlighter: {fileID: 0}
+  objectToAffect: {fileID: 0}
 --- !u!1 &5679626359663850642
 GameObject:
   m_ObjectHideFlags: 0
@@ -673,15 +694,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f509ff7a0b998d4b8b8390119d76a81, type: 3}
---- !u!198 &5352629567167879763 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 4457736097335495857, guid: 8f509ff7a0b998d4b8b8390119d76a81,
-    type: 3}
-  m_PrefabInstance: {fileID: 8616885166395430626}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8654172933330027167 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1120445271780283517, guid: 8f509ff7a0b998d4b8b8390119d76a81,
+    type: 3}
+  m_PrefabInstance: {fileID: 8616885166395430626}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &5352629567167879763 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 4457736097335495857, guid: 8f509ff7a0b998d4b8b8390119d76a81,
     type: 3}
   m_PrefabInstance: {fileID: 8616885166395430626}
   m_PrefabAsset: {fileID: 0}
