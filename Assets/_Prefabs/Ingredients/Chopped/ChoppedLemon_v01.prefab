@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 2442215898756543933}
   - component: {fileID: 2074442877452481570}
   - component: {fileID: 6910102386977378291}
+  - component: {fileID: 7343181856971255501}
   m_Layer: 0
   m_Name: Lemon_Slice_02
   m_TagString: Untagged
@@ -88,7 +89,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 5561349426305759274, guid: a1b42b8098dc7b9459f2f74a0573a042, type: 3}
+  - {fileID: 2100000, guid: 08bac67ceb07c432e99a656afc9d22b4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -109,6 +110,26 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &7343181856971255501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1209206287610543662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6a08144e37d22d4e8f8f51d2c5d4a4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nearTouchHighlight: {r: 0, g: 0, b: 0, a: 0}
+  touchHighlight: {r: 0, g: 1, b: 1, a: 1}
+  grabHighlight: {r: 0, g: 0, b: 0, a: 0}
+  useHighlight: {r: 0, g: 0, b: 0, a: 0}
+  objectToMonitor: {fileID: 8524939429550558001}
+  objectToHighlight: {fileID: 0}
+  objectHighlighter: {fileID: 0}
+  objectToAffect: {fileID: 0}
 --- !u!1 &2234502792209167142
 GameObject:
   m_ObjectHideFlags: 0
@@ -134,7 +155,7 @@ Transform:
   m_GameObject: {fileID: 2234502792209167142}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.58, y: 0.58, z: 0.58}
   m_Children:
   - {fileID: 5390344148658044241}
   - {fileID: 7286634259462752744}
@@ -159,7 +180,7 @@ GameObject:
   - component: {fileID: 7450753466316162924}
   m_Layer: 0
   m_Name: Lemon_Slice
-  m_TagString: Cookable
+  m_TagString: Garnish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -311,6 +332,7 @@ GameObject:
   - component: {fileID: 2373027539464677476}
   - component: {fileID: 29093776551409468}
   - component: {fileID: 6222668763309517787}
+  - component: {fileID: 6408855186996963380}
   m_Layer: 0
   m_Name: Lemon_End_01
   m_TagString: Untagged
@@ -357,7 +379,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 5561349426305759274, guid: b5bb73eb64edd884f9d4adecf560eb0c, type: 3}
+  - {fileID: 2100000, guid: 08bac67ceb07c432e99a656afc9d22b4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -378,6 +400,26 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &6408855186996963380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3580861489749693969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6a08144e37d22d4e8f8f51d2c5d4a4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nearTouchHighlight: {r: 0, g: 0, b: 0, a: 0}
+  touchHighlight: {r: 0, g: 1, b: 1, a: 1}
+  grabHighlight: {r: 0, g: 0, b: 0, a: 0}
+  useHighlight: {r: 0, g: 0, b: 0, a: 0}
+  objectToMonitor: {fileID: 8524939429550558001}
+  objectToHighlight: {fileID: 0}
+  objectHighlighter: {fileID: 0}
+  objectToAffect: {fileID: 0}
 --- !u!1 &5232810129488354517
 GameObject:
   m_ObjectHideFlags: 0
@@ -395,7 +437,7 @@ GameObject:
   - component: {fileID: 5369016525318785174}
   m_Layer: 0
   m_Name: Lemon_Slice
-  m_TagString: Cookable
+  m_TagString: Garnish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -533,6 +575,7 @@ GameObject:
   - component: {fileID: 9158592093049929284}
   - component: {fileID: 4938948621461352748}
   - component: {fileID: 5775655727297970332}
+  - component: {fileID: 7141605837769390361}
   m_Layer: 0
   m_Name: Lemon_End_02
   m_TagString: Untagged
@@ -579,7 +622,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 5561349426305759274, guid: 85ce7eb214e18d64592df5d3b53cfecf, type: 3}
+  - {fileID: 2100000, guid: 08bac67ceb07c432e99a656afc9d22b4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -600,6 +643,26 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &7141605837769390361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5823468149471504700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6a08144e37d22d4e8f8f51d2c5d4a4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nearTouchHighlight: {r: 0, g: 0, b: 0, a: 0}
+  touchHighlight: {r: 0, g: 1, b: 1, a: 1}
+  grabHighlight: {r: 0, g: 0, b: 0, a: 0}
+  useHighlight: {r: 0, g: 0, b: 0, a: 0}
+  objectToMonitor: {fileID: 8524939429550558001}
+  objectToHighlight: {fileID: 0}
+  objectHighlighter: {fileID: 0}
+  objectToAffect: {fileID: 0}
 --- !u!1 &5885716154128542180
 GameObject:
   m_ObjectHideFlags: 0
@@ -618,7 +681,7 @@ GameObject:
   - component: {fileID: 8524939429550558001}
   m_Layer: 0
   m_Name: Lemon_Slice
-  m_TagString: Cookable
+  m_TagString: Garnish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -793,6 +856,26 @@ Transform:
   m_Father: {fileID: 4122650384631782246}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &985263648471762153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8546070441953798099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6a08144e37d22d4e8f8f51d2c5d4a4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nearTouchHighlight: {r: 0, g: 0, b: 0, a: 0}
+  touchHighlight: {r: 0, g: 1, b: 1, a: 1}
+  grabHighlight: {r: 0, g: 0, b: 0, a: 0}
+  useHighlight: {r: 0, g: 0, b: 0, a: 0}
+  objectToMonitor: {fileID: 8524939429550558001}
+  objectToHighlight: {fileID: 0}
+  objectHighlighter: {fileID: 0}
+  objectToAffect: {fileID: 0}
 --- !u!1001 &821481868698481278
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -860,8 +943,19 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3665274331195319408, guid: 47a6633fa70537a419f10dd4ec88a4c1,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 08bac67ceb07c432e99a656afc9d22b4, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 47a6633fa70537a419f10dd4ec88a4c1, type: 3}
+--- !u!1 &8546070441953798099 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9079187173859481005, guid: 47a6633fa70537a419f10dd4ec88a4c1,
+    type: 3}
+  m_PrefabInstance: {fileID: 821481868698481278}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1773221647537420091 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1440521696123700549, guid: 47a6633fa70537a419f10dd4ec88a4c1,
@@ -879,6 +973,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Lemon_Whole_v01
+      objectReference: {fileID: 0}
+    - target: {fileID: 2427875080260029092, guid: e37b4850fce8dee48a975d08d9ad299a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5484469020849507733, guid: e37b4850fce8dee48a975d08d9ad299a,
         type: 3}
