@@ -2772,7 +2772,8 @@ AudioSource:
   m_GameObject: {fileID: 5142144666622417553}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 8704028323512845759, guid: 59a6f156d9a934541b005d249c83b841,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -2783,10 +2784,10 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
+  MinDistance: 1.3
+  MaxDistance: 4
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -2819,7 +2820,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -4894,6 +4895,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3250209738708342734, guid: 37d76ea8149f22b4ba3f3190eb3af9b6,
+        type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 1534317110857269465}
+    - target: {fileID: 2402570278647952112, guid: 37d76ea8149f22b4ba3f3190eb3af9b6,
+        type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 1534317110857269465}
+    - target: {fileID: 8582193225940092829, guid: 37d76ea8149f22b4ba3f3190eb3af9b6,
+        type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 1534317110857269465}
     - target: {fileID: 7481684989034053483, guid: 37d76ea8149f22b4ba3f3190eb3af9b6,
         type: 3}
       propertyPath: tipJar
@@ -4904,36 +4920,21 @@ PrefabInstance:
       propertyPath: audioSource
       value: 
       objectReference: {fileID: 1534317110857269465}
-    - target: {fileID: 4693031359215997145, guid: 37d76ea8149f22b4ba3f3190eb3af9b6,
-        type: 3}
-      propertyPath: tipJar
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2402570278647952112, guid: 37d76ea8149f22b4ba3f3190eb3af9b6,
-        type: 3}
-      propertyPath: audioSource
-      value: 
-      objectReference: {fileID: 1534317110857269465}
-    - target: {fileID: 5079921504161115390, guid: 37d76ea8149f22b4ba3f3190eb3af9b6,
-        type: 3}
-      propertyPath: tipJar
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3250209738708342734, guid: 37d76ea8149f22b4ba3f3190eb3af9b6,
-        type: 3}
-      propertyPath: audioSource
-      value: 
-      objectReference: {fileID: 1534317110857269465}
     - target: {fileID: 6812806155452614239, guid: 37d76ea8149f22b4ba3f3190eb3af9b6,
         type: 3}
       propertyPath: smokeScreen
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 8582193225940092829, guid: 37d76ea8149f22b4ba3f3190eb3af9b6,
+    - target: {fileID: 4693031359215997145, guid: 37d76ea8149f22b4ba3f3190eb3af9b6,
         type: 3}
-      propertyPath: audioSource
+      propertyPath: tipJar
       value: 
-      objectReference: {fileID: 1534317110857269465}
+      objectReference: {fileID: 0}
+    - target: {fileID: 5079921504161115390, guid: 37d76ea8149f22b4ba3f3190eb3af9b6,
+        type: 3}
+      propertyPath: tipJar
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 37d76ea8149f22b4ba3f3190eb3af9b6, type: 3}
 --- !u!4 &4364687689662705219 stripped

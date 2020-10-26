@@ -118,8 +118,6 @@ GameObject:
   - component: {fileID: 7397998188994861665}
   - component: {fileID: 7405712762784146119}
   - component: {fileID: 4191504794140477832}
-  - component: {fileID: 5567745026517507226}
-  - component: {fileID: 7226168654493813887}
   - component: {fileID: 8620351761023743560}
   - component: {fileID: 2570038533026729210}
   - component: {fileID: 713135508628930767}
@@ -354,120 +352,6 @@ MonoBehaviour:
   usingState: 0
   dropSpeed: 1
   isPlayingSomething: 0
---- !u!114 &5567745026517507226
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8910713308699699820}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 135d1269a4cca2747b04e6de0a48c783, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  soundSource: {fileID: 7226168654493813887}
-  dropSound: {fileID: 8300000, guid: c5d67b32416ccb34298447bcb849691d, type: 3}
-  interactSound: {fileID: 8300000, guid: c5d67b32416ccb34298447bcb849691d, type: 3}
-  cookSound: {fileID: 8300000, guid: 3a58ff49945f2dd418b930da25bdd418, type: 3}
-  dropSpeed: 1
---- !u!82 &7226168654493813887
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8910713308699699820}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: -3626078851918088244, guid: 59a6f156d9a934541b005d249c83b841,
-    type: 2}
-  m_audioClip: {fileID: 8300000, guid: c5d67b32416ccb34298447bcb849691d, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 0.3
-  MaxDistance: 1
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!114 &8620351761023743560
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -528,11 +412,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1843665493341331851}
     m_Modifications:
-    - target: {fileID: 8794757175939375550, guid: a2aac2dea07255242a80245b4e814cf9,
-        type: 3}
-      propertyPath: m_Name
-      value: CookingUI_v03
-      objectReference: {fileID: 0}
     - target: {fileID: 3410697302078619019, guid: a2aac2dea07255242a80245b4e814cf9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -653,10 +532,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.15528734
       objectReference: {fileID: 0}
-    - target: {fileID: 2833902663236759090, guid: a2aac2dea07255242a80245b4e814cf9,
+    - target: {fileID: 2412601138849914430, guid: a2aac2dea07255242a80245b4e814cf9,
         type: 3}
-      propertyPath: m_FillAmount
-      value: 0.282
+      propertyPath: m_AnchoredPosition.y
+      value: 0.337
       objectReference: {fileID: 0}
     - target: {fileID: 1344238910460877455, guid: a2aac2dea07255242a80245b4e814cf9,
         type: 3}
@@ -668,10 +547,15 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0.73901004
       objectReference: {fileID: 0}
-    - target: {fileID: 2412601138849914430, guid: a2aac2dea07255242a80245b4e814cf9,
+    - target: {fileID: 8794757175939375550, guid: a2aac2dea07255242a80245b4e814cf9,
         type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0.337
+      propertyPath: m_Name
+      value: CookingUI_v03
+      objectReference: {fileID: 0}
+    - target: {fileID: 2833902663236759090, guid: a2aac2dea07255242a80245b4e814cf9,
+        type: 3}
+      propertyPath: m_FillAmount
+      value: 0.282
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2aac2dea07255242a80245b4e814cf9, type: 3}

@@ -227,7 +227,7 @@ AudioSource:
   m_GameObject: {fileID: 1776778994532524765}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: -3626078851918088244, guid: 59a6f156d9a934541b005d249c83b841,
+  OutputAudioMixerGroup: {fileID: -3830345341181253345, guid: 59a6f156d9a934541b005d249c83b841,
     type: 2}
   m_audioClip: {fileID: 8300000, guid: c5d67b32416ccb34298447bcb849691d, type: 3}
   m_PlayOnAwake: 0
@@ -239,10 +239,10 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 20
+  MinDistance: 0.3
+  MaxDistance: 1.2
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -598,6 +598,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2971366620677499657}
     m_Modifications:
+    - target: {fileID: 7369659462576197351, guid: f1f1c9363b77d7e4d8fb1c82b32caf39,
+        type: 3}
+      propertyPath: m_Name
+      value: Chopping_ProgressBar_Meat
+      objectReference: {fileID: 0}
+    - target: {fileID: 7369659462576197351, guid: f1f1c9363b77d7e4d8fb1c82b32caf39,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3142651222112671313, guid: f1f1c9363b77d7e4d8fb1c82b32caf39,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3142651222816470752, guid: f1f1c9363b77d7e4d8fb1c82b32caf39,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1608874819208307037, guid: f1f1c9363b77d7e4d8fb1c82b32caf39,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -703,16 +723,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 7369659462576197351, guid: f1f1c9363b77d7e4d8fb1c82b32caf39,
-        type: 3}
-      propertyPath: m_Name
-      value: Chopping_ProgressBar_Meat
-      objectReference: {fileID: 0}
-    - target: {fileID: 7369659462576197351, guid: f1f1c9363b77d7e4d8fb1c82b32caf39,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3142651222483857147, guid: f1f1c9363b77d7e4d8fb1c82b32caf39,
         type: 3}
       propertyPath: m_LocalRotation.x
@@ -747,16 +757,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -0.0000016083549
-      objectReference: {fileID: 0}
-    - target: {fileID: 3142651222112671313, guid: f1f1c9363b77d7e4d8fb1c82b32caf39,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3142651222816470752, guid: f1f1c9363b77d7e4d8fb1c82b32caf39,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9101434937483533624, guid: f1f1c9363b77d7e4d8fb1c82b32caf39,
         type: 3}

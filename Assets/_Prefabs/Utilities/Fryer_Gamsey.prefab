@@ -486,6 +486,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e40dd5cf2bdfbb42982a5af2ec6a728, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  oilArea: {fileID: 0}
+  oilMeter: {fileID: 0}
+  fryingBasket: {fileID: 0}
 --- !u!1 &2036891852861653653
 GameObject:
   m_ObjectHideFlags: 0
@@ -1127,7 +1130,8 @@ AudioSource:
   m_GameObject: {fileID: 8555187932674437501}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 7011468698808576430, guid: 59a6f156d9a934541b005d249c83b841,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: cb70d6ca22723eb4cb43c732513fd36d, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.784
@@ -1138,10 +1142,10 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1.0209813
-  MaxDistance: 2.3
+  MinDistance: 1
+  MaxDistance: 2.5
   Pan2D: 0
-  rolloffMode: 2
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -1149,19 +1153,19 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0.8333333
-      value: 1
-      inSlope: -1.20048
-      outSlope: -1.20048
+      time: 0.9098168
+      value: 0.8495445
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
       time: 1
-      value: 0.1900304
-      inSlope: -0.8336663
-      outSlope: -0.8336663
+      value: 0
+      inSlope: -1.7982537
+      outSlope: -1.7982537
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
