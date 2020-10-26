@@ -12,6 +12,7 @@ namespace LevelManagement
         [Header("Pause Configuration")]
         public bool pausable;
         public bool isPaused;
+        public bool isOutOfFocus;
         public float fadeTime = 2;
         public float pauseCooldown;
         public PostProcessLayer pauseNoir;
@@ -52,6 +53,8 @@ namespace LevelManagement
         // Update is called once per frame
         void Update()
         {
+            ManageVRFocus();
+
             if (isFading)
             {
                 fadeTimer += Time.deltaTime;
@@ -90,6 +93,11 @@ namespace LevelManagement
             {
                 SwitchScene();
             }
+        }
+
+        public void ManageVRFocus()
+        {
+            isOutOfFocus = !OVRManager.hasInputFocus || !OVRManager.hasVrFocus;
         }
 
         public void SetLocationToPauseArea()
