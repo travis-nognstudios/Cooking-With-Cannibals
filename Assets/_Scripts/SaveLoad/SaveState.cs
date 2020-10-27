@@ -13,7 +13,7 @@ public class SaveState : MonoBehaviour
 
     public static bool goldKnifeUnlocked;
 
-    //[HideInInspector]
+    [HideInInspector]
     public bool debug;
 
     //Debug Variables
