@@ -110,7 +110,7 @@ namespace LevelManagement
                 screenFade = FindObjectOfType<OVRScreenFade>();
                 if (screenFade)
                 {
-                    screenFade.SetFadeLevel(0.5f);
+                    screenFade.SetFadeLevel(0.25f);
                 }
             }
 
@@ -120,7 +120,7 @@ namespace LevelManagement
                 screenFade = FindObjectOfType<OVRScreenFade>();
                 if (screenFade)
                 {
-                    screenFade.SetFadeLevel(1f);
+                    screenFade.SetFadeLevel(0f);
                 }
             }
         }
