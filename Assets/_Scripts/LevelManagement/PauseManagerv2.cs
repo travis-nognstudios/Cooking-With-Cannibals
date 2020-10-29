@@ -56,7 +56,7 @@ namespace LevelManagement
         {
             ManageVRFocus();
             ManageFocusFade();
-            ManageFocusHands();
+            //ManageFocusHands();
 
             if (isFading)
             {
@@ -126,6 +126,7 @@ namespace LevelManagement
             }
         }
 
+        // Doesn't work the way I want
         private void ManageFocusHands()
         {
             GameObject leftHand = GameObject.Find("LeftHandAnchor");
