@@ -28,6 +28,7 @@ namespace LevelManagement
         private Quaternion originalRotation;
 
         private OVRScreenFade screenFade;
+        private bool isFocusFaded;
         private float fadeTimer;
         private bool isFading;
         private bool fadeReady;
@@ -54,6 +55,7 @@ namespace LevelManagement
         void Update()
         {
             ManageVRFocus();
+            ManageFocusFade();
 
             if (isFading)
             {
@@ -95,9 +97,32 @@ namespace LevelManagement
             }
         }
 
-        public void ManageVRFocus()
+        private void ManageVRFocus()
         {
             isOutOfFocus = !OVRManager.hasInputFocus || !OVRManager.hasVrFocus;
+        }
+
+        private void ManageFocusFade()
+        {
+            if (isOutOfFocus && !isFocusFaded)
+            {
+                isFocusFaded = true;
+                screenFade = FindObjectOfType<OVRScreenFade>();
+                if (screenFade)
+                {
+                    screenFade.SetFadeLevel(0.5f);
+                }
+            }
+
+            if (!isOutOfFocus && isFocusFaded)
+            {
+                isFocusFaded = false;
+                screenFade = FindObjectOfType<OVRScreenFade>();
+                if (screenFade)
+                {
+                    screenFade.SetFadeLevel(1f);
+                }
+            }
         }
 
         public void SetLocationToPauseArea()
