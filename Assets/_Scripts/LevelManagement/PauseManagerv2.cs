@@ -126,24 +126,25 @@ namespace LevelManagement
             }
         }
 
-        // GOING NUCLEAR LMAO
         private void ManageFocusHands()
         {
-            GameObject PLAYER = GameObject.Find("[VRTK_SDKSetups]");
+            GameObject leftHand = GameObject.Find("hand_left");
+            GameObject rightHand = GameObject.Find("hand_right");
 
-            if (!PLAYER)
+            if (!rightHand || !leftHand)
             {
-                // Couldn't find
+                // Couldn't find, do nothing
             }
-            else if (isOutOfFocus && PLAYER.activeSelf)
+            else if (isOutOfFocus)
             {
-                PLAYER.SetActive(false);
+                leftHand.SetActive(false);
+                rightHand.SetActive(false);
             }
-            else if (!isOutOfFocus && !PLAYER.activeSelf)
+            else if (!isOutOfFocus)
             {
-                PLAYER.SetActive(true);
+                leftHand.SetActive(true);
+                rightHand.SetActive(true);
             }
-
         }
 
         public void SetLocationToPauseArea()
