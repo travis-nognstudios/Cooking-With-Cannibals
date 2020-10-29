@@ -56,6 +56,7 @@ namespace LevelManagement
         {
             ManageVRFocus();
             ManageFocusFade();
+            ManageFocusHands();
 
             if (isFading)
             {
@@ -122,6 +123,27 @@ namespace LevelManagement
                 {
                     screenFade.SetFadeLevel(0f);
                 }
+            }
+        }
+
+        private void ManageFocusHands()
+        {
+            GameObject leftHand = GameObject.Find("LeftHandAnchor");
+            GameObject rightHand = GameObject.Find("RightHandAnchor");
+
+            if (!rightHand || !leftHand)
+            {
+                // Couldn't find, do nothing
+            }
+            else if (isOutOfFocus)
+            {
+                leftHand.SetActive(false);
+                rightHand.SetActive(false);
+            }
+            else if (!isOutOfFocus)
+            {
+                leftHand.SetActive(true);
+                rightHand.SetActive(true);
             }
         }
 
