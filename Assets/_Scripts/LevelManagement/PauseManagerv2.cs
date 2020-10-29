@@ -131,16 +131,12 @@ namespace LevelManagement
             GameObject leftHand = GameObject.Find("hand_left");
             GameObject rightHand = GameObject.Find("hand_right");
 
-            if (!rightHand || !leftHand)
-            {
-                // Couldn't find, do nothing
-            }
-            else if (isOutOfFocus)
+            if (isOutOfFocus)
             {
                 leftHand.SetActive(false);
                 rightHand.SetActive(false);
             }
-            else if (!isOutOfFocus)
+            else
             {
                 leftHand.SetActive(true);
                 rightHand.SetActive(true);
