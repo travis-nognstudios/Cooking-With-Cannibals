@@ -142,13 +142,17 @@ namespace LevelManagement
             // Turn on/off
             if (isOutOfFocus)
             {
-                leftHand.SetActive(false);
-                rightHand.SetActive(false);
+                if (leftHand.activeSelf)
+                    leftHand.SetActive(false);
+                if (rightHand.activeSelf)
+                    rightHand.SetActive(false);
             }
             else
             {
-                leftHand.SetActive(true);
-                rightHand.SetActive(true);
+                if (!leftHand.activeSelf)
+                    leftHand.SetActive(true);
+                if (!rightHand.activeSelf)
+                    rightHand.SetActive(true);
             }
         }
 
