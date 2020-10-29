@@ -44,6 +44,10 @@ namespace LevelManagement
         private float pauseCooldownTimer;
         private bool pauseOnCooldown;
 
+        // Remember hands
+        GameObject leftHand = null;
+        GameObject rightHand = null;
+
         // Use this for initialization
         void Start()
         {
@@ -128,9 +132,14 @@ namespace LevelManagement
 
         private void ManageFocusHands()
         {
-            GameObject leftHand = GameObject.Find("hand_left");
-            GameObject rightHand = GameObject.Find("hand_right");
+            // Only search the first time
+            if (leftHand == null || rightHand == null)
+            {
+                leftHand = GameObject.Find("hand_left");
+                rightHand = GameObject.Find("hand_right");
+            }
 
+            // Turn on/off
             if (isOutOfFocus)
             {
                 leftHand.SetActive(false);
