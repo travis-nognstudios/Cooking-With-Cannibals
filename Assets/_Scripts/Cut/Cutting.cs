@@ -60,7 +60,6 @@ public class Cutting : MonoBehaviour
     }
     public void Chop()
     {
-        //Debug.Log(numberChops);
         progressBar.SetActive(true);
         numberChops++;
         progressSlider.value = numberChops;

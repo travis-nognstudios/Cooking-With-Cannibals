@@ -331,7 +331,6 @@
         {
             if (triggerButtonEvents)
             {
-                Debug.Log("Trigger Clicked");
                 DebugLogger(VRTK_ControllerReference.GetRealIndex(e.controllerReference), "TRIGGER", "hairline end", e);
             }
         }

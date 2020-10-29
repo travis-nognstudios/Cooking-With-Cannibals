@@ -22,7 +22,6 @@ public class BowlingScore : MonoBehaviour
 
             score++;
             //Destroy(other);
-            Debug.Log(score);
             if (score >= 6)
             {
                 CheckWin();
@@ -41,13 +40,11 @@ public class BowlingScore : MonoBehaviour
         else if (bowlingRespawn.ballsSpawned == 1)
         {
             spareText.SetActive(true);
-            Debug.Log("Spare");
 
         }
         else
         {
             loseText.SetActive(true);
-            Debug.Log("Lose");
         }
     }
 }

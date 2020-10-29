@@ -24,10 +24,6 @@ public class LevelOneSaveData : MonoBehaviour
         //Tests
         /*
         Load();
-        Debug.Log("levelOneCompleted: " + levelOneCompleted);
-        Debug.Log("levelOneHS: " + levelOneHS);
-        Debug.Log("levelOneTime: " + levelOneTime);
-        Debug.Log("levelOneHG: " + levelOneHG);
         */
 
 

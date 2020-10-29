@@ -113,7 +113,6 @@ namespace Serving
                 string mainName = recipe.mainIngredient.gameObject.name;
                 if (mainName.Equals(mainIngredientName))
                 {
-                    Debug.Log($"Matching recipe: from {mainIngredientName} to {recipe.recipeObject.name}");
                     return recipe;
                 }
             }
@@ -140,10 +139,9 @@ namespace Serving
 
         private void LogMainIngredientPreparedNames()
         {
-            Debug.Log("Prepared main ingredients");
             foreach (string n in mainIngredientsPreparedNames)
             {
-                Debug.Log(n);
+                
             }
         }
 
@@ -165,10 +163,9 @@ namespace Serving
             }
             
             // Log Prepared Recipe Names
-            Debug.Log("Prepared Recipes");
+          
             foreach (string n in preparedRecipeNames)
             {
-                Debug.Log($"Prepared recipe: {n}");
             }
 
             return preparedRecipeNames;
@@ -192,12 +189,10 @@ namespace Serving
                 // Log queued recipe names
                 foreach (string n in queuedRecipeNames)
                 {
-                    Debug.Log($"Queued Recipe: {n}");
                 }
                 
                 if (NameListsMatch(preparedRecipeNames, queuedRecipeNames))
                 {
-                    Debug.Log("Found matching group");
                     matchingQueuedRecipeGroup = recipeGroup;
                 }
             }
@@ -228,7 +223,6 @@ namespace Serving
 
         private void SpawnDubiousFoods()
         {
-            Debug.Log("No matching order found");
         }
 
         private bool RecipeIsReadyBasedOnRater(RecipeVariation recipe)

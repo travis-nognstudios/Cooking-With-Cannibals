@@ -15,7 +15,7 @@ namespace Serving
                 bell = GetComponent<FoodBellRing>();
             }
 
-            Debug.Log("Hit bell");
+
             bell.MakeReady();
 
             base.StartTouching(currentTouchingObject);

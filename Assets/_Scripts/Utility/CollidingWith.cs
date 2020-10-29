@@ -18,6 +18,5 @@ public class CollidingWith : MonoBehaviour
 
     public void OnCollisionEnter(Collision obj)
     {
-        Debug.Log("Colliding with:  " + obj.gameObject);
     }
 }

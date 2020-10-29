@@ -27,7 +27,6 @@ namespace AI
             {
                 if (other.CompareTag("Knife"))
                 {
-                    Debug.Log("You threw a knife at me jafeel");
                     alreadyReacted = true;
                     myState = State.Success;
                 }

@@ -26,7 +26,7 @@ namespace SceneObjects
 
         public void StopDrip()
         {
-            //Debug.Log("Stop Drip");
+
 
             if (dripEffect.isPlaying)
             {
@@ -36,7 +36,7 @@ namespace SceneObjects
 
         public void MakeSlowDrip()
         {
-            //Debug.Log("Slow Drip");
+
             if (dripEffect.isStopped)
             {
                 dripEffect.Play();
@@ -50,7 +50,7 @@ namespace SceneObjects
 
         public void MakeFastDrip()
         {
-            //Debug.Log("Fast Drip");
+
             if (dripEffect.isStopped)
             {
                 dripEffect.Play();

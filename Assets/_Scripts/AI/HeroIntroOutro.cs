@@ -51,8 +51,6 @@ namespace AI
                     isPlayingIntro = false;
                     introDone = true;
                     timeTracker = 0f;
-
-                    Debug.Log("Hero Intro Done");
                 }
             }
             else if (isPlayingOutro)
@@ -65,8 +63,6 @@ namespace AI
                     isPlayingOutro = false;
                     outroDone = true;
                     timeTracker = 0f;
-
-                    Debug.Log("Hero Outro Done");
                 }
             }
         }
@@ -82,7 +78,6 @@ namespace AI
 
         public void PlayOutro()
         {
-            Debug.Log("Playing Hero Outro");
 
             // ToDo: choose outro properly
             PlayGoodOutro();

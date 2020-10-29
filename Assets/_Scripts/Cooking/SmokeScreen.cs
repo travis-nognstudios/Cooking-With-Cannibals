@@ -33,7 +33,6 @@ namespace Cooking
                 kitchenSmoke.Play();
 
                 numSmokeScreensStarted++;
-                Debug.Log($"Smokescreens: {numSmokeScreensStarted}");
             }
         }
 
