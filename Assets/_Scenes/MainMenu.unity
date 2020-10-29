@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1047,6 +1047,40 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1176687910}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &679397576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 679397574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 563681618daa71b4c89f979b1fd7170b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AllowPitchLook: 0
+  AllowYawLook: 1
+  InvertPitch: 0
+  GamePad_PitchDegreesPerSec: 90
+  GamePad_YawDegreesPerSec: 90
+  AllowMovement: 0
+  ForwardSpeed: 2
+  StrafeSpeed: 2
+--- !u!114 &679397577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 679397574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 032142ba4fe4a53458d86dc9a8610f36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxMessages: 15
+  textMsg: {fileID: 0}
 --- !u!114 &679397578 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7609964758380068636, guid: c9379d6de0335b54fbfd54c24c559207,
