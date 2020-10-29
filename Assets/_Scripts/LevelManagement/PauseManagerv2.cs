@@ -56,7 +56,7 @@ namespace LevelManagement
         {
             ManageVRFocus();
             ManageFocusFade();
-            //ManageFocusHands();
+            ManageFocusHands();
 
             if (isFading)
             {
@@ -126,26 +126,24 @@ namespace LevelManagement
             }
         }
 
-        // Doesn't work the way I want
+        // GOING NUCLEAR LMAO
         private void ManageFocusHands()
         {
-            GameObject leftHand = GameObject.Find("LeftHandAnchor");
-            GameObject rightHand = GameObject.Find("RightHandAnchor");
+            GameObject PLAYER = GameObject.Find("[VRTK_SDKSetups]");
 
-            if (!rightHand || !leftHand)
+            if (!PLAYER)
             {
-                // Couldn't find, do nothing
+                // Couldn't find
             }
-            else if (isOutOfFocus)
+            else if (isOutOfFocus && PLAYER.activeSelf)
             {
-                leftHand.SetActive(false);
-                rightHand.SetActive(false);
+                PLAYER.SetActive(false);
             }
-            else if (!isOutOfFocus)
+            else if (!isOutOfFocus && !PLAYER.activeSelf)
             {
-                leftHand.SetActive(true);
-                rightHand.SetActive(true);
+                PLAYER.SetActive(true);
             }
+
         }
 
         public void SetLocationToPauseArea()
