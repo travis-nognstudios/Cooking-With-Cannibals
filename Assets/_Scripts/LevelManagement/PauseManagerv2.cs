@@ -5,11 +5,14 @@ using UnityEngine.Rendering.PostProcessing;
 
 namespace LevelManagement
 {
+    // TODO: Refactor!
+
     public class PauseManagerv2 : MonoBehaviour
     {
         [Header("Pause Configuration")]
         public bool pausable;
         public bool isPaused;
+        public bool isOutOfFocus;
         public float fadeTime = 2;
         public float pauseCooldown;
         public PostProcessLayer pauseNoir;
@@ -25,6 +28,7 @@ namespace LevelManagement
         private Quaternion originalRotation;
 
         private OVRScreenFade screenFade;
+        private bool isFocusFaded;
         private float fadeTimer;
         private bool isFading;
         private bool fadeReady;
@@ -40,16 +44,24 @@ namespace LevelManagement
         private float pauseCooldownTimer;
         private bool pauseOnCooldown;
 
+        // Remember hands
+        GameObject leftHand = null;
+        GameObject rightHand = null;
+
         // Use this for initialization
         void Start()
         {
-            ColorOn();
+            //ColorOn();
             SetLocationToPauseArea();
         }
 
         // Update is called once per frame
         void Update()
         {
+            ManageVRFocus();
+            ManageFocusFade();
+            ManageFocusHands();
+
             if (isFading)
             {
                 fadeTimer += Time.deltaTime;
@@ -87,6 +99,60 @@ namespace LevelManagement
             if (waitingToSceneSwitch && fadeReady)
             {
                 SwitchScene();
+            }
+        }
+
+        private void ManageVRFocus()
+        {
+            isOutOfFocus = !OVRManager.hasInputFocus || !OVRManager.hasVrFocus;
+        }
+
+        private void ManageFocusFade()
+        {
+            if (isOutOfFocus && !isFocusFaded)
+            {
+                isFocusFaded = true;
+                screenFade = FindObjectOfType<OVRScreenFade>();
+                if (screenFade)
+                {
+                    screenFade.SetFadeLevel(0.25f);
+                }
+            }
+
+            if (!isOutOfFocus && isFocusFaded)
+            {
+                isFocusFaded = false;
+                screenFade = FindObjectOfType<OVRScreenFade>();
+                if (screenFade)
+                {
+                    screenFade.SetFadeLevel(0f);
+                }
+            }
+        }
+
+        private void ManageFocusHands()
+        {
+            // Only search the first time
+            if (leftHand == null || rightHand == null)
+            {
+                leftHand = GameObject.Find("hand_left");
+                rightHand = GameObject.Find("hand_right");
+            }
+
+            // Turn on/off
+            if (isOutOfFocus)
+            {
+                if (leftHand.activeSelf)
+                    leftHand.SetActive(false);
+                if (rightHand.activeSelf)
+                    rightHand.SetActive(false);
+            }
+            else
+            {
+                if (!leftHand.activeSelf)
+                    leftHand.SetActive(true);
+                if (!rightHand.activeSelf)
+                    rightHand.SetActive(true);
             }
         }
 
@@ -197,7 +263,7 @@ namespace LevelManagement
         {
             if (goToPoint == pausePoint)
             {
-                ColorOff();
+                //ColorOff();
             }
 
             float x = player.transform.position.x;
@@ -218,7 +284,7 @@ namespace LevelManagement
 
         private void TeleportBackToLevel()
         {
-            ColorOn();
+            //ColorOn();
 
             player.transform.position = originalPosition;
             player.transform.rotation = originalRotation;

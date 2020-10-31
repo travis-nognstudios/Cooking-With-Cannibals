@@ -254,6 +254,7 @@ GameObject:
   - component: {fileID: 1433291714173323325}
   - component: {fileID: 1114043957335518243}
   - component: {fileID: 2548758718099344999}
+  - component: {fileID: 2328902958912262149}
   m_Layer: 10
   m_Name: Knife_Level3_v01
   m_TagString: Untagged
@@ -365,7 +366,8 @@ AudioSource:
   m_GameObject: {fileID: 4396705800470392586}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -554685307037422817, guid: 59a6f156d9a934541b005d249c83b841,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -517,6 +519,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connected: {fileID: 0}
+--- !u!114 &2328902958912262149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4396705800470392586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 680d450c68d924bec83cfcc5f7fc0ab4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  swooshSound: {fileID: 8300000, guid: cd75be4fedad1f849a4478825ee4d23d, type: 3}
+  thresholdSpeed: 0.2
+  resetSpeed: 0.1
 --- !u!1 &5694929915641740324
 GameObject:
   m_ObjectHideFlags: 0

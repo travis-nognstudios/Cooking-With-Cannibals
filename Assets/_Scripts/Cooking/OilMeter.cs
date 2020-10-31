@@ -10,6 +10,7 @@ namespace Cooking
     {
         [Header("Rates")]
         public float maxOilLevel = 4;
+        public float currentOilLevel;
         public float depletionPerSecond;
 
         [Header("UI")]
@@ -24,11 +25,11 @@ namespace Cooking
         public PauseManagerv2 pauseManager;
         public AudioSource deepFryerAudio;
 
-        private float oilLevel;
+        
 
         void Start()
         {
-            oilLevel = maxOilLevel;
+            currentOilLevel = maxOilLevel;
         }
 
         public void UseOil()
@@ -36,10 +37,10 @@ namespace Cooking
             float timeElapsed = pauseManager.DeltaTime();
             float depletion = depletionPerSecond * timeElapsed;
 
-            oilLevel -= depletion;
-            if (oilLevel <= 0)
+            currentOilLevel -= depletion;
+            if (currentOilLevel <= 0)
             {
-                oilLevel = 0;
+                currentOilLevel = 0;
             }
 
             UpdateUI();
@@ -48,7 +49,7 @@ namespace Cooking
 
         void UpdateUI()
         {
-            if (oilLevel <= 0)
+            if (currentOilLevel <= 0)
             {
                 deepFryerAudio.mute = true;
                 oilLevel1.enabled = false;
@@ -56,7 +57,7 @@ namespace Cooking
                 oilLevel3.enabled = false;
                 oilLevel4.enabled = false;
             }
-            else if (oilLevel < 1)
+            else if (currentOilLevel < 1)
             {
                 deepFryerAudio.mute = false;
                 oilLevel1.enabled = false;
@@ -64,7 +65,7 @@ namespace Cooking
                 oilLevel3.enabled = false;
                 oilLevel4.enabled = true;
             }
-            else if (oilLevel < 2)
+            else if (currentOilLevel < 2)
             {
                 deepFryerAudio.mute = false;
                 oilLevel1.enabled = false;
@@ -72,7 +73,7 @@ namespace Cooking
                 oilLevel3.enabled = true;
                 oilLevel4.enabled = true;
             }
-            else if (oilLevel < 3)
+            else if (currentOilLevel < 3)
             {
                 deepFryerAudio.mute = false;
                 oilLevel1.enabled = false;
@@ -92,7 +93,7 @@ namespace Cooking
 
         void UpdateOilArea()
         {
-            if (oilLevel <= 0)
+            if (currentOilLevel <= 0)
             {
                 fryerOil.TurnOff();
             }
@@ -109,11 +110,11 @@ namespace Cooking
                 int amount = other.GetComponent<OilRefill>().refillAmount;
                 Destroy(other.gameObject);
 
-                oilLevel += amount;
+                currentOilLevel += amount;
 
-                if (oilLevel > maxOilLevel)
+                if (currentOilLevel > maxOilLevel)
                 {
-                    oilLevel = maxOilLevel;
+                    currentOilLevel = maxOilLevel;
                 }
             }
         }

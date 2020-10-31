@@ -27,7 +27,6 @@ public class BowlingManager : MonoBehaviour
             score++;
 
             StartCoroutine(DestroyAfter(other, despawnTime));
-            Debug.Log(score);
             if (score >= 10)
             {
                 StartCoroutine(ResetGame());
@@ -47,13 +46,11 @@ public class BowlingManager : MonoBehaviour
         else if (bowlingRespawn.ballsSpawned == 1)
         {
             spareText.SetActive(true);
-            Debug.Log("Spare");
             StartCoroutine("ResetGame");
         }
         else
         {
             loseText.SetActive(true);
-            Debug.Log("Lose");
             StartCoroutine("ResetGame");
         }
     }

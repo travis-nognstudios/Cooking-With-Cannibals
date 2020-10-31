@@ -30,7 +30,6 @@ namespace Sequence
         public void Play()
         {
             orderSpawner.StartSpawning();
-            Debug.Log("Start of Game Loop");
         }
     }
 }

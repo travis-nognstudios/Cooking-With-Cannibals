@@ -182,7 +182,6 @@ namespace AwesomeToon {
                     break;
 
                 default:
-                    Debug.Log("Lighting type '" + light.type + "' not supported by Toon Helper");
                     lightSet.atten = 0f;
                     break;
             }

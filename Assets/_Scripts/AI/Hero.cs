@@ -31,7 +31,6 @@ namespace AI
         {
             isPointing = true;
             Vector3 itemPos = item.transform.position;
-            Debug.Log($"Bruce: I'm pointing at {item.name} which is at {itemPos.ToString()}");
         }
 
         public void StopPointing()
@@ -47,14 +46,12 @@ namespace AI
 
         public void ReactToThrownItem()
         {
-            //animator.SetTrigger("reactToThrownItem");
-            Debug.Log("Bruce: You threw an item at me!");
+
         }
 
         public void ReactToThrownKnife()
         {
             animator.SetTrigger("OnKnifeHit");
-            Debug.Log("Bruce: You threw a knife at me!");
 
         }
 

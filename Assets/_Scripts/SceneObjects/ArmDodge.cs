@@ -23,7 +23,7 @@ namespace SceneObjects
 
                 Vector3 dodgeForce = knifeDirection * baseForce * forceMultiplier;
 
-                //Debug.Log($"Knife coming from: {knifeDirection}");
+
                 //arm.AddForce(dodgeForce);
                 arm.AddForceAtPosition(dodgeForce, myPosition);
             }

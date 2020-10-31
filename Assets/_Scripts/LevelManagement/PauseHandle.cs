@@ -22,7 +22,6 @@ namespace LevelManagement
         {
             if (DoorHandleTurned())
             {
-                Debug.Log("Door Handle Turned");
                 pauseManager.SetPause();
             }
         }

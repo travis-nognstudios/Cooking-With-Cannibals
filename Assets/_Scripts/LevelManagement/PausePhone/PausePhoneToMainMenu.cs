@@ -10,7 +10,6 @@ namespace LevelManagement
 
         override public void DoButtonAction()
         {
-            Debug.Log("Going to Main Menu");
             pauseManager.JumpToScene(0);
         }
     }
