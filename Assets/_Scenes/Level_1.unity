@@ -425,13 +425,13 @@ MonoBehaviour:
   pausable: 1
   isPaused: 0
   isOutOfFocus: 0
-  fadeTime: 4
-  pauseCooldown: 5
+  fadeTime: 3
+  pauseCooldown: 1
   pauseNoir: {fileID: 0}
-  player: {fileID: 543099649}
-  pausePoint: {fileID: 1124169302}
-  easterEggPoint: {fileID: 1401656577}
-  minigamePoint: {fileID: 2044631448}
+  player: {fileID: 232043299}
+  pausePoint: {fileID: 689074648}
+  easterEggPoint: {fileID: 0}
+  minigamePoint: {fileID: 0}
 --- !u!114 &37790844
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6271,12 +6271,6 @@ Transform:
   m_Father: {fileID: 485033084}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &543099649 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7609964757059138928, guid: c9379d6de0335b54fbfd54c24c559207,
-    type: 3}
-  m_PrefabInstance: {fileID: 232043298}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &544475021
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7818,6 +7812,36 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 675232704}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &689074647
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 689074648}
+  m_Layer: 0
+  m_Name: PausePoint_Actual
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &689074648
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 689074647}
+  m_LocalRotation: {x: 0, y: 0.016492635, z: 0, w: 0.999864}
+  m_LocalPosition: {x: -0.83, y: -70.26, z: 4.66}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 1.89, z: 0}
 --- !u!1 &691248364
 GameObject:
   m_ObjectHideFlags: 0
@@ -11248,12 +11272,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 453d1d70ba0e3444f919b91488d0d884, type: 3}
---- !u!4 &982263170 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5168688936019706455, guid: 453d1d70ba0e3444f919b91488d0d884,
-    type: 3}
-  m_PrefabInstance: {fileID: 982263169}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &982263171 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4837712446858138411, guid: 453d1d70ba0e3444f919b91488d0d884,
@@ -11277,8 +11295,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.4742026, y: 0.4218393, z: 10.02185}
-  m_Center: {x: -1.7064493, y: 1.9135433, z: 5.0113883}
+  m_Size: {x: 3.4742026, y: 0.68388635, z: 10.02185}
+  m_Center: {x: -1.7064493, y: 1.3186971, z: 5.011583}
 --- !u!65 &982263174
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12109,36 +12127,6 @@ MonoBehaviour:
     toppingAmount: 
     maxToppingAmount: 0
   recipeTipAmount: 0
---- !u!1 &1124169301
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1124169302}
-  m_Layer: 0
-  m_Name: PausePoint_Alley
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1124169302
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1124169301}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 982263170}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1126310097 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6347608639245709512, guid: 985da931209ea964ebe9bedea154ad19,
@@ -19099,12 +19087,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8574032039292955233, guid: dc370a4bcc8abde45a7d2977759e1d5b,
     type: 3}
   m_PrefabInstance: {fileID: 743631618}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &2044631448 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 452404944, guid: 40b7740428e0628419f52a4b48863c71,
-    type: 3}
-  m_PrefabInstance: {fileID: 1328439823}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2045710361
 PrefabInstance:

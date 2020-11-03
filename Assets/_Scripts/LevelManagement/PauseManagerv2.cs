@@ -273,8 +273,10 @@ namespace LevelManagement
             originalPosition = new Vector3(x,y,z);
             originalRotation = player.transform.rotation;
 
+            player.GetComponentInChildren<CharacterController>().enabled = false;
             player.transform.position = goToPoint.position;
             player.transform.rotation = goToPoint.rotation;
+            player.GetComponentInChildren<CharacterController>().enabled = true;
 
             if (!keyboardMode)
             {
@@ -285,9 +287,10 @@ namespace LevelManagement
         private void TeleportBackToLevel()
         {
             //ColorOn();
-
+            player.GetComponentInChildren<CharacterController>().enabled = false;
             player.transform.position = originalPosition;
             player.transform.rotation = originalRotation;
+            player.GetComponentInChildren<CharacterController>().enabled = true;
 
             if (!keyboardMode)
             {
