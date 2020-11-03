@@ -1118,6 +1118,21 @@ PrefabInstance:
       propertyPath: pauseManager
       value: 
       objectReference: {fileID: 408556577}
+    - target: {fileID: 7383808056892597592, guid: 453d1d70ba0e3444f919b91488d0d884,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: -2.251135
+      objectReference: {fileID: 0}
+    - target: {fileID: 7383808056892597592, guid: 453d1d70ba0e3444f919b91488d0d884,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: -35.890434
+      objectReference: {fileID: 0}
+    - target: {fileID: 7383808056892597592, guid: 453d1d70ba0e3444f919b91488d0d884,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.z
+      value: 6.6283245
+      objectReference: {fileID: 0}
     - target: {fileID: 5124956347135126360, guid: 453d1d70ba0e3444f919b91488d0d884,
         type: 3}
       propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
@@ -1125,6 +1140,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 453d1d70ba0e3444f919b91488d0d884, type: 3}
+--- !u!4 &104202927 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7868885977079083790, guid: 453d1d70ba0e3444f919b91488d0d884,
+    type: 3}
+  m_PrefabInstance: {fileID: 104202926}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &120373917
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2691,7 +2712,7 @@ MonoBehaviour:
   pauseCooldown: 0
   pauseNoir: {fileID: 0}
   player: {fileID: 1424491313}
-  pausePoint: {fileID: 1224743842}
+  pausePoint: {fileID: 104202927}
   easterEggPoint: {fileID: 0}
   minigamePoint: {fileID: 1893118384}
 --- !u!4 &408556578
@@ -4929,7 +4950,7 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 2
   m_Height: 1
-  m_Radius: 0.2
+  m_Radius: 0.1
   m_SlopeLimit: 90
   m_StepOffset: 0
   m_SkinWidth: 0.0001
