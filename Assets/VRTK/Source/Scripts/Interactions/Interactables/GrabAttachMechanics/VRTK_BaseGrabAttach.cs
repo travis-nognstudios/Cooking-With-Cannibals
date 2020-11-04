@@ -26,6 +26,7 @@ namespace VRTK.GrabAttachMechanics
         public float throwMultiplier = 1f;
         [Tooltip("The amount of time to delay collisions affecting the Interactable Object when it is first grabbed. This is useful if the Interactable Object could get stuck inside another GameObject when it is being grabbed.")]
         public float onGrabCollisionDelay = 0f;
+        public Transform trackingSpace;
 
         protected bool tracked;
         protected bool climbable;
@@ -219,17 +220,18 @@ namespace VRTK.GrabAttachMechanics
 
                         Vector3 velocity = VRTK_DeviceFinder.GetControllerVelocity(controllerReference);
                         Vector3 angularVelocity = VRTK_DeviceFinder.GetControllerAngularVelocity(controllerReference);
+                        Transform trackingSpace = (GameObject.Find("TrackingSpace")).transform;
                         float grabbingObjectThrowMultiplier = grabbingObjectScript.throwMultiplier;
 
                         if (origin != null)
                         {
-                            objectRigidbody.velocity = origin.TransformVector(velocity) * (grabbingObjectThrowMultiplier * throwMultiplier);
-                            objectRigidbody.angularVelocity = origin.TransformDirection(angularVelocity);
+                            objectRigidbody.velocity = (trackingSpace.localRotation * origin.TransformVector(velocity)) * (grabbingObjectThrowMultiplier * throwMultiplier);
+                            objectRigidbody.angularVelocity = trackingSpace.localRotation * origin.TransformDirection(angularVelocity);
                         }
                         else
                         {
-                            objectRigidbody.velocity = velocity * (grabbingObjectThrowMultiplier * throwMultiplier);
-                            objectRigidbody.angularVelocity = angularVelocity;
+                            objectRigidbody.velocity = trackingSpace.localRotation * velocity * (grabbingObjectThrowMultiplier * throwMultiplier);
+                            objectRigidbody.angularVelocity =  trackingSpace.localRotation * angularVelocity;
                         }
 
                         if (throwVelocityWithAttachDistance)
