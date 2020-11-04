@@ -406,9 +406,9 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 2
   m_Height: 1
-  m_Radius: 0.1
-  m_SlopeLimit: 90
-  m_StepOffset: 0
+  m_Radius: 0.05
+  m_SlopeLimit: 30
+  m_StepOffset: 0.001
   m_SkinWidth: 0.02
   m_MinMoveDistance: 0
   m_Center: {x: 0, y: 0.5, z: 0}
@@ -435,7 +435,7 @@ MonoBehaviour:
   HmdResetsY: 1
   HmdRotatesY: 1
   GravityModifier: 0.379
-  useProfileData: 0
+  useProfileData: 1
   EnableLinearMovement: 1
   EnableRotation: 1
   RotationEitherThumbstick: 0
@@ -453,7 +453,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CameraRig: {fileID: 7609964758380068636}
   CurrentDistance: 0
-  EnableFadeout: 1
+  EnableFadeout: 0
   EnableCollision: 0
   DynamicHeight: 0
   MaxFade: 1
@@ -4883,7 +4883,7 @@ MonoBehaviour:
   usePositionTracking: 1
   useRotationTracking: 1
   useIPDInPositionTracking: 1
-  resetTrackerOnLoad: 0
+  resetTrackerOnLoad: 1
   AllowRecenter: 1
   _reorientHMDOnControllerRecenter: 1
 --- !u!114 &7609964758380068638
